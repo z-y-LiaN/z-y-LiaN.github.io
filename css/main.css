@@ -1169,7 +1169,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #13fabf;
+  background: #0a21ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2238,7 +2238,7 @@ ul.breadcrumb li + li:last-child {
   }
 }
 .site-brand-container {
-  background: #222;
+  background: #d2691e;
 }
 @media (max-width: 991px) {
   .site-brand-container {
@@ -2246,7 +2246,7 @@ ul.breadcrumb li + li:last-child {
   }
 }
 .site-meta {
-  padding: 20px 0;
+  padding: 10px 0;
 }
 .brand {
   padding: 0;
@@ -2536,6 +2536,13 @@ ul.breadcrumb li + li:last-child {
   .pagination {
     margin: 10px 0 0;
   }
+}
+body {
+  background: url("https://s3.bmp.ovh/imgs/2022/01/bd7ae53f89c0434a.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: 50% 50%;
 }
 @media (max-width: 767px) {
   .content-wrap {
