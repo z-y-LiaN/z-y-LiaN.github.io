@@ -8,7 +8,7 @@
       <link href="/2022/01/21/test1/"/>
       <url>/2022/01/21/test1/</url>
       
-        <content type="html"><![CDATA[<p>这是一个拿来测试的捏</p>]]></content>
+        <content type="html"><![CDATA[<p>这是一个拿来测试的捏</p><span id="more"></span><div class="note info">            <p>现在该说点什么呢</p>          </div><p>其中，note 后面的class_name 可以是以下列表中的一个值：</p><ul><li>default</li><li>primary</li><li>success</li><li>info</li><li>warning</li><li>danger</li></ul>]]></content>
       
       
       <categories>
