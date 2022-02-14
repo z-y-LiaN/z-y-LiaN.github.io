@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-01-21T13:07:10.029Z</updated>
+  <updated>2022-02-14T21:13:24.316Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>区块链</title>
+    <link href="http://example.com/2022/02/15/%E5%8C%BA%E5%9D%97%E9%93%BE+%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C/"/>
+    <id>http://example.com/2022/02/15/%E5%8C%BA%E5%9D%97%E9%93%BE+%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C/</id>
+    <published>2022-02-14T16:22:17.000Z</published>
+    <updated>2022-02-14T21:13:24.316Z</updated>
+    
+    <content type="html"><![CDATA[<p>预备知识</p><ul><li>区块链</li><li>复杂网络</li></ul><span id="more"></span><h1 id="区块链"><a href="#区块链" class="headerlink" title="区块链"></a>区块链</h1><h2 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h2><p>​    一种在<strong>对等网络环境</strong>下，通过透明和可信<strong>规则</strong>，构建不可伪造、不可篡改、可追溯的<strong>块链式数据结构</strong>，实现和管理事务处理的模式。</p><blockquote><p>？对等网络环境：</p><ul><li><p>Peer-to-peer network （P2P）</p></li><li><p>彼此连接的多台计算机之间都处于对等的地位 有相同的功能，无主从之分，一台计算机既可作为服务器，设定共享资源供网络中其他计算机所使用，又可以作为工作站，整个网络一般来说不依赖专用的集中服务器，也没有专用的工作站</p></li><li><p>P2P一个重要特点是改变互联网现在的以太网站为中心的状态、重返“非中心化”，并把权力交还给用户</p></li></ul><p>？理解：特殊的分布式数据库→ </p><p>​                每个网络上的节点共享数据，通过共识算法，保证整个区块链网络的一致性和安全性</p></blockquote><h2 id="技术架构"><a href="#技术架构" class="headerlink" title="技术架构"></a>技术架构</h2><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><h1 id="复杂网络"><a href="#复杂网络" class="headerlink" title="复杂网络"></a>复杂网络</h1><p>涉及参考文献：</p><blockquote><p>[1]周涛,柏文洁,汪秉宏,刘之景,严钢.复杂网络研究概述[J].物理,2005(01):31-36.</p><p>[<a href="https://www.cnblogs.com/maybe2030/p/4665847.html">Network Analysis] 复杂网络分析总结 - Poll的笔记 - 博客园 (cnblogs.com)</a></p></blockquote><h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><ul><li>典型的网络：节点+连接节点的边<ul><li>节点：代表真实系统中不同的<strong>个体</strong></li><li>边：代表个体之间的<strong>关系</strong></li><li>eg：神经网络、计算机网络、电力网络、社会关系网络</li></ul></li><li>网络的拓扑性质<ul><li>网络<strong>不依赖</strong>于节点的 <em>具体位置</em> 和 边的 <em>具体形态</em> 就能表现出来的性质</li><li>性质相应的结构：网络的拓扑结构</li></ul></li></ul><h3 id="复杂网络-1"><a href="#复杂网络-1" class="headerlink" title="复杂网络"></a>复杂网络</h3><ul><li>钱学森对于复杂网络给出了一种严格的定义：具有<strong>自组织、自相似、吸引子、小世界、无标度</strong>中 <strong>部分或全部</strong>性质 的网络称之为复杂网络。言外之意，复杂网络就是指一种呈现<strong>高度复杂性</strong>的网络</li></ul><h4 id="小世界"><a href="#小世界" class="headerlink" title="小世界"></a><strong>小世界</strong></h4><ul><li><p>社交网络中的任何一个成员和任何一个陌生人之间所间隔的人不会超过六个 六度空间理论）</p></li><li><p>衡量网络的两个特征</p><ul><li><p><code>特征路径长度（characteristic path length）</code>：在网络中，任选两个节点，连通这两个节点的最少边数，定义为这两个节点的路径长度，网络中<strong>所有节点对的路径长度的平均值</strong>，定义为网络的特征路径长度。</p><ul><li>这是网络的全局特征。</li></ul></li><li><p><code>聚合系数(clustering coefficient)</code>：假设某个节点有k条边，则这k条边连接的节点（k个）之间最多可能存在的边的条数为k(k−1)/2，用实际存在的边数除以最多可能存在的边数得到的分数值，定义为这个节点的聚合系数。<strong>所有节点的聚合系数的均值</strong>定义为网络的聚合系数。</p><ul><li><p>聚合系数是网络的局部特征，反映了相邻两个人之间朋友圈子的<strong>重合度</strong>，即该节点的朋友之间也是朋友的程度。</p></li><li><p>对于规则网络，任意两个点（个体）之间的特征路径长度长（通过多少个体联系在一起），但聚合系数高（你是朋友的朋友的朋友的几率高）。</p><blockquote><p>规则网络：用一种固定的规则的结构表示：如二维平面上的欧几里得网格</p></blockquote></li><li><p>对于随机网络，任意两个点之间的特征路径长度短，但聚合系数低。而小世界网络，点之间特征路径长度小，接近随机网络，而聚合系数依旧相当高，接近规则网络。</p><blockquote><p>随机网络：节点之间的边不再是确定的，而是用一个概率决定</p></blockquote></li></ul></li></ul></li><li><p>实际的社会、生态、等网络都是小世界网络，在这样的系统里，<strong>信息传递速度快，并且少量改变几个连接，就可以剧烈地改变网络的性能</strong>，如对已存在的网络进行调整，如蜂窝电话网，改动很少几条线路，就可以显著提高性能。</p></li></ul><h4 id="无标度"><a href="#无标度" class="headerlink" title="无标度"></a>无标度</h4><ul><li><p>现实世界的网络大部分都不是随机网络，<strong>少数的节点往往拥有大量的连接，而大部分节点却很少</strong>，节点的度数分布符合<strong>幂律分布</strong>，而这就被称为是网络的无标度特性（Scale-free）。将度分布符合<strong>幂律分布</strong>的复杂网络称为无标度网络。</p><blockquote><p>幂律分布：指某个具有分布性质的变量，且其分布密度函数是幂函数（由于分布密度函数必然满足“归一律”，所以这里的幂函数，一般规定小于负1）的分布</p></blockquote></li><li><p>无标度特性反映了复杂网络具有严重的异质性，其各节点之间的连接状况（度数）具有严重的不均匀分布性：网络中少数称之为Hub点的节点拥有极其多的连接，而大多数节点只有很少量的连接。少数Hub点对无标度网络的运行起着主导的作用。从广义上说，无标度网络的无标度性是描述大量复杂系统整体上严重不均匀分布的一种内在性质。</p><p>　　其实复杂网络的无标度特性与网络的鲁棒性分析具有密切的关系。无标度网络中幂律分布特性的存在极大地提高了高度数节点存在的可能性，因此，无标度网络同时显现出针对随机故障的鲁棒性和针对蓄意攻击的脆弱性。这种鲁棒且脆弱性对网络容错和抗攻击能力有很大影响。研究表明，无标度网络具有很强的容错性，但是对基于节点度值的选择性攻击而言，其抗攻击能力相当差，高度数节点的存在极大地削弱了网络的鲁棒性，一个恶意攻击者只需选择攻击网络很少的一部分高度数节点，就能使网络迅速瘫痪</p></li></ul><h2 id="重要节点、脆弱节点的检测、挖掘"><a href="#重要节点、脆弱节点的检测、挖掘" class="headerlink" title="重要节点、脆弱节点的检测、挖掘"></a>重要节点、脆弱节点的检测、挖掘</h2>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;预备知识&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;区块链&lt;/li&gt;
+&lt;li&gt;复杂网络&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="信安赛" scheme="http://example.com/categories/%E4%BF%A1%E5%AE%89%E8%B5%9B/"/>
+    
+    
+    <category term="区块链" scheme="http://example.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+  </entry>
   
   <entry>
     <title>操作系统第一章</title>
@@ -57,7 +82,7 @@
     <link href="http://example.com/2022/01/20/rubbish/"/>
     <id>http://example.com/2022/01/20/rubbish/</id>
     <published>2022-01-20T14:22:17.000Z</published>
-    <updated>2022-02-03T18:08:45.460Z</updated>
+    <updated>2022-02-03T18:12:47.901Z</updated>
     
     <content type="html"><![CDATA[<p>随便唠唠</p><span id="more"></span>]]></content>
     
@@ -66,6 +91,10 @@
     
     
     
+    <category term="批话连篇" scheme="http://example.com/categories/%E6%89%B9%E8%AF%9D%E8%BF%9E%E7%AF%87/"/>
+    
+    
+    <category term="评论区才是正文" scheme="http://example.com/tags/%E8%AF%84%E8%AE%BA%E5%8C%BA%E6%89%8D%E6%98%AF%E6%AD%A3%E6%96%87/"/>
     
   </entry>
   
