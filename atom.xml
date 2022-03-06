@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-02-14T23:04:06.283Z</updated>
+  <updated>2022-03-06T07:03:48.896Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,13 +17,68 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>小世界网络</title>
+    <link href="http://example.com/2022/02/26/2022-02-26-%E5%B0%8F%E4%B8%96%E7%95%8C%E7%BD%91%E7%BB%9C/"/>
+    <id>http://example.com/2022/02/26/2022-02-26-%E5%B0%8F%E4%B8%96%E7%95%8C%E7%BD%91%E7%BB%9C/</id>
+    <published>2022-02-26T07:45:01.000Z</published>
+    <updated>2022-03-06T07:03:48.896Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>关于小世界网络—— 一种特殊的<strong>复杂网络</strong></li><li>随机性<strong>介于</strong> 随机网络和规则耦合网络<strong>之间</strong></li><li>适合模拟<strong>真实</strong>网络系统</li><li>其概念, 简单说是描述这样的一个事实:<ul><li>尽管一些网络系统有<strong>很大</strong>的尺寸, 但其中<strong>任意两个节点</strong>之间却有一个<strong>相对小</strong>的距离。</li></ul></li><li>小世界特征：比较<strong>短</strong>的<strong>平均距离</strong> + 相对较<strong>大</strong>的<strong>集聚系数</strong></li></ul><span id="more"></span><h1 id="两种常见的小世界网络"><a href="#两种常见的小世界网络" class="headerlink" title="两种常见的小世界网络"></a>两种常见的小世界网络</h1><h2 id="NW小世界网络"><a href="#NW小世界网络" class="headerlink" title="NW小世界网络"></a>NW小世界网络</h2><ul><li><strong>实现方式</strong>：<strong>规则耦合网络 </strong>上进行 <strong>随机加边</strong></li></ul><h2 id="WS小世界网络"><a href="#WS小世界网络" class="headerlink" title="WS小世界网络"></a>WS小世界网络</h2><ul><li><strong>实现方式</strong>：<strong>规则耦合网络</strong>上进行<strong>随机重连</strong></li></ul><blockquote><p>参考文献：</p><p><a href="">[1]赵小林,徐浩,薛静峰,宋天凌,胡晶晶,闫怀志.基于复杂网络的网络系统脆弱点发现方法研究[J].信息安全学报,2019,4(01):39-52.DOI:10.19363/J.cnki.cn10-1380/tn.2019.01.04.</a></p></blockquote>]]></content>
+    
+    
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;关于小世界网络—— 一种特殊的&lt;strong&gt;复杂网络&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;随机性&lt;strong&gt;介于&lt;/strong&gt; 随机网络和规则耦合网络&lt;strong&gt;之间&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;适合模拟&lt;strong&gt;真实&lt;/strong&gt;网络系统&lt;/li&gt;
+&lt;li&gt;其概念, 简单说是描述这样的一个事实:&lt;ul&gt;
+&lt;li&gt;尽管一些网络系统有&lt;strong&gt;很大&lt;/strong&gt;的尺寸, 但其中&lt;strong&gt;任意两个节点&lt;/strong&gt;之间却有一个&lt;strong&gt;相对小&lt;/strong&gt;的距离。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;小世界特征：比较&lt;strong&gt;短&lt;/strong&gt;的&lt;strong&gt;平均距离&lt;/strong&gt; + 相对较&lt;strong&gt;大&lt;/strong&gt;的&lt;strong&gt;集聚系数&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="信安赛" scheme="http://example.com/categories/%E4%BF%A1%E5%AE%89%E8%B5%9B/"/>
+    
+    
+    <category term="复杂网络" scheme="http://example.com/tags/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C/"/>
+    
+    <category term="文献笔记" scheme="http://example.com/tags/%E6%96%87%E7%8C%AE%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>复杂网络中重要节点、脆弱节点的检查、挖掘方法</title>
+    <link href="http://example.com/2022/02/25/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E4%B8%AD%E9%87%8D%E8%A6%81%E8%8A%82%E7%82%B9%E3%80%81%E8%84%86%E5%BC%B1%E8%8A%82%E7%82%B9%E7%9A%84%E6%A3%80%E6%9F%A5%E3%80%81%E6%8C%96%E6%8E%98%E6%96%B9%E6%B3%95/"/>
+    <id>http://example.com/2022/02/25/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E4%B8%AD%E9%87%8D%E8%A6%81%E8%8A%82%E7%82%B9%E3%80%81%E8%84%86%E5%BC%B1%E8%8A%82%E7%82%B9%E7%9A%84%E6%A3%80%E6%9F%A5%E3%80%81%E6%8C%96%E6%8E%98%E6%96%B9%E6%B3%95/</id>
+    <published>2022-02-25T00:29:40.000Z</published>
+    <updated>2022-03-06T07:08:10.922Z</updated>
+    
+    <content type="html"><![CDATA[<p>从<strong>防</strong>的角度，<strong>加强保护</strong>和<strong>完善</strong> 脆弱节点</p><span id="more"></span><h1 id="脆弱节点的检查、挖掘"><a href="#脆弱节点的检查、挖掘" class="headerlink" title="脆弱节点的检查、挖掘"></a>脆弱节点的检查、挖掘</h1><blockquote><p>参考文献：</p><p><a href="">[1]赵小林,徐浩,薛静峰,宋天凌,胡晶晶,闫怀志.基于复杂网络的网络系统脆弱点发现方法研究[J].信息安全学报,2019,4(01):39-52.DOI:10.19363/J.cnki.cn10-1380/tn.2019.01.04.</a></p></blockquote><ul><li><p>该篇论文解决的问题：</p><ul><li>大量节点 加大了攻击图 的计算量 ，产生<strong>状态爆炸</strong>问题，限制了攻击图技术现实应用</li><li>因此，兼顾准确性&amp;&amp;<strong>减少计算量</strong>&amp;&amp;利用复杂网络的拓扑统计性质  <ul><li>寻找 脆弱点—&gt;达到目的：寻找<strong>更大规模</strong>（1000/10000以上）网络的脆弱点 </li></ul></li><li>提出了  对节点删除法的<strong>改进</strong></li></ul><hr></li></ul><ul><li><p>复杂网络 —&gt; 节点的集合 —&gt; 拥有自己的<strong>独立特征</strong>&amp;&amp;与其他个体有<strong>相互连接</strong>关系的节点</p></li><li><p>什么是脆弱节点?</p><ul><li><p><strong>受攻击</strong>后能引起网络性能<strong>大幅度下降</strong>的节点</p><ul><li><p>什么是网络性能?</p><ul><li>网络的<strong>连通性</strong>（网络能否正常工作）、平均最短路径（网络执行效率）等</li></ul></li></ul></li></ul></li></ul><h2 id="寻找脆弱节点的两种思路"><a href="#寻找脆弱节点的两种思路" class="headerlink" title="寻找脆弱节点的两种思路"></a>寻找脆弱节点的两种思路</h2><h3 id="思路一：网络中心性反映脆弱性"><a href="#思路一：网络中心性反映脆弱性" class="headerlink" title="思路一：网络中心性反映脆弱性"></a>思路一：网络中心性反映脆弱性</h3><ul><li><p><strong>中心性指标</strong></p><ul><li><p><strong>度中心性</strong></p><ul><li><p>归一化度值 <strong>越大，节点越重要</strong></p></li><li><script type="math/tex; mode=display">归一化度值=\frac{节点的度(与节点相连的其他节点个数)}{最大可能的度(N-1)}</script></li></ul></li></ul></li></ul><ul><li><p><strong>介数中心性</strong></p><ul><li><p>介数中心性 反映–&gt;节点在网络中的<strong>枢纽</strong>地位；通过该节点最短路径<strong>越多，节点越重要</strong></p><script type="math/tex; mode=display">介数=\frac{经过该节点的最短路径 条数}{所有最短路径 条数}</script></li><li><script type="math/tex; mode=display">介数中心性=\frac{某节点介数}{介数最大值}</script></li></ul></li></ul><ul><li><p><strong>接近度中心性</strong></p><ul><li>接近度：节点到其他节点 最短路径之和的倒数；<strong>越小越重要</strong></li><li>接近度中心性 = 某节点接近度  * （N-1）<ul><li>反映–&gt;节点通过网络到其他节点的<strong>影响能力</strong></li></ul></li></ul></li><li><p><strong>特征向量中心性</strong></p><ul><li>反映了节点间的<strong>相互影响</strong></li><li>反映了重要性和 <strong>连接的边数目</strong>有关、和<strong>连接的节点的重要性</strong>有关、连接重要的节点可<strong>提升</strong>自身节点的重要性</li></ul></li></ul><hr><h3 id="思路二：节点脆弱性-删除节点后对网络系统的破坏性"><a href="#思路二：节点脆弱性-删除节点后对网络系统的破坏性" class="headerlink" title="思路二：节点脆弱性 == 删除节点后对网络系统的破坏性"></a>思路二：节点脆弱性 == 删除节点后对网络系统的破坏性</h3><p> “核与核度”理论：</p><ul><li><p><strong>系统的“核”</strong>：</p><ul><li>给定的系统，若<strong>去掉or破坏</strong>其中若干个主要素，对系统<strong>破坏性最大</strong>的 这若干个主要素</li><li>—&gt; 可以：研究<strong>删除节点</strong>后对网络的<strong>破坏性</strong>来确定—&gt; 脆弱节点</li></ul></li><li><p><strong>如何“删除节点”？</strong></p><ul><li><p><strong>方法一</strong>：将节点对之间<strong>距离的倒数</strong>作为权数，对所有<strong>产生的</strong>不连通节点加权求和  以此度量破坏程度</p><blockquote><ul><li><p>参考文献：</p><p><a href="">[1]李鹏翔,任玉晴,席酉民.网络节点(集)重要性的一种度量指标[J].系统工程,2004(04):13-20.</a></p></li></ul></blockquote></li><li><p><strong>方法二：</strong></p><blockquote><ul><li><p>参考文献：</p><p><a href="">[1]刘浪,邓伟,采峰,陈玲. 节点重要度计算的新方法——优先等级法[C]//第九届中国管理科学学术年会论文集.[出版者不详],2007:168-171.</a></p></li></ul></blockquote></li></ul></li></ul><h3 id="该文献的思路"><a href="#该文献的思路" class="headerlink" title="该文献的思路"></a>该文献的思路</h3><ul><li>本文对<strong>节点删除法的改进 </strong>：针对网络攻防中 <strong>网络拓扑</strong>可能因为脆弱点 受到攻击而<strong>变化</strong>，寻找<strong>更符合网络实际情况</strong>的脆弱点<ul><li>通过计算 删除节点后对网络<strong>平均最短路径</strong>的影响 来 模拟当网络中节点 <strong>受到攻击 导致节点不可用</strong>时 对网络整体性质的影响</li></ul></li></ul><h3 id="算法设计"><a href="#算法设计" class="headerlink" title="算法设计"></a>算法设计</h3><ul><li><p>本文认为：主要影响的网络性质：<strong>平均最短路径</strong> &amp; <strong>连通节点对</strong>的变化</p><blockquote><p>删除节点后，可能<strong>产生</strong>一个or多个连通分支 ，可能<strong>改变</strong>某些节点对的最短路径</p></blockquote></li></ul><ol><li><p>首先考虑对平均最短路径的影响</p><ul><li><p>将<strong>不连通的节点对</strong> 间的距离设为 <strong>图的直径大小</strong></p><p><img src="https://i.bmp.ovh/imgs/2022/03/0662fb6717a810d5.png" style="zoom:50%;" /></p></li></ul></li></ol>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;从&lt;strong&gt;防&lt;/strong&gt;的角度，&lt;strong&gt;加强保护&lt;/strong&gt;和&lt;strong&gt;完善&lt;/strong&gt; 脆弱节点&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="信安赛" scheme="http://example.com/categories/%E4%BF%A1%E5%AE%89%E8%B5%9B/"/>
+    
+    
+    <category term="复杂网络" scheme="http://example.com/tags/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C/"/>
+    
+    <category term="文献笔记" scheme="http://example.com/tags/%E6%96%87%E7%8C%AE%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>区块链</title>
     <link href="http://example.com/2022/02/15/%E5%8C%BA%E5%9D%97%E9%93%BE+%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C/"/>
     <id>http://example.com/2022/02/15/%E5%8C%BA%E5%9D%97%E9%93%BE+%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C/</id>
     <published>2022-02-14T16:22:17.000Z</published>
-    <updated>2022-02-14T23:04:06.283Z</updated>
+    <updated>2022-03-06T01:59:35.220Z</updated>
     
-    <content type="html"><![CDATA[<ul><li>主要内容<ul><li>区块链，什么是，有什么技术架构、特点、应用场景、优缺点</li><li>复杂网络（complex network），弄明白什么是复杂网络（区块链网络就是一个例子）</li><li>复杂网络中重要节点、脆弱节点的检测、挖掘方法。</li></ul></li></ul><span id="more"></span><blockquote><p>针对区块链网络和分布式系统的，网络脆弱节点的挖掘检测：给定一个区块链网络，里边有很多节点，不同的配置、位置、算力，如何找到哪个节点是更重要、更脆弱的。</p></blockquote><ul><li>从<strong>攻</strong>的角度，那就可以作为攻击目标。</li><li>从<strong>防</strong>的角度，就是需要加强保护和完善的脆弱点</li></ul><h1 id="区块链"><a href="#区块链" class="headerlink" title="区块链"></a>区块链</h1><h2 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h2><p>​    一种在<strong>对等网络环境</strong>下，通过透明和可信<strong>规则</strong>，构建不可伪造、不可篡改、可追溯的<strong>块链式数据结构</strong>，实现和管理事务处理的模式。</p><blockquote><p>？对等网络环境：</p><ul><li><p>Peer-to-peer network （P2P）</p></li><li><p>彼此连接的多台计算机之间都处于对等的地位 有相同的功能，无主从之分，一台计算机既可作为服务器，设定共享资源供网络中其他计算机所使用，又可以作为工作站，整个网络一般来说不依赖专用的集中服务器，也没有专用的工作站</p></li><li><p>P2P一个重要特点是改变互联网现在的以太网站为中心的状态、重返“非中心化”，并把权力交还给用户</p></li></ul><p>？理解：特殊的分布式数据库→ </p><p>​                每个网络上的节点共享数据，通过共识算法，保证整个区块链网络的一致性和安全性</p></blockquote><h2 id="技术架构"><a href="#技术架构" class="headerlink" title="技术架构"></a>技术架构</h2><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><h1 id="复杂网络"><a href="#复杂网络" class="headerlink" title="复杂网络"></a>复杂网络</h1><p>涉及参考文献：</p><blockquote><p>[1]周涛,柏文洁,汪秉宏,刘之景,严钢.复杂网络研究概述[J].物理,2005(01):31-36.</p><p>[<a href="https://www.cnblogs.com/maybe2030/p/4665847.html">Network Analysis] 复杂网络分析总结 - Poll的笔记 - 博客园 (cnblogs.com)</a></p></blockquote><h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><ul><li>典型的网络：节点+连接节点的边<ul><li>节点：代表真实系统中不同的<strong>个体</strong></li><li>边：代表个体之间的<strong>关系</strong></li><li>eg：神经网络、计算机网络、电力网络、社会关系网络</li></ul></li><li>网络的拓扑性质<ul><li>网络<strong>不依赖</strong>于节点的 <em>具体位置</em> 和 边的 <em>具体形态</em> 就能表现出来的性质</li><li>性质相应的结构：网络的拓扑结构</li></ul></li></ul><h3 id="复杂网络-1"><a href="#复杂网络-1" class="headerlink" title="复杂网络"></a>复杂网络</h3><ul><li>钱学森对于复杂网络给出了一种严格的定义：具有<strong>自组织、自相似、吸引子、小世界、无标度</strong>中 <strong>部分或全部</strong>性质 的网络称之为复杂网络。</li><li>言外之意，复杂网络就是指一种呈现<strong>高度复杂性</strong>的网络</li></ul><h4 id="小世界"><a href="#小世界" class="headerlink" title="小世界"></a><strong>小世界</strong></h4><ul><li><p>社交网络中的任何一个成员和任何一个陌生人之间所间隔的人<font color="green">不会超过六个</font> (六度空间理论）</p></li><li><p>衡量网络的两个特征</p><ul><li><p><code>特征路径长度（characteristic path length）</code>：在网络中，任选两个节点，连通这两个节点的最少边数，定义为这两个节点的路径长度，网络中<strong>所有节点对的路径长度的平均值</strong>，定义为网络的特征路径长度。</p><ul><li>这是网络的全局特征。</li></ul></li><li><p><code>聚合系数(clustering coefficient)</code>：假设某个节点有k条边，则这k条边连接的节点（k个）之间最多可能存在的边的条数为k(k−1)/2，用实际存在的边数除以最多可能存在的边数得到的分数值，定义为这个节点的聚合系数。<strong>所有节点的聚合系数的均值</strong>定义为网络的聚合系数。</p><ul><li><p>聚合系数是网络的局部特征，反映了相邻两个人之间朋友圈子的<strong>重合度</strong>，即该节点的朋友之间也是朋友的程度。</p></li><li><p>对于规则网络，任意两个点（个体）之间的特征路径长度长（通过多少个体联系在一起），但聚合系数高（你是朋友的朋友的朋友的几率高）。</p><blockquote><p>规则网络：用一种固定的规则的结构表示：如二维平面上的欧几里得网格</p></blockquote></li><li><p>对于随机网络，任意两个点之间的特征路径长度短，但聚合系数低。而小世界网络，点之间特征路径长度小，接近随机网络，而聚合系数依旧相当高，接近规则网络。</p><blockquote><p>随机网络：节点之间的边不再是确定的，而是用一个概率决定</p></blockquote></li></ul></li></ul></li><li><p>实际的社会、生态、等网络都是小世界网络，在这样的系统里，<strong>信息传递速度快，并且少量改变几个连接，就可以剧烈地改变网络的性能</strong>，如对已存在的网络进行调整，如蜂窝电话网，改动很少几条线路，就可以显著提高性能。</p></li></ul><h4 id="无标度"><a href="#无标度" class="headerlink" title="无标度"></a>无标度</h4><ul><li><p>现实世界的网络大部分都不是随机网络，<strong>少数的节点往往拥有大量的连接，而大部分节点却很少</strong>，节点的度数分布符合<strong>幂律分布</strong>，而这就被称为是网络的无标度特性（Scale-free）。将度分布符合<strong>幂律分布</strong>的复杂网络称为无标度网络。</p><blockquote><p>幂律分布：指某个具有分布性质的变量，且其分布密度函数是幂函数（由于分布密度函数必然满足“归一律”，所以这里的幂函数，一般规定小于负1）的分布</p></blockquote></li><li><p>无标度特性反映了复杂网络具有严重的异质性，其各节点之间的连接状况<strong>（度数）具有严重的不均匀分布性</strong></p><ul><li>网络中少数称之为<strong>Hub点</strong>的节点拥有极其多的连接，而大多数节点只有很少量的连接。少数Hub点对无标度网络的运行起着<strong>主导</strong>的作用。</li><li>从广义上说，无标度网络的无标度性是描述大量复杂系统<strong>整体上严重不均匀分布</strong>的一种内在性质。</li></ul></li><li><p>其实复杂网络的无标度特性与<strong>网络的鲁棒性分析</strong>具有密切的关系。</p><ul><li><p>无标度网络中<strong>幂律分布特性</strong>的存在极大地提高了<strong>高度数节点存在</strong>的可能性，因此，无标度网络同时显现出<strong>针对随机故障的鲁棒性和针对蓄意攻击的脆弱性</strong>。这种鲁棒且脆弱性对网络容错和抗攻击能力有很大影响。</p><blockquote><p>鲁棒性：在异常和危险情况下系统生存的能力</p></blockquote></li><li><p>无标度网络具有很强的容错性，但是对基于节点度值的选择性攻击而言，其<strong>抗攻击能力相当差</strong>，高度数节点的存在极大地削弱了网络的鲁棒性，一个恶意攻击者只需选择攻击网络很少的一部分高度数节点，就能使网络迅速瘫痪</p></li></ul></li></ul><h2 id="重要节点、脆弱节点的检测、挖掘"><a href="#重要节点、脆弱节点的检测、挖掘" class="headerlink" title="重要节点、脆弱节点的检测、挖掘"></a>重要节点、脆弱节点的检测、挖掘</h2><p>涉及参考文献</p><blockquote><p><a href="https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&dbname=CJFD2007&filename=JSJA200712003&uniplatform=NZKPT&v=4M8fbSr9Jag8kRTp3gVwrqO7hkHjgcLxJ-HaeSp7dV8RwFv4B21WmBjH1CFMYSVH">[1]赫南,李德毅,淦文燕,朱熙.复杂网络中重要性节点发掘综述[J].计算机科学,2007(12):1-5+17.</a></p></blockquote>]]></content>
+    <content type="html"><![CDATA[<ul><li>主要内容<ul><li>区块链，什么是，有什么技术架构、特点、应用场景、优缺点</li><li>复杂网络（complex network），弄明白什么是复杂网络（区块链网络就是一个例子）</li><li>复杂网络中重要节点、脆弱节点的检测、挖掘方法。</li></ul></li></ul><span id="more"></span><blockquote><p>针对区块链网络和分布式系统的，网络脆弱节点的挖掘检测：给定一个区块链网络，里边有很多节点，不同的配置、位置、算力，如何找到哪个节点是更重要、更脆弱的。</p></blockquote><ul><li>从<strong>攻</strong>的角度，那就可以作为攻击目标。</li><li>从<strong>防</strong>的角度，就是需要加强保护和完善的脆弱点</li></ul><h1 id="区块链"><a href="#区块链" class="headerlink" title="区块链"></a>区块链</h1><h2 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h2><p>​    一种在<strong>对等网络环境</strong>下，通过透明和可信<strong>规则</strong>，构建不可伪造、不可篡改、可追溯的<strong>块链式数据结构</strong>，实现和管理事务处理的模式。</p><blockquote><p>？对等网络环境：</p><ul><li><p>Peer-to-peer network （P2P）</p></li><li><p>彼此连接的多台计算机之间都处于对等的地位 有相同的功能，无主从之分，一台计算机既可作为服务器，设定共享资源供网络中其他计算机所使用，又可以作为工作站，整个网络一般来说不依赖专用的集中服务器，也没有专用的工作站</p></li><li>P2P一个重要特点是改变互联网现在的以太网站为中心的状态、重返“非中心化”，并把权力交还给用户</li></ul><p>？理解：特殊的分布式数据库→ </p><p>​                每个网络上的节点共享数据，通过共识算法，保证整个区块链网络的一致性和安全性</p></blockquote><h2 id="技术架构"><a href="#技术架构" class="headerlink" title="技术架构"></a>技术架构</h2><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><h1 id="复杂网络"><a href="#复杂网络" class="headerlink" title="复杂网络"></a>复杂网络</h1><p>涉及参考文献：</p><blockquote><p>[1]周涛,柏文洁,汪秉宏,刘之景,严钢.复杂网络研究概述[J].物理,2005(01):31-36.</p><p><a href="https://www.cnblogs.com/maybe2030/p/4665847.html">[Network Analysis] 复杂网络分析总结 - Poll的笔记 - 博客园 (cnblogs.com)</a></p></blockquote><h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><ul><li>典型的网络：节点+连接节点的边<ul><li>节点：代表真实系统中不同的<strong>个体</strong></li><li>边：代表个体之间的<strong>关系</strong></li><li>eg：神经网络、计算机网络、电力网络、社会关系网络</li></ul></li><li>网络的拓扑性质<ul><li>网络<strong>不依赖</strong>于节点的 <em>具体位置</em> 和 边的 <em>具体形态</em> 就能表现出来的性质</li><li>性质相应的结构：网络的拓扑结构</li></ul></li></ul><h3 id="复杂网络-1"><a href="#复杂网络-1" class="headerlink" title="复杂网络"></a>复杂网络</h3><ul><li><p>钱学森对于复杂网络给出了一种严格的定义：具有<strong>自组织、自相似、吸引子、小世界、无标度</strong>中 <strong>部分或全部</strong>性质 的网络称之为复杂网络。</p></li><li><p>言外之意，复杂网络就是指一种呈现<strong>高度复杂性</strong>的网络</p></li><li><blockquote><blockquote><p><a href="https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&amp;dbname=CJFD2007&amp;filename=JSJA200712003&amp;uniplatform=NZKPT&amp;v=4M8fbSr9Jag8kRTp3gVwrqO7hkHjgcLxJ-HaeSp7dV8RwFv4B21WmBjH1CFMYSVH">[1]赫南,李德毅,淦文燕,朱熙.复杂网络中重要性节点发掘综述[J].计算机科学,2007(12):1-5+17.</a></p></blockquote></blockquote></li><li><p>上文献中认为：复杂网络没有精确严格的定义</p><ul><li>可以<strong>看作大量真实复杂系统的拓扑抽象</strong>，既不是规则网络，也不是随机网络。</li><li>现实世界中的复杂网络比如：社会关系网络、论文引用网络、软件类网络…</li></ul></li></ul><h4 id="特性1：小世界"><a href="#特性1：小世界" class="headerlink" title="特性1：小世界"></a><strong>特性1：小世界</strong></h4><ul><li><p>社交网络中的任何一个成员和任何一个陌生人之间所间隔的人<strong><font color="green">不会超过六个</font></strong> (六度空间理论）</p></li><li><p>小世界网络有 规则网络类似的<font color = "green">聚集性 </font>+ 随机网络类似的较小的<font color="green">平均路径长度</font></p></li><li><p>衡量网络的两个特征</p><ul><li><p><code>特征路径长度（characteristic path length）</code>：在网络中，任选两个节点，<strong>连通</strong>这两节点的<strong>最少</strong>边数，定义为这两个节点的路径长度，网络中<strong>所有节点对的路径长度的平均值</strong>，定义为网络的特征路径长度。</p><ul><li>网络的全局特征。</li></ul></li><li><p><code>聚合系数(clustering coefficient)</code>：假设某节点有k条边，则这k条边连接的节点（k个）之间最多可能存在的边的条数为k(k−1)/2</p><ul><li><p>节点的聚合系数：用<strong>实际存在的边数</strong>除以<strong>最多可能存在的边数</strong>得到的分数值</p></li><li><p><strong>所有节点的聚合系数的均值</strong>定义为网络的聚合系数。</p></li><li><p>聚合系数是网络的局部特征，反映了相邻两个人之间朋友圈子的<strong>重合度</strong>，即该节点的朋友之间也是朋友的程度。</p></li><li><p>对于规则网络，任意两个点（个体）之间的特征路径长度长（通过多少个体联系在一起），但聚合系数高（你是朋友的朋友的朋友的几率高）。</p><blockquote><p>规则网络：用一种固定的规则的结构表示：如二维平面上的欧几里得网格</p></blockquote></li><li><p>对于随机网络，任意两个点之间的特征路径长度短，但聚合系数低。而小世界网络，点之间特征路径长度小，接近随机网络，而聚合系数依旧相当高，接近规则网络。</p><blockquote><p>随机网络：节点之间的边不再是确定的，而是用一个概率决定</p></blockquote></li></ul></li></ul></li><li><p>实际的社会、生态、等网络都是小世界网络，在这样的系统里，<strong>信息传递速度快，并且少量改变几个连接，就可以剧烈地改变网络的性能</strong>，如对已存在的网络进行调整，如蜂窝电话网，改动很少几条线路，就可以显著提高性能。</p></li></ul><h4 id="无标度"><a href="#无标度" class="headerlink" title="无标度"></a>无标度</h4><ul><li><p>现实世界的网络大部分都不是随机网络，<strong>少数的节点往往拥有大量的连接，而大部分节点却很少</strong>，节点度数分布符合<strong>幂律分布</strong>—&gt;网络的无标度特性（Scale-free）。度分布符合<strong>幂律分布</strong>的复杂网络—&gt;无标度网络。</p><blockquote><p>幂律分布：指某个具有分布性质的变量，且其分布密度函数是幂函数（由于分布密度函数必然满足“归一律”，所以这里的幂函数，一般规定小于负1）的分布</p></blockquote></li><li><p>无标度特性反映了复杂网络具有严重的异质性，其各节点之间的连接状况<strong>（度数）具有严重的不均匀分布性</strong></p><ul><li>网络中少数称之为<strong>Hub点</strong>的节点拥有极其多的连接，而大多数节点只有很少量的连接。少数Hub点对无标度网络的运行起着<strong>主导</strong>的作用。</li><li>从广义上说，无标度网络的无标度性是描述大量复杂系统<strong>整体上严重不均匀分布</strong>的一种内在性质。</li></ul></li><li><p>其实复杂网络的无标度特性与<strong>网络的鲁棒性分析</strong>具有密切的关系。</p><ul><li><p>无标度网络中<strong>幂律分布特性</strong>的存在极大地提高了<strong>高度数节点存在</strong>的可能性，因此，无标度网络同时显现出<strong>针对随机故障的鲁棒性和针对蓄意攻击的脆弱性</strong>。这种鲁棒且脆弱性对网络容错和抗攻击能力有很大影响。</p><blockquote><p>鲁棒性：在异常和危险情况下系统生存的能力</p></blockquote></li><li><p>无标度网络具有很强的容错性，但是对基于节点度值的选择性攻击而言，其<strong>抗攻击能力相当差</strong>，高度数节点的存在极大地削弱了网络的鲁棒性，一个恶意攻击者只需选择攻击网络很少的一部分高度数节点，就能使网络迅速瘫痪</p></li></ul></li></ul><h2 id="重要节点、脆弱节点的检测、挖掘"><a href="#重要节点、脆弱节点的检测、挖掘" class="headerlink" title="重要节点、脆弱节点的检测、挖掘"></a>重要节点、脆弱节点的检测、挖掘</h2><p>涉及参考文献</p><blockquote><p><a href="https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&amp;dbname=CJFD2007&amp;filename=JSJA200712003&amp;uniplatform=NZKPT&amp;v=4M8fbSr9Jag8kRTp3gVwrqO7hkHjgcLxJ-HaeSp7dV8RwFv4B21WmBjH1CFMYSVH">[1]赫南,李德毅,淦文燕,朱熙.复杂网络中重要性节点发掘综述[J].计算机科学,2007(12):1-5+17.</a></p></blockquote>]]></content>
     
     
     <summary type="html">&lt;ul&gt;
@@ -40,9 +95,9 @@
     <category term="信安赛" scheme="http://example.com/categories/%E4%BF%A1%E5%AE%89%E8%B5%9B/"/>
     
     
-    <category term="区块链" scheme="http://example.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
     <category term="复杂网络" scheme="http://example.com/tags/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C/"/>
+    
+    <category term="区块链" scheme="http://example.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
     
   </entry>
   
@@ -66,10 +121,10 @@
     <published>2022-01-20T16:50:26.000Z</published>
     <updated>2022-01-21T00:06:07.000Z</updated>
     
-    <content type="html"><![CDATA[<p>这是一个拿来测试的捏</p><span id="more"></span><div class="note info">            <p>现在该说点什么呢</p>          </div><p>其中，note 后面的class_name 可以是以下列表中的一个值：</p><ul><li>default</li><li>primary</li><li>success</li><li>info</li><li>warning</li><li>danger</li></ul>]]></content>
+    <content type="html"><![CDATA[<p>这是一个拿来测试的捏<br><span id="more"></span><br><div class="note info">            <p>现在该说点什么呢</p>          </div></p><p>其中，note 后面的class_name 可以是以下列表中的一个值：</p><ul><li>default</li><li>primary</li><li>success</li><li>info</li><li>warning</li><li>danger</li></ul>]]></content>
     
     
-    <summary type="html">&lt;p&gt;这是一个拿来测试的捏&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;这是一个拿来测试的捏&lt;br&gt;</summary>
     
     
     
@@ -79,27 +134,6 @@
     <category term="测试" scheme="http://example.com/tags/%E6%B5%8B%E8%AF%95/"/>
     
     <category term="部署" scheme="http://example.com/tags/%E9%83%A8%E7%BD%B2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>碎碎念合辑</title>
-    <link href="http://example.com/2022/01/20/rubbish/"/>
-    <id>http://example.com/2022/01/20/rubbish/</id>
-    <published>2022-01-20T14:22:17.000Z</published>
-    <updated>2022-02-03T18:12:47.901Z</updated>
-    
-    <content type="html"><![CDATA[<p>随便唠唠</p><span id="more"></span>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;随便唠唠&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="批话连篇" scheme="http://example.com/categories/%E6%89%B9%E8%AF%9D%E8%BF%9E%E7%AF%87/"/>
-    
-    
-    <category term="评论区才是正文" scheme="http://example.com/tags/%E8%AF%84%E8%AE%BA%E5%8C%BA%E6%89%8D%E6%98%AF%E6%AD%A3%E6%96%87/"/>
     
   </entry>
   
