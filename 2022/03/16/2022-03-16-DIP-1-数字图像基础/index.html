@@ -22,17 +22,22 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="别焦虑了，说不定明天就死了呢.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LiaN">
-<meta property="og:url" content="http://example.com/archives/2022/index.html">
+  <meta name="description" content="数字图像的概念及表示 图像获取 图像数字化（Digitization） 不同类型的数字图像">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DIP-1-数字图像基础">
+<meta property="og:url" content="http://example.com/2022/03/16/2022-03-16-DIP-1-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="LiaN">
-<meta property="og:description" content="别焦虑了，说不定明天就死了呢.">
+<meta property="og:description" content="数字图像的概念及表示 图像获取 图像数字化（Digitization） 不同类型的数字图像">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/03/91bd075dd44a0604.png">
+<meta property="article:published_time" content="2022-03-16T13:10:02.000Z">
+<meta property="article:modified_time" content="2022-03-06T13:47:41.728Z">
 <meta property="article:author" content="LiaN">
+<meta property="article:tag" content="数字图像处理Digital Image Processing">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.bmp.ovh/imgs/2022/03/91bd075dd44a0604.png">
 
-<link rel="canonical" href="http://example.com/archives/2022/">
+<link rel="canonical" href="http://example.com/2022/03/16/2022-03-16-DIP-1-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%9F%BA%E7%A1%80/">
 
 
 <script id="page-configurations">
@@ -40,12 +45,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | LiaN</title>
+  <title>DIP-1-数字图像基础 | LiaN</title>
   
 
 
@@ -199,176 +204,193 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 7 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/16/2022-03-16-DIP-1-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn2.maocdn.cn/img/2022/01/21/J8U_G9ZTZG4W12DA260Z9.jpg">
+      <meta itemprop="name" content="LiaN">
+      <meta itemprop="description" content="<font color="#000000">别焦虑了，说不定明天就死了呢.</font>">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LiaN">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          DIP-1-数字图像基础
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-03-16 21:10:02" itemprop="dateCreated datePublished" datetime="2022-03-16T21:10:02+08:00">2022-03-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-03-06 21:47:41" itemprop="dateModified" datetime="2022-03-06T21:47:41+08:00">2022-03-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">课程笔记</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>355</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
+        <div class="toc">
+
+<!-- toc -->
+<ul>
+<li><a href="#shu-zi-tu-xiang-de-gai-nian-ji-biao-shi">数字图像的概念及表示</a></li>
+<li><a href="#tu-xiang-huo-qu">图像获取</a></li>
+<li><a href="#tu-xiang-shu-zi-hua-digitization">图像数字化（Digitization）</a></li>
+<li><a href="#bu-tong-lei-xing-de-shu-zi-tu-xiang">不同类型的数字图像</a></li>
+</ul>
+<!-- tocstop -->
+</div>
+
+
+<span id="more"></span>
+<h1><span id="shu-zi-tu-xiang-de-gai-nian-ji-biao-shi">数字图像的概念及表示</span><a href="#shu-zi-tu-xiang-de-gai-nian-ji-biao-shi" class="header-anchor">#</a></h1><ul>
+<li><strong>图像</strong>：三维场景 到 二维平面的一个投影<ul>
+<li>表示一幅图像：二维函数f（x,y)<ul>
+<li>任意一对空间坐标（<strong>x，y</strong>）处的<strong>幅值  f</strong> ：图像在该点的 强度或灰度</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>数字图像</strong>：x 和 y 和 f 都是 <strong>有限的离散量</strong><ul>
+<li>由有限数量的像素组成  —–》每个像素对应 一个（x，y）和一个f</li>
+</ul>
+</li>
+<li><strong>数字图像的表示</strong>：二维矩阵  <img src="https://i.bmp.ovh/imgs/2022/03/91bd075dd44a0604.png" style="zoom: 33%;"></li>
+</ul>
+<h1><span id="tu-xiang-huo-qu">图像获取</span><a href="#tu-xiang-huo-qu" class="header-anchor">#</a></h1><h1><span id="tu-xiang-shu-zi-hua-digitization">图像数字化（Digitization）</span><a href="#tu-xiang-shu-zi-hua-digitization" class="header-anchor">#</a></h1><ul>
+<li><p>数字化的两个过程<strong>：取样 + 量化</strong></p>
+</li>
+<li><p><strong>取样</strong></p>
+<ul>
+<li><p>即：对空间坐标<strong>x 和 y</strong>进行数字化</p>
+</li>
+<li><p>取样间隔必须满足 <strong>Nyquist条件</strong>：x和y方向的<font color="green">取样频率</font>必须 <strong>大于</strong>图像在 x 和 y 方向 <font color="green">最高频率</font>的两倍</p>
+<ul>
+<li><p>为什么要满足：确保取样以后的信号能<font color="orange">完全恢复</font>出原来的连续信号</p>
+</li>
+<li><p>低于这个条件，会产生<strong>混叠</strong>（Aliasing）</p>
+<blockquote>
+<p>什么是混叠？</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>量化</strong></p>
+<ul>
+<li>对<strong>灰度值 f</strong> 进行数字化</li>
+</ul>
+</li>
+</ul>
+<h1><span id="bu-tong-lei-xing-de-shu-zi-tu-xiang">不同类型的数字图像</span><a href="#bu-tong-lei-xing-de-shu-zi-tu-xiang" class="header-anchor">#</a></h1>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
+        
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-03-16T21:10:02+08:00"
-              content="2022-03-16">
-          03-16
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/03/16/2022-03-16-DIP-1-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%9F%BA%E7%A1%80/" itemprop="url">
-            <span itemprop="name">DIP-1-数字图像基础</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-02-26T15:45:01+08:00"
-              content="2022-02-26">
-          02-26
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/02/26/2022-02-26-%E5%B0%8F%E4%B8%96%E7%95%8C%E7%BD%91%E7%BB%9C/" itemprop="url">
-            <span itemprop="name">小世界网络</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-02-25T08:29:40+08:00"
-              content="2022-02-25">
-          02-25
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/02/25/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E4%B8%AD%E9%87%8D%E8%A6%81%E8%8A%82%E7%82%B9%E3%80%81%E8%84%86%E5%BC%B1%E8%8A%82%E7%82%B9%E7%9A%84%E6%A3%80%E6%9F%A5%E3%80%81%E6%8C%96%E6%8E%98%E6%96%B9%E6%B3%95/" itemprop="url">
-            <span itemprop="name">复杂网络中重要节点、脆弱节点的检查、挖掘方法</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-02-15T00:22:17+08:00"
-              content="2022-02-15">
-          02-15
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/02/15/%E5%8C%BA%E5%9D%97%E9%93%BE+%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C/" itemprop="url">
-            <span itemprop="name">区块链</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-01-21T20:53:43+08:00"
-              content="2022-01-21">
-          01-21
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/01/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AC%AC%E4%B8%80%E7%AB%A0/" itemprop="url">
-            <span itemprop="name">操作系统第一章</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-01-21T00:50:26+08:00"
-              content="2022-01-21">
-          01-21
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/01/21/test1/" itemprop="url">
-            <span itemprop="name">test1</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-01-20T20:17:59+08:00"
-              content="2022-01-20">
-          01-20
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/01/20/hello-world/" itemprop="url">
-            <span itemprop="name">Hello World</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>LiaN
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2022/03/16/2022-03-16-DIP-1-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%9F%BA%E7%A1%80/" title="DIP-1-数字图像基础">http://example.com/2022/03/16/2022-03-16-DIP-1-数字图像基础/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
 
 
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86Digital-Image-Processing/" rel="tag"># 数字图像处理Digital Image Processing</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/02/26/2022-02-26-%E5%B0%8F%E4%B8%96%E7%95%8C%E7%BD%91%E7%BB%9C/" rel="prev" title="小世界网络">
+      <i class="fa fa-chevron-left"></i> 小世界网络
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-  </div>
+      </footer>
+    
+  </article>
   
   
-  
-
   
 
 
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -415,6 +437,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">数字图像的概念及表示</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">图像获取</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">图像数字化（Digitization）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">不同类型的数字图像</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -600,6 +623,25 @@
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '532a45a59c2f395313f9',
+      clientSecret: '419760923076a6f709b5baa01457e5a96e275838',
+      repo        : 'z-y-LiaN.github.io',
+      owner       : 'z-y-LiaN',
+      admin       : ['z-y-LiaN'],
+      id          : '476879f41cec10bdf9bf0377ff247b4c',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
 </body>
 </html>
