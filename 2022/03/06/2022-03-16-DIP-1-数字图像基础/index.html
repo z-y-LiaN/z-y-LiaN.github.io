@@ -22,21 +22,26 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="这是一个拿来测试的捏">
+  <meta name="description" content="【主要内容】  数字图像的概念及表示 图像获取 图像数字化(Digitization) 不同类型的数字图像 图像基本性质 图像平均值Image Mean . 图像对比度Image Contrast 图像直方图Image Histogram 图像的熵Image Entropy 自适应直方图Adaptive Histogram   直方图的应用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="test1">
-<meta property="og:url" content="http://example.com/2022/01/21/test1/index.html">
+<meta property="og:title" content="DIP-1-数字图像基础">
+<meta property="og:url" content="http://example.com/2022/03/06/2022-03-16-DIP-1-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="LiaN">
-<meta property="og:description" content="这是一个拿来测试的捏">
+<meta property="og:description" content="【主要内容】  数字图像的概念及表示 图像获取 图像数字化(Digitization) 不同类型的数字图像 图像基本性质 图像平均值Image Mean . 图像对比度Image Contrast 图像直方图Image Histogram 图像的熵Image Entropy 自适应直方图Adaptive Histogram   直方图的应用">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-01-20T16:50:26.000Z">
-<meta property="article:modified_time" content="2022-01-21T00:06:07.000Z">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/03/91bd075dd44a0604.png">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/03/3829be80550cf6d6.png">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/03/aa18aac1c82e01a2.png">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/03/05bad86faafba1d7.png">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/03/7575a89fe2de9213.png">
+<meta property="article:published_time" content="2022-03-06T13:10:02.000Z">
+<meta property="article:modified_time" content="2022-03-08T07:46:27.120Z">
 <meta property="article:author" content="LiaN">
-<meta property="article:tag" content="测试">
-<meta property="article:tag" content="部署">
+<meta property="article:tag" content="数字图像处理Digital Image Processing">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.bmp.ovh/imgs/2022/03/91bd075dd44a0604.png">
 
-<link rel="canonical" href="http://example.com/2022/01/21/test1/">
+<link rel="canonical" href="http://example.com/2022/03/06/2022-03-16-DIP-1-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%9F%BA%E7%A1%80/">
 
 
 <script id="page-configurations">
@@ -49,7 +54,7 @@
   };
 </script>
 
-  <title>test1 | LiaN</title>
+  <title>DIP-1-数字图像基础 | LiaN</title>
   
 
 
@@ -210,7 +215,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/21/test1/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/06/2022-03-16-DIP-1-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%9F%BA%E7%A1%80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://cdn2.maocdn.cn/img/2022/01/21/J8U_G9ZTZG4W12DA260Z9.jpg">
@@ -223,7 +228,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          test1
+          DIP-1-数字图像基础
         </h1>
 
         <div class="post-meta">
@@ -232,17 +237,23 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-01-21 00:50:26 / 修改时间：08:06:07" itemprop="dateCreated datePublished" datetime="2022-01-21T00:50:26+08:00">2022-01-21</time>
+              <time title="创建时间：2022-03-06 21:10:02" itemprop="dateCreated datePublished" datetime="2022-03-06T21:10:02+08:00">2022-03-06</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-03-08 15:46:27" itemprop="dateModified" datetime="2022-03-08T15:46:27+08:00">2022-03-08</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%83%A8%E7%BD%B2%E6%B5%8B%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">部署测试</span></a>
+                  <a href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">课程笔记</span></a>
                 </span>
             </span>
 
@@ -259,14 +270,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>89</span>
+              <span>1.7k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -278,17 +289,166 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>这是一个拿来测试的捏<br><span id="more"></span><br><div class="note info">
-            <p>现在该说点什么呢</p>
-          </div></p>
-<p>其中，note 后面的class_name 可以是以下列表中的一个值：</p>
+        <p>【主要内容】</p>
 <ul>
-<li>default</li>
-<li>primary</li>
-<li>success</li>
-<li>info</li>
-<li>warning</li>
-<li>danger</li>
+<li>数字图像的概念及表示</li>
+<li>图像获取</li>
+<li>图像数字化(Digitization)</li>
+<li>不同类型的数字图像</li>
+<li>图像基本性质<ul>
+<li>图像平均值Image Mean .</li>
+<li>图像对比度Image Contrast</li>
+<li>图像直方图Image Histogram</li>
+<li>图像的熵Image Entropy</li>
+<li>自适应直方图Adaptive Histogram</li>
+</ul>
+</li>
+<li>直方图的应用</li>
+</ul>
+<span id="more"></span>
+<h1 id="数字图像的概念及表示"><a href="#数字图像的概念及表示" class="headerlink" title="数字图像的概念及表示"></a>数字图像的概念及表示</h1><ul>
+<li><strong>图像</strong>：三维场景 到 二维平面的一个投影<ul>
+<li>表示一幅图像：二维函数f（x,y)<ul>
+<li>任意一对空间坐标（<strong>x，y</strong>）处的<strong>幅值  f</strong> ：图像在该点的 强度或灰度</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>数字图像</strong>：x 和 y 和 f 都是 <strong>有限的离散量</strong><ul>
+<li>由有限数量的像素组成  —–》每个像素对应 一个（x，y）和一个f</li>
+</ul>
+</li>
+<li><strong>数字图像的表示</strong>：二维矩阵  <img src="https://i.bmp.ovh/imgs/2022/03/91bd075dd44a0604.png" style="zoom: 33%;" /></li>
+</ul>
+<h1 id="图像获取"><a href="#图像获取" class="headerlink" title="图像获取"></a>图像获取</h1><h1 id="图像数字化（Digitization）"><a href="#图像数字化（Digitization）" class="headerlink" title="图像数字化（Digitization）"></a>图像数字化（Digitization）</h1><ul>
+<li><p>数字化的两个过程<strong>：取样 + 量化</strong></p>
+</li>
+<li><p><strong>取样</strong></p>
+<ul>
+<li><p>即：对空间坐标<strong>x 和 y</strong>进行数字化</p>
+</li>
+<li><p>取样间隔必须满足 <strong>Nyquist条件</strong>：x和y方向的<font color="green">取样频率</font>必须 <strong>大于</strong>图像在 x 和 y 方向 <font color="green">最高频率</font>的两倍</p>
+<ul>
+<li><p>为什么要满足：确保取样以后的信号能<font color="orange">完全恢复</font>出原来的连续信号</p>
+</li>
+<li><p>低于这个条件，会产生<strong>混叠</strong>（Aliasing）</p>
+<blockquote>
+<p>什么是混叠？</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>量化</strong></p>
+<ul>
+<li>对<strong>灰度值 f</strong> 进行数字化</li>
+</ul>
+</li>
+</ul>
+<h1 id="不同类型的数字图像"><a href="#不同类型的数字图像" class="headerlink" title="不同类型的数字图像"></a>不同类型的数字图像</h1><p>暂略…</p>
+<h1 id="图像基本性质"><a href="#图像基本性质" class="headerlink" title="图像基本性质"></a>图像基本性质</h1><h2 id="图像平均值-Image-Mean"><a href="#图像平均值-Image-Mean" class="headerlink" title="图像平均值 Image Mean"></a>图像平均值 Image Mean</h2><ul>
+<li>图像平均值 = 像素之和 / 像素总个数 ，图像平均值 ↑ 👉图像亮度 ↑</li>
+<li>公式如下：</li>
+</ul>
+<script type="math/tex; mode=display">
+I_{av} = \frac{\sum_{i} \sum_{j}I(i,j)}{\sum_i\sum_j1}</script><h2 id="图像对比度-Image-Contrast"><a href="#图像对比度-Image-Contrast" class="headerlink" title="图像对比度 Image Contrast"></a>图像对比度 Image Contrast</h2><ul>
+<li><p>对比度是 图像复杂度的一种体现</p>
+</li>
+<li><p>首先，引入对比度的<strong>度量方式</strong>：</p>
+<ul>
+<li><p><strong>全局定义方式</strong>（统计学角度）：</p>
+<p>（灰度）最大偏差</p>
+<script type="math/tex; mode=display">
+max \left\{I(x,y) \right\} - min\left\{I(x,y)\right\}</script><p>（灰度）方差：</p>
+<script type="math/tex; mode=display">
+var\left\{I(x,y)\right\}=mean\left\{(I(x,y)-I_{av})_{}^{2}\right\}</script><p>（灰度）标准差</p>
+<script type="math/tex; mode=display">
+std\left\{I(x,y)\right\}=\sqrt{var\left\{I(x,y)\right\}}</script><p>   全局定义方式的<strong>缺点</strong>：不能感知局部结构，没有体现人类的视觉敏感性</p>
+</li>
+<li><p>（韦伯）<strong>局部对比度</strong></p>
+<ul>
+<li>．图像点的局部对比度表示<strong>该图像点(point)的 强度</strong> 与其 <strong>邻域(neihborhood) 强度</strong>之间的(相对)差:<script type="math/tex; mode=display">
+C=|\frac{I_{p}-I_{n}}{I_{n}}|</script></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="图像直方图-Image-Histogram"><a href="#图像直方图-Image-Histogram" class="headerlink" title="图像直方图 Image Histogram"></a>图像直方图 Image Histogram</h2><ul>
+<li>直方图：用来表达一幅图像灰度级分布情况的统计表</li>
+<li>横坐标→ 灰度级r； 纵坐标 ↑ 灰度值为r的像素个数n或者出现的概率p（r）</li>
+</ul>
+<p><img src="https://i.bmp.ovh/imgs/2022/03/3829be80550cf6d6.png" style="zoom:50%;" /></p>
+<ul>
+<li><p>直方图<strong>不是一对一</strong>的映射关系  —&gt; 图像的直方图不能完全代表图像</p>
+<ul>
+<li>因此：直方图只能体现数据的统计特性，没有结构特点。</li>
+<li>比如：将一张图的像素随机扰乱，直方图仍然是不变的<img src="https://i.bmp.ovh/imgs/2022/03/aa18aac1c82e01a2.png" style="zoom:50%;" /></li>
+</ul>
+</li>
+<li><p>直方图的<strong>用处</strong>：分析图像对比度的好坏</p>
+<ul>
+<li><strong>给定图像，算出图像平均值和标准差</strong><img src="https://i.bmp.ovh/imgs/2022/03/05bad86faafba1d7.png" style="zoom:65%;" /></li>
+</ul>
+</li>
+</ul>
+<h2 id="图像的-熵-Image-Entropy"><a href="#图像的-熵-Image-Entropy" class="headerlink" title="图像的 熵 Image Entropy"></a>图像的 熵 Image Entropy</h2><ul>
+<li><p>图像的熵的公式 (它是大于0的):</p>
+<script type="math/tex; mode=display">
+Entropy(I) = -\sum_{k}P(k)logP(k)</script><ul>
+<li>图像的熵表示图像值 的<strong>不确定性</strong></li>
+<li>均匀分布：<strong>熵max</strong>；集中分布在某一处：<strong>熵min</strong></li>
+<li>不频繁的事件比频繁的事件提供更多的信息</li>
+<li>熵 是 直方图 <strong>离散度 </strong>的度量</li>
+</ul>
+</li>
+</ul>
+<h2 id="自适应直方图-Adaptive-Histogram"><a href="#自适应直方图-Adaptive-Histogram" class="headerlink" title="自适应直方图 Adaptive Histogram"></a>自适应直方图 Adaptive Histogram</h2><ul>
+<li>在许多情况下，图像中的<strong>局部</strong>区域需要直方图<ul>
+<li>比如:：模式检测、自适应增强、自适应阈值</li>
+</ul>
+</li>
+<li>图像模糊<strong>不改变图像平均值</strong><ul>
+<li>而是会<strong>减小方差、减小熵</strong></li>
+</ul>
+</li>
+</ul>
+<h1 id="直方图的应用"><a href="#直方图的应用" class="headerlink" title="直方图的应用"></a>直方图的应用</h1><ul>
+<li><p>应用</p>
+<ul>
+<li>测量图像特性:平均值、方差、熵、对比度、区域(对于给定的灰度范围)</li>
+<li><strong>阈值选择</strong> <strong>Threshold selection</strong></li>
+<li>图像的距离</li>
+<li>图像增强<ul>
+<li><strong>直方图均衡化</strong></li>
+<li><strong>直方图拉伸</strong></li>
+<li><strong>直方图匹配</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>阈值<strong>分割</strong>：</p>
+<ul>
+<li><p>阈值选取的基本规律：两个峰之间的谷底</p>
+<p><img src="https://i.bmp.ovh/imgs/2022/03/7575a89fe2de9213.png" style="zoom:50%;" /></p>
+</li>
+</ul>
+</li>
+<li><p>图像的<strong>距离</strong></p>
+<ul>
+<li><p>问题:给定两幅图像A和B，其(归一化)直方图为Pa和Pb，定义图像之间的距离D(A,B)。</p>
+<ul>
+<li><strong>Minkowski距离</strong>： 存在的问题：距离可能 <strong>不能反映感知到的差异</strong></li>
+</ul>
+<script type="math/tex; mode=display">
+D_{p}(A,B)=[\sum_{k}|P_{A}(k)-P_{B}(k)|]_{}^{1/p}</script><ul>
+<li><strong>KL距离（散度）</strong>：非对称，同样面临Minkowski距离的缺点</li>
+</ul>
+<script type="math/tex; mode=display">
+D_{KL}(A||B)=\sum_{k}P_{A}(k)log\frac{P_{A}(k)}{P_{B}(k)}</script></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -305,7 +465,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://example.com/2022/01/21/test1/" title="test1">http://example.com/2022/01/21/test1/</a>
+    <a href="http://example.com/2022/03/06/2022-03-16-DIP-1-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%9F%BA%E7%A1%80/" title="DIP-1-数字图像基础">http://example.com/2022/03/06/2022-03-16-DIP-1-数字图像基础/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -316,8 +476,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag"># 测试</a>
-              <a href="/tags/%E9%83%A8%E7%BD%B2/" rel="tag"># 部署</a>
+              <a href="/tags/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86Digital-Image-Processing/" rel="tag"># 数字图像处理Digital Image Processing</a>
           </div>
 
         
@@ -326,12 +485,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/01/20/hello-world/" rel="prev" title="Hello World">
-      <i class="fa fa-chevron-left"></i> Hello World
+    <a href="/2022/02/26/2022-02-26-%E5%B0%8F%E4%B8%96%E7%95%8C%E7%BD%91%E7%BB%9C/" rel="prev" title="小世界网络">
+      <i class="fa fa-chevron-left"></i> 小世界网络
     </a></div>
       <div class="post-nav-item">
-    <a href="/2022/01/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AC%AC%E4%B8%80%E7%AB%A0/" rel="next" title="操作系统第一章">
-      操作系统第一章 <i class="fa fa-chevron-right"></i>
+    <a href="/2022/03/06/2022-03-06-DIP-2-%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97/" rel="next" title="DIP-2-基本运算">
+      DIP-2-基本运算 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -392,6 +551,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E7%9A%84%E6%A6%82%E5%BF%B5%E5%8F%8A%E8%A1%A8%E7%A4%BA"><span class="nav-number">1.</span> <span class="nav-text">数字图像的概念及表示</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E8%8E%B7%E5%8F%96"><span class="nav-number">2.</span> <span class="nav-text">图像获取</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E6%95%B0%E5%AD%97%E5%8C%96%EF%BC%88Digitization%EF%BC%89"><span class="nav-number">3.</span> <span class="nav-text">图像数字化（Digitization）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8D%E5%90%8C%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F"><span class="nav-number">4.</span> <span class="nav-text">不同类型的数字图像</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8"><span class="nav-number">5.</span> <span class="nav-text">图像基本性质</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E5%B9%B3%E5%9D%87%E5%80%BC-Image-Mean"><span class="nav-number">5.1.</span> <span class="nav-text">图像平均值 Image Mean</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E5%AF%B9%E6%AF%94%E5%BA%A6-Image-Contrast"><span class="nav-number">5.2.</span> <span class="nav-text">图像对比度 Image Contrast</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E7%9B%B4%E6%96%B9%E5%9B%BE-Image-Histogram"><span class="nav-number">5.3.</span> <span class="nav-text">图像直方图 Image Histogram</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E7%9A%84-%E7%86%B5-Image-Entropy"><span class="nav-number">5.4.</span> <span class="nav-text">图像的 熵 Image Entropy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E9%80%82%E5%BA%94%E7%9B%B4%E6%96%B9%E5%9B%BE-Adaptive-Histogram"><span class="nav-number">5.5.</span> <span class="nav-text">自适应直方图 Adaptive Histogram</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9B%B4%E6%96%B9%E5%9B%BE%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-number">6.</span> <span class="nav-text">直方图的应用</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -574,6 +734,59 @@
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
@@ -588,7 +801,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'z-y-LiaN.github.io',
       owner       : 'z-y-LiaN',
       admin       : ['z-y-LiaN'],
-      id          : 'd0eca451be645022c62450b3fb9e4b13',
+      id          : 'c98380ee01642eff86e0817877520060',
         language: 'zh-CN',
       distractionFreeMode: true
     });
