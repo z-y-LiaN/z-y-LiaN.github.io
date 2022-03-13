@@ -29,13 +29,16 @@
 <meta property="og:site_name" content="LiaN">
 <meta property="og:description" content="主要内容 几道数学类的题目 简单的几道dp">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/03/a2a62e99dbe531ac.png">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/03/cfb0e6853cd99acc.png">
 <meta property="article:published_time" content="2022-03-12T03:17:01.000Z">
-<meta property="article:modified_time" content="2022-03-12T12:18:52.340Z">
+<meta property="article:modified_time" content="2022-03-13T02:26:52.387Z">
 <meta property="article:author" content="LiaN">
 <meta property="article:tag" content="AcWing">
 <meta property="article:tag" content="数学">
 <meta property="article:tag" content="DP">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.bmp.ovh/imgs/2022/03/a2a62e99dbe531ac.png">
 
 <link rel="canonical" href="http://example.com/2022/03/12/2022-03-12-%E6%95%B0%E5%AD%A6%E5%92%8C%E7%AE%80%E5%8D%95DP/">
 
@@ -233,10 +236,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-03-12 11:17:01 / 修改时间：20:18:52" itemprop="dateCreated datePublished" datetime="2022-03-12T11:17:01+08:00">2022-03-12</time>
+              <time title="创建时间：2022-03-12 11:17:01" itemprop="dateCreated datePublished" datetime="2022-03-12T11:17:01+08:00">2022-03-12</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-03-13 10:26:52" itemprop="dateModified" datetime="2022-03-13T10:26:52+08:00">2022-03-13</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -260,7 +269,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>183</span>
+              <span>1.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -291,13 +300,69 @@
 <li>下取整：<script type="math/tex; mode=display">
 \lceil \frac{a}{b} \rceil=\lfloor\frac{a+b-1}{b}\rfloor</script></li>
 </ul>
-<h1 id="简单DP"><a href="#简单DP" class="headerlink" title="简单DP"></a>简单DP</h1><h2 id="01背包"><a href="#01背包" class="headerlink" title="01背包"></a>01背包</h2><ul>
-<li>N个物品，容量是V的背包</li>
-<li>每个物品：体积v，价值w； 每个物品最多只能用一次</li>
-<li>从这N个物品挑几个使得 ：总体积≤V 且价值max</li>
+<h1 id="简单DP"><a href="#简单DP" class="headerlink" title="简单DP"></a>简单DP</h1><ul>
+<li><strong>动态规划</strong><ul>
+<li><strong>状态表示</strong>：f（i，j）<ul>
+<li>表示的集合是啥<ul>
+<li>01背包里面表示的所有满足条件选法的集合</li>
+<li>满足的条件<ul>
+<li>只从前 i 个物品选</li>
+<li>选出来的物品的总体积≤ j</li>
 </ul>
-<h2 id="AcWing2-01背包问题"><a href="#AcWing2-01背包问题" class="headerlink" title="AcWing2 01背包问题"></a>AcWing2 01背包问题</h2><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/2/">2. 01背包问题 - AcWing题库</a></p>
-<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3>
+</li>
+</ul>
+</li>
+<li>表示的集合属性：<strong>最大值</strong>、最小值、数量<ul>
+<li>01背包：f（i，j）的值是集合里面所有选法的总价值的最大值</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>状态计算</strong>：集合的划分<ul>
+<li>选法中不含第 i 个物品 f（ i - 1，j ）， 选法中含第 i 个物品（先把所有选法中 的第i个物品去掉，f（ i - 1，j - vi ）+ wi ，再加上；最终的f（i，j）== 二者中的最大者</li>
+<li>原则：不重 （不一定非要满足） 不漏</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>DP优化</strong><ul>
+<li>一般都是对动态规划的代码（方程）做一个等价变形</li>
+<li>所以先考虑基本的形式，再做优化</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="01背包"><a href="#01背包" class="headerlink" title="01背包"></a>01背包</h2><ul>
+<li>N个物品，容量是V的背包</li>
+<li>每个物品：体积v，价值w； 每个物品<strong>最多只能用一次</strong></li>
+<li>从这N个物品挑几个使得 ：总体积≤V 且价值max</li>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Cf4y1R7Zz?spm_id_from=333.788.top_right_bar_window_custom_collection.content.click">参考视频：0/1背包问题-动态规划 bilibili</a></li>
+</ul>
+<hr>
+<h3 id="AcWing2-01背包问题（模板题）"><a href="#AcWing2-01背包问题（模板题）" class="headerlink" title="AcWing2 01背包问题（模板题）"></a>AcWing2 01背包问题（模板题）</h3><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/2/">2. 01背包问题 - AcWing题库</a></p>
+<h4 id="代码（二维）"><a href="#代码（二维）" class="headerlink" title="代码（二维）"></a>代码（二维）</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1005</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,v[N],w[N],dp[N][N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) cin&gt;&gt;v[i]&gt;&gt;w[i];	</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)  <span class="comment">//放前i个物品 </span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=m;j++)&#123;  <span class="comment">//体积不超过j </span></span><br><span class="line">			dp[i][j]=dp[i<span class="number">-1</span>][j]; <span class="comment">//如果当前物品容量大于j，不能放进去</span></span><br><span class="line">			<span class="comment">//如果当前物品体积小于j，说明能够放进去</span></span><br><span class="line">			<span class="comment">//所以选择 不放进该物品 和 放进该物品 中取较大者 </span></span><br><span class="line">			<span class="keyword">if</span>(v[i]&lt;=j) dp[i][j]=<span class="built_in">max</span>(dp[i<span class="number">-1</span>][j],dp[i<span class="number">-1</span>][j-v[i]]+w[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	cout&lt;&lt;dp[n][m]&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>如果要知道哪几个背包放进去</strong>：</p>
+<ul>
+<li>用数组x[N]存是否放进去</li>
+<li>参考视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1jT4y1o71J?spm_id_from=333.337.search-card.all.click">【动态规划秘籍】01背包、一维数组优化、完全背包bilibili</a><img src="https://i.bmp.ovh/imgs/2022/03/a2a62e99dbe531ac.png" style="zoom:40%;" /></li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> j=m;	</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=n;i&gt;=<span class="number">1</span>;i--)&#123;</span><br><span class="line">	<span class="keyword">if</span>(dp[i][j]&gt;dp[i<span class="number">-1</span>][j])&#123;</span><br><span class="line">		x[i]=<span class="number">1</span>;j=j-v[i];</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		x[i]=<span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	cout&lt;&lt;x[i]&lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="代码（优化成一维）"><a href="#代码（优化成一维）" class="headerlink" title="代码（优化成一维）"></a>代码（优化成一维）</h4><ul>
+<li>如果是j的遍历是顺序的话，那么之后的某个值的更新就用到的是新的值，而不是之前的旧值；所以要逆序</li>
+</ul>
+<p><img src="https://i.bmp.ovh/imgs/2022/03/cfb0e6853cd99acc.png" style="zoom:33%;" /></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)  <span class="comment">//放前i个物品 </span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=m;j&gt;=<span class="number">1</span>;j--)&#123; <span class="comment">//放前i个物品的容量=j ;倒序</span></span><br><span class="line">        <span class="keyword">if</span>(v[i]&lt;=j)</span><br><span class="line">            dp[j]=<span class="built_in">max</span>(dp[j],dp[j-v[i]]+w[i]);</span><br><span class="line">    &#125;</span><br><span class="line">cout&lt;&lt;dp[m]&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
+<h2 id="完全背包"><a href="#完全背包" class="headerlink" title="完全背包"></a>完全背包</h2><ul>
+<li>每件物品有<strong>无限个</strong></li>
+</ul>
+<h2 id="多重背包"><a href="#多重背包" class="headerlink" title="多重背包"></a>多重背包</h2><ul>
+<li>每个物品有有限个</li>
+<li>优化版</li>
+</ul>
+<h2 id="分组背包"><a href="#分组背包" class="headerlink" title="分组背包"></a>分组背包</h2><ul>
+<li>物品N组，每组物品有若干个，每组里面最多选一个</li>
+</ul>
+<h4 id=""><a href="#" class="headerlink" title=" "></a> </h4>
     </div>
 
     
@@ -397,7 +462,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6"><span class="nav-number">1.</span> <span class="nav-text">数学</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80"><span class="nav-number">1.1.</span> <span class="nav-text">基础</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%80%E5%8D%95DP"><span class="nav-number">2.</span> <span class="nav-text">简单DP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#01%E8%83%8C%E5%8C%85"><span class="nav-number">2.1.</span> <span class="nav-text">01背包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AcWing2-01%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98"><span class="nav-number">2.2.</span> <span class="nav-text">AcWing2 01背包问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E6%84%8F"><span class="nav-number">2.2.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF"><span class="nav-number">2.2.2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">2.2.3.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6"><span class="nav-number">1.</span> <span class="nav-text">数学</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80"><span class="nav-number">1.1.</span> <span class="nav-text">基础</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%80%E5%8D%95DP"><span class="nav-number">2.</span> <span class="nav-text">简单DP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#01%E8%83%8C%E5%8C%85"><span class="nav-number">2.1.</span> <span class="nav-text">01背包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AcWing2-01%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98%EF%BC%88%E6%A8%A1%E6%9D%BF%E9%A2%98%EF%BC%89"><span class="nav-number">2.1.1.</span> <span class="nav-text">AcWing2 01背包问题（模板题）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%88%E4%BA%8C%E7%BB%B4%EF%BC%89"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">代码（二维）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%88%E4%BC%98%E5%8C%96%E6%88%90%E4%B8%80%E7%BB%B4%EF%BC%89"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">代码（优化成一维）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85"><span class="nav-number">2.2.</span> <span class="nav-text">完全背包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E9%87%8D%E8%83%8C%E5%8C%85"><span class="nav-number">2.3.</span> <span class="nav-text">多重背包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E7%BB%84%E8%83%8C%E5%8C%85"><span class="nav-number">2.4.</span> <span class="nav-text">分组背包</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">2.4.0.1.</span> <span class="nav-text"> </span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -493,13 +558,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">17k</span>
+    <span title="站点总字数">20k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">16 分钟</span>
+    <span title="站点阅读时长">18 分钟</span>
 </div>
 <!--
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
