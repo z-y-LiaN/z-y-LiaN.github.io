@@ -22,21 +22,23 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="主要内容 区块链，什么是，有什么技术架构、特点、应用场景、优缺点 复杂网络（complex network），弄明白什么是复杂网络（区块链网络就是一个例子） 复杂网络中重要节点、脆弱节点的检测、挖掘方法。">
+  <meta name="description" content="主要内容 区块链，什么是，有什么技术架构、特点、应用场景、优缺点 复杂网络（complex network），弄明白什么是复杂网络（区块链网络就是一个例子）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="区块链">
-<meta property="og:url" content="http://example.com/2022/02/15/%E5%8C%BA%E5%9D%97%E9%93%BE+%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C/index.html">
+<meta property="og:title" content="区块链和复杂网络（基础知识）">
+<meta property="og:url" content="http://example.com/2022/02/15/%E5%8C%BA%E5%9D%97%E9%93%BE%E5%92%8C%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%EF%BC%88%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%89/index.html">
 <meta property="og:site_name" content="LiaN">
-<meta property="og:description" content="主要内容 区块链，什么是，有什么技术架构、特点、应用场景、优缺点 复杂网络（complex network），弄明白什么是复杂网络（区块链网络就是一个例子） 复杂网络中重要节点、脆弱节点的检测、挖掘方法。">
+<meta property="og:description" content="主要内容 区块链，什么是，有什么技术架构、特点、应用场景、优缺点 复杂网络（complex network），弄明白什么是复杂网络（区块链网络就是一个例子）">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/03/81fea0f2e904600c.png">
 <meta property="article:published_time" content="2022-02-14T16:22:17.000Z">
-<meta property="article:modified_time" content="2022-03-06T01:59:35.220Z">
+<meta property="article:modified_time" content="2022-03-14T02:24:35.030Z">
 <meta property="article:author" content="LiaN">
 <meta property="article:tag" content="复杂网络">
 <meta property="article:tag" content="区块链">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.bmp.ovh/imgs/2022/03/81fea0f2e904600c.png">
 
-<link rel="canonical" href="http://example.com/2022/02/15/%E5%8C%BA%E5%9D%97%E9%93%BE+%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C/">
+<link rel="canonical" href="http://example.com/2022/02/15/%E5%8C%BA%E5%9D%97%E9%93%BE%E5%92%8C%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%EF%BC%88%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%89/">
 
 
 <script id="page-configurations">
@@ -49,7 +51,7 @@
   };
 </script>
 
-  <title>区块链 | LiaN</title>
+  <title>区块链和复杂网络（基础知识） | LiaN</title>
   
 
 
@@ -210,7 +212,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/15/%E5%8C%BA%E5%9D%97%E9%93%BE+%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/15/%E5%8C%BA%E5%9D%97%E9%93%BE%E5%92%8C%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%EF%BC%88%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://cdn2.maocdn.cn/img/2022/01/21/J8U_G9ZTZG4W12DA260Z9.jpg">
@@ -223,7 +225,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          区块链
+          区块链和复杂网络（基础知识）
         </h1>
 
         <div class="post-meta">
@@ -240,7 +242,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-06 09:59:35" itemprop="dateModified" datetime="2022-03-06T09:59:35+08:00">2022-03-06</time>
+                <time title="修改时间：2022-03-14 10:24:35" itemprop="dateModified" datetime="2022-03-14T10:24:35+08:00">2022-03-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -265,7 +267,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.3k</span>
+              <span>2.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -288,19 +290,17 @@
 <li>主要内容<ul>
 <li>区块链，什么是，有什么技术架构、特点、应用场景、优缺点</li>
 <li>复杂网络（complex network），弄明白什么是复杂网络（区块链网络就是一个例子）</li>
-<li>复杂网络中重要节点、脆弱节点的检测、挖掘方法。</li>
 </ul>
 </li>
 </ul>
 <span id="more"></span>
-<blockquote>
-<p>针对区块链网络和分布式系统的，网络脆弱节点的挖掘检测：给定一个区块链网络，里边有很多节点，不同的配置、位置、算力，如何找到哪个节点是更重要、更脆弱的。</p>
-</blockquote>
-<ul>
-<li>从<strong>攻</strong>的角度，那就可以作为攻击目标。</li>
-<li>从<strong>防</strong>的角度，就是需要加强保护和完善的脆弱点</li>
+<h1 id="区块链"><a href="#区块链" class="headerlink" title="区块链"></a>区块链</h1><h2 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h2><ul>
+<li><p>​    一种在<strong>对等网络环境</strong>下，通过透明和可信<strong>规则</strong>，构建不可伪造、不可篡改、可追溯的<strong>块链式数据结构</strong>，实现和<strong>管理事务处理</strong>的模式。</p>
+</li>
+<li><p>​    区块链本质上是一个去中心化的分布式账本数据库（在与比特币相关的区块链应用中可使用这一术语，但区块链技术可能并不包含“账本”, 其本身是一串使用<strong>密码学相关联所产生的数据块</strong>，每一个数据块中包含了多次比特币网络交易有效确认的信息。)</p>
+</li>
+<li>每个区块按照 <strong>时间</strong> 线性顺序推进 </li>
 </ul>
-<h1 id="区块链"><a href="#区块链" class="headerlink" title="区块链"></a>区块链</h1><h2 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h2><p>​    一种在<strong>对等网络环境</strong>下，通过透明和可信<strong>规则</strong>，构建不可伪造、不可篡改、可追溯的<strong>块链式数据结构</strong>，实现和管理事务处理的模式。</p>
 <blockquote>
 <p>？对等网络环境：</p>
 <ul>
@@ -313,12 +313,57 @@
 <p>？理解：特殊的分布式数据库→ </p>
 <p>​                每个网络上的节点共享数据，通过共识算法，保证整个区块链网络的一致性和安全性</p>
 </blockquote>
-<h2 id="技术架构"><a href="#技术架构" class="headerlink" title="技术架构"></a>技术架构</h2><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><h1 id="复杂网络"><a href="#复杂网络" class="headerlink" title="复杂网络"></a>复杂网络</h1><p>涉及参考文献：</p>
+<h2 id="技术架构"><a href="#技术架构" class="headerlink" title="技术架构"></a>技术架构</h2><h3 id="密码学技术"><a href="#密码学技术" class="headerlink" title="密码学技术"></a>密码学技术</h3><ul>
+<li>哈希算法</li>
+<li>非对称加密技术</li>
+<li>数字签名</li>
+</ul>
+<h3 id="区块结构-链式结构"><a href="#区块结构-链式结构" class="headerlink" title="区块结构+链式结构"></a>区块结构+链式结构</h3><h3 id="Merkle树"><a href="#Merkle树" class="headerlink" title="Merkle树"></a>Merkle树</h3><h3 id="P2P网络"><a href="#P2P网络" class="headerlink" title="P2P网络"></a>P2P网络</h3><h3 id="挖矿与共识"><a href="#挖矿与共识" class="headerlink" title="挖矿与共识"></a>挖矿与共识</h3><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><p>略</p>
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p>略</p>
+<h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ul>
+<li><strong>分布式的去中心化</strong><ul>
+<li>去中心化：每个节点对等，基于<strong>P2P</strong></li>
+</ul>
+</li>
+<li><strong>无须信任系统</strong><ul>
+<li><strong>密码学+共识算法</strong> –&gt; 信任从第三方机构转移到区块链网络</li>
+</ul>
+</li>
+<li><strong>不可篡改</strong><ul>
+<li>每个区块的产生所需付出的<strong>算力成本高</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ul>
+<li><p><strong>交易账本必须公开</strong></p>
+</li>
+<li><p><strong>延迟性</strong></p>
+<ul>
+<li>每隔<strong>一定时间</strong>将自上一个区块以后的交易<strong>打包生成新</strong>的区块</li>
+</ul>
+</li>
+<li><p><strong>浪费能源</strong></p>
+</li>
+<li><p><strong>占用空间</strong></p>
+<ul>
+<li>每个节点可存储共享一份<strong>全网的账本数据</strong></li>
+</ul>
+</li>
+<li><p><strong>修复时间长</strong></p>
+<ul>
+<li><p>出现代码漏洞需修复时，<strong>每个节点</strong>都采取措施更新才能最终完成漏洞修复。</p>
+</li>
+<li><p>从发布漏洞补丁到每个节点都完成修复耗时长，且不保证每个节点都被及时修复。</p>
 <blockquote>
-<p>[1]周涛,柏文洁,汪秉宏,刘之景,严钢.复杂网络研究概述[J].物理,2005(01):31-36.</p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/maybe2030/p/4665847.html">[Network Analysis] 复杂网络分析总结 - Poll的笔记 - 博客园 (cnblogs.com)</a></p>
+<ul>
+<li>中心化的网络则可以通过同步下发给所有子节点进行快速修复。</li>
+</ul>
 </blockquote>
-<h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="复杂网络"><a href="#复杂网络" class="headerlink" title="复杂网络"></a>复杂网络</h1><h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><ul>
 <li>典型的网络：节点+连接节点的边<ul>
 <li>节点：代表真实系统中不同的<strong>个体</strong></li>
 <li>边：代表个体之间的<strong>关系</strong></li>
@@ -332,7 +377,7 @@
 </li>
 </ul>
 <h3 id="复杂网络-1"><a href="#复杂网络-1" class="headerlink" title="复杂网络"></a>复杂网络</h3><ul>
-<li><p>钱学森对于复杂网络给出了一种严格的定义：具有<strong>自组织、自相似、吸引子、小世界、无标度</strong>中 <strong>部分或全部</strong>性质 的网络称之为复杂网络。</p>
+<li><p>钱学森给出的严的定义：具有<strong>自组织、自相似、吸引子、小世界、无标度</strong>中 <strong>部分或全部</strong>性质 的网络</p>
 </li>
 <li><p>言外之意，复杂网络就是指一种呈现<strong>高度复杂性</strong>的网络</p>
 </li>
@@ -344,8 +389,12 @@
 </li>
 <li><p>上文献中认为：复杂网络没有精确严格的定义</p>
 <ul>
-<li>可以<strong>看作大量真实复杂系统的拓扑抽象</strong>，既不是规则网络，也不是随机网络。</li>
-<li>现实世界中的复杂网络比如：社会关系网络、论文引用网络、软件类网络…</li>
+<li><p>可以<strong>看作大量真实复杂系统的拓扑抽象</strong>。</p>
+<blockquote>
+<p>既不是规则网络，也不是随机网络</p>
+<p>现实世界中的复杂网络比如：社会关系网络、论文引用网络、软件类网络…</p>
+</blockquote>
+</li>
 </ul>
 </li>
 </ul>
@@ -354,7 +403,7 @@
 </li>
 <li><p>小世界网络有 规则网络类似的<font color = "green">聚集性 </font>+ 随机网络类似的较小的<font color="green">平均路径长度</font></p>
 </li>
-<li><p>衡量网络的两个特征</p>
+<li><p><strong>衡量网络的两个特征</strong></p>
 <ul>
 <li><p><code>特征路径长度（characteristic path length）</code>：在网络中，任选两个节点，<strong>连通</strong>这两节点的<strong>最少</strong>边数，定义为这两个节点的路径长度，网络中<strong>所有节点对的路径长度的平均值</strong>，定义为网络的特征路径长度。</p>
 <ul>
@@ -383,18 +432,27 @@
 </li>
 </ul>
 </li>
-<li><p>实际的社会、生态、等网络都是小世界网络，在这样的系统里，<strong>信息传递速度快，并且少量改变几个连接，就可以剧烈地改变网络的性能</strong>，如对已存在的网络进行调整，如蜂窝电话网，改动很少几条线路，就可以显著提高性能。</p>
+<li><p>实际的社会、生态、等网络都是小世界网络：</p>
+<ul>
+<li>信息传递速度快，并且少量改变几个连接，就可以剧烈地改变网络的性能，<ul>
+<li>如对已存在的网络进行调整，如蜂窝电话网，改动很少几条线路，就可以显著提高性能。</li>
+</ul>
 </li>
 </ul>
-<h4 id="无标度"><a href="#无标度" class="headerlink" title="无标度"></a>无标度</h4><ul>
-<li><p>现实世界的网络大部分都不是随机网络，<strong>少数的节点往往拥有大量的连接，而大部分节点却很少</strong>，节点度数分布符合<strong>幂律分布</strong>—&gt;网络的无标度特性（Scale-free）。度分布符合<strong>幂律分布</strong>的复杂网络—&gt;无标度网络。</p>
+</li>
+</ul>
+<h4 id="特性2：无标度（Scale-free）"><a href="#特性2：无标度（Scale-free）" class="headerlink" title="特性2：无标度（Scale-free）"></a>特性2：无标度（Scale-free）</h4><ul>
+<li><p>现实世界的网络大部分都不是随机网络，<strong>少数的节点往往拥有大量的连接，而大部分节点却很少</strong>，节点度数分布符合<strong>幂律分布</strong>—&gt;网络的无标度特性。度分布符合<strong>幂律分布</strong>的复杂网络—&gt;无标度网络。</p>
 <blockquote>
 <p>幂律分布：指某个具有分布性质的变量，且其分布密度函数是幂函数（由于分布密度函数必然满足“归一律”，所以这里的幂函数，一般规定小于负1）的分布</p>
 </blockquote>
+<p><img src="https://i.bmp.ovh/imgs/2022/03/81fea0f2e904600c.png" style="zoom:33%;" /></p>
 </li>
-<li><p>无标度特性反映了复杂网络具有严重的异质性，其各节点之间的连接状况<strong>（度数）具有严重的不均匀分布性</strong></p>
+<li><p>无标度特性反映：复杂网络具有严重的<strong>异质性</strong>，其各节点之间的连接状况<strong>（度数）具有严重的不均匀分布性</strong></p>
 <ul>
-<li>网络中少数称之为<strong>Hub点</strong>的节点拥有极其多的连接，而大多数节点只有很少量的连接。少数Hub点对无标度网络的运行起着<strong>主导</strong>的作用。</li>
+<li>网络中<strong>少数</strong>称之为<strong>Hub点</strong>的节点拥有<strong>极其多</strong>的连接，</li>
+<li>而<strong>大多数</strong>节点只有很<strong>少量</strong>的连接。</li>
+<li>少数Hub点对无标度网络的运行起着<strong>主导</strong>的作用。</li>
 <li>从广义上说，无标度网络的无标度性是描述大量复杂系统<strong>整体上严重不均匀分布</strong>的一种内在性质。</li>
 </ul>
 </li>
@@ -410,9 +468,11 @@
 </ul>
 </li>
 </ul>
-<h2 id="重要节点、脆弱节点的检测、挖掘"><a href="#重要节点、脆弱节点的检测、挖掘" class="headerlink" title="重要节点、脆弱节点的检测、挖掘"></a>重要节点、脆弱节点的检测、挖掘</h2><p>涉及参考文献</p>
-<blockquote>
+<h1 id="参考文献-博客出处"><a href="#参考文献-博客出处" class="headerlink" title="参考文献/博客出处"></a>参考文献/博客出处</h1><blockquote>
 <p><a target="_blank" rel="noopener" href="https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&amp;dbname=CJFD2007&amp;filename=JSJA200712003&amp;uniplatform=NZKPT&amp;v=4M8fbSr9Jag8kRTp3gVwrqO7hkHjgcLxJ-HaeSp7dV8RwFv4B21WmBjH1CFMYSVH">[1]赫南,李德毅,淦文燕,朱熙.复杂网络中重要性节点发掘综述[J].计算机科学,2007(12):1-5+17.</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/maybe2030/p/4665847.html#_labelTop">[Network Analysis] 复杂网络分析总结 - Poll的笔记 - 博客园 (cnblogs.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://shuwoom.com/?p=403">区块链快速入门 - shuwoom的博客</a></p>
+<p>[1]周涛,柏文洁,汪秉宏,刘之景,严钢.复杂网络研究概述[J].物理,2005(01):31-36.</p>
 </blockquote>
 
     </div>
@@ -429,7 +489,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://example.com/2022/02/15/%E5%8C%BA%E5%9D%97%E9%93%BE+%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C/" title="区块链">http://example.com/2022/02/15/区块链+复杂网络/</a>
+    <a href="http://example.com/2022/02/15/%E5%8C%BA%E5%9D%97%E9%93%BE%E5%92%8C%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%EF%BC%88%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%89/" title="区块链和复杂网络（基础知识）">http://example.com/2022/02/15/区块链和复杂网络（基础知识）/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -516,7 +576,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8C%BA%E5%9D%97%E9%93%BE"><span class="nav-number">1.</span> <span class="nav-text">区块链</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.1.</span> <span class="nav-text">是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84"><span class="nav-number">1.2.</span> <span class="nav-text">技术架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E7%82%B9"><span class="nav-number">1.3.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">1.4.</span> <span class="nav-text">应用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-number">1.5.</span> <span class="nav-text">优缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%98%E7%82%B9"><span class="nav-number">1.5.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9"><span class="nav-number">1.5.2.</span> <span class="nav-text">缺点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C"><span class="nav-number">2.</span> <span class="nav-text">复杂网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%90%86%E8%A7%A3"><span class="nav-number">2.1.</span> <span class="nav-text">理解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C-1"><span class="nav-number">2.1.1.</span> <span class="nav-text">复杂网络</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%89%B9%E6%80%A71%EF%BC%9A%E5%B0%8F%E4%B8%96%E7%95%8C"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">特性1：小世界</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%97%A0%E6%A0%87%E5%BA%A6"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">无标度</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E8%A6%81%E8%8A%82%E7%82%B9%E3%80%81%E8%84%86%E5%BC%B1%E8%8A%82%E7%82%B9%E7%9A%84%E6%A3%80%E6%B5%8B%E3%80%81%E6%8C%96%E6%8E%98"><span class="nav-number">2.2.</span> <span class="nav-text">重要节点、脆弱节点的检测、挖掘</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8C%BA%E5%9D%97%E9%93%BE"><span class="nav-number">1.</span> <span class="nav-text">区块链</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.1.</span> <span class="nav-text">是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84"><span class="nav-number">1.2.</span> <span class="nav-text">技术架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%86%E7%A0%81%E5%AD%A6%E6%8A%80%E6%9C%AF"><span class="nav-number">1.2.1.</span> <span class="nav-text">密码学技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%BA%E5%9D%97%E7%BB%93%E6%9E%84-%E9%93%BE%E5%BC%8F%E7%BB%93%E6%9E%84"><span class="nav-number">1.2.2.</span> <span class="nav-text">区块结构+链式结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Merkle%E6%A0%91"><span class="nav-number">1.2.3.</span> <span class="nav-text">Merkle树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#P2P%E7%BD%91%E7%BB%9C"><span class="nav-number">1.2.4.</span> <span class="nav-text">P2P网络</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%96%E7%9F%BF%E4%B8%8E%E5%85%B1%E8%AF%86"><span class="nav-number">1.2.5.</span> <span class="nav-text">挖矿与共识</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E7%82%B9"><span class="nav-number">1.3.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">1.4.</span> <span class="nav-text">应用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-number">1.5.</span> <span class="nav-text">优缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%98%E7%82%B9"><span class="nav-number">1.5.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9"><span class="nav-number">1.5.2.</span> <span class="nav-text">缺点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C"><span class="nav-number">2.</span> <span class="nav-text">复杂网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%90%86%E8%A7%A3"><span class="nav-number">2.1.</span> <span class="nav-text">理解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C-1"><span class="nav-number">2.1.1.</span> <span class="nav-text">复杂网络</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%89%B9%E6%80%A71%EF%BC%9A%E5%B0%8F%E4%B8%96%E7%95%8C"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">特性1：小世界</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%89%B9%E6%80%A72%EF%BC%9A%E6%97%A0%E6%A0%87%E5%BA%A6%EF%BC%88Scale-free%EF%BC%89"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">特性2：无标度（Scale-free）</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE-%E5%8D%9A%E5%AE%A2%E5%87%BA%E5%A4%84"><span class="nav-number">3.</span> <span class="nav-text">参考文献&#x2F;博客出处</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -612,13 +672,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">21k</span>
+    <span title="站点总字数">22k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">19 分钟</span>
+    <span title="站点阅读时长">20 分钟</span>
 </div>
 <!--
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
@@ -713,7 +773,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'z-y-LiaN.github.io',
       owner       : 'z-y-LiaN',
       admin       : ['z-y-LiaN'],
-      id          : 'd9df7008af83d0942fc7018514e20205',
+      id          : '076a715dcb328f365355cead60258ab9',
         language: 'zh-CN',
       distractionFreeMode: true
     });
