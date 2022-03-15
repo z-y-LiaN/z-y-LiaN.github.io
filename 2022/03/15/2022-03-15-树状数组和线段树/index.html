@@ -22,17 +22,22 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="别焦虑了，说不定明天就死了呢.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LiaN">
-<meta property="og:url" content="http://example.com/categories/%E4%BF%A1%E5%AE%89%E8%B5%9B/index.html">
+  <meta name="description" content="树状数组 可以动态地、快速 求前缀和 ； logN 给某个位置的数 加上 一个数（单点修改） 求某一个前缀和 （区间查询）   它只能解上述单点修改和区间查询问题，其他问题要转换成这种类型的才可以解 数组下标从1开始  AcWing1264 动态求连续区间和（模板题）题意思路代码线段树 线段树能处理的范围包含树状数组 代码短、常数小">
+<meta property="og:type" content="article">
+<meta property="og:title" content="树状数组和线段树">
+<meta property="og:url" content="http://example.com/2022/03/15/2022-03-15-%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%E5%92%8C%E7%BA%BF%E6%AE%B5%E6%A0%91/index.html">
 <meta property="og:site_name" content="LiaN">
-<meta property="og:description" content="别焦虑了，说不定明天就死了呢.">
+<meta property="og:description" content="树状数组 可以动态地、快速 求前缀和 ； logN 给某个位置的数 加上 一个数（单点修改） 求某一个前缀和 （区间查询）   它只能解上述单点修改和区间查询问题，其他问题要转换成这种类型的才可以解 数组下标从1开始  AcWing1264 动态求连续区间和（模板题）题意思路代码线段树 线段树能处理的范围包含树状数组 代码短、常数小">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-03-15T03:08:20.000Z">
+<meta property="article:modified_time" content="2022-03-15T04:17:20.320Z">
 <meta property="article:author" content="LiaN">
+<meta property="article:tag" content="AcWing">
+<meta property="article:tag" content="线段树">
+<meta property="article:tag" content="树状数组">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/categories/%E4%BF%A1%E5%AE%89%E8%B5%9B/">
+<link rel="canonical" href="http://example.com/2022/03/15/2022-03-15-%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%E5%92%8C%E7%BA%BF%E6%AE%B5%E6%A0%91/">
 
 
 <script id="page-configurations">
@@ -40,12 +45,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>分类: 信安赛 | LiaN</title>
+  <title>树状数组和线段树 | LiaN</title>
   
 
 
@@ -199,97 +204,152 @@
         <div class="content-wrap">
           
 
-          <div class="content category">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">信安赛
-          <small>分类</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/15/2022-03-15-%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%E5%92%8C%E7%BA%BF%E6%AE%B5%E6%A0%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn2.maocdn.cn/img/2022/01/21/J8U_G9ZTZG4W12DA260Z9.jpg">
+      <meta itemprop="name" content="LiaN">
+      <meta itemprop="description" content="<font color="#000000">别焦虑了，说不定明天就死了呢.</font>">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LiaN">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          树状数组和线段树
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-03-15 11:08:20 / 修改时间：12:17:20" itemprop="dateCreated datePublished" datetime="2022-03-15T11:08:20+08:00">2022-03-15</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%B7%E9%A2%98%E5%BA%9F%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">刷题废物</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>149</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-02-26T15:45:01+08:00"
-              content="2022-02-26">
-          02-26
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/02/26/2022-02-26-%E5%B0%8F%E4%B8%96%E7%95%8C%E7%BD%91%E7%BB%9C/" itemprop="url">
-            <span itemprop="name">小世界网络</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-02-25T08:29:40+08:00"
-              content="2022-02-25">
-          02-25
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/02/25/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E4%B8%AD%E9%87%8D%E8%A6%81%E8%8A%82%E7%82%B9%E3%80%81%E8%84%86%E5%BC%B1%E8%8A%82%E7%82%B9%E7%9A%84%E6%A3%80%E6%9F%A5%E3%80%81%E6%8C%96%E6%8E%98%E6%96%B9%E6%B3%95/" itemprop="url">
-            <span itemprop="name">复杂网络中重要节点、脆弱节点的检查、挖掘方法</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-02-15T00:22:17+08:00"
-              content="2022-02-15">
-          02-15
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/02/15/%E5%8C%BA%E5%9D%97%E9%93%BE%E5%92%8C%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%EF%BC%88%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%89/" itemprop="url">
-            <span itemprop="name">区块链和复杂网络（基础知识）</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
+        <span id="more"></span>
+<h1 id="树状数组"><a href="#树状数组" class="headerlink" title="树状数组"></a>树状数组</h1><ul>
+<li>可以<strong>动态地、快速 求前缀和</strong> ； logN<ul>
+<li>给某个位置的数 <strong>加上</strong> 一个数<strong>（单点修改）</strong></li>
+<li>求某一个前缀和 <strong>（区间查询）</strong></li>
+</ul>
+</li>
+<li>它只能解上述单点修改和区间查询问题，其他问题要<strong>转换成</strong>这种类型的才可以解</li>
+<li>数组下标从1开始</li>
+</ul>
+<h2 id="AcWing1264-动态求连续区间和（模板题）"><a href="#AcWing1264-动态求连续区间和（模板题）" class="headerlink" title="AcWing1264 动态求连续区间和（模板题）"></a>AcWing1264 动态求连续区间和（模板题）</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><h1 id="线段树"><a href="#线段树" class="headerlink" title="线段树"></a>线段树</h1><ul>
+<li>线段树能处理的范围包含树状数组</li>
+<li>代码短、常数小</li>
+</ul>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>LiaN
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2022/03/15/2022-03-15-%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%E5%92%8C%E7%BA%BF%E6%AE%B5%E6%A0%91/" title="树状数组和线段树">http://example.com/2022/03/15/2022-03-15-树状数组和线段树/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/AcWing/" rel="tag"># AcWing</a>
+              <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/" rel="tag"># 线段树</a>
+              <a href="/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" rel="tag"># 树状数组</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/03/12/2022-03-12-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="prev" title="动态规划">
+      <i class="fa fa-chevron-left"></i> 动态规划
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/03/15/2022-03-15-%E6%A8%A1%E6%8B%9F-%E6%9E%9A%E4%B8%BE-%E6%8E%92%E5%BA%8F/" rel="next" title="模拟-枚举-排序">
+      模拟-枚举-排序 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -336,6 +396,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84"><span class="nav-number">1.</span> <span class="nav-text">树状数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#AcWing1264-%E5%8A%A8%E6%80%81%E6%B1%82%E8%BF%9E%E7%BB%AD%E5%8C%BA%E9%97%B4%E5%92%8C%EF%BC%88%E6%A8%A1%E6%9D%BF%E9%A2%98%EF%BC%89"><span class="nav-number">1.1.</span> <span class="nav-text">AcWing1264 动态求连续区间和（模板题）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E6%84%8F"><span class="nav-number">1.1.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF"><span class="nav-number">1.1.2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">1.1.3.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BA%BF%E6%AE%B5%E6%A0%91"><span class="nav-number">2.</span> <span class="nav-text">线段树</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -521,6 +582,25 @@
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '532a45a59c2f395313f9',
+      clientSecret: '419760923076a6f709b5baa01457e5a96e275838',
+      repo        : 'z-y-LiaN.github.io',
+      owner       : 'z-y-LiaN',
+      admin       : ['z-y-LiaN'],
+      id          : '10f64dbbb1fbedff1789d4ff5a8a44b8',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
 </body>
 </html>
