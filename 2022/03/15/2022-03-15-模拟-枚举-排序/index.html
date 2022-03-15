@@ -22,15 +22,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="模拟AcWing1210 连号区间数量题意1210. 连号区间数 - AcWing题库 概括：给定排列的数组 求连号区间的个数 思路 首先，有个概念：排列，一般地，从n个不同元素中取出m（m≤n）个元素，按照一定的顺序排成一列，叫做从n个元素中取出m个元素的一个排列。 既然从a[L]到a[R]数组内的元素如果排序后严格逐个递增，那么必有max-min&#x3D;R-L；题目已经说了是排列，所以不可能有相同">
+  <meta name="description" content="主要内容 一些题…">
 <meta property="og:type" content="article">
 <meta property="og:title" content="模拟-枚举-排序">
 <meta property="og:url" content="http://example.com/2022/03/15/2022-03-15-%E6%A8%A1%E6%8B%9F-%E6%9E%9A%E4%B8%BE-%E6%8E%92%E5%BA%8F/index.html">
 <meta property="og:site_name" content="LiaN">
-<meta property="og:description" content="模拟AcWing1210 连号区间数量题意1210. 连号区间数 - AcWing题库 概括：给定排列的数组 求连号区间的个数 思路 首先，有个概念：排列，一般地，从n个不同元素中取出m（m≤n）个元素，按照一定的顺序排成一列，叫做从n个元素中取出m个元素的一个排列。 既然从a[L]到a[R]数组内的元素如果排序后严格逐个递增，那么必有max-min&#x3D;R-L；题目已经说了是排列，所以不可能有相同">
+<meta property="og:description" content="主要内容 一些题…">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-15T08:18:55.000Z">
-<meta property="article:modified_time" content="2022-03-15T10:25:19.285Z">
+<meta property="article:modified_time" content="2022-03-15T14:27:15.851Z">
 <meta property="article:author" content="LiaN">
 <meta property="article:tag" content="AcWing">
 <meta name="twitter:card" content="summary">
@@ -233,7 +233,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-03-15 16:18:55 / 修改时间：18:25:19" itemprop="dateCreated datePublished" datetime="2022-03-15T16:18:55+08:00">2022-03-15</time>
+              <time title="创建时间：2022-03-15 16:18:55 / 修改时间：22:27:15" itemprop="dateCreated datePublished" datetime="2022-03-15T16:18:55+08:00">2022-03-15</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -258,7 +258,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>618</span>
+              <span>1.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -277,7 +277,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <span id="more"></span>
+        <ul>
+<li>主要内容<ul>
+<li>一些题…</li>
+</ul>
+</li>
+</ul>
+<span id="more"></span>
 <h1 id="模拟"><a href="#模拟" class="headerlink" title="模拟"></a>模拟</h1><h2 id="AcWing1210-连号区间数量"><a href="#AcWing1210-连号区间数量" class="headerlink" title="AcWing1210 连号区间数量"></a>AcWing1210 连号区间数量</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/1212/">1210. 连号区间数 - AcWing题库</a></p>
 <p>概括：给定排列的数组 求连号区间的个数</p>
 <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul>
@@ -285,7 +291,21 @@
 <li>既然从a[L]到a[R]数组内的元素如果排序后严格逐个递增，那么必有<strong>max-min=R-L</strong>；题目已经说了是排列，所以不可能有相同的多个元素</li>
 </ul>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">10005</span>;</span><br><span class="line"><span class="keyword">int</span> n,a[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">	<span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a[i]);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		<span class="keyword">int</span> maxx=a[i],minn=a[i];</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=i;j&lt;=n;j++)&#123;</span><br><span class="line">			maxx = <span class="built_in">max</span>(maxx,a[j]);</span><br><span class="line">			minn = <span class="built_in">min</span>(minn,a[j]);</span><br><span class="line">			<span class="keyword">if</span>(maxx-minn == j-i) ans++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="AcWing1236-递增三元组"><a href="#AcWing1236-递增三元组" class="headerlink" title="AcWing1236 递增三元组"></a>AcWing1236 递增三元组</h2><h3 id="题意-1"><a href="#题意-1" class="headerlink" title="题意"></a>题意</h3><h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3>
+<h2 id="AcWing1236-递增三元组"><a href="#AcWing1236-递增三元组" class="headerlink" title="AcWing1236 递增三元组"></a>AcWing1236 递增三元组</h2><h3 id="题意-1"><a href="#题意-1" class="headerlink" title="题意"></a>题意</h3><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/1238/">1236. 递增三元组 - AcWing题库</a></p>
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><ul>
+<li>首先考虑暴力求解，但至少三重循环，不太行，考虑如何优化：</li>
+<li>根据数据范围 1e5 反推，时间复杂度最多时nlogn的，并且至少会有一层遍历n，所有考虑logn的算法</li>
+<li>所以 可以循环遍历Bi，然后在A中找小于Bi的，在C中找大于Bi的；考虑用 <strong>前缀和</strong> 或者 <strong>二分</strong>的方法<ul>
+<li>要求的是满足条件的三元组个数，则只需要 找到A中小于Bi个数，C中大于Bi的个数，相乘即可</li>
+</ul>
+</li>
+<li><strong>细节</strong>：<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> n,a[N],b[N],c[N],sa[N],sc[N],s[N],cnt[N];</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a[i]),a[i]++;	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;b[i]),b[i]++;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;c[i]),c[i]++;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) cnt[a[i]]++;  <span class="comment">//sa[i]: 数组a中值等于i的个数 </span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;N;i++) s[i]=s[i<span class="number">-1</span>]+cnt[i];  <span class="comment">//s[i]:数组中的值 小于等于i 的个数</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) sa[i]=s[b[i]<span class="number">-1</span>] ;<span class="comment">//a[i]表示 小于b[i]的个数 </span></span><br><span class="line">	</span><br><span class="line">	<span class="built_in">memset</span>(s,<span class="number">0</span>,<span class="keyword">sizeof</span> s);</span><br><span class="line">	<span class="built_in">memset</span>(cnt,<span class="number">0</span>,<span class="keyword">sizeof</span> cnt);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) cnt[c[i]]++;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;N;i++) s[i]=s[i<span class="number">-1</span>]+cnt[i];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) sc[i]=s[N<span class="number">-1</span>]-s[b[i]];</span><br><span class="line">	LL ans=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		ans=ans+(LL)sa[i]*sc[i];</span><br><span class="line">	cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
     </div>
 
     
@@ -479,13 +499,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">24k</span>
+    <span title="站点总字数">27k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">22 分钟</span>
+    <span title="站点阅读时长">25 分钟</span>
 </div>
 <!--
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
