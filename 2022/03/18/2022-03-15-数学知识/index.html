@@ -22,17 +22,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="别焦虑了，说不定明天就死了呢.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LiaN">
-<meta property="og:url" content="http://example.com/tags/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C/index.html">
+  <meta name="description" content="主要内容 数论、组合计数、高斯消元、简单博弈论">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数学知识">
+<meta property="og:url" content="http://example.com/2022/03/18/2022-03-15-%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86/index.html">
 <meta property="og:site_name" content="LiaN">
-<meta property="og:description" content="别焦虑了，说不定明天就死了呢.">
+<meta property="og:description" content="主要内容 数论、组合计数、高斯消元、简单博弈论">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-03-18T03:08:20.000Z">
+<meta property="article:modified_time" content="2022-03-18T10:24:32.348Z">
 <meta property="article:author" content="LiaN">
+<meta property="article:tag" content="AcWing">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/tags/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C/">
+<link rel="canonical" href="http://example.com/2022/03/18/2022-03-15-%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86/">
 
 
 <script id="page-configurations">
@@ -40,12 +43,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>标签: 复杂网络 | LiaN</title>
+  <title>数学知识 | LiaN</title>
   
 
 
@@ -199,97 +202,157 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">复杂网络
-          <small>标签</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/18/2022-03-15-%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn2.maocdn.cn/img/2022/01/21/J8U_G9ZTZG4W12DA260Z9.jpg">
+      <meta itemprop="name" content="LiaN">
+      <meta itemprop="description" content="<font color="#000000">别焦虑了，说不定明天就死了呢.</font>">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LiaN">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数学知识
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-03-18 11:08:20 / 修改时间：18:24:32" itemprop="dateCreated datePublished" datetime="2022-03-18T11:08:20+08:00">2022-03-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%B7%E9%A2%98%E5%BA%9F%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">刷题废物</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>337</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
+        <ul>
+<li>主要内容<ul>
+<li>数论、组合计数、高斯消元、简单博弈论</li>
+</ul>
+</li>
+</ul>
+<span id="more"></span>
+<h1 id="数论"><a href="#数论" class="headerlink" title="数论"></a>数论</h1><h2 id="质数"><a href="#质数" class="headerlink" title="质数"></a>质数</h2><ul>
+<li>定义（素数/质数）：在<strong>大于1</strong> 的整数中，如果只包含1和本身这两个约数</li>
+<li>质数判定：试除法 O(√n)</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">is_prime</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(n&lt;<span class="number">2</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n/i;i++)</span><br><span class="line">		<span class="keyword">if</span>(n%i==<span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>分解质因数：试除法</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="容斥原理"><a href="#容斥原理" class="headerlink" title="容斥原理"></a>容斥原理</h1><script type="math/tex; mode=display">
+|S_{1}\cup S_{2}\cup S_{3}|=|S_{1}|+|S_{2}|+|S_{3}|-|S_{1}\cap S_{2}|-|S_{1}\cap S_{3}|-|S_{2}\cap S_{3}|+|S_{1}\cap S_{2}\cap S_{3}|</script><ul>
+<li>依次类推</li>
+<li></li>
+</ul>
+<h1 id="简单博弈论"><a href="#简单博弈论" class="headerlink" title="简单博弈论"></a>简单博弈论</h1>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
+        
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-02-26T15:45:01+08:00"
-              content="2022-02-26">
-          02-26
-        </time>
-      </div>
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>LiaN
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2022/03/18/2022-03-15-%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86/" title="数学知识">http://example.com/2022/03/18/2022-03-15-数学知识/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/02/26/2022-02-26-%E5%B0%8F%E4%B8%96%E7%95%8C%E7%BD%91%E7%BB%9C/" itemprop="url">
-            <span itemprop="name">小世界网络</span>
-          </a>
-      </div>
 
-    </header>
-  </article>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/AcWing/" rel="tag"># AcWing</a>
+          </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+        
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-02-25T08:29:40+08:00"
-              content="2022-02-25">
-          02-25
-        </time>
-      </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/02/25/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E4%B8%AD%E9%87%8D%E8%A6%81%E8%8A%82%E7%82%B9%E3%80%81%E8%84%86%E5%BC%B1%E8%8A%82%E7%82%B9%E7%9A%84%E6%A3%80%E6%9F%A5%E3%80%81%E6%8C%96%E6%8E%98%E6%96%B9%E6%B3%95/" itemprop="url">
-            <span itemprop="name">复杂网络中重要节点、脆弱节点的检查、挖掘方法</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-02-15T00:22:17+08:00"
-              content="2022-02-15">
-          02-15
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/02/15/%E5%8C%BA%E5%9D%97%E9%93%BE%E5%92%8C%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%EF%BC%88%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%89/" itemprop="url">
-            <span itemprop="name">区块链和复杂网络（基础知识）</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/03/15/2022-03-15-%E6%A8%A1%E6%8B%9F-%E6%9E%9A%E4%B8%BE-%E6%8E%92%E5%BA%8F/" rel="prev" title="模拟-枚举-排序">
+      <i class="fa fa-chevron-left"></i> 模拟-枚举-排序
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/03/18/2022-03-18-%E5%85%B3%E4%BA%8E%E5%88%B7%E9%A2%98%E7%9A%84%E5%85%B6%E4%BB%96%E9%9B%B6%E9%9B%B6%E7%A2%8E%E7%A2%8E/" rel="next" title="关于刷题的其他零零碎碎">
+      关于刷题的其他零零碎碎 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
-  </div>
+      </footer>
+    
+  </article>
   
   
-  
-
   
 
 
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -336,6 +399,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E8%AE%BA"><span class="nav-number">1.</span> <span class="nav-text">数论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%A8%E6%95%B0"><span class="nav-number">1.1.</span> <span class="nav-text">质数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%B9%E6%96%A5%E5%8E%9F%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">容斥原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E5%8D%9A%E5%BC%88%E8%AE%BA"><span class="nav-number">3.</span> <span class="nav-text">简单博弈论</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -518,9 +582,81 @@
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '532a45a59c2f395313f9',
+      clientSecret: '419760923076a6f709b5baa01457e5a96e275838',
+      repo        : 'z-y-LiaN.github.io',
+      owner       : 'z-y-LiaN',
+      admin       : ['z-y-LiaN'],
+      id          : '19ae9a93c34f8baf227715bb4f157de9',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
 </body>
 </html>
