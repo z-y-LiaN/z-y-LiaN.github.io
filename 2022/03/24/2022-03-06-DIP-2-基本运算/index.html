@@ -22,19 +22,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="别焦虑了，说不定明天就死了呢.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://example.com/tags/index.html">
+  <meta name="description" content="关于一些 让我自己觉得我自己就是个智障QAQ的东西  瞎几把乱写的通俗理解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DIP-2-频率域滤波">
+<meta property="og:url" content="http://example.com/2022/03/24/2022-03-06-DIP-2-%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97/index.html">
 <meta property="og:site_name" content="LiaN">
-<meta property="og:description" content="别焦虑了，说不定明天就死了呢.">
+<meta property="og:description" content="关于一些 让我自己觉得我自己就是个智障QAQ的东西  瞎几把乱写的通俗理解">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-01-20T16:05:56.000Z">
-<meta property="article:modified_time" content="2022-01-20T16:09:42.304Z">
+<meta property="article:published_time" content="2022-03-24T13:10:02.000Z">
+<meta property="article:modified_time" content="2022-03-25T08:29:20.564Z">
 <meta property="article:author" content="LiaN">
+<meta property="article:tag" content="数字图像处理Digital Image Processing">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/tags/">
+<link rel="canonical" href="http://example.com/2022/03/24/2022-03-06-DIP-2-%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97/">
 
 
 <script id="page-configurations">
@@ -42,13 +43,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>标签 | LiaN
-</title>
+  <title>DIP-2-频率域滤波 | LiaN</title>
   
 
 
@@ -201,51 +201,193 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
-          <div class="content page posts-expand">
+          <div class="content post posts-expand">
             
 
     
-    
-    
-    <div class="post-block" lang="zh-CN">
-      <header class="post-header">
-
-<h1 class="post-title" itemprop="name headline">标签
-</h1>
-
-<div class="post-meta">
   
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/24/2022-03-06-DIP-2-%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97/">
 
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn2.maocdn.cn/img/2022/01/21/J8U_G9ZTZG4W12DA260Z9.jpg">
+      <meta itemprop="name" content="LiaN">
+      <meta itemprop="description" content="<font color="#000000">别焦虑了，说不定明天就死了呢.</font>">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LiaN">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          DIP-2-频率域滤波
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-03-24 21:10:02" itemprop="dateCreated datePublished" datetime="2022-03-24T21:10:02+08:00">2022-03-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-03-25 16:29:20" itemprop="dateModified" datetime="2022-03-25T16:29:20+08:00">2022-03-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/" itemprop="url" rel="index"><span itemprop="name">专业课</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <ul>
+<li>关于一些 让我自己觉得<strong>我自己就是个智障</strong>QAQ的东西  瞎几把乱写的通俗理解</li>
+</ul>
+<span id="more"></span>
+<ul>
+<li>任何<strong>周期函数</strong>，都可以看作 不同振幅、不同相位<strong>正弦波的叠加</strong></li>
+<li>滤波：从某条曲线中去除一些特定的频率成分</li>
+<li><p>频率分量：不同频率的正弦波</p>
+<ul>
+<li>将角频率为ω0的正弦波cos（ω0）看作基础，那么频域的基本单元就是ω0</li>
+</ul>
+</li>
+<li><p>cos(0t)也就是一条直线，可以理解成一个周期长的正弦波</p>
+<ul>
+<li>所以在频率域，0频率 称为 直流分量</li>
+</ul>
+</li>
+<li>频域的基本单元也可以理解为<strong>一个始终在旋转的圆</strong></li>
+<li>简单说就是如果从时间域分析信号时，时间是横坐标振幅是纵坐标。而在<strong>频率域</strong>分析的时候则是<strong>频率是横坐标</strong>，<strong>振幅是纵坐标</strong></li>
+<li><p>频域图像，也就是俗称的<strong>频谱</strong></p>
+</li>
+<li><p>空间域就是你看到的一个个像素。频率域就是空间域经过傅立叶变换的信号</p>
+</li>
+<li>在 图像处理中，频域反应了图像在空域<strong>灰度变化剧烈程度</strong>，也就是图像<strong>灰度的变化速度</strong>，也就是图像的梯度大小。对图像而言，图像的边缘部分是突变部分，变化较 快，因此反应在频域上是高频分量；图像的噪声大部分情况下是高频部分；图像平缓变化部分则为低频分量。也就是说，傅立叶变换提供另外一个角度来观察图像， 可以将图像从灰度分布转化到频率分布上来观察图像的特征。书面一点说就是，傅里叶变换提供了一条从空域到频率自由转换的途径。</li>
+</ul>
+<hr>
+<ul>
+<li>二维傅里叶变换就是 <strong>将一个图像分解称若干个复平面波之和</strong></li>
+</ul>
+<p>二维连续傅里叶变换的公式：</p>
+<script type="math/tex; mode=display">
+F（u,v)=\int_{-\infin}^{+\infin} \int_{-\infin}^{+\infin} f(x,y)e^{-j2\pi(ux+vy)}dxdy</script><p>将<strong>图像f</strong> 与<strong>每个不同频率的不同方向的复平面波</strong>做内积</p>
+<p>给定一幅图像f, 能够算出<strong>每个平面波在图像中的成分是多少</strong></p>
+<p>也就说，求这个图像 ，在<strong>基上的投影</strong></p>
+<ul>
+<li>傅里叶谱的<strong>每个位置存储的数</strong>代表了所在位置复平面波 在图像中的成分占多数，</li>
+<li>每个位置存储的数* 该位置所代表的平面波求和得到原来的图像</li>
+</ul>
+<p>已知一幅图像f（x,y), 二维离散傅里叶变换公式，一对uv值对应了基底的一种形式，也就是对应了一个对应频率下的复平面波，那么F（u，v）的模就可以用来在这个频率下的复平面波对图像的影响，可以把它看作一个权重，表示该频率对图像的贡献程度，傅里叶谱</p>
+<ul>
+<li>傅里叶谱，中间部分代表低频，四周代表高频</li>
+<li><p>不同的频率有不同的幅度，</p>
+<ul>
+<li>如果谱中 ，亮度越高 ，意味着频幅越大，亮度越按，意味着频幅越小</li>
+<li>而这个频幅，又代表这对应的该频率对原图像的影响程度<ul>
+<li>一幅图像分解成 若干个 不同频率的复平面波之和，这个之和 应该是带权相加，而那个频幅就相当于这个权</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>频谱图中的每一个点都与空域中的<strong>整幅图像相关</strong>，相当于每一个点都代表一个用于表示原图的波或者频率；这个点越亮，代表着用于表示原图的那个频率占比越重</p>
+</li>
+<li>频域是一个全局的概念。<strong>低频高频，都是对于整幅图片而言的</strong>。低频幅度大 是因为图片大部分区域都是缓慢变化的，而锐利的边缘则非常稀疏（即高频幅度小）</li>
+<li>频谱上的点与空域上的点不是一一对应的。<strong>频谱上每一点都与空域所有点有关</strong>，反之，空域每一点都与频谱上所有点有关。这可以从傅里叶变换的公式直观看出来。</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>LiaN
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2022/03/24/2022-03-06-DIP-2-%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97/" title="DIP-2-频率域滤波">http://example.com/2022/03/24/2022-03-06-DIP-2-基本运算/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
 </div>
 
-</header>
 
-      
-      
-      
-      <div class="post-body">
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-              目前共计 21 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/AcWing/" style="font-size: 30px; color: #111">AcWing</a> <a href="/tags/DP/" style="font-size: 12px; color: #ccc">DP</a> <a href="/tags/%E4%BA%8C%E5%88%86/" style="font-size: 12px; color: #ccc">二分</a> <a href="/tags/%E5%89%8D%E7%BC%80%E5%92%8C/" style="font-size: 12px; color: #ccc">前缀和</a> <a href="/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" style="font-size: 12px; color: #ccc">区块链</a> <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" style="font-size: 12px; color: #ccc">双指针</a> <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 12px; color: #ccc">图论</a> <a href="/tags/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C/" style="font-size: 24px; color: #4f4f4f">复杂网络</a> <a href="/tags/%E5%B7%AE%E5%88%86/" style="font-size: 12px; color: #ccc">差分</a> <a href="/tags/%E6%90%9C%E7%B4%A2/" style="font-size: 12px; color: #ccc">搜索</a> <a href="/tags/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86Digital-Image-Processing/" style="font-size: 24px; color: #4f4f4f">数字图像处理Digital Image Processing</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 12px; color: #ccc">数学</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 12px; color: #ccc">数据结构</a> <a href="/tags/%E6%96%87%E7%8C%AE%E7%AC%94%E8%AE%B0/" style="font-size: 18px; color: #8e8e8e">文献笔记</a> <a href="/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" style="font-size: 12px; color: #ccc">树状数组</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 12px; color: #ccc">测试</a> <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/" style="font-size: 12px; color: #ccc">线段树</a> <a href="/tags/%E8%8B%B1%E8%AF%AD%E5%90%AC%E5%8A%9B/" style="font-size: 12px; color: #ccc">英语听力</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 12px; color: #ccc">软件设计模式</a> <a href="/tags/%E9%80%92%E6%8E%A8/" style="font-size: 12px; color: #ccc">递推</a> <a href="/tags/%E9%83%A8%E7%BD%B2/" style="font-size: 12px; color: #ccc">部署</a>
-            </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86Digital-Image-Processing/" rel="tag"># 数字图像处理Digital Image Processing</a>
           </div>
-        
-      </div>
-      
-      
-      
-    </div>
-    
 
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/03/22/2022-03-22-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="prev" title="软件设计模式">
+      <i class="fa fa-chevron-left"></i> 软件设计模式
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/03/24/2022-03-06-DIP-2-%E5%82%85%E9%87%8C%E5%8F%B6/" rel="next" title="DIP-2-频率域滤波">
+      DIP-2-频率域滤波 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
     
-    
-    
+  </article>
+  
+  
+  
+
 
 
           </div>
@@ -479,6 +621,59 @@
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
@@ -493,7 +688,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'z-y-LiaN.github.io',
       owner       : 'z-y-LiaN',
       admin       : ['z-y-LiaN'],
-      id          : 'f47af1d1eda4d807b02bba32be15120b',
+      id          : 'b26458bb25325427eab8cd9b832a7810',
         language: 'zh-CN',
       distractionFreeMode: true
     });

@@ -22,12 +22,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="主要内容 装饰者模式、工厂模式   参考资料：《HeadFirst设计模式》">
+  <meta name="description" content="主要内容 装饰者模式、工厂模式、单件模式   参考资料：《HeadFirst设计模式》">
 <meta property="og:type" content="article">
 <meta property="og:title" content="软件设计模式">
 <meta property="og:url" content="http://example.com/2022/03/22/2022-03-22-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="LiaN">
-<meta property="og:description" content="主要内容 装饰者模式、工厂模式   参考资料：《HeadFirst设计模式》">
+<meta property="og:description" content="主要内容 装饰者模式、工厂模式、单件模式   参考资料：《HeadFirst设计模式》">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.bmp.ovh/imgs/2022/03/a0d7fddf8d6a7266.png">
 <meta property="og:image" content="https://i.bmp.ovh/imgs/2022/03/b5619a2a5ba71c61.png">
@@ -47,8 +47,15 @@
 <meta property="og:image" content="https://i.bmp.ovh/imgs/2022/03/ed29a07c1bd29a7d.png">
 <meta property="og:image" content="https://i.bmp.ovh/imgs/2022/03/2cde0ebb92239b6e.png">
 <meta property="og:image" content="https://i.bmp.ovh/imgs/2022/03/40a969dfb82c50dc.png">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/03/355f4b3aa8a92aac.png">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/03/3eb03ec2dbe04f8c.png">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/03/fac2ed68e7d0b475.png">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/03/a1995c3b195e07d2.png">
+<meta property="og:image" content="https://i.imgtg.com/2022/03/25/bDb6c.png">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/03/b60131071f364eb0.png">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/03/1bbbc28bdd1b10d9.png">
 <meta property="article:published_time" content="2022-03-22T14:45:34.000Z">
-<meta property="article:modified_time" content="2022-03-24T02:46:46.962Z">
+<meta property="article:modified_time" content="2022-03-25T14:19:53.230Z">
 <meta property="article:author" content="LiaN">
 <meta property="article:tag" content="软件设计模式">
 <meta name="twitter:card" content="summary">
@@ -165,7 +172,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">18</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">19</span></a>
 
   </li>
         <li class="menu-item menu-item-mubulinks">
@@ -258,7 +265,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-24 10:46:46" itemprop="dateModified" datetime="2022-03-24T10:46:46+08:00">2022-03-24</time>
+                <time title="修改时间：2022-03-25 22:19:53" itemprop="dateModified" datetime="2022-03-25T22:19:53+08:00">2022-03-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -283,14 +290,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>10k</span>
+              <span>14k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>9 分钟</span>
+              <span>13 分钟</span>
             </span>
 
         </div>
@@ -304,7 +311,7 @@
       
         <ul>
 <li>主要内容<ul>
-<li>装饰者模式、工厂模式</li>
+<li>装饰者模式、工厂模式、单件模式</li>
 </ul>
 </li>
 <li>参考资料：《HeadFirst设计模式》</li>
@@ -584,7 +591,19 @@
 </blockquote>
 </li>
 </ul>
-<h2 id="三种工厂模式的比较"><a href="#三种工厂模式的比较" class="headerlink" title="三种工厂模式的比较"></a>三种工厂模式的比较</h2><h3 id="抽象工厂-VS-工厂方法"><a href="#抽象工厂-VS-工厂方法" class="headerlink" title="抽象工厂 VS 工厂方法"></a>抽象工厂 VS 工厂方法</h3><ul>
+<h2 id="三种工厂模式的比较"><a href="#三种工厂模式的比较" class="headerlink" title="三种工厂模式的比较"></a>三种工厂模式的比较</h2><h3 id="三种类图对比总结"><a href="#三种类图对比总结" class="headerlink" title="三种类图对比总结"></a>三种类图对比总结</h3><ul>
+<li>简单工厂：<strong>用来生产 同一等级结构中的任意产品（对于新加的产品，无能为力）</strong></li>
+</ul>
+<p><img src="https://i.bmp.ovh/imgs/2022/03/355f4b3aa8a92aac.png" style="zoom:50%;" /></p>
+<ul>
+<li><p>工厂方法：<strong>用来生产同一等级结构的固定产品（支持增加任意产品）</strong></p>
+<p><img src="https://i.bmp.ovh/imgs/2022/03/3eb03ec2dbe04f8c.png" style="zoom:50%;" /></p>
+</li>
+<li><p>抽象工厂：<strong>用来生产不同产品族的全部产品</strong>（对于新增加的产品，无能为力，支持增加产品族）</p>
+</li>
+</ul>
+<p><img src="https://i.bmp.ovh/imgs/2022/03/fac2ed68e7d0b475.png" style="zoom:50%;" /></p>
+<h3 id="抽象工厂-VS-工厂方法"><a href="#抽象工厂-VS-工厂方法" class="headerlink" title="抽象工厂 VS 工厂方法"></a>抽象工厂 VS 工厂方法</h3><ul>
 <li><p>共同点：都是用来 <strong>创建对象</strong>的，把客户从所使用的具体实际产品中解耦</p>
 </li>
 <li><p>不同点</p>
@@ -603,6 +622,99 @@
 </ul>
 </li>
 </ul>
+<hr>
+<h1 id="单件模式"><a href="#单件模式" class="headerlink" title="单件模式"></a>单件模式</h1><ul>
+<li><p>用来创建独一无二的，<strong>只能有一个实例</strong>的对象</p>
+<blockquote>
+<p>因为，<strong>有些对象我们只需要一个</strong>，如果制造多个会导致许多问题</p>
+<p>可以确保程序中使用的全局资源只有一份，对资源敏感的对象特别重要</p>
+</blockquote>
+</li>
+<li><p>单件模式可以确保<strong>只有一个示例</strong>被创建，并且可以在<strong>需要时</strong>才创建</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">	<span class="comment">// 利用静态变量 来记录这个 唯一的实例</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton uniqueInstance;</span><br><span class="line">    <span class="comment">// 声明为私有：只有Singleton类内才可以调用它</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;;</span><br><span class="line">    <span class="comment">// 利用静态方法来实例化这个唯一的实例</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(uniqueInstance == <span class="keyword">null</span>)&#123;</span><br><span class="line">			uniqueInstance = <span class="keyword">new</span> Singleton();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> uniqueInstance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>调用<code>Singleton</code>里面的静态方法：<code>Singleton.getInstance()</code></p>
+<blockquote>
+<p>getInstance()：静态方法，也就是类方法；对静态方法的调用要使用类名 </p>
+</blockquote>
+</li>
+<li><p><strong>延迟实例化</strong>：如果不需要这个实例，它就永远不会产生</p>
+</li>
+<li>要想取得<code>Singleton</code>的一个实例，我们必须”请求“得到这么一个实例，而不是自行new 一个<code>Singleton</code>出来，（反正也new不出来，因为构造器是private）。所以我们可以，调用静态方法<code>getInstance</code>来请求得到 这个类的实例，这相当于一个<strong>全局访问点</strong><ul>
+<li>从上面的代码易知：这个实例可能是在这次调用的时候被创建出来的，也可能是之前已经创建出来的。反正它只有一个</li>
+</ul>
+</li>
+</ul>
+<h2 id="一个栗子-1"><a href="#一个栗子-1" class="headerlink" title="一个栗子"></a>一个栗子</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ChocolateBoiler</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> ChocolateBoiler uniqueInstance;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> empty;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> boiled;</span><br><span class="line">    <span class="keyword">private</span> ChocolateBoiler&#123;</span><br><span class="line">         empty = <span class="keyword">true</span>;</span><br><span class="line">         boiled = <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ChocolateBoiler <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(uniqueInstance == <span class="keyword">null</span>)&#123;</span><br><span class="line">			uniqueInstance = <span class="keyword">new</span> ChocolateBoiler();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> uniqueInstance;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> 其他方法()&#123;...&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="定义单件模式"><a href="#定义单件模式" class="headerlink" title="定义单件模式"></a>定义单件模式</h2><font color="red">单件模式：确保一个类中只有一个实例，并提供一个全局访问点</font>
+
+<p><img src="https://i.bmp.ovh/imgs/2022/03/a1995c3b195e07d2.png" style="zoom:50%;" /></p>
+<p>但是上面这种经典的单件模式在多线程的情况下会出现问题</p>
+<p><img src="https://i.imgtg.com/2022/03/25/bDb6c.png" alt="bDb6c.png"></p>
+<p>对于多线程的处理：把<code>getInstance()</code>变成<strong>同步方法</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;...&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>这样，可以迫使每个线程进入该方法之前，需要等待别的线程离开该方法，保证不会有两个线程同时进入该方法</li>
+<li>但是，只有在new uniqueInstance的时候才需要同步，所以这会拖垮性能</li>
+</ul>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><h4 id="getInstance的性能不是很关键，就不用解决"><a href="#getInstance的性能不是很关键，就不用解决" class="headerlink" title="getInstance的性能不是很关键，就不用解决"></a>getInstance的性能不是很关键，就不用解决</h4><ul>
+<li>但如果<code>getInstance</code>使用在程序频繁运行的地方，就必须解决，否则运行效率会大幅下降</li>
+</ul>
+<h4 id="“急切”创建实例，而不用延迟实例化的做法"><a href="#“急切”创建实例，而不用延迟实例化的做法" class="headerlink" title="“急切”创建实例，而不用延迟实例化的做法"></a>“急切”创建实例，而不用延迟实例化的做法</h4><ul>
+<li><p>如果总是创建并使用单件实例or在创建和运行时负担不繁重，可以急切创建此单件</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="comment">//JVM在加载这个类的时候马上创建唯一的单件实例（静态初始化实例）</span></span><br><span class="line">    <span class="comment">//保证在任何线程访问uniqueInstance之前，一定先创建了它</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> Singleton uniqueInstance = <span class="keyword">new</span> Singleton();</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> uniqueInstance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="双重检查加锁"><a href="#双重检查加锁" class="headerlink" title="双重检查加锁"></a>双重检查加锁</h4><ul>
+<li><strong>首先检查</strong>实例是否已经创建，若<strong>未创建，才进行同步</strong>–&gt;保证只有第一次同步</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">static</span> Singleton uniqueInstance;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">// 检查实例，如果未创建，就进行同步</span></span><br><span class="line">        <span class="keyword">if</span>(uniqueInstance == <span class="keyword">null</span>)&#123;</span><br><span class="line">			<span class="keyword">synchronized</span>(Singleton.class)&#123; <span class="comment">//再检查一次</span></span><br><span class="line">				<span class="keyword">if</span>(uniqueInstance == <span class="keyword">null</span>)&#123;</span><br><span class="line">					uniqueInstance = <span class="keyword">new</span> Singleton();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> uniqueInstance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="命令模式——封装调用"><a href="#命令模式——封装调用" class="headerlink" title="命令模式——封装调用"></a>命令模式——封装调用</h1><blockquote>
+<p>刚学这个模式的时候狠狠地难受到了，一开始始终理不清书上餐厅点餐和遥控器这个两个栗子的相通点，看了两遍书才看明白，啊啊啊啊，突然好羡慕世界上那些理解能力超强一学就会的人呐QAQ</p>
+</blockquote>
+<ul>
+<li><p>命令模式 可以将<strong>“动作的请求者” 从“动作的执行者”</strong> 对象中解耦</p>
+<p><img src="https://i.bmp.ovh/imgs/2022/03/b60131071f364eb0.png" style="zoom:50%;" /></p>
+</li>
+</ul>
+<ul>
+<li><p>请求者：遥控器；执行者：某个家电</p>
+</li>
+<li><p>命令对象：封装的东西–&gt;  家电的具体工作执行+家电</p>
+<blockquote>
+<p>比如，遥控器想要打开电灯，那么就把电灯+电灯的打开工作 封装成一个请求对象，也就是我们所说的“命令对象”；</p>
+<p>换种理解方式就是：一个命令对象 封装了 命令的执行者<strong>“谁执行”</strong>+执行者的执行动作<strong>“具体怎样执行”</strong></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="第一个命令对象"><a href="#第一个命令对象" class="headerlink" title="第一个命令对象"></a>第一个命令对象</h2><ul>
+<li>为所有命令声明一个接口，只要命令execute，就可以让命令的接收者执行动作</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Command</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">execute</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>实现一个打开电灯的<strong>命令</strong> (这就是一个<strong>命令对象</strong>：封装了<strong>执行者+具体动作</strong>)</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LightOnCommand</span> <span class="keyword">implements</span> <span class="title">Command</span></span>&#123;</span><br><span class="line">	Light light;</span><br><span class="line">    <span class="comment">//传入执行“开灯”命令的执行者light </span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">LightOnCommand</span><span class="params">(Light light)</span></span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.light = light;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//一旦调用，就由这个light接受命令，执行动作</span></span><br><span class="line">    <span class="comment">//execute封装了 执行命令的 执行者 所要执行的所有动作</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">execute</span><span class="params">()</span></span>&#123;</span><br><span class="line">		light.on();        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>使用</strong>命令对象（先假设遥控器上只有一个插槽</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SimpleRemoteControl</span></span>&#123;</span><br><span class="line">    Command slot；<span class="comment">//一个插槽持有一个命令对象 用来控制一个设备</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">SimpleRemoteControl</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="comment">//设置该插槽 持有的命令是什么；</span></span><br><span class="line">    <span class="comment">//比如传入ligthOn，就让这个插槽持有“开灯”这个命令，那么我按这个按钮，就是开灯，如果传入lightOff，那么这个插槽就持有“关灯”这个命令，我按这个按钮，就变成了关灯；所以可以传入不同的命令，实现按下当前按钮，执行不同的功能</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCommand</span><span class="params">(Command command)</span></span>&#123;</span><br><span class="line">		slot = command;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//一旦按下按钮（发出请求），插槽持有的命令就可以执行</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buttonWasPressed</span><span class="params">()</span></span>&#123;</span><br><span class="line">		slot.execute();</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>测试</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这个测试 就是命令模式的客户</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RemoteControlTest</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        SimpleRemoteControl remote = <span class="keyword">new</span> SimpleRemoteControl();</span><br><span class="line">        <span class="comment">//new出来的这个light 就是请求的接收者(真正执行这个命令的东西)</span></span><br><span class="line">        Light light = <span class="keyword">new</span> light();</span><br><span class="line">        <span class="comment">//客户负责创建一个具体的命令对象，同时要设置这个命令的接收者</span></span><br><span class="line">        <span class="comment">//相当于：顾客下了一个订单，</span></span><br><span class="line">        LightOnCommand lightOn = <span class="keyword">new</span> LightOnCommand(light);</span><br><span class="line">        <span class="comment">//remote就相当于服务员，服务员一天能接受很多很多的订单，相当于setComand可以接受不同的参数；此刻，当下，传入lightOn这个参数，代表服务员接受了lightOn这个订单</span></span><br><span class="line">        remote.setCommand(lightOn);</span><br><span class="line">        <span class="comment">//然后服务员知道所有订单都支持buttonWasPressed这个方法，一旦有订单，也就是有了一个命令，这个命令的执行只需要按一下按钮就彻底执行完毕了</span></span><br><span class="line">        remote.buttonWasPressed();</span><br><span class="line">        <span class="comment">//只要buttonWasPressed，这个button绑定的命令就立马执行</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="定义命令模式"><a href="#定义命令模式" class="headerlink" title="定义命令模式"></a>定义命令模式</h2><font color="red">命令模式：将“请求”封装成对象，以便使用不同的请求、队列、或者日志来**参数化**其他对象。命令模式也支持可撤销的操作</font>
+
+<ul>
+<li>理解<ul>
+<li>参数化：比如遥控器的一个插槽，可以用不用的请求当参数<code>remote.setCommand(参数)</code></li>
+</ul>
+</li>
+</ul>
+<p><img src="https://i.bmp.ovh/imgs/2022/03/1bbbc28bdd1b10d9.png" style="zoom: 50%;" /></p>
 
     </div>
 
@@ -641,7 +753,10 @@
     <a href="/2022/03/22/2022-03-22-%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/" rel="prev" title="搜索与图论">
       <i class="fa fa-chevron-left"></i> 搜索与图论
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2022/03/24/2022-03-06-DIP-2-%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97/" rel="next" title="DIP-2-频率域滤波">
+      DIP-2-频率域滤波 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -701,7 +816,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">装饰者模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99"><span class="nav-number">1.1.</span> <span class="nav-text">开闭原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A4%E8%AF%86%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.2.</span> <span class="nav-text">认识装饰者模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E8%A6%81%E7%82%B9"><span class="nav-number">1.3.</span> <span class="nav-text">一些要点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.4.</span> <span class="nav-text">定义装饰者模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F%E7%9A%84%E7%B1%BB%E5%9B%BE"><span class="nav-number">1.5.</span> <span class="nav-text">装饰者模式的类图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E6%A0%97%E5%AD%90%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.6.</span> <span class="nav-text">一个栗子实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A6%96%E5%85%88%E5%AE%9E%E7%8E%B0%E6%9C%80%E4%B8%8A%E9%9D%A2%E7%9A%84%E6%8A%BD%E8%B1%A1%E7%B1%BBBeverage"><span class="nav-number">1.6.1.</span> <span class="nav-text">首先实现最上面的抽象类Beverage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%84%B6%E5%90%8E%E5%AE%9E%E7%8E%B0%E4%B8%8B%E9%9D%A2%E7%9A%84%E6%8A%BD%E8%B1%A1%E7%B1%BBCondiment"><span class="nav-number">1.6.2.</span> <span class="nav-text">然后实现下面的抽象类Condiment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%99%E9%A5%AE%E6%96%99%E7%9A%84%E4%BB%A3%E7%A0%81%EF%BC%88%E5%85%B7%E4%BD%93%E7%BB%84%E4%BB%B6%EF%BC%88%E8%A2%AB%E8%A3%85%E9%A5%B0%E5%AF%B9%E8%B1%A1%EF%BC%89%EF%BC%89"><span class="nav-number">1.6.3.</span> <span class="nav-text">写饮料的代码（具体组件（被装饰对象））</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%99%E8%B0%83%E6%96%99%E4%BB%A3%E7%A0%81%EF%BC%88%E5%85%B7%E4%BD%93%E8%A3%85%E9%A5%B0%E8%80%85%EF%BC%89"><span class="nav-number">1.6.4.</span> <span class="nav-text">写调料代码（具体装饰者）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.7.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">工厂模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82"><span class="nav-number">2.1.</span> <span class="nav-text">简单工厂</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E6%8A%AB%E8%90%A8%E5%B7%A5%E5%8E%82%EF%BC%9A%E7%94%A8%E4%BA%8E%E5%88%9B%E5%BB%BApizza"><span class="nav-number">2.1.1.</span> <span class="nav-text">建立一个简单披萨工厂：用于创建pizza</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E5%81%9APizzaStore%E7%B1%BB"><span class="nav-number">2.1.2.</span> <span class="nav-text">重做PizzaStore类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%9B%BE"><span class="nav-number">2.1.3.</span> <span class="nav-text">类图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.2.</span> <span class="nav-text">工厂方法模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%99PizzaStore%EF%BC%88%E6%8A%BD%E8%B1%A1%E7%B1%BB%EF%BC%89%E4%BD%BF%E7%94%A8%E7%9A%84%E6%A1%86%E6%9E%B6"><span class="nav-number">2.2.1.</span> <span class="nav-text">给PizzaStore（抽象类）使用的框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%81%E8%AE%B8%E5%AD%90%E7%B1%BB%E5%81%9A%E5%86%B3%E5%AE%9A"><span class="nav-number">2.2.2.</span> <span class="nav-text">允许子类做决定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A3%B0%E6%98%8E%E4%B8%80%E4%B8%AA%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95"><span class="nav-number">2.2.3.</span> <span class="nav-text">声明一个工厂方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E6%A0%97%E5%AD%90"><span class="nav-number">2.2.4.</span> <span class="nav-text">一个栗子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pizza%E6%9C%AC%E8%BA%AB%EF%BC%88%E6%8A%BD%E8%B1%A1%E7%B1%BB%EF%BC%89"><span class="nav-number">2.2.5.</span> <span class="nav-text">Pizza本身（抽象类）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%99%E4%B8%AA%E6%A0%97%E5%AD%90%E7%9A%84%E7%B1%BB%E5%9B%BE"><span class="nav-number">2.2.6.</span> <span class="nav-text">这个栗子的类图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E7%82%B9-%E5%AE%9A%E4%B9%89%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F-%E7%B1%BB%E5%9B%BE%EF%BC%88Factory-Method-Pattern%EF%BC%89"><span class="nav-number">2.2.7.</span> <span class="nav-text">* 重点 * 定义工厂方法模式+类图（Factory Method Pattern）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E4%BE%9D%E8%B5%96%EF%BC%88%E4%BE%9D%E8%B5%96%E5%80%92%E7%BD%AE%E5%8E%9F%E5%88%99%EF%BC%89"><span class="nav-number">2.2.8.</span> <span class="nav-text">对象依赖（依赖倒置原则）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.3.</span> <span class="nav-text">抽象工厂模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A6%96%E5%85%88%EF%BC%8C%E5%BB%BA%E9%80%A0%E5%87%BA%E6%8A%BD%E8%B1%A1%E5%87%BA%E6%9D%A5%E7%9A%84%E5%8E%9F%E6%96%99%E5%B7%A5%E5%8E%82"><span class="nav-number">2.3.1.</span> <span class="nav-text">首先，建造出抽象出来的原料工厂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%BA%BD%E7%BA%A6%E5%8E%9F%E6%96%99%E5%B7%A5%E5%8E%82"><span class="nav-number">2.3.2.</span> <span class="nav-text">创建纽约原料工厂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E5%81%9APizza"><span class="nav-number">2.3.3.</span> <span class="nav-text">重做Pizza</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E7%9A%84Pizza"><span class="nav-number">2.3.3.1.</span> <span class="nav-text">抽象的Pizza</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E7%9A%84Pizza"><span class="nav-number">2.3.3.2.</span> <span class="nav-text">具体的Pizza</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pizza%E5%BA%97"><span class="nav-number">2.3.4.</span> <span class="nav-text">Pizza店</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E4%BD%93%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.3.5.</span> <span class="nav-text">总体实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%80%BB-%E5%AE%9A%E4%B9%89%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F-%E7%B1%BB%E5%9B%BE"><span class="nav-number">2.3.6.</span> <span class="nav-text">※ 定义抽象工厂模式+类图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E7%A7%8D%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E7%9A%84%E6%AF%94%E8%BE%83"><span class="nav-number">2.4.</span> <span class="nav-text">三种工厂模式的比较</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82-VS-%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95"><span class="nav-number">2.4.1.</span> <span class="nav-text">抽象工厂 VS 工厂方法</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">装饰者模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99"><span class="nav-number">1.1.</span> <span class="nav-text">开闭原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A4%E8%AF%86%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.2.</span> <span class="nav-text">认识装饰者模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E8%A6%81%E7%82%B9"><span class="nav-number">1.3.</span> <span class="nav-text">一些要点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.4.</span> <span class="nav-text">定义装饰者模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F%E7%9A%84%E7%B1%BB%E5%9B%BE"><span class="nav-number">1.5.</span> <span class="nav-text">装饰者模式的类图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E6%A0%97%E5%AD%90%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.6.</span> <span class="nav-text">一个栗子实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A6%96%E5%85%88%E5%AE%9E%E7%8E%B0%E6%9C%80%E4%B8%8A%E9%9D%A2%E7%9A%84%E6%8A%BD%E8%B1%A1%E7%B1%BBBeverage"><span class="nav-number">1.6.1.</span> <span class="nav-text">首先实现最上面的抽象类Beverage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%84%B6%E5%90%8E%E5%AE%9E%E7%8E%B0%E4%B8%8B%E9%9D%A2%E7%9A%84%E6%8A%BD%E8%B1%A1%E7%B1%BBCondiment"><span class="nav-number">1.6.2.</span> <span class="nav-text">然后实现下面的抽象类Condiment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%99%E9%A5%AE%E6%96%99%E7%9A%84%E4%BB%A3%E7%A0%81%EF%BC%88%E5%85%B7%E4%BD%93%E7%BB%84%E4%BB%B6%EF%BC%88%E8%A2%AB%E8%A3%85%E9%A5%B0%E5%AF%B9%E8%B1%A1%EF%BC%89%EF%BC%89"><span class="nav-number">1.6.3.</span> <span class="nav-text">写饮料的代码（具体组件（被装饰对象））</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%99%E8%B0%83%E6%96%99%E4%BB%A3%E7%A0%81%EF%BC%88%E5%85%B7%E4%BD%93%E8%A3%85%E9%A5%B0%E8%80%85%EF%BC%89"><span class="nav-number">1.6.4.</span> <span class="nav-text">写调料代码（具体装饰者）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.7.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">工厂模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82"><span class="nav-number">2.1.</span> <span class="nav-text">简单工厂</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E6%8A%AB%E8%90%A8%E5%B7%A5%E5%8E%82%EF%BC%9A%E7%94%A8%E4%BA%8E%E5%88%9B%E5%BB%BApizza"><span class="nav-number">2.1.1.</span> <span class="nav-text">建立一个简单披萨工厂：用于创建pizza</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E5%81%9APizzaStore%E7%B1%BB"><span class="nav-number">2.1.2.</span> <span class="nav-text">重做PizzaStore类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%9B%BE"><span class="nav-number">2.1.3.</span> <span class="nav-text">类图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.2.</span> <span class="nav-text">工厂方法模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%99PizzaStore%EF%BC%88%E6%8A%BD%E8%B1%A1%E7%B1%BB%EF%BC%89%E4%BD%BF%E7%94%A8%E7%9A%84%E6%A1%86%E6%9E%B6"><span class="nav-number">2.2.1.</span> <span class="nav-text">给PizzaStore（抽象类）使用的框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%81%E8%AE%B8%E5%AD%90%E7%B1%BB%E5%81%9A%E5%86%B3%E5%AE%9A"><span class="nav-number">2.2.2.</span> <span class="nav-text">允许子类做决定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A3%B0%E6%98%8E%E4%B8%80%E4%B8%AA%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95"><span class="nav-number">2.2.3.</span> <span class="nav-text">声明一个工厂方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E6%A0%97%E5%AD%90"><span class="nav-number">2.2.4.</span> <span class="nav-text">一个栗子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pizza%E6%9C%AC%E8%BA%AB%EF%BC%88%E6%8A%BD%E8%B1%A1%E7%B1%BB%EF%BC%89"><span class="nav-number">2.2.5.</span> <span class="nav-text">Pizza本身（抽象类）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%99%E4%B8%AA%E6%A0%97%E5%AD%90%E7%9A%84%E7%B1%BB%E5%9B%BE"><span class="nav-number">2.2.6.</span> <span class="nav-text">这个栗子的类图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E7%82%B9-%E5%AE%9A%E4%B9%89%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F-%E7%B1%BB%E5%9B%BE%EF%BC%88Factory-Method-Pattern%EF%BC%89"><span class="nav-number">2.2.7.</span> <span class="nav-text">* 重点 * 定义工厂方法模式+类图（Factory Method Pattern）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E4%BE%9D%E8%B5%96%EF%BC%88%E4%BE%9D%E8%B5%96%E5%80%92%E7%BD%AE%E5%8E%9F%E5%88%99%EF%BC%89"><span class="nav-number">2.2.8.</span> <span class="nav-text">对象依赖（依赖倒置原则）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.3.</span> <span class="nav-text">抽象工厂模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A6%96%E5%85%88%EF%BC%8C%E5%BB%BA%E9%80%A0%E5%87%BA%E6%8A%BD%E8%B1%A1%E5%87%BA%E6%9D%A5%E7%9A%84%E5%8E%9F%E6%96%99%E5%B7%A5%E5%8E%82"><span class="nav-number">2.3.1.</span> <span class="nav-text">首先，建造出抽象出来的原料工厂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%BA%BD%E7%BA%A6%E5%8E%9F%E6%96%99%E5%B7%A5%E5%8E%82"><span class="nav-number">2.3.2.</span> <span class="nav-text">创建纽约原料工厂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E5%81%9APizza"><span class="nav-number">2.3.3.</span> <span class="nav-text">重做Pizza</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E7%9A%84Pizza"><span class="nav-number">2.3.3.1.</span> <span class="nav-text">抽象的Pizza</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E7%9A%84Pizza"><span class="nav-number">2.3.3.2.</span> <span class="nav-text">具体的Pizza</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pizza%E5%BA%97"><span class="nav-number">2.3.4.</span> <span class="nav-text">Pizza店</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E4%BD%93%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.3.5.</span> <span class="nav-text">总体实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%80%BB-%E5%AE%9A%E4%B9%89%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F-%E7%B1%BB%E5%9B%BE"><span class="nav-number">2.3.6.</span> <span class="nav-text">※ 定义抽象工厂模式+类图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E7%A7%8D%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E7%9A%84%E6%AF%94%E8%BE%83"><span class="nav-number">2.4.</span> <span class="nav-text">三种工厂模式的比较</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E7%A7%8D%E7%B1%BB%E5%9B%BE%E5%AF%B9%E6%AF%94%E6%80%BB%E7%BB%93"><span class="nav-number">2.4.1.</span> <span class="nav-text">三种类图对比总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82-VS-%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95"><span class="nav-number">2.4.2.</span> <span class="nav-text">抽象工厂 VS 工厂方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%95%E4%BB%B6%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">单件模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E6%A0%97%E5%AD%90-1"><span class="nav-number">3.1.</span> <span class="nav-text">一个栗子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E5%8D%95%E4%BB%B6%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.2.</span> <span class="nav-text">定义单件模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="nav-number">3.2.1.</span> <span class="nav-text">解决办法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#getInstance%E7%9A%84%E6%80%A7%E8%83%BD%E4%B8%8D%E6%98%AF%E5%BE%88%E5%85%B3%E9%94%AE%EF%BC%8C%E5%B0%B1%E4%B8%8D%E7%94%A8%E8%A7%A3%E5%86%B3"><span class="nav-number">3.2.1.1.</span> <span class="nav-text">getInstance的性能不是很关键，就不用解决</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%80%9C%E6%80%A5%E5%88%87%E2%80%9D%E5%88%9B%E5%BB%BA%E5%AE%9E%E4%BE%8B%EF%BC%8C%E8%80%8C%E4%B8%8D%E7%94%A8%E5%BB%B6%E8%BF%9F%E5%AE%9E%E4%BE%8B%E5%8C%96%E7%9A%84%E5%81%9A%E6%B3%95"><span class="nav-number">3.2.1.2.</span> <span class="nav-text">“急切”创建实例，而不用延迟实例化的做法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8C%E9%87%8D%E6%A3%80%E6%9F%A5%E5%8A%A0%E9%94%81"><span class="nav-number">3.2.1.3.</span> <span class="nav-text">双重检查加锁</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E5%B0%81%E8%A3%85%E8%B0%83%E7%94%A8"><span class="nav-number">4.</span> <span class="nav-text">命令模式——封装调用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%91%BD%E4%BB%A4%E5%AF%B9%E8%B1%A1"><span class="nav-number">4.1.</span> <span class="nav-text">第一个命令对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.2.</span> <span class="nav-text">定义命令模式</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -717,7 +832,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -797,13 +912,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">48k</span>
+    <span title="站点总字数">54k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">43 分钟</span>
+    <span title="站点阅读时长">49 分钟</span>
 </div>
 <!--
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
