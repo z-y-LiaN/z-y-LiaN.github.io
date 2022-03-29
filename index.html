@@ -133,7 +133,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">21</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">22</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -143,7 +143,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">18</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">19</span></a>
 
   </li>
         <li class="menu-item menu-item-mubulinks">
@@ -201,6 +201,158 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/28/2022-03-28-%E8%B4%AA%E5%BF%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn2.maocdn.cn/img/2022/01/21/J8U_G9ZTZG4W12DA260Z9.jpg">
+      <meta itemprop="name" content="LiaN">
+      <meta itemprop="description" content="<font color="#000000">别焦虑了，说不定明天就死了呢.</font>">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LiaN">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/03/28/2022-03-28-%E8%B4%AA%E5%BF%83/" class="post-title-link" itemprop="url">贪心</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-03-28 11:17:01" itemprop="dateCreated datePublished" datetime="2022-03-28T11:17:01+08:00">2022-03-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-03-29 19:21:39" itemprop="dateModified" datetime="2022-03-29T19:21:39+08:00">2022-03-29</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%B7%E9%A2%98%E5%BA%9F%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">刷题废物</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="区间问题"><a href="#区间问题" class="headerlink" title="区间问题"></a>区间问题</h1><font color="red">区间问题的贪心一般都是上来先按左端点or右端点排序</font>
+
+<p>然后手动模拟一下贪心，找性质，多找几组样例试试</p>
+<h2 id="AcWing905-区间选点"><a href="#AcWing905-区间选点" class="headerlink" title="AcWing905 区间选点"></a>AcWing905 区间选点</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>给定<strong>N个闭区间</strong>，在数轴上选择尽量少的点，使<strong>每个区间至少包含</strong>一个选出的点，求选择的点的<strong>最小数量</strong></p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p><img src="https://i.bmp.ovh/imgs/2022/03/d297674baef4ce99.png" alt=""></p>
+<ul>
+<li>将每个区间<strong>按右端点</strong>从小到大<font color="red">排序</font></li>
+<li>按照这个顺序从小到大<strong>枚举每个区间</strong><ul>
+<li>对于当前区间，比如首先选择区间①的右端点，区间②、③都<strong>包含</strong>该点，所以直接pass（不在②、③区间选择点），继续往后枚举</li>
+<li>当枚举到区间④时，发现区间①的右端点<strong>不在</strong>区间④内，所以此时<strong>选择</strong>区间④的右端点</li>
+</ul>
+</li>
+</ul>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">100010</span>,INF=<span class="number">2e9</span>;</span><br><span class="line"><span class="keyword">int</span> n,ans;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Range</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> l,r;</span><br><span class="line">	<span class="comment">//重载小于号，按r从小到大排序 </span></span><br><span class="line">	<span class="keyword">bool</span> <span class="keyword">operator</span>&lt; (<span class="keyword">const</span> Range&amp;W)<span class="keyword">const</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> r&lt;W.r;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;range[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++) cin&gt;&gt;range[i].l&gt;&gt;range[i].r;</span><br><span class="line">	<span class="built_in">sort</span>(range,range+n);</span><br><span class="line">	<span class="keyword">int</span> ed=-INF;  <span class="comment">//ed：当前区间右端点，初始化为最小值 </span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(ed&lt;range[i].l)&#123; <span class="comment">//如果前一个区间的右端点＜当前区间的左端点 </span></span><br><span class="line">			ans++;</span><br><span class="line">			ed=range[i].r;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;res&lt;&lt;endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span> ;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<h2 id="AcWing908-最大不相交区间数量"><a href="#AcWing908-最大不相交区间数量" class="headerlink" title="AcWing908 最大不相交区间数量"></a>AcWing908 最大不相交区间数量</h2><h3 id="题意-1"><a href="#题意-1" class="headerlink" title="题意"></a>题意</h3><p>给定<strong>N个闭区间</strong>，在数轴上<strong>选择若干区间</strong>，之间<strong>互不相交</strong>，求可选区间的<strong>最大</strong>数量</p>
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><ul>
+<li><strong>实际上和上题一样</strong>，区间相交 == 这几个区间能被同一个点覆盖 == 就只能从这几个区间中选择一个区间</li>
+</ul>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><ul>
+<li>和上题一模一样</li>
+</ul>
+<h2 id="AcWing906-区间分组"><a href="#AcWing906-区间分组" class="headerlink" title="AcWing906 区间分组"></a>AcWing906 区间分组</h2><h3 id="优先队列"><a href="#优先队列" class="headerlink" title="优先队列"></a>优先队列</h3><ul>
+<li><p>简单的理解，就是一种可以<strong>自动排序</strong>的队列</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line">priority_queue&lt;结构名,vector&lt;结构名&gt;,greater/less&lt;结构名&gt;&gt; 队列名</span><br><span class="line"><span class="comment">// greater代表升序,从小到大; less代表降序,从大到小</span></span><br><span class="line"><span class="comment">//比如小根堆:</span></span><br><span class="line">    priority_queue&lt;<span class="keyword">int</span>,vector&lt;<span class="keyword">int</span>&gt;,greater&lt;<span class="keyword">int</span>&gt;&gt;heap;</span><br><span class="line">heap.<span class="built_in">size</span>();</span><br><span class="line">heap.<span class="built_in">empty</span>();<span class="comment">//heap为空则返回1</span></span><br><span class="line">heap.<span class="built_in">push</span>(k);<span class="comment">//在heap队列中插入k</span></span><br><span class="line">heap.<span class="built_in">pop</span>();<span class="comment">//删除heap队列中的第一个元素,小根堆的话,就是删除最小的那个</span></span><br><span class="line">heap.<span class="built_in">top</span>();<span class="comment">//返回heap队列中的第一个元素,并不删除</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="题意-2"><a href="#题意-2" class="headerlink" title="题意"></a>题意</h3><p>给定<strong>N个闭区间</strong>，将其分组，使得<strong>每组</strong>里面的各个区间<strong>没有交集</strong>，求<strong>最小</strong>分组数量</p>
+<h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><ul>
+<li><p>将所有区间按照<strong>左端点</strong> 从小到大<font color="red">排序</font></p>
+</li>
+<li><p>从前往后处理每个区间</p>
+<ul>
+<li><strong>判断能否将其放到</strong>某个 现有 的组中<code>L[i]＞MAX_r</code>：<strong>==</strong> 判断每一组的<strong>右端点最右</strong>的区间是否跟它<strong>有交集</strong> <ul>
+<li>如果和每一个组都有交集，则开一个新的组，把当前区间放进去</li>
+<li>如果和某一个组无交集，将当前组的<code>MAX_r</code>放进去，并更新<code>MAX_r</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>理解：循环到该区间时，在此之前有很多组，每组里面有很多个不相交的区间，<strong>每个组</strong>里面都有<strong>一个</strong>MAX_r；</p>
+<p><img src="https://s3.bmp.ovh/imgs/2022/03/effb589caed4b102.png" style="zoom: 40%;" /></p>
+<p><img src="https://i.bmp.ovh/imgs/2022/03/6821c2d7023fdd3a.png" style="zoom:40%;" /></p>
+<p><img src="https://s3.bmp.ovh/imgs/2022/03/7e41023452060a5b.png" style="zoom:40%;" /></p>
+</li>
+</ul>
+<h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1e5</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Range</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> l,r;</span><br><span class="line">	<span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> Range&amp;M)<span class="keyword">const</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> l&lt;M.l;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;range[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="keyword">int</span> l,r; </span><br><span class="line">		cin&gt;&gt;range[i].l&gt;&gt;range[i].r;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">sort</span>(range,range+n);</span><br><span class="line">	</span><br><span class="line">	priority_queue&lt;<span class="keyword">int</span>,vector&lt;<span class="keyword">int</span>&gt;,greater&lt;<span class="keyword">int</span>&gt;&gt; heap;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(heap.<span class="built_in">empty</span>()||heap.<span class="built_in">top</span>()&gt;=range[i].l)&#123;<span class="comment">//第一个区间or当前区间左端点小于最小Max_r</span></span><br><span class="line">			heap.<span class="built_in">push</span>(range[i].r);  <span class="comment">//新增一个</span></span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			heap.<span class="built_in">pop</span>();  <span class="comment">//大于最小Max_r，就把堆顶那个最小Max_r弹出，更新为当前区间的r</span></span><br><span class="line">			heap.<span class="built_in">push</span>(range[i].r);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;heap.<span class="built_in">size</span>()&lt;&lt;endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="AcWing907-区间覆盖"><a href="#AcWing907-区间覆盖" class="headerlink" title="AcWing907 区间覆盖"></a>AcWing907 区间覆盖</h2><h3 id="题意-3"><a href="#题意-3" class="headerlink" title="题意"></a>题意</h3><p><strong>N个闭区间</strong>，一个线段区间[s,t] ，选择尽量<strong>少</strong>的区间，将指定<strong>线段区间完全覆盖</strong></p>
+<h3 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h3><ul>
+<li>将所有区间按<strong>左端点从小到大</strong>排序</li>
+<li>从前往后依次枚举每个区间，<ul>
+<li>在所有<strong>能覆盖s</strong>(左端点≤s的情况下)的区间中，选择一个<strong>右端点最大</strong>的区间</li>
+<li>然后，将<strong>s更新</strong>为右端点的最大值</li>
+<li><strong>直到</strong>右端点<strong>大于t</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="Huffman树"><a href="#Huffman树" class="headerlink" title="Huffman树"></a>Huffman树</h1><h2 id="AcWing148-合并果子"><a href="#AcWing148-合并果子" class="headerlink" title="AcWing148 合并果子"></a>AcWing148 合并果子</h2><h3 id="题意-4"><a href="#题意-4" class="headerlink" title="题意"></a>题意</h3><p>N堆果子，每次<strong>任意合并两堆</strong>，每次合并消耗的体积等于这两堆重量之和，求合并完消耗的<strong>最小体力</strong></p>
+<h3 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h3><p>经典huffman模型，每次合并重量最小的两堆</p>
+<h3 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">	<span class="keyword">int</span> n,ans=<span class="number">0</span>;</span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	<span class="comment">//定义小根堆：优先队列，对push进去的元素，会从小到大自动排序 </span></span><br><span class="line">	priority_queue&lt;<span class="keyword">int</span>,vector&lt;<span class="keyword">int</span>&gt;,greater&lt;<span class="keyword">int</span>&gt; &gt;heap;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="keyword">int</span> a;cin&gt;&gt;a;</span><br><span class="line">		heap.<span class="built_in">push</span>(a);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(heap.<span class="built_in">size</span>()&gt;<span class="number">1</span>)&#123;</span><br><span class="line">		<span class="comment">//每次取最小的两个合并 </span></span><br><span class="line">		<span class="keyword">int</span> a=heap.<span class="built_in">top</span>();heap.<span class="built_in">pop</span>();</span><br><span class="line">		<span class="keyword">int</span> b=heap.<span class="built_in">top</span>();heap.<span class="built_in">pop</span>();</span><br><span class="line">		ans+=(a+b);</span><br><span class="line">		<span class="comment">//合并后再push到小根堆中 </span></span><br><span class="line">		heap.<span class="built_in">push</span>(a+b);</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="排序不等式"><a href="#排序不等式" class="headerlink" title="排序不等式"></a>排序不等式</h1><h2 id="AcWing913-排队打水"><a href="#AcWing913-排队打水" class="headerlink" title="AcWing913 排队打水"></a>AcWing913 排队打水</h2><h3 id="题意-5"><a href="#题意-5" class="headerlink" title="题意"></a>题意</h3><p><strong>n个</strong>人排队打水，第i个人装满水的时间是ti，问如何排队使得所有人<strong>等待时间之和最小</strong></p>
+<h3 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h3><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/q6ydhj"><img src="https://s1.ax1x.com/2022/03/29/q6ydhj.png" alt="q6ydhj.png" style="zoom: 50%;" /></a></p>
+<h3 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> ll N=<span class="number">1e5</span>+<span class="number">10</span>;</span><br><span class="line">ll a[N];</span><br><span class="line">ll n,ans;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(ll i=<span class="number">0</span>;i&lt;n;i++) cin&gt;&gt;a[i];</span><br><span class="line">	<span class="built_in">sort</span>(a,a+n);</span><br><span class="line">	<span class="keyword">for</span>(ll i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		ans+=a[i]*(n-i<span class="number">-1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<h2 id="AcWing104-货舱选址"><a href="#AcWing104-货舱选址" class="headerlink" title="AcWing104 货舱选址"></a>AcWing104 货舱选址</h2><h3 id="题意-6"><a href="#题意-6" class="headerlink" title="题意"></a>题意</h3><h3 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h3><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/q6hctK"><img src="https://s1.ax1x.com/2022/03/29/q6hctK.png" alt="q6hctK.png" style="zoom: 33%;" /></a></p>
+<h3 id="代码-6"><a href="#代码-6" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -403,100 +555,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/22/2022-03-22-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn2.maocdn.cn/img/2022/01/21/J8U_G9ZTZG4W12DA260Z9.jpg">
-      <meta itemprop="name" content="LiaN">
-      <meta itemprop="description" content="<font color="#000000">别焦虑了，说不定明天就死了呢.</font>">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="LiaN">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/03/22/2022-03-22-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-title-link" itemprop="url">数据结构</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-03-22 09:55:34 / 修改时间：17:10:31" itemprop="dateCreated datePublished" datetime="2022-03-22T09:55:34+08:00">2022-03-22</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%88%B7%E9%A2%98%E5%BA%9F%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">刷题废物</span></a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li>主要内容<ul>
-<li>链表、栈和队列、kmp、</li>
-</ul>
-</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/03/22/2022-03-22-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/22/2022-03-22-%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -568,6 +626,100 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/03/22/2022-03-22-%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/22/2022-03-22-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn2.maocdn.cn/img/2022/01/21/J8U_G9ZTZG4W12DA260Z9.jpg">
+      <meta itemprop="name" content="LiaN">
+      <meta itemprop="description" content="<font color="#000000">别焦虑了，说不定明天就死了呢.</font>">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LiaN">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/03/22/2022-03-22-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-title-link" itemprop="url">数据结构</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-03-22 09:55:34 / 修改时间：17:10:31" itemprop="dateCreated datePublished" datetime="2022-03-22T09:55:34+08:00">2022-03-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%B7%E9%A2%98%E5%BA%9F%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">刷题废物</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ul>
+<li>主要内容<ul>
+<li>链表、栈和队列、kmp、</li>
+</ul>
+</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/03/22/2022-03-22-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -802,10 +954,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-03-15 16:18:55 / 修改时间：22:27:15" itemprop="dateCreated datePublished" datetime="2022-03-15T16:18:55+08:00">2022-03-15</time>
+              <time title="创建时间：2022-03-15 16:18:55" itemprop="dateCreated datePublished" datetime="2022-03-15T16:18:55+08:00">2022-03-15</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-03-29 15:41:24" itemprop="dateModified" datetime="2022-03-29T15:41:24+08:00">2022-03-29</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -822,14 +980,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.6k</span>
+              <span>4.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>4 分钟</span>
             </span>
 
         </div>
@@ -1069,109 +1227,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/10/2022-03-10-%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E3%80%90%E5%90%88%E8%BE%91%E3%80%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn2.maocdn.cn/img/2022/01/21/J8U_G9ZTZG4W12DA260Z9.jpg">
-      <meta itemprop="name" content="LiaN">
-      <meta itemprop="description" content="<font color="#000000">别焦虑了，说不定明天就死了呢.</font>">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="LiaN">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/03/10/2022-03-10-%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E3%80%90%E5%90%88%E8%BE%91%E3%80%91/" class="post-title-link" itemprop="url">基础算法【合辑】</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-03-10 18:53:25" itemprop="dateCreated datePublished" datetime="2022-03-10T18:53:25+08:00">2022-03-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-19 09:46:25" itemprop="dateModified" datetime="2022-03-19T09:46:25+08:00">2022-03-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%88%B7%E9%A2%98%E5%BA%9F%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">刷题废物</span></a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>9.9k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>9 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li>主要内容<ul>
-<li>二分</li>
-<li>前缀和</li>
-<li>差分 </li>
-<li>双指针</li>
-</ul>
-</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/03/10/2022-03-10-%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E3%80%90%E5%90%88%E8%BE%91%E3%80%91/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1243,7 +1298,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1256,7 +1311,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1323,13 +1378,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">60k</span>
+    <span title="站点总字数">66k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">54 分钟</span>
+    <span title="站点阅读时长">1:01</span>
 </div>
 <!--
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
