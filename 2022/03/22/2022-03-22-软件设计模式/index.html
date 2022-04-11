@@ -22,13 +22,18 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="主要内容 装饰者模式、工厂模式、单件模式、命令模式   参考资料：《HeadFirst设计模式》">
+  <meta name="description" content="主要内容 装饰者模式、工厂模式、单件模式、命令模式 模板方法模式：封装算法 迭代器和组合模式：管理良好的集合   参考资料：《HeadFirst设计模式》">
 <meta property="og:type" content="article">
 <meta property="og:title" content="软件设计模式">
 <meta property="og:url" content="http://example.com/2022/03/22/2022-03-22-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="LiaN">
-<meta property="og:description" content="主要内容 装饰者模式、工厂模式、单件模式、命令模式   参考资料：《HeadFirst设计模式》">
+<meta property="og:description" content="主要内容 装饰者模式、工厂模式、单件模式、命令模式 模板方法模式：封装算法 迭代器和组合模式：管理良好的集合   参考资料：《HeadFirst设计模式》">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/04/11/b073f9f623e28513.png">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/04/11/ac498f3c0a5e6d15.png">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/04/11/ff0a976277f80515.png">
+<meta property="og:image" content="https://s1.boluo.link/2022/04/11/4821dccd837d3a02f4caf03b72c999f7.png">
+<meta property="og:image" content="https://www.hualigs.cn/image/6253e01683f33.jpg">
 <meta property="og:image" content="https://i.bmp.ovh/imgs/2022/03/a0d7fddf8d6a7266.png">
 <meta property="og:image" content="https://i.bmp.ovh/imgs/2022/03/b5619a2a5ba71c61.png">
 <meta property="og:image" content="https://i.bmp.ovh/imgs/2022/03/b5619a2a5ba71c61.png">
@@ -62,12 +67,31 @@
 <meta property="og:image" content="https://i.bmp.ovh/imgs/2022/03/6c4883665ec5904d.png">
 <meta property="og:image" content="https://i.bmp.ovh/imgs/2022/03/ea2903ba5f12223a.png">
 <meta property="og:image" content="https://i.bmp.ovh/imgs/2022/03/06a0ea3bb86ade77.png">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/04/09/bb395cb66de3b8bb.png">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/04/09/9e1722efc57cbd1b.png">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/04/09/1bc81e862f7a5d9d.png">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/04/09/6420977290ad11c0.png">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/04/09/271f71928f6d6291.png">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/04/10/9e3c335e18674026.png">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/04/10/8044cb7679393e81.png">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/04/10/3def41655a370abf.png">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/04/10/742898cea6ea5dda.png">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/04/10/5c5d97f561d6df88.png">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/04/10/42177f8fd9fba002.png">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/04/10/8ac487f1936f16df.png">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/04/10/9e6b14f2808ab76e.png">
+<meta property="og:image" content="https://www.hualigs.cn/image/6252871808d7a.jpg">
+<meta property="og:image" content="https://www.hualigs.cn/image/625289b45186f.jpg">
+<meta property="og:image" content="https://www.hualigs.cn/image/6252e3a06ba5f.jpg">
+<meta property="og:image" content="https://www.hualigs.cn/image/6252e0b66982e.jpg">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/04/11/97377ff0ed4987fb.png">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/04/11/d5e795f6c10a3d81.png">
 <meta property="article:published_time" content="2022-03-22T14:45:34.000Z">
-<meta property="article:modified_time" content="2022-03-26T12:43:42.071Z">
+<meta property="article:modified_time" content="2022-04-11T08:21:32.597Z">
 <meta property="article:author" content="LiaN">
 <meta property="article:tag" content="软件设计模式">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.bmp.ovh/imgs/2022/03/a0d7fddf8d6a7266.png">
+<meta name="twitter:image" content="https://i.bmp.ovh/imgs/2022/04/11/b073f9f623e28513.png">
 
 <link rel="canonical" href="http://example.com/2022/03/22/2022-03-22-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
 
@@ -170,17 +194,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">22</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">24</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">6</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">7</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">19</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">21</span></a>
 
   </li>
         <li class="menu-item menu-item-mubulinks">
@@ -273,7 +297,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-26 20:43:42" itemprop="dateModified" datetime="2022-03-26T20:43:42+08:00">2022-03-26</time>
+                <time title="修改时间：2022-04-11 16:21:32" itemprop="dateModified" datetime="2022-04-11T16:21:32+08:00">2022-04-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -298,14 +322,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>21k</span>
+              <span>28k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>19 分钟</span>
+              <span>25 分钟</span>
             </span>
 
         </div>
@@ -320,12 +344,129 @@
         <ul>
 <li>主要内容<ul>
 <li>装饰者模式、工厂模式、单件模式、命令模式</li>
+<li>模板方法模式：封装算法</li>
+<li>迭代器和组合模式：管理良好的集合</li>
 </ul>
 </li>
 <li>参考资料：《HeadFirst设计模式》</li>
 </ul>
 <span id="more"></span>
-<h1 id="装饰者模式"><a href="#装饰者模式" class="headerlink" title="装饰者模式"></a>装饰者模式</h1><ul>
+<h1 id="设计原则总结"><a href="#设计原则总结" class="headerlink" title="设计原则总结"></a>设计原则总结</h1><h2 id="封装变化"><a href="#封装变化" class="headerlink" title="封装变化"></a>封装变化</h2><p>找出应用中<strong>可能需要变化之处</strong>，把它们<strong>独立</strong>出来，不要和那些不需要变化的代码混在一起</p>
+<p>理解：</p>
+<ul>
+<li>变化的部分：每次有新的需求，会使<strong>某方面代码发生变化</strong></li>
+<li>把这部分变化的<strong>抽取出来</strong></li>
+<li>即：把会变化的部分取出并<strong>封装</strong>起来，以便以后可以轻易地改动或扩充此部分，而不影响不需要变化的其他部分</li>
+<li>效果：代码变化引起的不经意的后果变少，系统变得更有<strong>弹性</strong></li>
+</ul>
+<h2 id="针对接口"><a href="#针对接口" class="headerlink" title="针对接口"></a>针对接口</h2><p><strong>针对接口编程</strong>，而不是针对实现编程</p>
+<p>理解：</p>
+<ul>
+<li>实质就是，针对<strong>超类型编程</strong></li>
+<li>明确地理解：变量的<strong>声明类型是超类型</strong>——抽象类或者接口</li>
+</ul>
+<p>区分</p>
+<ul>
+<li><p>针对实现编程</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Dog d = <span class="keyword">new</span> Dog(); <span class="comment">//Dog是抽象类Animal的具体实现</span></span><br><span class="line">d.bark();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>针对接口、超类型编程</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Animal animal = <span class="keyword">new</span> Dog();</span><br><span class="line">animal.makeSound();  <span class="comment">//多态调用</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//在运行时指定具体实现的对象:</span></span><br><span class="line">a = getAnimal();</span><br><span class="line">a.makeSound();</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="多用组合"><a href="#多用组合" class="headerlink" title="多用组合"></a>多用组合</h2><p><strong>多用组合、少用继承</strong></p>
+<p>理解：</p>
+<ul>
+<li><p>比如在创建ModelDuck这个具体类时，在它的构造器里实例化了FlyBehavior和QuackBehavior这两个类（接口）；这就是使用了组合</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ModelDuck</span> <span class="keyword">extends</span> <span class="title">Duck</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ModelDuck</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        flyBehavior = <span class="keyword">new</span> FlyNoWay();</span><br><span class="line">        quackBehavior = <span class="keyword">new</span> Quack();</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="comment">//其他代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h1><ol>
+<li><p><strong>依赖</strong><br> A类只作为B类中方法的<strong>参数或返回值</strong>，则A类与B类之间存在依赖关系</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">method1</span><span class="params">(A a)</span></span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">method2</span><span class="params">()</span></span>&#123;</span><br><span class="line">        A a;</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;<span class="comment">//B依赖于A</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>关联</strong><br> <strong>A类作为B类的属性</strong>（成员变量），则A类与B类之间存在关联关系</p>
+<ul>
+<li><strong>组合</strong><br><strong>组合关系也属于关联关系</strong>，A类作为B类的属性，并且在<strong>B类中包含了A类的实例化过程</strong>，则A类与B类之间存在组合关系。</li>
+<li>比如C类实例化B类时，B类会在构造方法中对A类进行实例化，A类与B类的产生和灭亡<strong>完全同步</strong>。组合关系下B类中的A属性不可能为null。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span></span>&#123;</span><br><span class="line">    <span class="keyword">new</span> B();</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">B</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">new</span> A;<span class="comment">//构造方法中对A类进行实例化</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>聚合</strong><br><strong>聚合关系属于关联关系</strong>，A类作为B类的属性，但<strong>A类的实例化不是在B类中实现</strong>的，则A类与B类之间存在聚合关系。</li>
+<li>比如在C类中实例化了A类，并将A类对象通过B类对象的set方法或B类的带参数构造器传入B中。聚合关系下B类中的A属性有可能为null。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span></span>&#123;</span><br><span class="line">    <span class="keyword">new</span> A();</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setXX</span><span class="params">(A)</span></span>&#123; XX=A&#125;;<span class="comment">//将A类对象通过B类对象的set方法传入</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">B</span><span class="params">(A)</span></span>&#123;&#125; <span class="comment">//将A类对象通过B类的带参数构造器传入B中</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h1><h2 id="引例"><a href="#引例" class="headerlink" title="引例"></a>引例</h2><p><img src="https://i.bmp.ovh/imgs/2022/04/11/b073f9f623e28513.png" style="zoom:50%;" /></p>
+<p>如上，<strong>使用继承</strong>来提供Duck的行为<strong>存在的缺点</strong>：</p>
+<ul>
+<li><strong>代码</strong>在多个子类中<strong>重复</strong><ul>
+<li>有些子类的有些行为相同</li>
+</ul>
+</li>
+<li>运行时的行为<strong>不容易改变</strong></li>
+<li><strong>很难知道</strong>所有鸭子的全部行为<ul>
+<li>每知道一个都要在父类中添加一个</li>
+</ul>
+</li>
+<li>改变会<strong>牵一发动全身</strong>，造成不想要的改变<ul>
+<li>比如，父类中添加一个fly，所有子类都继承fly，然而并不是所有鸭子都能fly</li>
+</ul>
+</li>
+</ul>
+<p>可见，因为<strong>鸭子的行为在子类中不断地 改变，让所有子类都拥有这些行为是不恰当的</strong></p>
+<hr>
+<p>那么，使用如下的接口呢？</p>
+<p><img src="https://i.bmp.ovh/imgs/2022/04/11/ac498f3c0a5e6d15.png" style="zoom:67%;" /></p>
+<p>使用接口的话，子类的fly和quack中仍有很多重复代码，且<strong>代码无法复用</strong></p>
+<hr>
+<p>因为鸭子的<strong>行为是不断变化的</strong>，根据<strong>封装变化</strong>的原则，可以将鸭子的变化的行为从Duck类中<strong>抽取</strong>出来</p>
+<ul>
+<li>变化的行为：fly（）、quack（）；它们会<strong>随着鸭子的不同而改变</strong></li>
+<li>把这两个行为抽取出来，<strong>建立两个新类各自代表这两个行为</strong></li>
+</ul>
+<p>同时，我们想要在运行时动态地改变某种鸭子的飞行行为，根据针对接口编程的原则：</p>
+<ul>
+<li><strong>每个接口代表每个行为</strong>，Duck类不负责实现接口，而是有<strong>行为类</strong>来实现接口</li>
+</ul>
+<p><img src="https://i.bmp.ovh/imgs/2022/04/11/ff0a976277f80515.png" style="zoom:67%;" /></p>
+<p>这样设计，可以让这些动作被其他对象复用，因为上面<strong>这些东西实际上跟Duck类已经无关。</strong></p>
+<p>也就是说，鸭子现在将fly和quack行为 <strong>委托给别人处理</strong>，而不是使用在Duck类或Duck的子类中的fly和quack</p>
+<h2 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2><p><img src="https://s1.boluo.link/2022/04/11/4821dccd837d3a02f4caf03b72c999f7.png" style="zoom:67%;" /></p>
+<h2 id="策略模式定义"><a href="#策略模式定义" class="headerlink" title="策略模式定义"></a>策略模式定义</h2><p>策略模式定义了<strong>算法族、分别封装</strong>起来，让它们之间可以互相替换，此模式让算法的<strong>变化独立于</strong>算法的<strong>客户</strong></p>
+<p>理解：</p>
+<ul>
+<li>定义了算法族：比如上面的实现FlyBehavior的一组行为类，这就是一个算法族，这个算法族里面的各种行为可以替换</li>
+<li>FlyBehavior的变化和原来的Duck无关，被独立了出来</li>
+</ul>
+<p><img src="https://www.hualigs.cn/image/6253e01683f33.jpg" style="zoom:80%;" /></p>
+<ul>
+<li><strong>Context类：</strong>它是使用算法的角色，它在解决某个问题（即实现某个方法）时可以<strong>采用多种策略</strong>。在Context类中维持一个<strong>对抽象策略类（Strategy）的引用实例</strong>，用于定义所采用的策略。</li>
+<li><strong>Strategy（抽象策略类）：</strong>它为所支持的算法声明了抽象方法，是所有策略类的父类，它可以是抽象类或具体类，也可以是接口。Context类通过抽象策略类中声明的方法 在运行时调用具体策略类中实现的算法。</li>
+<li><strong>ConcreteStrategy（具体策略类）：</strong>它实现了在抽象策略类中声明的算法，在运行时，具体策略类将<strong>覆盖</strong>在Context类中定义的抽象策略类对象，使用一<strong>种具体的算法实现</strong>某个业务处理。</li>
+</ul>
+<p>使用场景：</p>
+<ul>
+<li>有很多相关的类，具有不同的行为</li>
+<li>算法有很多变种</li>
+<li>算法使用的数据无需客户知晓</li>
+<li>对很多行为有很多if-else语句</li>
+</ul>
+<p>好处</p>
+<ul>
+<li>提供一种替代继承的方法</li>
+<li>去掉if-else语句</li>
+<li>同种行为提供不同实现</li>
+</ul>
+<p>缺点</p>
+<ul>
+<li>客户应该知道所有策略</li>
+<li>策略和Context之间的通信开销</li>
+<li>太多策略的类</li>
+</ul>
+<hr>
+<h1 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h1><h1 id="装饰者模式"><a href="#装饰者模式" class="headerlink" title="装饰者模式"></a>装饰者模式</h1><ul>
 <li>不用继承 如何达到复用？<ul>
 <li><strong>组合和委托</strong> 可以在运行时具有继承行为的结果</li>
 <li>利用继承设计子类的行为，是在编译时静态决定的，而且所有子类都会继承到相同的行为。如果利用组合 扩展对象的行为，就可以在运行时动态扩展</li>
@@ -858,6 +999,231 @@
 <p><img src="https://i.bmp.ovh/imgs/2022/03/06a0ea3bb86ade77.png" style="zoom:80%;" /></p>
 </li>
 </ul>
+<h1 id="模板方法模式"><a href="#模板方法模式" class="headerlink" title="模板方法模式"></a>模板方法模式</h1><p><img src="https://i.bmp.ovh/imgs/2022/04/09/bb395cb66de3b8bb.png" style="zoom: 50%;" /></p>
+<h2 id="模板方法定义"><a href="#模板方法定义" class="headerlink" title="模板方法定义"></a>模板方法定义</h2><p><a target="_blank" rel="noopener" href="https://github.com/z-y-LiaN/Software-Design-Pattern/tree/master/Template">课本代码实现总结</a></p>
+<p><strong>模板方法模式</strong> 在一个<strong>方法</strong>中定义一个<font color="red">算法的骨架</font>，而将一些步骤<font color="red">延迟到子类</font>中。模板方法使得子类可以在<strong>不改变算法结构</strong>的情况下，<strong>重新定义</strong>算法中的<strong>某些</strong>步骤</p>
+<p>理解</p>
+<ul>
+<li>所谓模板，本质是个方法，一个用<strong>一组步骤</strong>来定义算法的方法<ul>
+<li>保证由<strong>子类提供算法某一部分的实现</strong>，而算法结构保持不变</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://i.bmp.ovh/imgs/2022/04/09/9e1722efc57cbd1b.png" style="zoom: 43%;" /></p>
+<h2 id="对模板方法进行挂钩"><a href="#对模板方法进行挂钩" class="headerlink" title="对模板方法进行挂钩"></a>对模板方法进行挂钩</h2><p>钩子：声明在<strong>抽象类</strong>中的（具体）方法，<strong>只有空的或者默认</strong>的实现。</p>
+<p>有了钩子，子类可以自主决定要不要覆盖这个钩子，如果不覆盖，抽象类会提供一个默认的实现</p>
+<font color="green">何时使用抽象方法，何时使用钩子：</font>
+
+<ul>
+<li>子类<strong>必须提供</strong>算法中某个方法或步骤的<strong>实现</strong>：抽象方法</li>
+<li>不是必须，而是<strong>可选</strong>的：钩子</li>
+</ul>
+<hr>
+<p>子类必须实现抽象类中的<strong>所有抽象方法</strong></p>
+<h2 id="好莱坞原则"><a href="#好莱坞原则" class="headerlink" title="好莱坞原则"></a>好莱坞原则</h2><h3 id="使用了好莱坞原则的模式："><a href="#使用了好莱坞原则的模式：" class="headerlink" title="使用了好莱坞原则的模式："></a><strong>使用了好莱坞原则的模式：</strong></h3><ul>
+<li>工厂模式</li>
+<li>观察者模式</li>
+<li>模板方法模式</li>
+</ul>
+<hr>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>（高层组件对待低层组件的方式：）<strong>别调用我们，我们会调用你</strong></p>
+<p>允许低层组件将自己挂钩到系统上，但<strong>高层</strong>组件会<strong>决定什么时候和怎样使用</strong>这些低层组件</p>
+<p><img src="https://i.bmp.ovh/imgs/2022/04/09/1bc81e862f7a5d9d.png" style="zoom:50%;" /></p>
+<p>说明：低层组件<strong>并不是 不可以</strong>调用高层组件中的方法。</p>
+<ul>
+<li>事实上，在低层组件结束时，常常会调用从超类继承而来的方法</li>
+<li>我们要做的是，<strong>避免</strong>高低层组件之间有<strong>明显的环状依赖</strong></li>
+</ul>
+<h3 id="好莱坞原则与依赖倒置原则的关系"><a href="#好莱坞原则与依赖倒置原则的关系" class="headerlink" title="好莱坞原则与依赖倒置原则的关系"></a>好莱坞原则与依赖倒置原则的关系</h3><ul>
+<li>依赖倒置原则：避免使用具体类，<strong>多使用抽象</strong></li>
+<li>好莱坞原则：用在<strong>创建框架or组件</strong>上的一种技巧，让<strong>低层组件能够被挂钩进计算</strong>中，而且不会让高层组件依赖低层组件<ul>
+<li>创建一个弹性的设计，允许低层结构能够相互操作，而且又防止其他类太过依赖它们</li>
+</ul>
+</li>
+<li><strong>二者都在解耦，依赖倒置原则更注重于避免依赖</strong></li>
+</ul>
+<h2 id="好莱坞原则与模板方法"><a href="#好莱坞原则与模板方法" class="headerlink" title="好莱坞原则与模板方法"></a>好莱坞原则与模板方法</h2><p><img src="https://i.bmp.ovh/imgs/2022/04/09/6420977290ad11c0.png" style="zoom:50%;" /></p>
+<h2 id="模板方法和策略模式的对比"><a href="#模板方法和策略模式的对比" class="headerlink" title="模板方法和策略模式的对比"></a>模板方法和策略模式的对比</h2><h2 id="模板方法的例题"><a href="#模板方法的例题" class="headerlink" title="模板方法的例题"></a>模板方法的例题</h2><font color="red">关键词：步骤、流程、某些流程不一样</font>
+
+<hr>
+<p>1.对数据库的操作一般包括连接、打开、使用、关闭等<strong>步骤</strong>，在数据库操作模板类中我们定义了connDB（）,openDB（）,useDB()，closeDB（）四个方法分别对应这<strong>四个步骤</strong>，对于不同类型的数据库（如SQLserver和Oracle），<strong>其操作步骤都一致</strong>，只是连接数据库connDB（）方法有所区别，现使用模板方法模式对其进行设计</p>
+<hr>
+<p>2.某软件公司欲为某银行的业务支撑系统开发一个利息计算模块，利息计算<strong>流程</strong>如下：<br>(1) 系统根据账号和密码验证用户信息，如果用户信息错误，系统显示出错提示；（<strong>具体方法）</strong><br>(2) 如果用户信息正确，则根据<strong>用户类型的不同使用不同的利息计算公式</strong>计算利息（如活期账户和定期账户具有不同的利息计算公式）；<strong>（这是个不同的步骤，抽象方法）</strong><br>(3) 系统显示利息。<strong>（具体方法）</strong><br>试使用模板方法模式设计该利息计算模块。</p>
+<p><img src="https://i.bmp.ovh/imgs/2022/04/09/271f71928f6d6291.png" style="zoom: 33%;" /></p>
+<hr>
+<p>3.某软件公司欲为销售管理系统提供一个数据图表显示功能，该功能的实现包括如下<strong>几个步骤</strong>：<br>(1) 从数据源获取数据；<br>(2) 将数据转换为XML格式；<br>(3) 以某种图表方式显示XML格式的数据。<br>该功能支持<strong>多种数据源和多种图表</strong>显示方式，但所<strong>有的图表显示操作都基于XML格式的数据，因此可能需要对数据进行转换</strong>，如果从数据源获取的数据已经是XML数据则无须转换</p>
+<hr>
+<h1 id="迭代器模式"><a href="#迭代器模式" class="headerlink" title="迭代器模式"></a>迭代器模式</h1><p>让客户<strong>遍历</strong>你的对象而无法窥视你存储对象的方式</p>
+<p><img src="https://i.bmp.ovh/imgs/2022/04/10/9e3c335e18674026.png" alt=""></p>
+<p>显然，这两种不同的菜单表现方式会让事情变得复杂化，我们需要实现一个<strong>同时使用这两个菜单</strong>的客户代码 </p>
+<ul>
+<li><p>比如一个waitress类（客户）需要遍历打印菜单中的每一项 printMenu()</p>
+</li>
+<li><p>但是这两份存储菜单项的菜单里所<strong>使用的数据结构不同</strong></p>
+</li>
+<li><p>导致printMenu()要分别遍历每份菜单，比如</p>
+<p><img src="https://i.bmp.ovh/imgs/2022/04/10/8044cb7679393e81.png" style="zoom: 50%;" /></p>
+</li>
+</ul>
+<p>考虑让这两个菜单<strong>实现一个相同的接口</strong>：</p>
+<ul>
+<li><p>可以看到 <strong>发生变化的部分</strong>是不同集合类型所造成的遍历，因此可以<strong>考虑封装遍历</strong></p>
+</li>
+<li><p>因此，创建一个对象：迭代器，利用它来封装“<strong>遍历</strong>集合内的每个对象的过程”</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Iterator iterator = dinerMenu.createIterator();</span><br><span class="line"><span class="keyword">while</span>(iterator.hasNext())&#123;</span><br><span class="line">    MenuItem menuItem = (MenuItem)iterator.next();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>所以，接下来的具体实现是：</p>
+<ul>
+<li>定义一个<strong>迭代器接口</strong>Iterator</li>
+<li>为每个菜单各自定义<strong>实现一个具体的Iterator类</strong>：DinerMenuIterator、PancakeHouseMenuIterator</li>
+<li><p>改写原菜单：<strong>遍历菜单时需要获得它的迭代器</strong>，所以原菜单要有一个createIterator()方法来或许对应的迭代器</p>
+</li>
+<li><p>waitress（客户代码）想要遍历所有菜单里面的所有菜单项，只需要获取到对应的迭代器，利用迭代器的方法遍历就行。</p>
+</li>
+</ul>
+<hr>
+<p><img src="https://i.bmp.ovh/imgs/2022/04/10/3def41655a370abf.png" style="zoom: 50%;" /></p>
+<h2 id="利用Java-util-Iterator来清理"><a href="#利用Java-util-Iterator来清理" class="headerlink" title="利用Java.util.Iterator来清理"></a>利用Java.util.Iterator来清理</h2><ul>
+<li>PancakeHouseMenu：对于ArrayList不需要创建自己的迭代器，直接调用iterator()方法即可</li>
+<li>DinerMenu：写一个具体的迭代器实现Iterator</li>
+<li>让waitress不依赖于具体的DinerMenu和PancakeHouseMenu类：<ul>
+<li>添加一个Menu接口，只有createIterator（）方法</li>
+<li>具体的Menu去实现这个Menu接口类</li>
+<li>这样waitress可以<strong>针对抽象</strong>（Menu）编程，而<strong>不是针对具体编程</strong>，实现解耦</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://i.bmp.ovh/imgs/2022/04/10/742898cea6ea5dda.png" style="zoom: 50%;" /></p>
+<h2 id="定义迭代器模式"><a href="#定义迭代器模式" class="headerlink" title="定义迭代器模式"></a>定义迭代器模式</h2><p>迭代器模式 提供一种方法<strong>顺序访问</strong>每一个聚合对象中的各个元素，而不暴露其内部的表示</p>
+<hr>
+<ul>
+<li>迭代器模式把元素之间游走的责任交给迭代器实现，而不是句合对象。</li>
+<li>使我们能够游走（遍历）聚合内的每一个元素，而又不保留其内部的表示</li>
+</ul>
+<p><img src="https://i.bmp.ovh/imgs/2022/04/10/5c5d97f561d6df88.png" style="zoom: 50%;" /></p>
+<h2 id="单一责任原则"><a href="#单一责任原则" class="headerlink" title="单一责任原则"></a>单一责任原则</h2><p><strong>一个类应该只有一个引起变化的原因</strong></p>
+<hr>
+<p>理解</p>
+<ul>
+<li><p>当我们允许一个类不但要完整自己的事情（管理某种集合），还同时担负起更多的责任（例如遍历）时，我们就给了这个类两个变化的原因：</p>
+<ul>
+<li>集合改变、类随之改变</li>
+<li>遍历方式改变、类随之改变</li>
+</ul>
+<p>比如最初的没有使用迭代器模式的<code>DinerMenu</code>和<code>PancakeHouseMenu</code>；<code>DinerMenu</code>既需要管理存储菜单项的数组，又需要参与到数组遍历中</p>
+</li>
+<li><p><strong>类的每个责任都有改变的潜在区域</strong>，超过一个责任，意味着超过一个改变的区域</p>
+</li>
+</ul>
+<p>内聚：度量一个类或模块紧密地达到单一目的或责任</p>
+<ul>
+<li>具有<strong>高内聚</strong>的模块或类：只支持一组相关的功能</li>
+<li>具有<strong>低内聚</strong>的模块或类：支持一组不相干的功能</li>
+</ul>
+<p><img src="https://i.bmp.ovh/imgs/2022/04/10/42177f8fd9fba002.png" style="zoom:67%;" /></p>
+<p><img src="https://i.bmp.ovh/imgs/2022/04/10/8ac487f1936f16df.png" style="zoom:62%;" /></p>
+<hr>
+<h1 id="组合模式"><a href="#组合模式" class="headerlink" title="组合模式"></a>组合模式</h1><p>基于上面的例子，我们希望在DinerMenu中添加一个甜点的子菜单</p>
+<p><img src="https://i.bmp.ovh/imgs/2022/04/10/9e6b14f2808ab76e.png" style="zoom:50%;" /></p>
+<p>因此，我们需要：</p>
+<ul>
+<li>需要某种<strong>树形结构</strong>，可以容纳菜单、子菜单、菜单项</li>
+<li>需要确定<strong>能够在每个菜单的各个项之间的游走</strong>，而且至少要像现在用迭代器一样方便</li>
+<li>需要<strong>更有弹性</strong>地在菜单项之间游走：可以只遍历甜点菜单，可以遍历餐厅整个菜单</li>
+</ul>
+<h2 id="组合模式定义"><a href="#组合模式定义" class="headerlink" title="组合模式定义"></a>组合模式定义</h2><p>组合模式允许你 将组合对象 <strong>组合成树形结构</strong> 来表现 “整体/部分“层次结构。组合能让客户以<strong>一致的方式</strong>处理<strong>个别</strong>对象以及对象<strong>组合</strong></p>
+<hr>
+<ul>
+<li>组合模式让我们能够用<strong>树形的方式</strong>创建对象的结构，树里面包含了<strong>组合以及个别的对象</strong></li>
+<li>使用组合结构，我们能把<strong>相同的操作</strong>应用在组合和个别对象上；<ul>
+<li>即：大多数情况下，可以<strong>忽略</strong>对象组合和个别对象的<strong>差别</strong></li>
+</ul>
+</li>
+</ul>
+<p><img src="https://www.hualigs.cn/image/6252871808d7a.jpg" style="zoom: 55%;" /></p>
+<h2 id="利用组合设计菜单"><a href="#利用组合设计菜单" class="headerlink" title="利用组合设计菜单"></a>利用组合设计菜单</h2><ul>
+<li>创建一个<strong>组件接口</strong>，作为菜单和菜单项的<strong>共同接口</strong>，这样就能用统一的做法来处理菜单和菜单项。</li>
+</ul>
+<p>  <img src="https://www.hualigs.cn/image/625289b45186f.jpg" style="zoom:67%;" /></p>
+<ul>
+<li>实现菜单组件：MenuComponent<ul>
+<li>它的目的是为叶节点和组合节点提供一个共同的接口</li>
+<li>它的方法要<strong>提供默认的实现</strong>，这样菜单项或菜单不想实现某些方法 就可以不实现</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="状态模式"><a href="#状态模式" class="headerlink" title="状态模式"></a>状态模式</h1><p>针对一种像这种状态机的模型</p>
+<p><img src="https://www.hualigs.cn/image/6252e3a06ba5f.jpg" style="zoom:50%;" /></p>
+<p>我们把每个状态的<strong>行为都放在</strong>各自的<strong>状态类</strong>中，每个状态只要实现它的动作就行</p>
+<p>所以用户施加在糖果机上的<strong>动作</strong>，只需要<strong>委托给代表当前状态的状态对象</strong>就行</p>
+<p><img src="https://www.hualigs.cn/image/6252e0b66982e.jpg" alt=""></p>
+<ul>
+<li>将每个状态的行为局部化到它自己的类中</li>
+<li>将容易产生问题的if语句删除，方便维护</li>
+<li>让每个状态<strong>对修改关闭</strong>，让糖果机<strong>对扩展开放</strong>，因此可以加入新的状态类</li>
+</ul>
+<h2 id="定义状态模式"><a href="#定义状态模式" class="headerlink" title="定义状态模式"></a>定义状态模式</h2><p>状态模式  允许对象在<strong>内部状态改变</strong>时<strong>改变</strong>它的<strong>行为</strong>，对象看起来<strong>好像修改</strong>了它 的<strong>类</strong></p>
+<p>理解：</p>
+<ul>
+<li>将状态<strong>封装成</strong>独立的<strong>类</strong>，并将动作<strong>委托</strong>到代表<strong>当前状态的对象</strong>，行为随着内部状态而改变<ul>
+<li>比如：糖果机处于不同状态，对它执行相同动作，得到的结果可能不同</li>
+</ul>
+</li>
+<li>从客户的视角，如果说你<strong>使用的对象能够改变它的行为</strong>，那你就会觉得，这个对象实际上是从别的类实例化而来的，而实际上是使用<strong>组合</strong>通过简单<strong>引用</strong>不同的 状态对象造成的假象</li>
+</ul>
+<p><img src="https://i.bmp.ovh/imgs/2022/04/11/97377ff0ed4987fb.png" style="zoom:67%;" /></p>
+<h2 id="状态模式和策略模式对比"><a href="#状态模式和策略模式对比" class="headerlink" title="状态模式和策略模式对比"></a>状态模式和策略模式对比</h2><h2 id="一个练习"><a href="#一个练习" class="headerlink" title="一个练习"></a>一个练习</h2><p>信用卡业务系统</p>
+<p>​    Sunny软件公司欲为某银行开发一套信用卡业务系统，银行账户(Account)是该系统的核心类之一，通过分析，Sunny软件公司开发人员发现在该系统中，账户存在<strong>三种状态</strong>，且在不同状态下账户存在不同的行为，具体说明如下：</p>
+<ul>
+<li><p>如果账户中余额大于等于0，则账户的状态为<strong><em>\</em>正常状态(Normal State)**</strong>，此时用户既可以向该账户<strong><em>\</em>存款**</strong>也可以从该账户<strong><em>\</em>取款**</strong>；</p>
+</li>
+<li><p>如果账户中余额小于0，并且大于-2000，则账户的状态为<strong><em>\</em>透支状态(Overdraft State)**</strong>，此时用户既可以向该账户存款也可以从该账户取款，但需要<strong><em>\</em>按天计算利息**</strong>；</p>
+</li>
+<li><p>如果账户中余额等于-2000，那么账户的状态为<strong><em>\</em>受限状态(Restricted State)**</strong>，此时用户只能向该账户存款，不能再从中取款，同时也将按天计算利息；</p>
+</li>
+</ul>
+<p>根据余额的不同，以上<strong><em>\</em>三种状态可发生相互转换**</strong>。</p>
+<p><img src="https://i.bmp.ovh/imgs/2022/04/11/d5e795f6c10a3d81.png" alt=""></p>
+<p>stateCheck()用于在每一次执行存款和取款操作后<strong>根据余额来判断是否要进行状态转换并实现状态转换</strong>，相同的方法在不同的状态中可能会有不同的实现。</p>
+<p>上面的例子通过<strong>具体状态类来实现状态的转换</strong>，在每一个具体状态类中都包含一个stateCheck()方法，在该方法内部实现状态的转换。</p>
+<p>除此之外，我们还可以通过<strong>Context类来实现状态转换</strong>，Context类作为一个状态管理器，统一实现各种状态之间的转换操作</p>
+<hr>
+<h2 id="多个Context类共享-状态"><a href="#多个Context类共享-状态" class="headerlink" title="多个Context类共享 状态"></a>多个Context类共享 状态</h2><p>在有些情况下，<strong>多个</strong>Context可能需要<strong>共享同一个状态</strong></p>
+<ul>
+<li>如果希望在系统中实现多个Context共享一个或多个状态对象</li>
+<li>则可以<strong>将这些State定义为Context的静态成员对象</strong>。</li>
+</ul>
+<hr>
+<p>关于为什么定义为静态成员对象：</p>
+<ul>
+<li><p>属于类，独立于对象，即使未创建对象，也可以通过类调用静态的属性和方法</p>
+</li>
+<li><p>由于static成员<strong>为所有实例对象所共享</strong>，当业务需求出现<strong>某个成员需要被所有实例对象所需要</strong>时，应将其设为static，<strong>当类的任何对象访问它时，存取到的都是相同的值</strong></p>
+<ul>
+<li>某个成员：可以对应某个状态</li>
+<li>被所有实例对象所需要：这个状态被多个Context共享</li>
+</ul>
+</li>
+<li><p>static变量只会在类加载时被分配一次且一次空间，而实例对象会在每次创建新对象时都会为其分配一次新的空间</p>
+</li>
+</ul>
+<ul>
+<li><p><strong>static成员可以通过类名访问，也可以通过对象名访问</strong></p>
+</li>
+<li><p>static方法中只允许访问static属性或方法，不允许访问非static成员（因为非static成员在初次类加载时并未初始化）</p>
+</li>
+</ul>
+<hr>
+<p>例如：如果某系统要求两个开关对象（Context）要么<strong>都</strong>处于开的状态，要么都处于关的状态，在使用时它们的状态必须保持一致，开关可以由开转换到关，也可以由关转换到开。</p>
+<p>分析：</p>
+<ul>
+<li>两个开关对象——两个Context</li>
+<li>都处于开，都处于关——共享开状态和共享关状态</li>
+<li>因此，需要把这两个state定义为context的静态成员对象</li>
+</ul>
+<hr>
 
     </div>
 
@@ -959,7 +1325,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">装饰者模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99"><span class="nav-number">1.1.</span> <span class="nav-text">开闭原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A4%E8%AF%86%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.2.</span> <span class="nav-text">认识装饰者模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E8%A6%81%E7%82%B9"><span class="nav-number">1.3.</span> <span class="nav-text">一些要点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.4.</span> <span class="nav-text">定义装饰者模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F%E7%9A%84%E7%B1%BB%E5%9B%BE"><span class="nav-number">1.5.</span> <span class="nav-text">装饰者模式的类图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E6%A0%97%E5%AD%90%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.6.</span> <span class="nav-text">一个栗子实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A6%96%E5%85%88%E5%AE%9E%E7%8E%B0%E6%9C%80%E4%B8%8A%E9%9D%A2%E7%9A%84%E6%8A%BD%E8%B1%A1%E7%B1%BBBeverage"><span class="nav-number">1.6.1.</span> <span class="nav-text">首先实现最上面的抽象类Beverage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%84%B6%E5%90%8E%E5%AE%9E%E7%8E%B0%E4%B8%8B%E9%9D%A2%E7%9A%84%E6%8A%BD%E8%B1%A1%E7%B1%BBCondiment"><span class="nav-number">1.6.2.</span> <span class="nav-text">然后实现下面的抽象类Condiment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%99%E9%A5%AE%E6%96%99%E7%9A%84%E4%BB%A3%E7%A0%81%EF%BC%88%E5%85%B7%E4%BD%93%E7%BB%84%E4%BB%B6%EF%BC%88%E8%A2%AB%E8%A3%85%E9%A5%B0%E5%AF%B9%E8%B1%A1%EF%BC%89%EF%BC%89"><span class="nav-number">1.6.3.</span> <span class="nav-text">写饮料的代码（具体组件（被装饰对象））</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%99%E8%B0%83%E6%96%99%E4%BB%A3%E7%A0%81%EF%BC%88%E5%85%B7%E4%BD%93%E8%A3%85%E9%A5%B0%E8%80%85%EF%BC%89"><span class="nav-number">1.6.4.</span> <span class="nav-text">写调料代码（具体装饰者）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.7.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.</span> <span class="nav-text">工厂模式——创建对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82"><span class="nav-number">2.1.</span> <span class="nav-text">简单工厂</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E6%8A%AB%E8%90%A8%E5%B7%A5%E5%8E%82%EF%BC%9A%E7%94%A8%E4%BA%8E%E5%88%9B%E5%BB%BApizza"><span class="nav-number">2.1.1.</span> <span class="nav-text">建立一个简单披萨工厂：用于创建pizza</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E5%81%9APizzaStore%E7%B1%BB"><span class="nav-number">2.1.2.</span> <span class="nav-text">重做PizzaStore类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%9B%BE"><span class="nav-number">2.1.3.</span> <span class="nav-text">类图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.2.</span> <span class="nav-text">工厂方法模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%99PizzaStore%EF%BC%88%E6%8A%BD%E8%B1%A1%E7%B1%BB%EF%BC%89%E4%BD%BF%E7%94%A8%E7%9A%84%E6%A1%86%E6%9E%B6"><span class="nav-number">2.2.1.</span> <span class="nav-text">给PizzaStore（抽象类）使用的框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%81%E8%AE%B8%E5%AD%90%E7%B1%BB%E5%81%9A%E5%86%B3%E5%AE%9A"><span class="nav-number">2.2.2.</span> <span class="nav-text">允许子类做决定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A3%B0%E6%98%8E%E4%B8%80%E4%B8%AA%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95"><span class="nav-number">2.2.3.</span> <span class="nav-text">声明一个工厂方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E6%A0%97%E5%AD%90"><span class="nav-number">2.2.4.</span> <span class="nav-text">一个栗子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pizza%E6%9C%AC%E8%BA%AB%EF%BC%88%E6%8A%BD%E8%B1%A1%E7%B1%BB%EF%BC%89"><span class="nav-number">2.2.5.</span> <span class="nav-text">Pizza本身（抽象类）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%99%E4%B8%AA%E6%A0%97%E5%AD%90%E7%9A%84%E7%B1%BB%E5%9B%BE"><span class="nav-number">2.2.6.</span> <span class="nav-text">这个栗子的类图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E7%82%B9-%E5%AE%9A%E4%B9%89%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F-%E7%B1%BB%E5%9B%BE%EF%BC%88Factory-Method-Pattern%EF%BC%89"><span class="nav-number">2.2.7.</span> <span class="nav-text">* 重点 * 定义工厂方法模式+类图（Factory Method Pattern）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E4%BE%9D%E8%B5%96%EF%BC%88%E4%BE%9D%E8%B5%96%E5%80%92%E7%BD%AE%E5%8E%9F%E5%88%99%EF%BC%89"><span class="nav-number">2.2.8.</span> <span class="nav-text">对象依赖（依赖倒置原则）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.3.</span> <span class="nav-text">抽象工厂模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A6%96%E5%85%88%EF%BC%8C%E5%BB%BA%E9%80%A0%E5%87%BA%E6%8A%BD%E8%B1%A1%E5%87%BA%E6%9D%A5%E7%9A%84%E5%8E%9F%E6%96%99%E5%B7%A5%E5%8E%82"><span class="nav-number">2.3.1.</span> <span class="nav-text">首先，建造出抽象出来的原料工厂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%BA%BD%E7%BA%A6%E5%8E%9F%E6%96%99%E5%B7%A5%E5%8E%82"><span class="nav-number">2.3.2.</span> <span class="nav-text">创建纽约原料工厂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E5%81%9APizza"><span class="nav-number">2.3.3.</span> <span class="nav-text">重做Pizza</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E7%9A%84Pizza"><span class="nav-number">2.3.3.1.</span> <span class="nav-text">抽象的Pizza</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E7%9A%84Pizza"><span class="nav-number">2.3.3.2.</span> <span class="nav-text">具体的Pizza</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pizza%E5%BA%97"><span class="nav-number">2.3.4.</span> <span class="nav-text">Pizza店</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E4%BD%93%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.3.5.</span> <span class="nav-text">总体实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%80%BB-%E5%AE%9A%E4%B9%89%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F-%E7%B1%BB%E5%9B%BE"><span class="nav-number">2.3.6.</span> <span class="nav-text">※ 定义抽象工厂模式+类图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E7%A7%8D%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E7%9A%84%E6%AF%94%E8%BE%83"><span class="nav-number">2.4.</span> <span class="nav-text">三种工厂模式的比较</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E7%A7%8D%E7%B1%BB%E5%9B%BE%E5%AF%B9%E6%AF%94%E6%80%BB%E7%BB%93"><span class="nav-number">2.4.1.</span> <span class="nav-text">三种类图对比总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82-VS-%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95"><span class="nav-number">2.4.2.</span> <span class="nav-text">抽象工厂 VS 工厂方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%95%E4%BB%B6%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">单件模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E6%A0%97%E5%AD%90-1"><span class="nav-number">3.1.</span> <span class="nav-text">一个栗子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E5%8D%95%E4%BB%B6%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.2.</span> <span class="nav-text">定义单件模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="nav-number">3.2.1.</span> <span class="nav-text">解决办法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#getInstance%E7%9A%84%E6%80%A7%E8%83%BD%E4%B8%8D%E6%98%AF%E5%BE%88%E5%85%B3%E9%94%AE%EF%BC%8C%E5%B0%B1%E4%B8%8D%E7%94%A8%E8%A7%A3%E5%86%B3"><span class="nav-number">3.2.1.1.</span> <span class="nav-text">getInstance的性能不是很关键，就不用解决</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%80%9C%E6%80%A5%E5%88%87%E2%80%9D%E5%88%9B%E5%BB%BA%E5%AE%9E%E4%BE%8B%EF%BC%8C%E8%80%8C%E4%B8%8D%E7%94%A8%E5%BB%B6%E8%BF%9F%E5%AE%9E%E4%BE%8B%E5%8C%96%E7%9A%84%E5%81%9A%E6%B3%95"><span class="nav-number">3.2.1.2.</span> <span class="nav-text">“急切”创建实例，而不用延迟实例化的做法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8C%E9%87%8D%E6%A3%80%E6%9F%A5%E5%8A%A0%E9%94%81"><span class="nav-number">3.2.1.3.</span> <span class="nav-text">双重检查加锁</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E5%B0%81%E8%A3%85%E8%B0%83%E7%94%A8"><span class="nav-number">4.</span> <span class="nav-text">命令模式——封装调用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E6%AD%A5%E7%90%86%E8%A7%A3"><span class="nav-number">4.1.</span> <span class="nav-text">初步理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%91%BD%E4%BB%A4%E5%AF%B9%E8%B1%A1"><span class="nav-number">4.2.</span> <span class="nav-text">第一个命令对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.3.</span> <span class="nav-text">定义命令模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%86%E5%91%BD%E4%BB%A4%E6%8C%87%E5%AE%9A%E5%88%B0%E6%8F%92%E6%A7%BD"><span class="nav-number">4.3.1.</span> <span class="nav-text">将命令指定到插槽</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E5%91%BD%E4%BB%A4"><span class="nav-number">4.3.2.</span> <span class="nav-text">实现命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95"><span class="nav-number">4.3.3.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%9B%BE-1"><span class="nav-number">4.3.4.</span> <span class="nav-text">类图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%92%A4%E9%94%80"><span class="nav-number">4.4.</span> <span class="nav-text">实现撤销</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E7%8A%B6%E6%80%81%E5%AE%9E%E7%8E%B0%E6%92%A4%E9%94%80"><span class="nav-number">4.5.</span> <span class="nav-text">使用状态实现撤销</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%AE%8F%E5%91%BD%E4%BB%A4"><span class="nav-number">4.5.1.</span> <span class="nav-text">使用宏命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F%E7%9A%84%E6%9B%B4%E5%A4%9A%E7%94%A8%E9%80%94%EF%BC%9A%E9%98%9F%E5%88%97%E8%AF%B7%E6%B1%82"><span class="nav-number">4.6.</span> <span class="nav-text">命令模式的更多用途：队列请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F%E7%9A%84%E6%9B%B4%E5%A4%9A%E7%94%A8%E9%80%94%EF%BC%9A%E6%97%A5%E5%BF%97%E8%AF%B7%E6%B1%82"><span class="nav-number">4.7.</span> <span class="nav-text">命令模式的更多用途：日志请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93-1"><span class="nav-number">4.8.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F%E4%B8%8E%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F"><span class="nav-number">5.</span> <span class="nav-text">适配器模式与外观模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%AB%E7%9D%80%E9%B8%AD%E5%AD%90%E7%9A%AE%E7%9A%84%E7%81%AB%E9%B8%A1"><span class="nav-number">5.1.</span> <span class="nav-text">披着鸭子皮的火鸡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F%E8%A7%A3%E6%9E%90"><span class="nav-number">5.2.</span> <span class="nav-text">适配器模式解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F-%E7%B1%BB%E5%9B%BE"><span class="nav-number">5.3.</span> <span class="nav-text">定义适配器模式+类图</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99%E6%80%BB%E7%BB%93"><span class="nav-number">1.</span> <span class="nav-text">设计原则总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%81%E8%A3%85%E5%8F%98%E5%8C%96"><span class="nav-number">1.1.</span> <span class="nav-text">封装变化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%92%88%E5%AF%B9%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.2.</span> <span class="nav-text">针对接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E7%94%A8%E7%BB%84%E5%90%88"><span class="nav-number">1.3.</span> <span class="nav-text">多用组合</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86"><span class="nav-number">2.</span> <span class="nav-text">预备知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">策略模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E4%BE%8B"><span class="nav-number">3.1.</span> <span class="nav-text">引例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0"><span class="nav-number">3.2.</span> <span class="nav-text">具体实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F%E5%AE%9A%E4%B9%89"><span class="nav-number">3.3.</span> <span class="nav-text">策略模式定义</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.</span> <span class="nav-text">观察者模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F"><span class="nav-number">5.</span> <span class="nav-text">装饰者模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99"><span class="nav-number">5.1.</span> <span class="nav-text">开闭原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A4%E8%AF%86%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F"><span class="nav-number">5.2.</span> <span class="nav-text">认识装饰者模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E8%A6%81%E7%82%B9"><span class="nav-number">5.3.</span> <span class="nav-text">一些要点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F"><span class="nav-number">5.4.</span> <span class="nav-text">定义装饰者模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F%E7%9A%84%E7%B1%BB%E5%9B%BE"><span class="nav-number">5.5.</span> <span class="nav-text">装饰者模式的类图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E6%A0%97%E5%AD%90%E5%AE%9E%E7%8E%B0"><span class="nav-number">5.6.</span> <span class="nav-text">一个栗子实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A6%96%E5%85%88%E5%AE%9E%E7%8E%B0%E6%9C%80%E4%B8%8A%E9%9D%A2%E7%9A%84%E6%8A%BD%E8%B1%A1%E7%B1%BBBeverage"><span class="nav-number">5.6.1.</span> <span class="nav-text">首先实现最上面的抽象类Beverage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%84%B6%E5%90%8E%E5%AE%9E%E7%8E%B0%E4%B8%8B%E9%9D%A2%E7%9A%84%E6%8A%BD%E8%B1%A1%E7%B1%BBCondiment"><span class="nav-number">5.6.2.</span> <span class="nav-text">然后实现下面的抽象类Condiment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%99%E9%A5%AE%E6%96%99%E7%9A%84%E4%BB%A3%E7%A0%81%EF%BC%88%E5%85%B7%E4%BD%93%E7%BB%84%E4%BB%B6%EF%BC%88%E8%A2%AB%E8%A3%85%E9%A5%B0%E5%AF%B9%E8%B1%A1%EF%BC%89%EF%BC%89"><span class="nav-number">5.6.3.</span> <span class="nav-text">写饮料的代码（具体组件（被装饰对象））</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%99%E8%B0%83%E6%96%99%E4%BB%A3%E7%A0%81%EF%BC%88%E5%85%B7%E4%BD%93%E8%A3%85%E9%A5%B0%E8%80%85%EF%BC%89"><span class="nav-number">5.6.4.</span> <span class="nav-text">写调料代码（具体装饰者）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">5.7.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1"><span class="nav-number">6.</span> <span class="nav-text">工厂模式——创建对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82"><span class="nav-number">6.1.</span> <span class="nav-text">简单工厂</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E6%8A%AB%E8%90%A8%E5%B7%A5%E5%8E%82%EF%BC%9A%E7%94%A8%E4%BA%8E%E5%88%9B%E5%BB%BApizza"><span class="nav-number">6.1.1.</span> <span class="nav-text">建立一个简单披萨工厂：用于创建pizza</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E5%81%9APizzaStore%E7%B1%BB"><span class="nav-number">6.1.2.</span> <span class="nav-text">重做PizzaStore类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%9B%BE"><span class="nav-number">6.1.3.</span> <span class="nav-text">类图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F"><span class="nav-number">6.2.</span> <span class="nav-text">工厂方法模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%99PizzaStore%EF%BC%88%E6%8A%BD%E8%B1%A1%E7%B1%BB%EF%BC%89%E4%BD%BF%E7%94%A8%E7%9A%84%E6%A1%86%E6%9E%B6"><span class="nav-number">6.2.1.</span> <span class="nav-text">给PizzaStore（抽象类）使用的框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%81%E8%AE%B8%E5%AD%90%E7%B1%BB%E5%81%9A%E5%86%B3%E5%AE%9A"><span class="nav-number">6.2.2.</span> <span class="nav-text">允许子类做决定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A3%B0%E6%98%8E%E4%B8%80%E4%B8%AA%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95"><span class="nav-number">6.2.3.</span> <span class="nav-text">声明一个工厂方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E6%A0%97%E5%AD%90"><span class="nav-number">6.2.4.</span> <span class="nav-text">一个栗子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pizza%E6%9C%AC%E8%BA%AB%EF%BC%88%E6%8A%BD%E8%B1%A1%E7%B1%BB%EF%BC%89"><span class="nav-number">6.2.5.</span> <span class="nav-text">Pizza本身（抽象类）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%99%E4%B8%AA%E6%A0%97%E5%AD%90%E7%9A%84%E7%B1%BB%E5%9B%BE"><span class="nav-number">6.2.6.</span> <span class="nav-text">这个栗子的类图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E7%82%B9-%E5%AE%9A%E4%B9%89%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F-%E7%B1%BB%E5%9B%BE%EF%BC%88Factory-Method-Pattern%EF%BC%89"><span class="nav-number">6.2.7.</span> <span class="nav-text">* 重点 * 定义工厂方法模式+类图（Factory Method Pattern）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E4%BE%9D%E8%B5%96%EF%BC%88%E4%BE%9D%E8%B5%96%E5%80%92%E7%BD%AE%E5%8E%9F%E5%88%99%EF%BC%89"><span class="nav-number">6.2.8.</span> <span class="nav-text">对象依赖（依赖倒置原则）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F"><span class="nav-number">6.3.</span> <span class="nav-text">抽象工厂模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A6%96%E5%85%88%EF%BC%8C%E5%BB%BA%E9%80%A0%E5%87%BA%E6%8A%BD%E8%B1%A1%E5%87%BA%E6%9D%A5%E7%9A%84%E5%8E%9F%E6%96%99%E5%B7%A5%E5%8E%82"><span class="nav-number">6.3.1.</span> <span class="nav-text">首先，建造出抽象出来的原料工厂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%BA%BD%E7%BA%A6%E5%8E%9F%E6%96%99%E5%B7%A5%E5%8E%82"><span class="nav-number">6.3.2.</span> <span class="nav-text">创建纽约原料工厂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E5%81%9APizza"><span class="nav-number">6.3.3.</span> <span class="nav-text">重做Pizza</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E7%9A%84Pizza"><span class="nav-number">6.3.3.1.</span> <span class="nav-text">抽象的Pizza</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E7%9A%84Pizza"><span class="nav-number">6.3.3.2.</span> <span class="nav-text">具体的Pizza</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pizza%E5%BA%97"><span class="nav-number">6.3.4.</span> <span class="nav-text">Pizza店</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E4%BD%93%E5%AE%9E%E7%8E%B0"><span class="nav-number">6.3.5.</span> <span class="nav-text">总体实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%80%BB-%E5%AE%9A%E4%B9%89%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F-%E7%B1%BB%E5%9B%BE"><span class="nav-number">6.3.6.</span> <span class="nav-text">※ 定义抽象工厂模式+类图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E7%A7%8D%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E7%9A%84%E6%AF%94%E8%BE%83"><span class="nav-number">6.4.</span> <span class="nav-text">三种工厂模式的比较</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E7%A7%8D%E7%B1%BB%E5%9B%BE%E5%AF%B9%E6%AF%94%E6%80%BB%E7%BB%93"><span class="nav-number">6.4.1.</span> <span class="nav-text">三种类图对比总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82-VS-%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95"><span class="nav-number">6.4.2.</span> <span class="nav-text">抽象工厂 VS 工厂方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%95%E4%BB%B6%E6%A8%A1%E5%BC%8F"><span class="nav-number">7.</span> <span class="nav-text">单件模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E6%A0%97%E5%AD%90-1"><span class="nav-number">7.1.</span> <span class="nav-text">一个栗子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E5%8D%95%E4%BB%B6%E6%A8%A1%E5%BC%8F"><span class="nav-number">7.2.</span> <span class="nav-text">定义单件模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="nav-number">7.2.1.</span> <span class="nav-text">解决办法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#getInstance%E7%9A%84%E6%80%A7%E8%83%BD%E4%B8%8D%E6%98%AF%E5%BE%88%E5%85%B3%E9%94%AE%EF%BC%8C%E5%B0%B1%E4%B8%8D%E7%94%A8%E8%A7%A3%E5%86%B3"><span class="nav-number">7.2.1.1.</span> <span class="nav-text">getInstance的性能不是很关键，就不用解决</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%80%9C%E6%80%A5%E5%88%87%E2%80%9D%E5%88%9B%E5%BB%BA%E5%AE%9E%E4%BE%8B%EF%BC%8C%E8%80%8C%E4%B8%8D%E7%94%A8%E5%BB%B6%E8%BF%9F%E5%AE%9E%E4%BE%8B%E5%8C%96%E7%9A%84%E5%81%9A%E6%B3%95"><span class="nav-number">7.2.1.2.</span> <span class="nav-text">“急切”创建实例，而不用延迟实例化的做法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8C%E9%87%8D%E6%A3%80%E6%9F%A5%E5%8A%A0%E9%94%81"><span class="nav-number">7.2.1.3.</span> <span class="nav-text">双重检查加锁</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E5%B0%81%E8%A3%85%E8%B0%83%E7%94%A8"><span class="nav-number">8.</span> <span class="nav-text">命令模式——封装调用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E6%AD%A5%E7%90%86%E8%A7%A3"><span class="nav-number">8.1.</span> <span class="nav-text">初步理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%91%BD%E4%BB%A4%E5%AF%B9%E8%B1%A1"><span class="nav-number">8.2.</span> <span class="nav-text">第一个命令对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F"><span class="nav-number">8.3.</span> <span class="nav-text">定义命令模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%86%E5%91%BD%E4%BB%A4%E6%8C%87%E5%AE%9A%E5%88%B0%E6%8F%92%E6%A7%BD"><span class="nav-number">8.3.1.</span> <span class="nav-text">将命令指定到插槽</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E5%91%BD%E4%BB%A4"><span class="nav-number">8.3.2.</span> <span class="nav-text">实现命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95"><span class="nav-number">8.3.3.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%9B%BE-1"><span class="nav-number">8.3.4.</span> <span class="nav-text">类图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%92%A4%E9%94%80"><span class="nav-number">8.4.</span> <span class="nav-text">实现撤销</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E7%8A%B6%E6%80%81%E5%AE%9E%E7%8E%B0%E6%92%A4%E9%94%80"><span class="nav-number">8.5.</span> <span class="nav-text">使用状态实现撤销</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%AE%8F%E5%91%BD%E4%BB%A4"><span class="nav-number">8.5.1.</span> <span class="nav-text">使用宏命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F%E7%9A%84%E6%9B%B4%E5%A4%9A%E7%94%A8%E9%80%94%EF%BC%9A%E9%98%9F%E5%88%97%E8%AF%B7%E6%B1%82"><span class="nav-number">8.6.</span> <span class="nav-text">命令模式的更多用途：队列请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F%E7%9A%84%E6%9B%B4%E5%A4%9A%E7%94%A8%E9%80%94%EF%BC%9A%E6%97%A5%E5%BF%97%E8%AF%B7%E6%B1%82"><span class="nav-number">8.7.</span> <span class="nav-text">命令模式的更多用途：日志请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93-1"><span class="nav-number">8.8.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F%E4%B8%8E%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F"><span class="nav-number">9.</span> <span class="nav-text">适配器模式与外观模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%AB%E7%9D%80%E9%B8%AD%E5%AD%90%E7%9A%AE%E7%9A%84%E7%81%AB%E9%B8%A1"><span class="nav-number">9.1.</span> <span class="nav-text">披着鸭子皮的火鸡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F%E8%A7%A3%E6%9E%90"><span class="nav-number">9.2.</span> <span class="nav-text">适配器模式解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F-%E7%B1%BB%E5%9B%BE"><span class="nav-number">9.3.</span> <span class="nav-text">定义适配器模式+类图</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F"><span class="nav-number">10.</span> <span class="nav-text">模板方法模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E5%AE%9A%E4%B9%89"><span class="nav-number">10.1.</span> <span class="nav-text">模板方法定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E8%BF%9B%E8%A1%8C%E6%8C%82%E9%92%A9"><span class="nav-number">10.2.</span> <span class="nav-text">对模板方法进行挂钩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A5%BD%E8%8E%B1%E5%9D%9E%E5%8E%9F%E5%88%99"><span class="nav-number">10.3.</span> <span class="nav-text">好莱坞原则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E4%BA%86%E5%A5%BD%E8%8E%B1%E5%9D%9E%E5%8E%9F%E5%88%99%E7%9A%84%E6%A8%A1%E5%BC%8F%EF%BC%9A"><span class="nav-number">10.3.1.</span> <span class="nav-text">使用了好莱坞原则的模式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">10.3.2.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A5%BD%E8%8E%B1%E5%9D%9E%E5%8E%9F%E5%88%99%E4%B8%8E%E4%BE%9D%E8%B5%96%E5%80%92%E7%BD%AE%E5%8E%9F%E5%88%99%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">10.3.3.</span> <span class="nav-text">好莱坞原则与依赖倒置原则的关系</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A5%BD%E8%8E%B1%E5%9D%9E%E5%8E%9F%E5%88%99%E4%B8%8E%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95"><span class="nav-number">10.4.</span> <span class="nav-text">好莱坞原则与模板方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E5%92%8C%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%AF%B9%E6%AF%94"><span class="nav-number">10.5.</span> <span class="nav-text">模板方法和策略模式的对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E7%9A%84%E4%BE%8B%E9%A2%98"><span class="nav-number">10.6.</span> <span class="nav-text">模板方法的例题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F"><span class="nav-number">11.</span> <span class="nav-text">迭代器模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A9%E7%94%A8Java-util-Iterator%E6%9D%A5%E6%B8%85%E7%90%86"><span class="nav-number">11.1.</span> <span class="nav-text">利用Java.util.Iterator来清理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F"><span class="nav-number">11.2.</span> <span class="nav-text">定义迭代器模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E4%B8%80%E8%B4%A3%E4%BB%BB%E5%8E%9F%E5%88%99"><span class="nav-number">11.3.</span> <span class="nav-text">单一责任原则</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F"><span class="nav-number">12.</span> <span class="nav-text">组合模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F%E5%AE%9A%E4%B9%89"><span class="nav-number">12.1.</span> <span class="nav-text">组合模式定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A9%E7%94%A8%E7%BB%84%E5%90%88%E8%AE%BE%E8%AE%A1%E8%8F%9C%E5%8D%95"><span class="nav-number">12.2.</span> <span class="nav-text">利用组合设计菜单</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F"><span class="nav-number">13.</span> <span class="nav-text">状态模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F"><span class="nav-number">13.1.</span> <span class="nav-text">定义状态模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F%E5%92%8C%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F%E5%AF%B9%E6%AF%94"><span class="nav-number">13.2.</span> <span class="nav-text">状态模式和策略模式对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E7%BB%83%E4%B9%A0"><span class="nav-number">13.3.</span> <span class="nav-text">一个练习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E4%B8%AAContext%E7%B1%BB%E5%85%B1%E4%BA%AB-%E7%8A%B6%E6%80%81"><span class="nav-number">13.4.</span> <span class="nav-text">多个Context类共享 状态</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -975,20 +1341,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">24</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1055,13 +1421,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">106k</span>
+    <span title="站点总字数">119k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:36</span>
+    <span title="站点阅读时长">1:49</span>
 </div>
 <!--
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
