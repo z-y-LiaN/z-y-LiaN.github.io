@@ -1163,7 +1163,7 @@ pre .javascript .function {
 }
 .sidebar-inner {
   color: #999;
-  padding: 18px 10px;
+  padding: 20px 10px;
   text-align: center;
 }
 .cc-license {
@@ -1214,7 +1214,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffb9cb;
+  background: #2affff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2384,7 +2384,7 @@ mjx-container + br {
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
   box-sizing: border-box;
   padding: 40px;
-  width: calc(100% - 252px);
+  width: calc(100% - 250px);
 }
 @media (max-width: 991px) {
   .content-wrap {
@@ -2536,7 +2536,7 @@ mjx-container + br {
 }
 .sidebar-inner.affix {
   position: fixed;
-  top: 12px;
+  top: 10px;
 }
 .sidebar-inner.affix-bottom {
   position: absolute;
@@ -2641,13 +2641,13 @@ mjx-container + br {
 .post-block + .post-block {
   border-radius: initial;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
-  margin-top: 12px;
+  margin-top: 10px;
 }
 .comments {
   background: var(--content-bg-color);
   border-radius: initial;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
-  margin-top: 12px;
+  margin-top: 10px;
   padding: 40px;
 }
 .tabs-comment {
@@ -2664,7 +2664,7 @@ mjx-container + br {
   border-radius: initial;
   border-top: initial;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
-  margin: 12px 0 0;
+  margin: 10px 0 0;
   padding: 10px 0 10px;
 }
 .pagination .prev,
@@ -2685,7 +2685,7 @@ mjx-container + br {
 }
 .sub-menu + .content .post-block {
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
-  margin-top: 12px;
+  margin-top: 10px;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .sub-menu + .content .post-block {
@@ -2732,20 +2732,20 @@ mjx-container + br {
     padding: 8px;
   }
   .posts-expand .post-button {
-    margin: 12px 0;
+    margin: 10px 0;
   }
   .post-block {
     border-radius: initial;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
     min-height: auto;
-    padding: 12px;
+    padding: 10px;
   }
   .post-block + .post-block {
     margin-top: 8px;
   }
   .comments {
     margin-top: 8px;
-    padding: 10px 12px;
+    padding: 10px 10px;
   }
   .pagination {
     margin: 8px 0 0;
