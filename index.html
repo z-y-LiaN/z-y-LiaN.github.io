@@ -133,17 +133,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">25</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">27</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">7</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">8</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">23</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">25</span></a>
 
   </li>
         <li class="menu-item menu-item-mubulinks">
@@ -205,6 +205,411 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/19/2022-04-19-Kademlia%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn2.maocdn.cn/img/2022/01/21/J8U_G9ZTZG4W12DA260Z9.jpg">
+      <meta itemprop="name" content="LiaN">
+      <meta itemprop="description" content="<font color="#000000">别焦虑了，说不定明天就死了呢.</font>">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LiaN">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/04/19/2022-04-19-Kademlia%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/" class="post-title-link" itemprop="url">Kademlia基本原理</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-04-19 00:22:17 / 修改时间：14:44:18" itemprop="dateCreated datePublished" datetime="2022-04-19T00:22:17+08:00">2022-04-19</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BF%A1%E5%AE%89%E8%B5%9B/" itemprop="url" rel="index"><span itemprop="name">信安赛</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <span id="more"></span>
+<h1 id="Kademlia"><a href="#Kademlia" class="headerlink" title="Kademlia"></a>Kademlia</h1><p>来源：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f2c31e632f1d">易懂分布式 | Kademlia算法 - 简书 (jianshu.com)</a></p>
+<blockquote>
+<p>ps：这篇文章真的写得太棒啦！！！！！是我所看过讲Kademlia文章中逻辑最清晰表达最棒的一篇文章！</p>
+</blockquote>
+<h2 id="基本原理理解"><a href="#基本原理理解" class="headerlink" title="基本原理理解"></a>基本原理理解</h2><p><strong>Kad算法</strong> 是一种<strong>分布式存储</strong>及路由的算法，DHT (Distributed Hash Table) 的一种</p>
+<p>Kad优点：</p>
+<ul>
+<li>对于任意一个有[ 2^(n−1) ,2^n)个节点的网络，<strong>最多只需要n步</strong>搜索即可找到目标节点；</li>
+<li>K-bucket的更新机制一定程度上保持了网络的<strong>活性和安全性</strong></li>
+</ul>
+<blockquote>
+<p>分布式存储：<strong>不设立中心化</strong>的服务器，所有（资源）文件<strong>分散存储</strong>在各个节点上</p>
+</blockquote>
+<p><strong>DHT</strong>：一种去中心化的分布式系统</p>
+<ul>
+<li>在这类系统中，每个node分别维护<strong>一部分的存储内容</strong>以及<strong>其他</strong>（部分）<strong>节点的路由/地址</strong><ul>
+<li>使得网络中任何节点的进入和退出，对整个网络造成的影响最小。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><strong>考虑的问题</strong>：</p>
+<ul>
+<li>分配：如何进行资源分配，把分配的内容存储到各个节点上，新增或者删除内容如何处理</li>
+<li>路由：如果某节点 想要<strong>获取</strong>某个特定的资源，<strong>如何找到</strong>存储资源的节点\地址\路径</li>
+</ul>
+<hr>
+<p><strong>针对每个节点</strong>：</p>
+<ul>
+<li><p>被分配到的资源 以<key,value>的形式储存；</p>
+<blockquote>
+<p>通俗的理解：key-资源名（确切一点，是资源名的hash值），value-资源内容</p>
+</blockquote>
+</li>
+<li><p>维护一张路由表；用来去找其他节点</p>
+<ul>
+<li>这张路由表，也称为“k-bucket”（k桶）</li>
+<li>路由表<strong>按异或距离分层</strong><ul>
+<li>本节点的nodeID 异或  目标节点的nodeID</li>
+</ul>
+</li>
+<li>记录<strong>有限</strong>个数的<strong>其他节点的ID</strong> （nodeID）、IP地址和端口</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><strong>为什么每个节点不能拥有其他所有的节点路由信息</strong>：</p>
+<ul>
+<li>分布式系统中，节点的进入退出十分频繁<ul>
+<li>如果每次变动都全网广播，通讯量很大</li>
+</ul>
+</li>
+<li>不安全：如果一个节点被攻破的话</li>
+</ul>
+<hr>
+<p><strong>分布式存储后，资源如何存储和查找？</strong></p>
+<p>例子：</p>
+<blockquote>
+<p>假设《分布式算法》这本书的书名的hash值是 <strong>00010000</strong>，那么这本书就会被要求存在学号为<strong>00010000</strong>的同学手上。（这要求hash算法的值域与node ID的值域一致。Kademlia的Node ID是160位2进制。这里的示例对Node ID进行了简略）<br> 但还得考虑到会有同学缺勤。万一<em>00010000</em>今天没来上学（节点<strong>没有上线或彻底退出</strong>网络），那《分布式算法》这本书岂不是谁都拿不到了？那算法要求这本书不能只存在一个同学手上，而是被要求<strong>同时存储在学号最接近00010000</strong>的<strong>k</strong>位同学手上，即<em>00010001</em>、<em>00010010</em>、<em>00010011</em>…等同学手上都会有这本书。</p>
+<p>同样地，当你需要找《分布式算法》这本书时，将书名hash一下，得到 <em>00010000</em>，这个便是索书号，你就知道该找哪（几）位同学了。</p>
+</blockquote>
+<p>剩下的问题，就是找到这（几）位同学的手机号（路由）。</p>
+<p>但是，你手中的通讯录里<strong>可能没他们的手机号</strong></p>
+<p>即是：已知源节点<strong>持有的路由表</strong>，和 目的节点<strong>target</strong>的<strong>nodeID</strong>，如果找到目的节点的IP</p>
+<blockquote>
+<p>算法的核心思路：</p>
+<p>当你知道<strong>目标同学Z</strong>与你之间的<strong>距离</strong>（这个距离通过你的nodeID和目标的nodeID异或得到）</p>
+<p>你可以在你的通讯录（即：路由表）上先找到一个你认为与同学Z<strong>最相近的同学B</strong>，请同学B再进一步去<strong>查找同学Z</strong>的手机号。</p>
+<p>每个同学只维护<strong>一部分</strong>的通讯录，这个通讯录按照距离分层（可以理解为按学号与自己的学号从第几位开始不同而分层），即k-bucket1, k-bucket 2, k-bucket 3…</p>
+<p>虽然每个k-bucket中实际存在的同学人数逐渐增多，但每个同学在它自己的每个k-bucket中<strong>只记录k位同学</strong>的手机号</p>
+</blockquote>
+<p><strong>对应</strong>：每个k-bucket只存 k个节点的地址与端口，这里的k是一个<strong>可调节的常量参数</strong></p>
+<blockquote>
+<p>由于学号（节点的ID）有160位，所以每个同学的通讯录中共分160层（节点共有160个k-bucket）。整个网络最多可以容纳2^160个同学（节点），但是每个同学（节点）最多只维护<strong>160 * k</strong> 行通讯录（其他节点的地址与端口）</p>
+</blockquote>
+<hr>
+<p><strong>节点的定位</strong>：</p>
+<p>A同学（学号<em>00000110</em>）想找《分布式算法》，A首先需要<strong>计算</strong>书名的<strong>哈希值</strong>，hash(《分布式算法》) = <strong>00010000</strong>。那么A就知道ta需要找到<strong>00010000</strong>号同学（命名为Z同学）或学号与Z<strong>邻近的</strong>同学。<br> Z的学号<em>00010000</em>与自己的<strong>异或距离</strong>为 <em>00010110</em>，距离范围在[2^4, 2^5)，所以这个Z同学可能在k-bucket 5中（或者说，Z同学的学号与A同学的学号从第5位开始不同，所以Z同学可能在k-bucket 5中）。<br> 然后<strong>A同学看看自己的k-bucket 5</strong>有没有Z同学：</p>
+<ul>
+<li>如果有，那就直接联系Z同学要书；</li>
+<li>如果没有，在k-bucket 5里<strong>随便找一个</strong>B同学（注意任意B同学，它的学号第5位肯定与Z相同，即它与Z同学的距离会小于24，相当于比Z、A之间的<strong>距离缩短了一半以上</strong>），请求B同学在它自己的通讯录里按同样的查找方式找一下Z同学：<ul>
+<li>如果B知道Z同学，那就把Z同学的手机号（IP Address）告诉A；</li>
+<li>如果B也不知道Z同学，那<strong>B按同样的搜索方法</strong>，可以在自己的通讯录里找到一个离Z更近的C同学（Z、C之间距离小于2^3），把C同学推荐给A；A同学请求C同学进行下一步查找。<strong>（递归）</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="技术细节"><a href="#技术细节" class="headerlink" title="技术细节"></a>技术细节</h2><h3 id="三个参数"><a href="#三个参数" class="headerlink" title="三个参数"></a>三个参数</h3><ul>
+<li><strong>keyspace</strong><ul>
+<li>nodeID有多少位</li>
+<li>决定每个节点的路由表有几层</li>
+</ul>
+</li>
+<li><p><strong>k</strong></p>
+<ul>
+<li>每一层k-bucket里<strong>装k个node信息</strong>：<nodeID, IP, Address ,Port></li>
+<li>每次查找node，<strong>返回k个node信息</strong></li>
+<li>对于某个特定的data，它的ID也就是所说的key，离其key<strong>最近的k个节点</strong>也要存储这个data</li>
+</ul>
+</li>
+<li><p>α</p>
+<ul>
+<li>每次向其他node请求查找某个node时，会<strong>向α个node发送请求</strong></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="节点的指令"><a href="#节点的指令" class="headerlink" title="节点的指令"></a>节点的指令</h3><blockquote>
+<p>每个节点只有4个指令</p>
+</blockquote>
+<ul>
+<li>PING：测试一个节点是否在线</li>
+<li>STORE：要求一个节点存储一份数据</li>
+<li>FIND_NODE：根据nodeID查找一个node</li>
+<li>FIND_VALUE：根据KEY查找一个data，跟FIND_NODE十分相似</li>
+</ul>
+<hr>
+<h3 id="k-bucket的维护和更新机制"><a href="#k-bucket的维护和更新机制" class="headerlink" title="k-bucket的维护和更新机制"></a>k-bucket的维护和更新机制</h3><blockquote>
+<p>保证任何节点的加入和离开都不影响整体网络</p>
+</blockquote>
+<ul>
+<li>每个bucket里的节点都按最后一次接触的时间倒序排列<ul>
+<li>也就是：最近接触的放在队尾</li>
+</ul>
+</li>
+<li>每次执行四个指令中的任何一个，都会触发更新</li>
+<li>当<font color="green">一个节点</font>和<strong>自己</strong>接触时，检查它是否在<strong>自己</strong>的k-bucket中<ul>
+<li>在：把<font color="green">这个节点</font>挪到k-bucket列表的末尾</li>
+<li>不在：PING一下列表最头部的<font color="orange">一个节点</font><ul>
+<li>PING通：把<font color="orange">旧节点</font>挪到列表的末尾，丢弃<font color="green">新节点</font></li>
+<li>PING不通：删除<font color="orange">旧节点</font>，并将<font color="green">新节点</font>加入列表</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/17/2022-04-17-%E3%80%90SE%E3%80%91%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn2.maocdn.cn/img/2022/01/21/J8U_G9ZTZG4W12DA260Z9.jpg">
+      <meta itemprop="name" content="LiaN">
+      <meta itemprop="description" content="<font color="#000000">别焦虑了，说不定明天就死了呢.</font>">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LiaN">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/04/17/2022-04-17-%E3%80%90SE%E3%80%91%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" class="post-title-link" itemprop="url">【SE】线性代数</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-04-17 22:45:34" itemprop="dateCreated datePublished" datetime="2022-04-17T22:45:34+08:00">2022-04-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-04-19 14:54:22" itemprop="dateModified" datetime="2022-04-19T14:54:22+08:00">2022-04-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>20</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>线性代数基本概念复习总结</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/04/17/2022-04-17-%E3%80%90SE%E3%80%91%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/17/2022-04-17-%E3%80%90SE%E3%80%91%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn2.maocdn.cn/img/2022/01/21/J8U_G9ZTZG4W12DA260Z9.jpg">
+      <meta itemprop="name" content="LiaN">
+      <meta itemprop="description" content="<font color="#000000">别焦虑了，说不定明天就死了呢.</font>">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LiaN">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/04/17/2022-04-17-%E3%80%90SE%E3%80%91%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" class="post-title-link" itemprop="url">【SE】软件体系结构</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-04-17 22:45:34 / 修改时间：15:08:39" itemprop="dateCreated datePublished" datetime="2022-04-17T22:45:34+08:00">2022-04-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">软件工程</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>12</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>软件体系结构：</p>
+<ul>
+<li>组成派定义</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/04/17/2022-04-17-%E3%80%90SE%E3%80%91%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/15/2022-04-15-%E3%80%90SE%E3%80%91%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E5%99%A8%E5%92%8C%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -228,10 +633,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-04-15 22:45:34 / 修改时间：21:27:30" itemprop="dateCreated datePublished" datetime="2022-04-15T22:45:34+08:00">2022-04-15</time>
+              <time title="创建时间：2022-04-15 22:45:34" itemprop="dateCreated datePublished" datetime="2022-04-15T22:45:34+08:00">2022-04-15</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-04-18 12:52:32" itemprop="dateModified" datetime="2022-04-18T12:52:32+08:00">2022-04-18</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -248,7 +659,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>754</span>
+              <span>1.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -279,95 +690,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/04/15/2022-04-15-%E3%80%90SE%E3%80%91%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E5%99%A8%E5%92%8C%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/15/2022-04-15-%E3%80%90%E6%80%BB%E7%BB%93%E3%80%91C++%E5%A4%9A%E6%96%87%E4%BB%B6%E7%BC%96%E8%AF%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn2.maocdn.cn/img/2022/01/21/J8U_G9ZTZG4W12DA260Z9.jpg">
-      <meta itemprop="name" content="LiaN">
-      <meta itemprop="description" content="<font color="#000000">别焦虑了，说不定明天就死了呢.</font>">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="LiaN">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/15/2022-04-15-%E3%80%90%E6%80%BB%E7%BB%93%E3%80%91C++%E5%A4%9A%E6%96%87%E4%BB%B6%E7%BC%96%E8%AF%91/" class="post-title-link" itemprop="url">关于写C++遇到的问题</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-04-15 22:45:34 / 修改时间：21:25:45" itemprop="dateCreated datePublished" datetime="2022-04-15T22:45:34+08:00">2022-04-15</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>69</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>总结在软件课程涉及II中，编写C++代码遇到的各种小问题</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/04/15/2022-04-15-%E3%80%90%E6%80%BB%E7%BB%93%E3%80%91C++%E5%A4%9A%E6%96%87%E4%BB%B6%E7%BC%96%E8%AF%91/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -783,7 +1105,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/22/2022-03-22-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/22/2022-03-22-%E3%80%90SE%E3%80%91%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://cdn2.maocdn.cn/img/2022/01/21/J8U_G9ZTZG4W12DA260Z9.jpg">
@@ -797,7 +1119,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/03/22/2022-03-22-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">【SE】软件设计模式</a>
+            <a href="/2022/03/22/2022-03-22-%E3%80%90SE%E3%80%91%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">【SE】软件设计模式</a>
         </h2>
 
         <div class="post-meta">
@@ -814,7 +1136,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-13 20:56:02" itemprop="dateModified" datetime="2022-04-13T20:56:02+08:00">2022-04-13</time>
+                <time title="修改时间：2022-04-17 21:08:50" itemprop="dateModified" datetime="2022-04-17T21:08:50+08:00">2022-04-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -822,7 +1144,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/" itemprop="url" rel="index"><span itemprop="name">专业课</span></a>
+                  <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">软件工程</span></a>
                 </span>
             </span>
 
@@ -832,14 +1154,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>29k</span>
+              <span>31k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>26 分钟</span>
+              <span>28 分钟</span>
             </span>
 
         </div>
@@ -864,7 +1186,7 @@
 </ul>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2022/03/22/2022-03-22-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/#more" rel="contents">
+              <a class="btn" href="/2022/03/22/2022-03-22-%E3%80%90SE%E3%80%91%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -984,213 +1306,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/22/2022-03-22-%E3%80%90%E9%A2%98%E8%A7%A3%E3%80%91%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn2.maocdn.cn/img/2022/01/21/J8U_G9ZTZG4W12DA260Z9.jpg">
-      <meta itemprop="name" content="LiaN">
-      <meta itemprop="description" content="<font color="#000000">别焦虑了，说不定明天就死了呢.</font>">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="LiaN">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/03/22/2022-03-22-%E3%80%90%E9%A2%98%E8%A7%A3%E3%80%91%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-title-link" itemprop="url">【题解】数据结构</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-03-22 09:55:34" itemprop="dateCreated datePublished" datetime="2022-03-22T09:55:34+08:00">2022-03-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-07 21:57:39" itemprop="dateModified" datetime="2022-04-07T21:57:39+08:00">2022-04-07</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%88%B7%E9%A2%98%E5%BA%9F%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">刷题废物</span></a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>5.2k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>5 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li>主要内容<ul>
-<li>链表</li>
-<li>哈希表</li>
-<li>并查集：在近乎<strong>O(1)</strong>的情况下，<ul>
-<li>关键：p[N]初始化，find(int a)：返回a所在集合的编号</li>
-<li><strong>合并 </strong>两集合 </li>
-<li><strong>询问</strong> 两元素是否在同一集合</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/03/22/2022-03-22-%E3%80%90%E9%A2%98%E8%A7%A3%E3%80%91%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/18/2022-03-18-%E3%80%90%E9%A2%98%E8%A7%A3%E3%80%91%E9%9B%B6%E9%9B%B6%E7%A2%8E%E7%A2%8E/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn2.maocdn.cn/img/2022/01/21/J8U_G9ZTZG4W12DA260Z9.jpg">
-      <meta itemprop="name" content="LiaN">
-      <meta itemprop="description" content="<font color="#000000">别焦虑了，说不定明天就死了呢.</font>">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="LiaN">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/03/18/2022-03-18-%E3%80%90%E9%A2%98%E8%A7%A3%E3%80%91%E9%9B%B6%E9%9B%B6%E7%A2%8E%E7%A2%8E/" class="post-title-link" itemprop="url">【题解】零零碎碎</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-03-18 19:08:20" itemprop="dateCreated datePublished" datetime="2022-03-18T19:08:20+08:00">2022-03-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-04 17:30:50" itemprop="dateModified" datetime="2022-04-04T17:30:50+08:00">2022-04-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%88%B7%E9%A2%98%E5%BA%9F%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">刷题废物</span></a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>814</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li>主要内容<ul>
-<li>没有主要的，全是次要的小东西</li>
-</ul>
-</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/03/18/2022-03-18-%E3%80%90%E9%A2%98%E8%A7%A3%E3%80%91%E9%9B%B6%E9%9B%B6%E7%A2%8E%E7%A2%8E/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1262,20 +1377,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-count">27</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1342,13 +1457,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">125k</span>
+    <span title="站点总字数">129k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:53</span>
+    <span title="站点阅读时长">1:57</span>
 </div>
 <!--
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
