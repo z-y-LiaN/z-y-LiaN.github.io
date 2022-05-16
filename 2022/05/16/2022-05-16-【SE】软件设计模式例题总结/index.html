@@ -41,8 +41,15 @@
 <meta property="og:image" content="https://s2.loli.net/2022/05/16/ZnXTjCpd1kWJeSx.png">
 <meta property="og:image" content="https://s2.loli.net/2022/05/16/wTMrSJcxa5ZnsgC.png">
 <meta property="og:image" content="https://s2.loli.net/2022/05/16/XWw2xoZtavPzFK4.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/16/Gb8BOLEWyvfXja6.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/16/3174QBdu5TswFfe.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/16/w1Pe5C3qoJpZGX6.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/16/5qF7zvOZBQDwVGK.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/16/xJjpWI32DAU8ZRb.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/16/ICLzGuw6t8BZMKo.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/16/cKTs741XiDV5rnE.png">
 <meta property="article:published_time" content="2022-05-16T14:45:34.000Z">
-<meta property="article:modified_time" content="2022-05-16T12:59:14.517Z">
+<meta property="article:modified_time" content="2022-05-16T13:50:13.719Z">
 <meta property="article:author" content="LiaN">
 <meta property="article:tag" content="软件设计模式">
 <meta name="twitter:card" content="summary">
@@ -246,7 +253,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-05-16 22:45:34 / 修改时间：20:59:14" itemprop="dateCreated datePublished" datetime="2022-05-16T22:45:34+08:00">2022-05-16</time>
+              <time title="创建时间：2022-05-16 22:45:34 / 修改时间：21:50:13" itemprop="dateCreated datePublished" datetime="2022-05-16T22:45:34+08:00">2022-05-16</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -271,14 +278,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.4k</span>
+              <span>4.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>4 分钟</span>
             </span>
 
         </div>
@@ -361,6 +368,8 @@
 <p>对比书上的例子（照喵画虎）</p>
 <p><img src="https://s2.loli.net/2022/05/16/316ragLTyltDMKz.png" alt="image.png" style="zoom:67%;" /></p>
 <h3 id="例9：图片滤镜"><a href="#例9：图片滤镜" class="headerlink" title="例9：图片滤镜"></a>例9：图片滤镜</h3><p>为了实现一些特殊的显示效果，某公司欲开发一款手机数码照片处理软件，在该软件中为照片(Photograph)提供了<strong>多种</strong>滤镜(Filter)效果，例如黑白滤镜(BlackWhiteFilter)、单色滤镜(MonochromaticFilter)、怀旧滤镜(NostalgicFilter)等，不同的滤镜通过不同的算法对照片进行美化，该软件可以<strong>灵活地增加一些新的</strong>滤镜效果。</p>
+<h3 id="例10：加密"><a href="#例10：加密" class="headerlink" title="例10：加密"></a>例10：加密</h3><p>某系统需要对重要数据（如用户密码）进行加密，并提供了<strong>几种</strong>加密方案（如凯撒加密、DES加密等），对该加密模块进行设计，使得用户可以<strong>动态选择</strong>加密方式</p>
+<hr>
 <h1 id="【行为型】观察者模式"><a href="#【行为型】观察者模式" class="headerlink" title="【行为型】观察者模式"></a>【行为型】观察者模式</h1><h2 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h2><p>定义了对象之间的一对多依赖，当一个对象状态改变时，它的所有依赖者都会收到通知并且自动更新</p>
 <h2 id="类图与使用场景-1"><a href="#类图与使用场景-1" class="headerlink" title="类图与使用场景"></a>类图与使用场景</h2><p><img src="https://s2.loli.net/2022/05/16/YpCHBNUnFP7MOzc.png" alt="image.png" style="zoom:67%;" /></p>
 <ul>
@@ -380,6 +389,67 @@
 <p><img src="https://s2.loli.net/2022/05/16/wTMrSJcxa5ZnsgC.png" alt="image.png" style="zoom:50%;" /></p>
 <h3 id="例4：机房监控系统"><a href="#例4：机房监控系统" class="headerlink" title="例4：机房监控系统"></a>例4：机房监控系统</h3><p>如果机房达到一定指定温度，<strong>传感器</strong>将作出反应，将<strong>信号传递</strong>给响应设备，如警示灯将闪烁，报警器将发出警报，安全逃生门将自动开启、隔热门将自动关闭，每一响应设备的行为由专门的程序来控制，支持将来引入新类型的响应设备。</p>
 <p><img src="https://s2.loli.net/2022/05/16/XWw2xoZtavPzFK4.png" alt="image.png"></p>
+<h3 id="例5：多人联机对战"><a href="#例5：多人联机对战" class="headerlink" title="例5：多人联机对战"></a>例5：多人联机对战</h3><p>某在线游戏支持多人联机对战，每个玩家都可以加入某一战队组成联盟，当战队中某一成员受到敌人攻击时将给所有盟友<strong>发送通知</strong>，盟友收到通知后将作出响应</p>
+<p><img src="https://s2.loli.net/2022/05/16/Gb8BOLEWyvfXja6.png" alt="image.png" style="zoom: 50%;" /></p>
+<hr>
+<h1 id="【行为型】状态模式"><a href="#【行为型】状态模式" class="headerlink" title="【行为型】状态模式"></a>【行为型】状态模式</h1><h2 id="定义-2"><a href="#定义-2" class="headerlink" title="定义"></a>定义</h2><p>允许对象在内部状态改变时改变它的行为，对象看起来好像修改了它的类</p>
+<h2 id="类图与使用场景-2"><a href="#类图与使用场景-2" class="headerlink" title="类图与使用场景"></a>类图与使用场景</h2><p><img src="https://s2.loli.net/2022/05/16/3174QBdu5TswFfe.png" alt="image.png" style="zoom:67%;" /></p>
+<ul>
+<li>对象的行为依赖于它的状态（如某些属性值），<strong>状态的改变将导致行为的变化</strong></li>
+<li>在代码中包含大量与<strong>对象状态有关的条件语句</strong>，这些条件语句的出现，会导致代码的可维护性和灵活性变差，不能方便地增加和删除状态，并且导致客户类与类库之间的耦合增强。</li>
+</ul>
+<h2 id="与其他模式的关系-2"><a href="#与其他模式的关系-2" class="headerlink" title="与其他模式的关系"></a>与其他模式的关系</h2><ul>
+<li><p>在状态模式中， 特定状态（可以）知道其他所有状态的存在，且能触发从一个状态到另一个状态的转换；<strong>行为对客户来说是透明的</strong>，客户不知道状态对象的存在</p>
+<ul>
+<li><p>策略则几乎完全不知道其他策略的存在。</p>
+</li>
+<li><p>状态可被视为策略的扩展。两者都基于组合机制：它们都通过将部分工作<strong>委派</strong>给“帮手”对象来改变其在不同情景下的行为。策略使得这些对象相互之间完全独立，它们不知道其他对象的存在。 但状态模式没有限制具体状态之间的依赖，且允许它们自行改变在不同情景下的状态。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="样例-2"><a href="#样例-2" class="headerlink" title="样例"></a>样例</h2><p>关键词：<code>状态</code>，<code>动作使得状态转换</code></p>
+<ul>
+<li>为对象的<strong>每</strong>一个 <strong>所有可能状态</strong> 新建一个类(ConcreteState)，将所有该状态的对应行为抽取到这些类中</li>
+<li>Context类持有State/ConcreteState成员变量</li>
+</ul>
+<h3 id="例1：信用卡账户"><a href="#例1：信用卡账户" class="headerlink" title="例1：信用卡账户"></a>例1：信用卡账户</h3><p> 信用卡业务系统，账户(Account)是核心类之一，<strong>账户</strong>存在三种状态，且在不同状态下账户存在不同的行为，具体说明如下：</p>
+<ul>
+<li><p>(1) 如果账户中余额大于等于0，则账户的状态为<strong>正常状态(</strong>Normal State)，此时用户既可以向该账户存款也可以从该账户取款；</p>
+</li>
+<li><p>(2) 如果账户中余额小于0，并且大于-2000，则账户的状态为<strong>透支状态</strong>(Overdraft State)，此时用户既可以向该账户存款也可以从该账户取款，但需要按天计算利息；</p>
+</li>
+<li><p>(3) 如果账户中余额等于-2000，那么账户的状态为<strong>受限状态</strong>(Restricted State)，此时用户只能向该账户存款，不能再从中取款，同时也将按天计算利息；       </p>
+</li>
+<li><p>(4) 根据余额的不同，以上三种状态<strong>可发生相互转换</strong>。</p>
+<ul>
+<li>分析：账户==Context，三种状态 == ConcreteState；封装进状态的动作：存款、取款、利息计算、根据余额进行状态转换</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://s2.loli.net/2022/05/16/w1Pe5C3qoJpZGX6.png" alt="image.png"></p>
+<h3 id="例2：开关"><a href="#例2：开关" class="headerlink" title="例2：开关"></a>例2：开关</h3><p>如果某系统要求两个开关对象（Context）要么都处于开的状态，要么都处于关的状态，在使用时它们的<strong>状态必须保持一致</strong>，开关可以由开转换到关，也可以由关转换到开</p>
+<ul>
+<li><p>分析：多个环境对象可能需要共享同一个状态，如果希望在系统中实现<strong>多个环境对象共享一个或多个状态对象</strong>，那么需要将这些<strong>状态对象</strong>定义为环境类的<strong>静态成员对象</strong>。</p>
+</li>
+<li><p>Switch里的三个state都是静态成员变量（所以应该还有下划线表示才对</p>
+</li>
+</ul>
+<p><img src="https://s2.loli.net/2022/05/16/5qF7zvOZBQDwVGK.png" alt="image.png" style="zoom:80%;" /></p>
+<h3 id="例3：屏幕放大"><a href="#例3：屏幕放大" class="headerlink" title="例3：屏幕放大"></a>例3：屏幕放大</h3><p>一个屏幕放大镜工具： 用户单击“放大镜”按钮之后屏幕将放大一倍，再点击一次“放大镜”按钮屏幕再放大一倍，第三次点击该按钮后屏幕将还原到默认大小</p>
+<ul>
+<li>定义三个<strong>屏幕状态类</strong>NormalState、LargerState和LargestState来对应屏幕的三种状态，分别是正常状态、二倍放大状态和四倍放大状态，屏幕类Screen充当Context类</li>
+</ul>
+<p><img src="https://s2.loli.net/2022/05/16/xJjpWI32DAU8ZRb.png" alt="image.png"></p>
+<h3 id="例4：纸牌游戏"><a href="#例4：纸牌游戏" class="headerlink" title="例4：纸牌游戏"></a>例4：纸牌游戏</h3><p>某纸牌游戏中，<strong>人物角色</strong>具有<strong>入门级</strong>（Primary），<strong>熟练级</strong>(Secondary)，<strong>高手级</strong>(Professional)和<strong>骨灰级</strong>(Final)四种等级，<strong>角色的等级与积分相对应</strong>，游戏胜利将增加积分，失败则扣除积分，入门级具有最基本的游戏功能play()，熟练级增加了游戏胜利积分加倍功能doubleScore（），高手级在熟练级基础上再增加换牌功能changeCards()，骨灰级在高手级基础上再增加偷看他人的牌的功能peekCards()</p>
+<ul>
+<li>第一眼儿看差点以为是策略模式；但是要注意“角色的等级与积分相对应”，说明等级会随着积分的改变而发生改变，游戏又对积分有各种操作；所以更应该是状态模式</li>
+</ul>
+<p><img src="https://s2.loli.net/2022/05/16/ICLzGuw6t8BZMKo.png" alt="image.png"></p>
+<h3 id="例5：线程状态"><a href="#例5：线程状态" class="headerlink" title="例5：线程状态"></a>例5：线程状态</h3><p>多线程存在 5 种状态，分别为新建状态、就绪状态、运行状态、阻塞状态和死亡状态，各个状态当遇到相关方法调用或事件触发时会转换到其他状态</p>
+<p><img src="https://s2.loli.net/2022/05/16/cKTs741XiDV5rnE.png" alt="image.png" style="zoom:67%;" /></p>
+<h3 id="例6：传输门"><a href="#例6：传输门" class="headerlink" title="例6：传输门"></a>例6：传输门</h3><p>传输门具有Open（打开）、Closed（关闭）、Opening（正在打开）、StayOpen（保持打开）、Closing（正在关闭）五种状态。触发状态的转换事件有click、complete和timeout三种。</p>
+<hr>
 
     </div>
 
@@ -478,7 +548,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E3%80%90%E8%A1%8C%E4%B8%BA%E5%9E%8B%E3%80%91%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">【行为型】策略模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E5%9B%BE%E4%B8%8E%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">1.2.</span> <span class="nav-text">类图与使用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8E%E5%85%B6%E4%BB%96%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">1.3.</span> <span class="nav-text">与其他模式的关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B"><span class="nav-number">1.4.</span> <span class="nav-text">样例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B1%EF%BC%9A%E5%AF%BC%E6%B8%B8%E8%B7%AF%E7%BA%BF%E8%A7%84%E5%88%92"><span class="nav-number">1.4.1.</span> <span class="nav-text">例1：导游路线规划</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B2%EF%BC%9A%E5%87%BA%E8%A1%8C%E6%96%B9%E5%BC%8F"><span class="nav-number">1.4.2.</span> <span class="nav-text">例2：出行方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B3%EF%BC%9A%E7%94%B5%E5%BD%B1%E9%99%A2%E5%94%AE%E7%A5%A8"><span class="nav-number">1.4.3.</span> <span class="nav-text">例3：电影院售票</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B4%EF%BC%9A%E7%A8%8E%E9%A2%9D%E8%AE%A1%E7%AE%97"><span class="nav-number">1.4.4.</span> <span class="nav-text">例4：税额计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B5%EF%BC%9A%E8%AE%A1%E7%AE%97%E5%99%A8"><span class="nav-number">1.4.5.</span> <span class="nav-text">例5：计算器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B6%EF%BC%9A%E5%9B%BE%E4%B9%A6%E6%89%93%E6%8A%98%E6%96%B9%E5%BC%8F"><span class="nav-number">1.4.6.</span> <span class="nav-text">例6：图书打折方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B7%EF%BC%9A%E4%BC%9A%E5%91%98%E6%89%93%E6%8A%98%E6%96%B9%E5%BC%8F"><span class="nav-number">1.4.7.</span> <span class="nav-text">例7：会员打折方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B8%EF%BC%9A%E5%90%84%E7%A7%8D%E9%A3%9E%E6%9C%BA"><span class="nav-number">1.4.8.</span> <span class="nav-text">例8：各种飞机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B9%EF%BC%9A%E5%9B%BE%E7%89%87%E6%BB%A4%E9%95%9C"><span class="nav-number">1.4.9.</span> <span class="nav-text">例9：图片滤镜</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E3%80%90%E8%A1%8C%E4%B8%BA%E5%9E%8B%E3%80%91%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">【行为型】观察者模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-1"><span class="nav-number">2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E5%9B%BE%E4%B8%8E%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF-1"><span class="nav-number">2.2.</span> <span class="nav-text">类图与使用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8E%E5%85%B6%E4%BB%96%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%85%B3%E7%B3%BB-1"><span class="nav-number">2.3.</span> <span class="nav-text">与其他模式的关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B-1"><span class="nav-number">2.4.</span> <span class="nav-text">样例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B1%EF%BC%9A%E8%82%A1%E7%A5%A8%E4%BB%B7%E6%A0%BC%E9%80%9A%E7%9F%A5"><span class="nav-number">2.4.1.</span> <span class="nav-text">例1：股票价格通知</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B2%EF%BC%9A%E5%9C%B0%E9%9C%87%E7%9B%91%E6%B5%8B%E6%8A%A5%E8%AD%A6"><span class="nav-number">2.4.2.</span> <span class="nav-text">例2：地震监测报警</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B3%EF%BC%9A%E7%94%B5%E5%AD%90%E5%95%86%E5%8A%A1%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.4.3.</span> <span class="nav-text">例3：电子商务系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B4%EF%BC%9A%E6%9C%BA%E6%88%BF%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.4.4.</span> <span class="nav-text">例4：机房监控系统</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E3%80%90%E8%A1%8C%E4%B8%BA%E5%9E%8B%E3%80%91%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">【行为型】策略模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E5%9B%BE%E4%B8%8E%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">1.2.</span> <span class="nav-text">类图与使用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8E%E5%85%B6%E4%BB%96%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">1.3.</span> <span class="nav-text">与其他模式的关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B"><span class="nav-number">1.4.</span> <span class="nav-text">样例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B1%EF%BC%9A%E5%AF%BC%E6%B8%B8%E8%B7%AF%E7%BA%BF%E8%A7%84%E5%88%92"><span class="nav-number">1.4.1.</span> <span class="nav-text">例1：导游路线规划</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B2%EF%BC%9A%E5%87%BA%E8%A1%8C%E6%96%B9%E5%BC%8F"><span class="nav-number">1.4.2.</span> <span class="nav-text">例2：出行方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B3%EF%BC%9A%E7%94%B5%E5%BD%B1%E9%99%A2%E5%94%AE%E7%A5%A8"><span class="nav-number">1.4.3.</span> <span class="nav-text">例3：电影院售票</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B4%EF%BC%9A%E7%A8%8E%E9%A2%9D%E8%AE%A1%E7%AE%97"><span class="nav-number">1.4.4.</span> <span class="nav-text">例4：税额计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B5%EF%BC%9A%E8%AE%A1%E7%AE%97%E5%99%A8"><span class="nav-number">1.4.5.</span> <span class="nav-text">例5：计算器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B6%EF%BC%9A%E5%9B%BE%E4%B9%A6%E6%89%93%E6%8A%98%E6%96%B9%E5%BC%8F"><span class="nav-number">1.4.6.</span> <span class="nav-text">例6：图书打折方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B7%EF%BC%9A%E4%BC%9A%E5%91%98%E6%89%93%E6%8A%98%E6%96%B9%E5%BC%8F"><span class="nav-number">1.4.7.</span> <span class="nav-text">例7：会员打折方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B8%EF%BC%9A%E5%90%84%E7%A7%8D%E9%A3%9E%E6%9C%BA"><span class="nav-number">1.4.8.</span> <span class="nav-text">例8：各种飞机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B9%EF%BC%9A%E5%9B%BE%E7%89%87%E6%BB%A4%E9%95%9C"><span class="nav-number">1.4.9.</span> <span class="nav-text">例9：图片滤镜</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B10%EF%BC%9A%E5%8A%A0%E5%AF%86"><span class="nav-number">1.4.10.</span> <span class="nav-text">例10：加密</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E3%80%90%E8%A1%8C%E4%B8%BA%E5%9E%8B%E3%80%91%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">【行为型】观察者模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-1"><span class="nav-number">2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E5%9B%BE%E4%B8%8E%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF-1"><span class="nav-number">2.2.</span> <span class="nav-text">类图与使用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8E%E5%85%B6%E4%BB%96%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%85%B3%E7%B3%BB-1"><span class="nav-number">2.3.</span> <span class="nav-text">与其他模式的关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B-1"><span class="nav-number">2.4.</span> <span class="nav-text">样例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B1%EF%BC%9A%E8%82%A1%E7%A5%A8%E4%BB%B7%E6%A0%BC%E9%80%9A%E7%9F%A5"><span class="nav-number">2.4.1.</span> <span class="nav-text">例1：股票价格通知</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B2%EF%BC%9A%E5%9C%B0%E9%9C%87%E7%9B%91%E6%B5%8B%E6%8A%A5%E8%AD%A6"><span class="nav-number">2.4.2.</span> <span class="nav-text">例2：地震监测报警</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B3%EF%BC%9A%E7%94%B5%E5%AD%90%E5%95%86%E5%8A%A1%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.4.3.</span> <span class="nav-text">例3：电子商务系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B4%EF%BC%9A%E6%9C%BA%E6%88%BF%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.4.4.</span> <span class="nav-text">例4：机房监控系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B5%EF%BC%9A%E5%A4%9A%E4%BA%BA%E8%81%94%E6%9C%BA%E5%AF%B9%E6%88%98"><span class="nav-number">2.4.5.</span> <span class="nav-text">例5：多人联机对战</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E3%80%90%E8%A1%8C%E4%B8%BA%E5%9E%8B%E3%80%91%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">【行为型】状态模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-2"><span class="nav-number">3.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E5%9B%BE%E4%B8%8E%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF-2"><span class="nav-number">3.2.</span> <span class="nav-text">类图与使用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8E%E5%85%B6%E4%BB%96%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%85%B3%E7%B3%BB-2"><span class="nav-number">3.3.</span> <span class="nav-text">与其他模式的关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B-2"><span class="nav-number">3.4.</span> <span class="nav-text">样例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B1%EF%BC%9A%E4%BF%A1%E7%94%A8%E5%8D%A1%E8%B4%A6%E6%88%B7"><span class="nav-number">3.4.1.</span> <span class="nav-text">例1：信用卡账户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B2%EF%BC%9A%E5%BC%80%E5%85%B3"><span class="nav-number">3.4.2.</span> <span class="nav-text">例2：开关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B3%EF%BC%9A%E5%B1%8F%E5%B9%95%E6%94%BE%E5%A4%A7"><span class="nav-number">3.4.3.</span> <span class="nav-text">例3：屏幕放大</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B4%EF%BC%9A%E7%BA%B8%E7%89%8C%E6%B8%B8%E6%88%8F"><span class="nav-number">3.4.4.</span> <span class="nav-text">例4：纸牌游戏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B5%EF%BC%9A%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81"><span class="nav-number">3.4.5.</span> <span class="nav-text">例5：线程状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B6%EF%BC%9A%E4%BC%A0%E8%BE%93%E9%97%A8"><span class="nav-number">3.4.6.</span> <span class="nav-text">例6：传输门</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -574,13 +644,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">141k</span>
+    <span title="站点总字数">143k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">2:08</span>
+    <span title="站点阅读时长">2:10</span>
 </div>
 <!--
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
