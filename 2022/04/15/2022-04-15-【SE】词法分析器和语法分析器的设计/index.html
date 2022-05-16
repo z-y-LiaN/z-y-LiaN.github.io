@@ -22,18 +22,43 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":20,"offset":10,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="主要内容  词法分析器的原理和设计 语法分析器的原理和设计  写课设的时候发现上学期学的编译原理有点忘了QWQ，顺便再简单复习一遍">
+  <meta name="description" content="主要内容 实现词法分析器 实现语法分析器">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【SE】词法分析器和语法分析器的设计">
 <meta property="og:url" content="http://example.com/2022/04/15/2022-04-15-%E3%80%90SE%E3%80%91%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E5%99%A8%E5%92%8C%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1/index.html">
 <meta property="og:site_name" content="LiaN">
-<meta property="og:description" content="主要内容  词法分析器的原理和设计 语法分析器的原理和设计  写课设的时候发现上学期学的编译原理有点忘了QWQ，顺便再简单复习一遍">
+<meta property="og:description" content="主要内容 实现词法分析器 实现语法分析器">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/05/03/b31be7f16a2e2127.png">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/05/03/a19bf29f8f13c3e2.png">
+<meta property="og:image" content="http://example.com/2022/04/15/blogImages/2022-04-15-【SE】词法分析器和语法分析器的设计/image-20220503095219277.png">
+<meta property="og:image" content="http://example.com/2022/04/15/blogImages/2022-04-15-【SE】词法分析器和语法分析器的设计/image-20220503095318581.png">
+<meta property="og:image" content="http://example.com/2022/04/15/blogImages/2022-04-15-【SE】词法分析器和语法分析器的设计/image-20220503095435881.png">
+<meta property="og:image" content="http://example.com/2022/04/15/blogImages/2022-04-15-【SE】词法分析器和语法分析器的设计/image-20220503095607966.png">
+<meta property="og:image" content="http://example.com/2022/04/15/blogImages/2022-04-15-【SE】词法分析器和语法分析器的设计/image-20220503100210138.png">
+<meta property="og:image" content="http://example.com/2022/04/15/blogImages/2022-04-15-【SE】词法分析器和语法分析器的设计/image-20220503100618138.png">
+<meta property="og:image" content="http://example.com/2022/04/15/blogImages/2022-04-15-【SE】词法分析器和语法分析器的设计/image-20220503111033602.png">
+<meta property="og:image" content="http://example.com/2022/04/15/blogImages/2022-04-15-【SE】词法分析器和语法分析器的设计/image-20220503125941169.png">
+<meta property="og:image" content="http://example.com/2022/04/15/blogImages/2022-04-15-【SE】词法分析器和语法分析器的设计/image-20220503130118347.png">
+<meta property="og:image" content="http://example.com/2022/04/15/blogImages/2022-04-15-【SE】词法分析器和语法分析器的设计/image-20220503220718340.png">
+<meta property="og:image" content="http://example.com/2022/04/15/blogImages/2022-04-15-【SE】词法分析器和语法分析器的设计/image-20220503221014826.png">
+<meta property="og:image" content="http://example.com/2022/04/15/blogImages/2022-04-15-【SE】词法分析器和语法分析器的设计/image-20220503144649721.png">
+<meta property="og:image" content="http://example.com/2022/04/15/blogImages/2022-04-15-【SE】词法分析器和语法分析器的设计/image-20220503144737724.png">
+<meta property="og:image" content="http://example.com/2022/04/15/blogImages/2022-04-15-【SE】词法分析器和语法分析器的设计/image-20220503144812202.png">
+<meta property="og:image" content="http://example.com/2022/04/15/blogImages/2022-04-15-【SE】词法分析器和语法分析器的设计/image-20220503144847851.png">
+<meta property="og:image" content="http://example.com/2022/04/15/blogImages/2022-04-15-【SE】词法分析器和语法分析器的设计/image-20220503144921107.png">
+<meta property="og:image" content="http://example.com/2022/04/15/blogImages/2022-04-15-【SE】词法分析器和语法分析器的设计/image-20220503144941722.png">
+<meta property="og:image" content="http://example.com/2022/04/15/blogImages/2022-04-15-【SE】词法分析器和语法分析器的设计/image-20220503145537941.png">
+<meta property="og:image" content="http://example.com/2022/04/15/blogImages/2022-04-15-【SE】词法分析器和语法分析器的设计/image-20220503204749919.png">
+<meta property="og:image" content="http://example.com/2022/04/15/blogImages/2022-04-15-【SE】词法分析器和语法分析器的设计/image-20220503210635580.png">
+<meta property="og:image" content="http://example.com/2022/04/15/blogImages/2022-04-15-【SE】词法分析器和语法分析器的设计/image-20220503221437398.png">
+<meta property="og:image" content="http://example.com/2022/04/15/blogImages/2022-04-15-【SE】词法分析器和语法分析器的设计/image-20220503221705649.png">
 <meta property="article:published_time" content="2022-04-15T14:45:34.000Z">
-<meta property="article:modified_time" content="2022-04-18T04:52:32.965Z">
+<meta property="article:modified_time" content="2022-05-04T10:37:18.434Z">
 <meta property="article:author" content="LiaN">
 <meta property="article:tag" content="编译原理">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.bmp.ovh/imgs/2022/05/03/b31be7f16a2e2127.png">
 
 <link rel="canonical" href="http://example.com/2022/04/15/2022-04-15-%E3%80%90SE%E3%80%91%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E5%99%A8%E5%92%8C%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1/">
 
@@ -146,7 +171,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">25</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">27</span></a>
 
   </li>
         <li class="menu-item menu-item-mubulinks">
@@ -239,7 +264,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-18 12:52:32" itemprop="dateModified" datetime="2022-04-18T12:52:32+08:00">2022-04-18</time>
+                <time title="修改时间：2022-05-04 18:37:18" itemprop="dateModified" datetime="2022-05-04T18:37:18+08:00">2022-05-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -264,14 +289,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
+              <span>7.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>7 分钟</span>
             </span>
 
         </div>
@@ -284,56 +309,420 @@
 
       
         <ul>
-<li><p>主要内容</p>
-<ul>
-<li>词法分析器的原理和设计</li>
-<li>语法分析器的原理和设计</li>
+<li>主要内容<ul>
+<li>实现词法分析器</li>
+<li>实现语法分析器</li>
 </ul>
-<p>写课设的时候发现上学期学的编译原理有点忘了QWQ，顺便再简单复习一遍</p>
 </li>
 </ul>
 <span id="more"></span>
-<h1 id="词法分析器"><a href="#词法分析器" class="headerlink" title="词法分析器"></a>词法分析器</h1><p>处理逻辑：</p>
-<p>根据用户输入的<strong>正规文法，生成 NFA，再确定化生成 DFA</strong>，</p>
-<p>根据 <strong>DFA 编写识别 token 的程序</strong>，</p>
-<p>从头到尾从左至右识别用户输入的源代码，生成 token 列表（三元组：所在行号，类别，token 内容）</p>
-<hr>
-<h2 id="不确定的有穷自动机NFA"><a href="#不确定的有穷自动机NFA" class="headerlink" title="不确定的有穷自动机NFA"></a>不确定的有穷自动机NFA</h2><h3 id="NFA"><a href="#NFA" class="headerlink" title="NFA"></a>NFA</h3><p>一个不确定的 有穷自动机M 是一个五元组：</p>
-<script type="math/tex; mode=display">
-M=（K,\sum,f,S,Z)</script><ul>
-<li>K：有穷集合，每一个元素称为一个<strong>状态</strong></li>
-<li>Σ：有穷字母表，每一个元素称为一个<strong>输入符号</strong></li>
-<li>f：一个映射</li>
-<li>S ⊆ K：非空初态集（不唯一）</li>
+<h1 id="1-词法分析器"><a href="#1-词法分析器" class="headerlink" title="1. 词法分析器"></a>1. 词法分析器</h1><h2 id="1-1-基本原理"><a href="#1-1-基本原理" class="headerlink" title="1.1 基本原理"></a>1.1 基本原理</h2><ul>
+<li><p><strong>正规文法</strong></p>
+<ul>
+<li>也称<strong>3型</strong>文法 G=(VN,VT,S,P)</li>
+<li>其中P中的每一条规则都有下述形式：<code>A-&gt;aB或A-&gt;a</code>，其中A和B是非终结符，a是终结符的闭包</li>
+</ul>
+</li>
+<li><p><strong>不确定的有穷自动机NFA</strong></p>
+<blockquote>
+<p>一个不确定的 有穷自动机M 是一个五元组：$M=（K,\sum,f,S,Z)$</p>
+</blockquote>
+<ul>
+<li>K：有穷集，每个元素称为一个<strong>状态</strong></li>
+<li><p>Σ：有穷字母表，每一个元素称为一个<strong>输入符号</strong></p>
+</li>
+<li><p>f：一个映射</p>
+</li>
+<li>S ⊆ K：非空初态集（对于<strong>DFA，初态唯一</strong>）</li>
 <li>Z ⊆ K：终态集</li>
 </ul>
-<hr>
-<p>对于Σ<em>中的任何一个串t，若存在一条，从某一<strong>初态</strong>节点<strong>到</strong>某一<strong>终态</strong>节点的道路，且这条道路上<strong>所有弧的标记字依序</strong>连接成一个串 等于t，则称 <em>*t能够被这个NFA所接受</em></em>（识别）</p>
-<p>空字可以被M所接受的情况：</p>
+</li>
+<li><p><strong>字符串t能被DFA所接收</strong></p>
 <ul>
-<li>情况一：M的某些结点<strong>既是初态又是终态</strong></li>
-<li>情况二：存在一条从某个初态结点到某个终态结点的是 <strong>ε 道路</strong></li>
-</ul>
-<hr>
-<h2 id="正规文法→NFA"><a href="#正规文法→NFA" class="headerlink" title="正规文法→NFA"></a>正规文法→NFA</h2><p><strong>输入字符集</strong>Σ  与 正规文法的 <strong>VT</strong>（终结符集）      相同<br><strong>状态集</strong>K          与 正规文法的 <strong>VN</strong>（非终结符集） 相同</p>
-<p><font color="red">右线性</font>正规文法的转换规则：<br>    ①     增加一个终态结点，开始符号对应的结点作为初态<br>    ②     对形如 A→t 的规则，引一条从A到终态结点的弧，标记为t<br>    ③     对形如 A→tB 的规则，引一条从A到B的弧，标记为t<br>    注：t 为 VT 或ε</p>
-<h2 id="NFA→DFA"><a href="#NFA→DFA" class="headerlink" title="NFA→DFA"></a>NFA→DFA</h2><p>1.状态集合I的ε<strong>闭包</strong>：表示为<strong>ε-closure(I)</strong></p>
-<ul>
-<li>状态集I中的 <strong>任何状态 </strong>S 经 <strong>任意条 ε 弧</strong>而能到达的状态的集合。</li>
-<li>状态集I 的 <strong>任何状态S</strong> 都属于<strong>ε-closure(I)</strong></li>
-</ul>
-<p>2.状态集合I的<strong>a弧转换</strong>：表示为<strong>move(I,a)</strong></p>
-<ul>
-<li>定义为状态集合 J ，其中J是所有那些可从I的某一状态<strong>经过一条a弧</strong>而到达的<strong>状态</strong>的全体。<ul>
-<li>注意是<strong>一条</strong>！就是直接相连的那种</li>
-<li>而且是<strong>到达</strong>的那些状态，不要把本身出发的那个状态包含进去</li>
+<li>对于$\sum^{*}$中的任何符号串t，若存在一条从初态节点到某一终态节点的道路，且这条道路的所有弧的标记符连接成的符号等于t，则称t可被这个DFA所接收（识别），若DFA的初态节点同时又是终态节点，则空字($\epsilon$)可为DFA所接收</li>
 </ul>
 </li>
 </ul>
-<hr>
-<h3 id="子集法"><a href="#子集法" class="headerlink" title="子集法"></a>子集法</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">假定所构造的**子集族** 为 C = (T1, T2,,... Ti)，</span><br><span class="line">其中T1, T2,,... Ti为状态 K 的子集。</span><br><span class="line"><span class="number">1</span>）开始，令ε -<span class="built_in">closure</span>(K0) 为C中唯一成员，并且它是未被标记的。</span><br><span class="line"><span class="number">2</span>）<span class="built_in">While</span>(C中存在尚未被标记的子集T) <span class="keyword">do</span></span><br><span class="line">&#123;	标记T；</span><br><span class="line">	<span class="keyword">for</span>(每个 **输入字母** a) <span class="keyword">do</span></span><br><span class="line">	&#123;	U:= ε-<span class="built_in">closure</span>(<span class="built_in">move</span>(T,a))；</span><br><span class="line">		<span class="keyword">if</span>（U不在C中）  then</span><br><span class="line">		&#123;	将U作为未标记的子集加在C中；&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">包含NFA终态的状态为DFA的终态</span><br></pre></td></tr></table></figure>
-<h1 id="语法分析-LR-1"><a href="#语法分析-LR-1" class="headerlink" title="语法分析(LR(1))"></a>语法分析(LR(1))</h1><p>语法分析的作用：识别单词符号<strong>序列</strong>是否是给定文法的正确程序</p>
-<h2 id="LR分析法"><a href="#LR分析法" class="headerlink" title="LR分析法"></a>LR分析法</h2><p>根据当前分析栈中的符号串 和 向右顺序查看输入串的k个符号 就可以唯一地 确定分析器的动作使移进还是规约 和 用哪个产生式规约。因而能够唯一地确定句柄</p>
+<h2 id="1-2-设计思路"><a href="#1-2-设计思路" class="headerlink" title="1.2 设计思路"></a>1.2 设计思路</h2><p>​    最先开始先以课本上给出的简单构词规则进行编写代码，进行调试，然后逐步扩充和完善构词规则，进行编码和调试。严格按照词法分析流程，根据规定的正规文法，先<strong>构建NFA</strong>，再利用子集法<strong>确定为DFA</strong>，分模块逐步完成主要函数。最后再通过DFA，读入测试程序进行扫描进行词法分析，得到<strong>输出的token序列</strong>或者错误信息。生成 token 列表（三元组：所在行号，类别，token 内容）。由于算法所用数据结构和C++中许多已有数据结构概念相符，因此可考虑用C++代码编写，充分利用C++中的STL库，十分方便算法的实现。总体流程图如下：</p>
+<p><img src="https://i.bmp.ovh/imgs/2022/05/03/b31be7f16a2e2127.png" style="zoom: 30%;" /></p>
+<h2 id="1-3-文件结构"><a href="#1-3-文件结构" class="headerlink" title="1.3 文件结构"></a>1.3 文件结构</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>路径</th>
+<th>文件说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lexical\TXT\GRAMMAR.txt</td>
+<td>存放构词规则（正规文法）</td>
+</tr>
+<tr>
+<td>Lexical\TXT\INCHAR.txt</td>
+<td>存放终结符</td>
+</tr>
+<tr>
+<td>Lexical\TXT\KEYWORDS.txt</td>
+<td>存放关键字</td>
+</tr>
+<tr>
+<td>Lexical\TXT\LIMITER.txt</td>
+<td>存放界符(限定符）</td>
+</tr>
+<tr>
+<td>Lexical\TXT\OPERATOR.txt</td>
+<td>存放操作符</td>
+</tr>
+<tr>
+<td>Lexical\TXT\ROW.txt</td>
+<td>存放源程序中每一行的token数，便于语法分析器的报错提示</td>
+</tr>
+<tr>
+<td>Lexical\TXT\SOURCE.txt</td>
+<td>存放源程序代码</td>
+</tr>
+<tr>
+<td>Lexical\TXT\TOKEN_TRIAD.txt</td>
+<td>存放输出的token序列（三元组）</td>
+</tr>
+<tr>
+<td>Lexical\TXT\TOKEN.txt</td>
+<td>存放输出的token序列（二元组）</td>
+</tr>
+<tr>
+<td>Lexical\TXT\WRONG.txt</td>
+<td>存放语法分析器的报错信息，同时便于语法分析器的分析判断</td>
+</tr>
+<tr>
+<td>Lexical\lexical.cpp</td>
+<td>函数实现</td>
+</tr>
+<tr>
+<td>Lexical\path.h</td>
+<td>文件路径定义的头文件</td>
+</tr>
+<tr>
+<td>Lexical\lexical.h</td>
+<td>函数和变量声明的头文件</td>
+</tr>
+<tr>
+<td>Lexical\main.cpp</td>
+<td>主函数</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="1-4-构词规则"><a href="#1-4-构词规则" class="headerlink" title="1.4 构词规则"></a>1.4 构词规则</h2><p>基于本课程考核要求的内容，确定词法分析的构词如下：</p>
+<p><img src="https://i.bmp.ovh/imgs/2022/05/03/a19bf29f8f13c3e2.png" style="zoom:40%;" /></p>
+<p>因此，根据构词规则设置正规文法，文法中的各项产生式的作用和之间的<strong>逻辑关系和分类</strong>如下：</p>
+<ol>
+<li>界符(限定符)</li>
+</ol>
+<p><img src="..\blogImages\2022-04-15-【SE】词法分析器和语法分析器的设计\image-20220503095219277.png" alt="image-20220503095219277" style="zoom: 30%;" /></p>
+<ol>
+<li><p>标识符</p>
+<p><img src="..\blogImages\2022-04-15-【SE】词法分析器和语法分析器的设计\image-20220503095318581.png" alt="image-20220503095318581" style="zoom: 33%;" /></p>
+</li>
+<li><p>运算符</p>
+<p><img src="..\blogImages\2022-04-15-【SE】词法分析器和语法分析器的设计\image-20220503095435881.png" alt="image-20220503095435881" style="zoom: 33%;" /></p>
+</li>
+<li><p>常量</p>
+<p><img src="..\blogImages\2022-04-15-【SE】词法分析器和语法分析器的设计\image-20220503095607966.png" alt="image-20220503095607966" style="zoom:80%;" /></p>
+</li>
+</ol>
+<h2 id="1-5-具体实现"><a href="#1-5-具体实现" class="headerlink" title="1.5 具体实现"></a>1.5 具体实现</h2><h3 id="（1）初始化所有加载项：void-init"><a href="#（1）初始化所有加载项：void-init" class="headerlink" title="（1）初始化所有加载项：void init()"></a>（1）初始化所有加载项：void init()</h3><p>预处理，从各文本文件中加载终结符、关键字、操作符、界符到各自的数据结构中。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>数据结构</th>
+<th>函数名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>终结符</td>
+<td>vector<char>INCHAR</td>
+<td>void load_inchar();</td>
+</tr>
+<tr>
+<td>关键字</td>
+<td>vector<string> KEYWORDS</td>
+<td>void load_keywords();</td>
+</tr>
+<tr>
+<td>操作符</td>
+<td>vector<string> OPT</td>
+<td>void load_opt();</td>
+</tr>
+<tr>
+<td>界符</td>
+<td>vector<string>LIMITER</td>
+<td>void load_limiter();</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="（2）创建NFA：void-createNFA"><a href="#（2）创建NFA：void-createNFA" class="headerlink" title="（2）创建NFA：void createNFA()"></a>（2）创建NFA：void createNFA()</h3><ul>
+<li><p><strong>数据结构定义</strong></p>
+<ul>
+<li><p>NFA中的一条边的数据结构，结构体存储三元组的形式：边的起点，边的输入（权重），边的终点</p>
+<p><img src="..\blogImages\2022-04-15-【SE】词法分析器和语法分析器的设计\image-20220503100210138.png" alt="image-20220503100210138" style="zoom: 50%;" /></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Triad</span> &#123;</span></span><br><span class="line">  <span class="keyword">char</span> startPoint, input, endPoint;</span><br><span class="line">&#125; Triad;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>NFA的数据结构： 结构体保存<code>initialState</code>-初态，<code>finalState</code>-终态，<code>f</code>-NFA中所有边的集合</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">NFA</span> &#123;</span></span><br><span class="line">  <span class="keyword">char</span> initialState;</span><br><span class="line">  vector&lt;<span class="keyword">char</span>&gt; finalState;</span><br><span class="line">  vector&lt;Triad&gt; f;</span><br><span class="line">&#125; NFA;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><strong>读入的正规文法创建NFA</strong></p>
+<ul>
+<li><p>根据<strong>右线性</strong>正规文法的转换规则（注：t 为 VT 或ε）：</p>
+<pre><code>① 增加一个终态结点，开始符号对应的结点作为初态
+② 对形如 A→t 的规则，引一条从A到终态结点的弧，标记为t
+③ 对形如 A→tB 的规则，引一条从A到B的弧，标记为t
+</code></pre></li>
+<li><p>算法具体流程图如下，由于NFA的终态集合采用的是vector，最后需要对vector的元素进行去重，但代码运行时即使不去重也没有影响。</p>
+<p><img src="..\blogImages\2022-04-15-【SE】词法分析器和语法分析器的设计\image-20220503100618138.png" alt="image-20220503100618138" style="zoom:50%;" /></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="（3）将NFA转换成DFA：void-NFA-TO-DFA"><a href="#（3）将NFA转换成DFA：void-NFA-TO-DFA" class="headerlink" title="（3）将NFA转换成DFA：void NFA_TO_DFA()"></a>（3）将NFA转换成DFA：void NFA_TO_DFA()</h3><p>​    首先，定义DFA的数据结构，利用结构体保存初态-initialState、终态集合-finalState、边的集合-f；在定义DFA的边的集合时，并没有采用像NFA一样的结构体来定义边，而是采用一个二维数组<code>f[MAX_NODES][MAX_NODES]</code>，比如<code>f[state][input]=nextState</code>就表示从当前状态<code>state</code>输入字符<code>input</code>后转移到下一个状态<code>nextState</code>，将char隐式地转换成int类型作为数组下标，在代码中利用change函数实现，比如初始状态表示字符<code>S</code>对应int中0，其余状态<code>A</code>对应int中的1，<code>B</code>对应int中的2……以此类推。的实现了O(1)查找，提高了算法的效率。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">DFA</span> &#123;</span></span><br><span class="line">  <span class="keyword">char</span> initialState;</span><br><span class="line">  vector&lt;<span class="keyword">char</span>&gt; finalState;</span><br><span class="line">  <span class="keyword">int</span> f[MAX_NODES][MAX_NODES];  </span><br><span class="line">&#125; DFA;</span><br></pre></td></tr></table></figure>
+<p>算法的关键部分的伪代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">开始e-<span class="built_in">closure</span>(K0)令C为中唯一成员，并且它是未被标记的。</span><br><span class="line"><span class="built_in">While</span> (C 中存在尚未标记的子集T) <span class="keyword">do</span></span><br><span class="line">&#123;    标记T；</span><br><span class="line">     <span class="built_in">For</span>(每个输入字符a) <span class="keyword">do</span></span><br><span class="line">      &#123;   U:=e-<span class="built_in">closure</span>(<span class="built_in">move</span>(T,a))</span><br><span class="line">          <span class="built_in">If</span> (U不在C中) then</span><br><span class="line">          &#123; 将U作为未标记的子集加载C中；&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中，需要求闭包和move集：</p>
+<ul>
+<li><p><strong>求状态集T的闭包:</strong></p>
+<ul>
+<li><p>对应代码的函数名为<code>set&lt;char&gt; e_closure(set&lt;char&gt; T)</code>。</p>
+</li>
+<li><p>传入参数，类型为<code>set&lt;char&gt;</code>的状态集T，函数返回状态集T的一个闭包。</p>
+</li>
+<li>求T的闭包即是求状态集<strong>T中的任何状态</strong>，及<strong>经过任意条ε弧所能到达的状态</strong>的集合。</li>
+<li>由于集合的概念和C++的STL中的set概念一致，所以采用的是set类型来保存所有满足要求的状态，这样就没有重复元素，不需要去重。</li>
+</ul>
+</li>
+<li><p><strong>求集合I的move集：</strong></p>
+<ul>
+<li><p>对应代码的函数名为<code>set&lt;char&gt; move(set&lt;char&gt; I, char input)</code>。</p>
+</li>
+<li><p>传入参数，类型为<code>set&lt;char&gt;</code>  的集合I，和一个char类型的字符input，求它的move集，即是求所有可以从I中的某一状态经一条input弧所能到达的状态，返回满足要求的状态的集合。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>定义完求闭包和求move集的函数后，编写NFA转换成DFA的算法。根据伪代码转换的具体算法流程图如下：</p>
+<p><img src="..\blogImages\2022-04-15-【SE】词法分析器和语法分析器的设计\image-20220503111033602.png" alt="image-20220503111033602" style="zoom:50%;" /></p>
+<h3 id="（4）读入源程序进行词法分析：void-scanSourceCode"><a href="#（4）读入源程序进行词法分析：void-scanSourceCode" class="headerlink" title="（4）读入源程序进行词法分析：void scanSourceCode()"></a>（4）读入源程序进行词法分析：void scanSourceCode()</h3><p>​    首先，在读入源程序之前，需要将源程序一些不必要的换行和tab符号过滤掉，然后存到数组中，然后对这些已经用空格分隔该来的预处理字符串序列进行处理，将一个个字符串分割成一个个单词，初始化对应的单词类型为空串，具体算法执行流程如下：</p>
+<p><img src="..\blogImages\2022-04-15-【SE】词法分析器和语法分析器的设计\image-20220503125941169.png" alt="image-20220503125941169" style="zoom:50%;" /></p>
+<p>​    然后单词分割完毕后，对每个单词进行类型判断，通过DFA的状态转移表f对字符串序列逐个处理，每处理一个更新当前状态，直至状态为-1即找不到下一个状态为止，判断当前是否是因为未知符号导致的中断，将已经识别的字符串作为一个token识别其属于关键字，操作符，界符，常数和标识符的哪一种。具体算法执行流程如下：</p>
+<p><img src="..\blogImages\2022-04-15-【SE】词法分析器和语法分析器的设计\image-20220503130118347.png" alt="image-20220503130118347" style="zoom:50%;" /></p>
+<h3 id="（5）其他非关键函数"><a href="#（5）其他非关键函数" class="headerlink" title="（5）其他非关键函数"></a>（5）其他非关键函数</h3><ul>
+<li>包括：打印NFA、打印DFA、关键词、界符等的判断函数、状态重命名函数、过滤源程序函数等等。</li>
+</ul>
+<h2 id="1-6-实例分析"><a href="#1-6-实例分析" class="headerlink" title="1.6 实例分析"></a>1.6 实例分析</h2><ul>
+<li><p>输入正确源程序，词法分析成功，无误。</p>
+<p><img src="../blogImages/2022-04-15-【SE】词法分析器和语法分析器的设计/image-20220503220718340.png" alt="image-20220503220718340" style="zoom:30%;" /></p>
+</li>
+<li><p>修改源程序，检查，能够报出错误信息，指明出错位置</p>
+<p><img src="../blogImages/2022-04-15-【SE】词法分析器和语法分析器的设计/image-20220503221014826.png" alt="image-20220503221014826" style="zoom:30%;" /></p>
+</li>
+</ul>
+<h1 id="2-LR-1-语法分析器"><a href="#2-LR-1-语法分析器" class="headerlink" title="2. LR(1)语法分析器"></a>2. LR(1)语法分析器</h1><h2 id="2-1-基本原理"><a href="#2-1-基本原理" class="headerlink" title="2.1 基本原理"></a>2.1 基本原理</h2><ul>
+<li><strong>LR分析法</strong><ul>
+<li>根据<strong>状态栈</strong>，和<strong>向右顺序查看</strong>输入串的$k(k≥0)$ 个符号，就可以唯一地确定分析器的动作<strong>是移进还是归约</strong>和用哪个产生式归约，因而能就确定唯一的句柄。</li>
+<li>LR分析法的归约过程是规范推导的逆过程，所以LR分析过程是一种规范归约的过程</li>
+</ul>
+</li>
+<li><strong>LR分析器</strong><ul>
+<li>总控程序</li>
+<li>分析表：Action-Goto表</li>
+<li>分析栈：状态栈、符号栈；<ul>
+<li>分析器的动作由栈顶状态和当前输入符号来确定<ul>
+<li>移进：当$S_{j}=GOTO[S_{i},a]$ 成立，将$S_{j}$ 移入到状态栈，将$a$ 移入符号栈</li>
+<li>归约：当栈顶形成句柄$\beta$ ，用$\beta$ 归约为相应的非终结符</li>
+<li>接受：归约到文法符号栈中只剩下开始符号S，并且输入符号串结束，分析成功</li>
+<li>报错：当遇到状态栈顶为某一状态下出现不该遇到的文法符号时报错，无法接受该句子</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>几种LR分析法的区别</strong><ul>
+<li><strong>LR(0)</strong><ul>
+<li>分析过程不需要向右查看输入符号</li>
+<li>不存在<strong>移进-归约</strong> 和 <strong>归约-归约</strong> 冲突，即 R(0)文法分析<strong>不能解决这两种冲突</strong>，所以适用范围最小</li>
+</ul>
+</li>
+<li><strong>SLR(1)</strong><ul>
+<li>简单的LR(1)，存在<strong>多余（无效）归约</strong>的情况</li>
+<li>不存在归约-归约冲突，<strong>有可能存在移进-归约冲突</strong>，但是如果可以用 follow集解决则是 SLR文法。换句话说，SLR文法分析过程可以解决归约-归约冲突，但是<strong>不一定能解决移进-归约冲突</strong>。用 follow集来处理即出现移进-归约冲突的两条产生式，如果其 follow集相交为空则为 SLR文法，反之不是。</li>
+</ul>
+</li>
+<li><strong>LR(1)</strong><ul>
+<li>因为 LR(1)文法的范围比较大，所以文法几乎都是 LR(1)的</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>项目集中的项目种类</strong><ul>
+<li>移进项目、待约项目、归约项目、接受项</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-2-设计思路"><a href="#2-2-设计思路" class="headerlink" title="2.2 设计思路"></a>2.2 设计思路</h2><ul>
+<li>读入二型文法产生式文档，识别出所有终结符和非终结符，求相应的First集</li>
+<li>构建初始项目集，对核其闭包，进行状态转移，得到项目集族，构建Action-Goto表</li>
+<li>构造分析表。</li>
+</ul>
+<p>编码过程中，严格分模块进行，每完成一个模块就进行一个模块的测试和校正。大量使用STL极大的简便了繁琐的编码。</p>
+<h2 id="2-3-文件结构"><a href="#2-3-文件结构" class="headerlink" title="2.3 文件结构"></a>2.3 文件结构</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>路径</th>
+<th>文件说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Parser\TXT\ACTION_GOTO.txt</td>
+<td>存放产生的Action-Goto表</td>
+</tr>
+<tr>
+<td>Parser\TXT\ANALYSIS.TXT</td>
+<td>存放分析表</td>
+</tr>
+<tr>
+<td>Parser\TXT\GRAMMAR.txt</td>
+<td>存放文法表</td>
+</tr>
+<tr>
+<td>Parser\TXT\ITEMSET.txt</td>
+<td>存放产生的项目集</td>
+</tr>
+<tr>
+<td>Parser\main.cpp</td>
+<td>主函数</td>
+</tr>
+<tr>
+<td>Parser\parser.cpp</td>
+<td>函数实现</td>
+</tr>
+<tr>
+<td>Parser\parser.h</td>
+<td>函数和变量声明的头文件</td>
+</tr>
+<tr>
+<td>Parser\path.h</td>
+<td>文件路径定义的头文件</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="2-4-语法规则"><a href="#2-4-语法规则" class="headerlink" title="2.4 语法规则"></a>2.4 语法规则</h2><p>​    实现基本的运算，赋值，定义变量，if-else，while，do-while，for，switch-case分支语句的判别。抽象的文法映射成程序中的文法规则的逻辑分类如下：</p>
+<ol>
+<li><p>程序框架</p>
+<p><img src="../blogImages/2022-04-15-【SE】词法分析器和语法分析器的设计/image-20220503144649721.png" alt="image-20220503144649721" style="zoom: 50%;" /></p>
+</li>
+<li><p>赋值语句</p>
+<p><img src="../blogImages/2022-04-15-【SE】词法分析器和语法分析器的设计/image-20220503144737724.png" alt="image-20220503144737724" style="zoom:45%;" /></p>
+</li>
+<li><p>操作语句</p>
+<p><img src="../blogImages/2022-04-15-【SE】词法分析器和语法分析器的设计/image-20220503144812202.png" alt="image-20220503144812202" style="zoom: 45%;" /></p>
+<p><img src="../blogImages/2022-04-15-【SE】词法分析器和语法分析器的设计/image-20220503144847851.png" alt="image-20220503144847851" style="zoom:40%;" /></p>
+</li>
+<li><p>分支语句</p>
+<p><img src="../blogImages/2022-04-15-【SE】词法分析器和语法分析器的设计/image-20220503144921107.png" alt="image-20220503144921107" style="zoom:60%;" /></p>
+</li>
+<li><p>代码块</p>
+<p><img src="../blogImages/2022-04-15-【SE】词法分析器和语法分析器的设计/image-20220503144941722.png" alt="image-20220503144941722" style="zoom:50%;" /></p>
+</li>
+</ol>
+<h2 id="2-5-具体实现"><a href="#2-5-具体实现" class="headerlink" title="2.5 具体实现"></a>2.5 具体实现</h2><h3 id="（1）预处理阶段：读取给定的二型文法文件"><a href="#（1）预处理阶段：读取给定的二型文法文件" class="headerlink" title="（1）预处理阶段：读取给定的二型文法文件"></a>（1）预处理阶段：读取给定的二型文法文件</h3><ul>
+<li><p>数据结构定义</p>
+<ul>
+<li><p>二型文法产生式的数据结构</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Grammar</span>&#123;</span></span><br><span class="line">    <span class="keyword">char</span> left;</span><br><span class="line">    string right;</span><br><span class="line">&#125;Grammar;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>存放所有产生式的数据结构</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;Grammar&gt; grammar; </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>定义存放token的数据结构，将词法分析器获取的token的<strong>单词映射成一个字符</strong>，存入token字符串中</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">     string token;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>定义存放终结符和非终结符的数据结构，VT存放终结符，其中不包括epsilon，epsilon单独处理； VN存放非终结符。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set&lt;<span class="keyword">char</span>&gt; VT;  </span><br><span class="line">set&lt;<span class="keyword">char</span>&gt; VN;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>算法具体流程如下：</p>
+<p><img src="../blogImages/2022-04-15-【SE】词法分析器和语法分析器的设计/image-20220503145537941.png" alt="image-20220503145537941" style="zoom:60%;" /></p>
+</li>
+</ul>
+<h3 id="（2）创建项目集族和Action-Goto表：void-create-char-left-char-right"><a href="#（2）创建项目集族和Action-Goto表：void-create-char-left-char-right" class="headerlink" title="（2）创建项目集族和Action-Goto表：void create(char left,char right)"></a>（2）创建项目集族和Action-Goto表：void create(char left,char right)</h3><ul>
+<li><p><strong>数据结构定义</strong></p>
+<ul>
+<li><p>LR(1)项目集中的一条项目</p>
+<ul>
+<li><p><code>left</code>项目的产生式左边，<code>right</code>产生式右边，<code>position</code>圆点的位置，规定在<code>right[position]</code>的左边，<code>index</code> 本项目产生式在文法中的位置索引，<code>forward</code>向前搜索符集；</p>
+</li>
+<li><p>另外重载 <code>＜</code> 和 <code>==</code>便于后续的一些比较</p>
+</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Item</span>&#123;</span></span><br><span class="line">	<span class="keyword">char</span> left; </span><br><span class="line">	string right;</span><br><span class="line">	<span class="keyword">int</span> position = <span class="number">0</span>; </span><br><span class="line">	<span class="keyword">int</span> index; </span><br><span class="line">	set&lt;<span class="keyword">char</span>&gt; forward; </span><br><span class="line">	<span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> struct Item &amp; item) <span class="keyword">const</span>&#123;...详细见代码...&#125;</span><br><span class="line">	<span class="keyword">bool</span> <span class="keyword">operator</span>==(<span class="keyword">const</span> struct Item &amp; item) <span class="keyword">const</span>&#123;...详细见代码...&#125; </span><br><span class="line">&#125;Item;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>LR(1)项目集族的数据结构</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set&lt;Item&gt; Itemset[<span class="number">1000</span>];  </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Action-Goto表的数据结构</p>
+<p>​    因为Action和Goto表的<strong>移进项没有本质区别</strong>，只有Action中的移进和归约态有区别。因为终结符和非终结符本代码都只用了一个字符表示，所以采用了char到int的隐式转换作为二维数组的索引，实现了O(1)的查找。。再判断的时候也和256作比较再进行下一步的判断。例如<code>ActionGoto[state][input]</code>的值表示栈顶状态为<code>state</code>时，遇见字符<code>input</code>所要执行的动作。</p>
+<p>​    <strong>对ActionGoto数组的值的规定</strong>：</p>
+<ul>
+<li>-1 标识接受动作；</li>
+<li>-2 标识不存在这个状态转移，即出错动作；</li>
+<li>其余：Action表中的移进和归约用是否加256区分：x标识移进动作，x+256表示规约动作</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> ActionGoto[<span class="number">300</span>][<span class="number">300</span>]; </span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><strong>算法具体流程</strong></p>
+<p>​    left是增广文法的左部非终结符，right是原文法的起始非终结符，用于初始化初始项目集，然后创建所有项目集，得到最终的项目集族，采用的是宽搜的方式，遍历所有终结符和非终结符。</p>
+<p>​    如果能进行状态转移，那么就核和闭包，扩充项目集。若与原项目集不同则加入到项目集族，增加一条状态转移；若相同则只增加一条状态转移（指向自己），同时填充ActionGoto数组。</p>
+<p>​    直至项目集族中不再有新项目集出现为止。在建好项目集族后，再来遍历项目集族判断项目集中是否含有归约项，区分和填充ActionGoto数组中的归约项和接受项。</p>
+<p><img src="../blogImages/2022-04-15-【SE】词法分析器和语法分析器的设计/image-20220503204749919.png" alt="image-20220503204749919" style="zoom:77%;" /></p>
+<p>在构造DFA项目集的过程中，还涉及到以下函数调用</p>
+<p>| 函数作用         | 函数名                                            | 说明                                                         |<br>| :———————- | ————————————————————————- | —————————————————————————————— |<br>| 求核             | <code>set&lt;Item&gt; getKernel(char c, set&lt;Item&gt; itemSet)</code>  | 遍历项目集中的每个项目，与文法进行匹配即可                   |<br>| 求闭包           | <code>set&lt;Item&gt; getClosure(set&lt;Item&gt; itemSet)</code>         | 通过while循环，循环体内遍历项目集中的每一个项目，若还有能扩充项目则继续迭代，直至项目集中的每一个项目不再能进行扩充。 |<br>| 求向前搜索符号集 | <code>set&lt;char&gt; getForward(char c, set&lt;char&gt; forward)</code> | 关键在于需要进行c是否为epsilon以及c是否能推出空来判断相应的动作，得到向前搜素符。 |<br>| 求First集        | <code>void getFirstSet()</code>                              | 通过while循环，循环体内遍历每一个文法，直至每个非终结符的First集不再发生改变就停止迭代，若还有变化则继续迭代。 |</p>
+</li>
+</ul>
+<h3 id="（3）扫描token序列进行语法分析：void-scanSourceToken-string-token-str"><a href="#（3）扫描token序列进行语法分析：void-scanSourceToken-string-token-str" class="headerlink" title="（3）扫描token序列进行语法分析：void scanSourceToken(string token_str)"></a>（3）扫描token序列进行语法分析：void scanSourceToken(string token_str)</h3><p>​    首先检查词法分析无误，然后再进行语法分析，依据Action-Goto表依次对输入的token进行分析，根据当前的项目集（即DFA状态）和当前的token找Action-Goto表中的对应项，根据表中对应的值，判断是移进还是归约还是acc还是报错。如果是移进则更新当前状态，同时将状态和token入栈；如果是归约，则符号栈和状态栈依据归约文法进行退栈和入栈，同时根据最新的状态和token进行移进。直至acc或者检测到语法出错，则迭代结束。具体流程图如下：</p>
+<p><img src="../blogImages/2022-04-15-【SE】词法分析器和语法分析器的设计/image-20220503210635580.png" alt="image-20220503210635580" style="zoom:50%;" /></p>
+<h2 id="2-6-实例分析"><a href="#2-6-实例分析" class="headerlink" title="2.6 实例分析"></a>2.6 实例分析</h2><ul>
+<li>输入正确源程序，语法分析成功，无误。</li>
+</ul>
+<p><img src="../blogImages/2022-04-15-【SE】词法分析器和语法分析器的设计/image-20220503221437398.png" alt="image-20220503221437398" style="zoom:33%;" /></p>
+<ul>
+<li><p>修改源程序，检查，能够报出错误信息，指明出错位置</p>
+<p><img src="../blogImages/2022-04-15-【SE】词法分析器和语法分析器的设计/image-20220503221705649.png" alt="image-20220503221705649" style="zoom:33%;" /></p>
+</li>
+</ul>
+<h1 id="3-运行环境说明"><a href="#3-运行环境说明" class="headerlink" title="3. 运行环境说明"></a>3. 运行环境说明</h1><ul>
+<li><p>操作系统：Windows 10</p>
+</li>
+<li><p>运行环境：Visual Studio Code</p>
+</li>
+<li><p>说明：编译链接Lexical或者Parser中的各个.cpp文件，然后运行main.cpp即可，Visual Studio Code环境下推荐CodeRunner插件一键运行；若更改源程序进行语法分析器的测试，请先运行词法分析器得到相应的token，再进行语法分析</p>
+</li>
+</ul>
+<h1 id="3-课设总结"><a href="#3-课设总结" class="headerlink" title="3. 课设总结"></a>3. 课设总结</h1><p>​    本次课设花了将近两周的时间，首先由于是上学期学的编译原理，时间一长难免有些遗忘，所以在写代码前提前粗略地复习了一下之前学过的知识。在写代码过程中的同时，将理论知识转换成实际代码，也加深了我对编译原理课程所学知识的理解，也对我的代码能力有一定的提高。在写代码的过程中，感受到了选择一项好的数据结构的重要性，尤其是对C++中STL的实际应用，各种各样的数据结构让我体会到了STL的简便性。</p>
+<p>​    在本次课设中，也遇到了一些磕磕碰碰，比如在进行语法分析器的设计，因为之前用的是书上的例子，导致之前开的保存项目集族的全局变量并没有很大，结果在代入自己的文法时，异常中断，最后通过开一大数组解决问题。还比如，在进行set的遍历时，删除了容器的部分元素，导致当前迭代器失效，通过预先获取下一步的迭代器，再删除现有的迭代器解决问题。</p>
+<p>​    但是通过此次课程设计，让我体会到代码的模块化能够大大地节省编码过程中的调试时间，使代码逻辑层次更加清晰的好处。在编码过程中，将各个算法所用到的函数一个个写好，分阶段测试函数，整合算法，边写边检查和调试，就能够保证最终整合代码运行时报错模块数量最少。上学期虽然编译原理学得不错，但是转换成具体可用的程序来说，仍是有点陌生，但通过手动实现词法分析器和语法分析器，让我加深了对编译原理的理解和运用，总体来说收获颇丰。</p>
 
     </div>
 
@@ -373,8 +762,8 @@ M=（K,\sum,f,S,Z)</script><ul>
       <i class="fa fa-chevron-left"></i> 区块链的一些简单理解
     </a></div>
       <div class="post-nav-item">
-    <a href="/2022/04/17/2022-04-17-%E3%80%90SE%E3%80%91%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="next" title="【SE】线性代数">
-      【SE】线性代数 <i class="fa fa-chevron-right"></i>
+    <a href="/2022/04/17/2022-04-17-%E3%80%90SE%E3%80%91%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" rel="next" title="【SE】软件体系结构">
+      【SE】软件体系结构 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -435,7 +824,7 @@ M=（K,\sum,f,S,Z)</script><ul>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text">词法分析器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8D%E7%A1%AE%E5%AE%9A%E7%9A%84%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BANFA"><span class="nav-number">1.1.</span> <span class="nav-text">不确定的有穷自动机NFA</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#NFA"><span class="nav-number">1.1.1.</span> <span class="nav-text">NFA</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E8%A7%84%E6%96%87%E6%B3%95%E2%86%92NFA"><span class="nav-number">1.2.</span> <span class="nav-text">正规文法→NFA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NFA%E2%86%92DFA"><span class="nav-number">1.3.</span> <span class="nav-text">NFA→DFA</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%90%E9%9B%86%E6%B3%95"><span class="nav-number">1.3.1.</span> <span class="nav-text">子集法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90-LR-1"><span class="nav-number">2.</span> <span class="nav-text">语法分析(LR(1))</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#LR%E5%88%86%E6%9E%90%E6%B3%95"><span class="nav-number">2.1.</span> <span class="nav-text">LR分析法</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text">1. 词法分析器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 基本原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 设计思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 文件结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-%E6%9E%84%E8%AF%8D%E8%A7%84%E5%88%99"><span class="nav-number">1.4.</span> <span class="nav-text">1.4 构词规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.5.</span> <span class="nav-text">1.5 具体实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E5%88%9D%E5%A7%8B%E5%8C%96%E6%89%80%E6%9C%89%E5%8A%A0%E8%BD%BD%E9%A1%B9%EF%BC%9Avoid-init"><span class="nav-number">1.5.1.</span> <span class="nav-text">（1）初始化所有加载项：void init()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E5%88%9B%E5%BB%BANFA%EF%BC%9Avoid-createNFA"><span class="nav-number">1.5.2.</span> <span class="nav-text">（2）创建NFA：void createNFA()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%883%EF%BC%89%E5%B0%86NFA%E8%BD%AC%E6%8D%A2%E6%88%90DFA%EF%BC%9Avoid-NFA-TO-DFA"><span class="nav-number">1.5.3.</span> <span class="nav-text">（3）将NFA转换成DFA：void NFA_TO_DFA()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%884%EF%BC%89%E8%AF%BB%E5%85%A5%E6%BA%90%E7%A8%8B%E5%BA%8F%E8%BF%9B%E8%A1%8C%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%EF%BC%9Avoid-scanSourceCode"><span class="nav-number">1.5.4.</span> <span class="nav-text">（4）读入源程序进行词法分析：void scanSourceCode()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%885%EF%BC%89%E5%85%B6%E4%BB%96%E9%9D%9E%E5%85%B3%E9%94%AE%E5%87%BD%E6%95%B0"><span class="nav-number">1.5.5.</span> <span class="nav-text">（5）其他非关键函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6-%E5%AE%9E%E4%BE%8B%E5%88%86%E6%9E%90"><span class="nav-number">1.6.</span> <span class="nav-text">1.6 实例分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-LR-1-%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">2. LR(1)语法分析器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 基本原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 设计思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 文件结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 语法规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.5.</span> <span class="nav-text">2.5 具体实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E9%A2%84%E5%A4%84%E7%90%86%E9%98%B6%E6%AE%B5%EF%BC%9A%E8%AF%BB%E5%8F%96%E7%BB%99%E5%AE%9A%E7%9A%84%E4%BA%8C%E5%9E%8B%E6%96%87%E6%B3%95%E6%96%87%E4%BB%B6"><span class="nav-number">2.5.1.</span> <span class="nav-text">（1）预处理阶段：读取给定的二型文法文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE%E9%9B%86%E6%97%8F%E5%92%8CAction-Goto%E8%A1%A8%EF%BC%9Avoid-create-char-left-char-right"><span class="nav-number">2.5.2.</span> <span class="nav-text">（2）创建项目集族和Action-Goto表：void create(char left,char right)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%883%EF%BC%89%E6%89%AB%E6%8F%8Ftoken%E5%BA%8F%E5%88%97%E8%BF%9B%E8%A1%8C%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%EF%BC%9Avoid-scanSourceToken-string-token-str"><span class="nav-number">2.5.3.</span> <span class="nav-text">（3）扫描token序列进行语法分析：void scanSourceToken(string token_str)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-%E5%AE%9E%E4%BE%8B%E5%88%86%E6%9E%90"><span class="nav-number">2.6.</span> <span class="nav-text">2.6 实例分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E8%AF%B4%E6%98%8E"><span class="nav-number">3.</span> <span class="nav-text">3. 运行环境说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E8%AF%BE%E8%AE%BE%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">3. 课设总结</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -451,7 +840,7 @@ M=（K,\sum,f,S,Z)</script><ul>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -531,13 +920,13 @@ M=（K,\sum,f,S,Z)</script><ul>
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">129k</span>
+    <span title="站点总字数">140k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:57</span>
+    <span title="站点阅读时长">2:07</span>
 </div>
 <!--
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
