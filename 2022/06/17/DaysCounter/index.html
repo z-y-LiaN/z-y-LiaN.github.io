@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":20,"offset":10,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="一些碎碎念记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【生活】Days Counter">
+<meta property="og:url" content="http://example.com/2022/06/17/DaysCounter/index.html">
+<meta property="og:site_name" content="LiaN">
+<meta property="og:description" content="一些碎碎念记录">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/07/03/Aje27ih1sdmZpEG.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/07/03/wEos5eXkpqvArFu.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/07/05/wW6aUFudTLZe2mD.png">
+<meta property="og:image" content="https://s2.loli.net/2022/07/05/lrbLWzi1T6UQNB7.png">
+<meta property="og:image" content="https://s2.loli.net/2022/07/05/mExB3HPnWcdN5ST.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/07/07/QhVYP628ewDBtXn.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/07/07/JSEAljVx38WUDiO.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/07/07/4TfJ2vNw8YCBMgL.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/07/07/BHETgdk2RMGm9aW.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/07/11/UOCq8kGi2xAuyLg.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/07/11/STuJimv5gneWLoq.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/07/11/3dcVNGeya5Lbf1x.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/07/11/fl5dmFIxH379oE4.jpg">
+<meta property="article:published_time" content="2022-06-17T01:55:34.000Z">
+<meta property="article:modified_time" content="2022-07-11T03:40:21.232Z">
+<meta property="article:author" content="LiaN">
+<meta property="article:tag" content="胡言乱语">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/07/03/Aje27ih1sdmZpEG.jpg">
+
+<link rel="canonical" href="http://example.com/2022/06/17/DaysCounter/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>【生活】Days Counter | LiaN</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="LiaN" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband">
+    </div>
+<a target="_blank" rel="noopener" href="https://github.com/z-y-LiaN" class="github-corner" aria-label="View source on GitHub">
+<svg width="80" height="80" viewBox="0 0 250 250" style="fill:#F4A460; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">LiaN</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">是一只废物捏</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">30</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">32</span></a>
+
+  </li>
+        <li class="menu-item menu-item-mubulinks">
+
+    <a href="/mubulinks/" rel="section"><i class="fa fa-link fa-fw"></i>幕布链接</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/17/DaysCounter/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn2.maocdn.cn/img/2022/01/21/J8U_G9ZTZG4W12DA260Z9.jpg">
+      <meta itemprop="name" content="LiaN">
+      <meta itemprop="description" content="<font color="#000000">别焦虑了，说不定明天就死了呢.</font>">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LiaN">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【生活】Days Counter
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-06-17 09:55:34" itemprop="dateCreated datePublished" datetime="2022-06-17T09:55:34+08:00">2022-06-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-07-11 11:40:21" itemprop="dateModified" datetime="2022-07-11T11:40:21+08:00">2022-07-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">生活</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>一些碎碎念记录</p>
+<span id="more"></span>
+<h1 id="2022"><a href="#2022" class="headerlink" title="2022"></a>2022</h1><h2 id="June"><a href="#June" class="headerlink" title="June"></a>June</h2><h3 id="17th"><a href="#17th" class="headerlink" title="17th"></a>17th</h3><ul>
+<li>上午去把川大夏令营的章盖了，然后划水一上午</li>
+<li>下午把网页代码写了一点，然后划水一下午</li>
+<li>水群的时候看到fdu的夏令营开奖了，计科两位大佬入营了，太牛了，还好我没报，不然就要收到人生第一封夏令营拒信了OvO</li>
+<li>小脑斧点赞我朋友圈了呜呜，泪目</li>
+</ul>
+<h3 id="18th"><a href="#18th" class="headerlink" title="18th"></a>18th</h3><ul>
+<li>写了半天的前端</li>
+<li>剩下半天划水</li>
+<li>在b站刷到了以前的一部剧，《爱情宝典》，看了两集，果然还是那个年代的人做电视剧细心啊，服化道和人物形象和语言都让人觉得舒服，剧情节奏紧凑。</li>
+</ul>
+<h3 id="19th"><a href="#19th" class="headerlink" title="19th"></a>19th</h3><ul>
+<li>上午把buaa的材料交了</li>
+<li>下午睡了半个下午，写了半个下午的文档</li>
+<li>呜呜感觉自己效率真的好低 ，一天下来好像什么也没干，等把信安赛初赛作品交了我要全身心投入复习！！！不能再像最近几天这么摸鱼了，感觉自己有好多东西要看，数据结构没复习完，计网还没开始背，操作系统也没有看，但操作系统应该很快就能看完吧。acwing的基础课还没有刷完，之前卖的linux基础课也没看，项目还没有好好整理复习。救命，怎么会有这么多事情要做，感觉自己一样都没开始做好QAQ。</li>
+</ul>
+<h3 id="20th"><a href="#20th" class="headerlink" title="20th"></a>20th</h3><ul>
+<li>嗯，有点烦躁的一天。嗯，怎么说呢，学好语文真的是太重要太重要了，尤其是对于理工科。</li>
+<li>熬一熬，再熬一熬就可以全身心地开始复习专业课了啾咪啾咪</li>
+<li>晚上把文档搞完了，九点多就回去躺着啦嘿嘿</li>
+</ul>
+<h3 id="21st"><a href="#21st" class="headerlink" title="21st"></a>21st</h3><ul>
+<li>早上自然醒太早了，把闹钟关了睡了个回笼觉结果睡过头了，上午就看了一点点点二叉树</li>
+<li>中午回去吃完饭睡个午觉一觉睡到了三点多，开空调也能被热醒QAQ，傍晚洗完头洗完澡舒服多了，晚上等温度降下来了然后出门转一转</li>
+<li>等晚上回来再好好学习（希望如此，但是现在就是一个毫无动力的状态，没有ddl来push我学习效率真的是太低惹。</li>
+<li>晚上并没有好好学习，不过解决了一件麻烦事，舒服了:white_flower:</li>
+<li>先给明天画个饼🤗：早起（8点之前？），看完计网第一章，复习os第二章，刷几道基础课的题:hammer:</li>
+</ul>
+<h3 id="22nd"><a href="#22nd" class="headerlink" title="22nd"></a>22nd</h3><ul>
+<li><p>确实早起成功了，六点半自然醒，意识醒了但是眼睛 睁不开:laughing:，勉强睡到七点半才下床</p>
+</li>
+<li><p>给未来几天画个大饼</p>
+</li>
+<li><p>晚上摸鱼去啦，去一号门外面买了点荔枝和山竹，荔枝还是得吃妃子笑，白糖荔真的垃圾，水分和甜度都比不上妃子笑，虽然看起来大个儿又好看，但是核太大了，一颗白糖荔半颗核属于是。妃子笑yyds:heart_eyes:</p>
+</li>
+</ul>
+<h3 id="23rd"><a href="#23rd" class="headerlink" title="23rd"></a>23rd</h3><ul>
+<li>上午开了个会，改了一下互联网+那个比赛的前端代码，:satisfied:点了七口辣的火锅杯，一会儿拿完外卖再买半个西瓜再回宿舍，刷几集神探狄仁杰（真的没啥好剧可以看了，还是看这种老剧有意思，拍的真好啊），打算三点多的时候再出门吧，去院办把bit的章盖了，然后把留在院办的东西拿回来。学习，晚上再学:sob:</li>
+<li>晚上不想学呜呜，呜呜能不能直接躺平等预推免啊，夏0营太耗费精力了呜呜，学不动 烦死啦，回去继续刷神探狄仁杰！！！！！！！！！！！</li>
+</ul>
+<h3 id="24th"><a href="#24th" class="headerlink" title="24th"></a>24th</h3><ul>
+<li>昨天晚上南京下暴雨，一早睡到十点半才醒，中午点了黄焖鸡米饭，点的这家的不好吃，不如一号门外面的那家黄焖鸡米饭，有空出去吃一吃那家的:open_mouth:</li>
+<li>下午把计网的第一章看完了，好多啊好多啊，将近200页ppt，真的会谢，突然想起去年这个时候大概也在复习计网，hhh去年七月初考的计网好像是。</li>
+<li>晚上数字图像处理的成绩出了，大三最后一门。以后再也不用卷生卷死卷分数啦 ，从大一上最初的82点几的均分，到大三下92点几的均分，还真是个逐渐“卷”化的三年，呜呜，这三年怎么这么快，呜呜:sob:</li>
+</ul>
+<h3 id="25th"><a href="#25th" class="headerlink" title="25th"></a>25th</h3><ul>
+<li>上午又是一觉睡到十点多，虽然每天都是七点左右自然醒，但是醒了又没完全醒，所以继续睡:sleeping:</li>
+<li>下午都在写PPT，没时间复习呜呜呜。</li>
+<li>晚上去一号路吃了那个麻辣牛肚卷，牛肚真好吃呀，明天如果没吃晚饭的话就再去吃一次嘿嘿:happy:看计网的应用层的PPT看到了80页:sassy_woman:，嗯，明天干啥呢，赌一波明天能不能早起，如果早起的话争取上午把应用层这一章的ppt看完吧，下午复习一下数据结构的查找那一章；晚上再过一遍os的进程这一章以及上午（可能）没看完的计网ppt</li>
+</ul>
+<h3 id="26th"><a href="#26th" class="headerlink" title="26th"></a>26th</h3><ul>
+<li>早起成功，不过已经是早上十点:clock10:，上午看了40页PPT，呜呜华东师范寄了呜呜，真就夏0营呗，呜呜呜呜，川大要是再给我寄，真的会emo呜呜，川大，我的川大:sob::sob::sob:虽然说智能的去年前几名也是夏0营，呜呜，我知道是神仙打架，但是能不能给我一个offer保底呐QWQ，心痛呜呜，下午决定把那几个不想去的学校也报一下呜呜，能不能让我有个夏令营体验感！！！！！</li>
+<li>15:50的时候终于把应用层这章的PPT看完了:cowboy_hat_face:下午跟xbj学长聊了会儿保研的事情，呜呜感觉自己又重新燃起了自己一定有书读的期望！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！</li>
+<li>18:57把数据结构的排序这章看了2/3，好饿QwQ，出去吃昨天吃的牛肚卷！:hugs:吃饱回来再学</li>
+<li>牛肚卷好好吃✌，吃完回来把排序这张看完了；昨天画的饼没有实现:sob:（虽然是意料之中</li>
+<li>如果明天能够早起的话，画的饼应该就是：上午把王道的排序这章节题做了，如果互联网+的ppt浪费的时间不多的话，复习一下os的存储管理这一章，然后倒着过一遍进程和死锁那一章；</li>
+</ul>
+<h3 id="27th-30th"><a href="#27th-30th" class="headerlink" title="27th-30th"></a>27th-30th</h3><ul>
+<li>头痛摸鱼睡觉不愿打字</li>
+</ul>
+<h2 id="July"><a href="#July" class="headerlink" title="July"></a>July</h2><h3 id="1st"><a href="#1st" class="headerlink" title="1st"></a>1st</h3><ul>
+<li>买的摄像头和支架到了，白天复习了操作系统的文件管理（一半），还剩最后的IO设备管理</li>
+<li>今天晚上把比赛报告改完然后看一遍，再把ppt做了，还要川大的面试ppt</li>
+<li>2、3、4、5、希望3号之前能把os过一遍，4、5号复习数据结构，自我介绍打个草稿QwQ</li>
+<li>等南大的机试完了（寄了）然后开始跑步运动；上旬复习408，下旬复习数学！zyl可真会画大饼呐</li>
+</ul>
+<h3 id="2st"><a href="#2st" class="headerlink" title="2st"></a>2st</h3><ul>
+<li><p>越是ddl就越是懒，在摆烂的边缘疯狂试探</p>
+</li>
+<li><p>下午把文件管理和设备管理走马观花看完了，晚上回寝室摸鱼嘿嘿嘿</p>
+</li>
+<li><p>夏天的天空真的好好看，不用p图的好看</p>
+<p><img src="https://s2.loli.net/2022/07/03/Aje27ih1sdmZpEG.jpg" alt="SHWY_N_7P9@M87J3UOU_VXK.jpg" style="zoom: 20%;" /></p>
+</li>
+<li><p>晚上嘴馋但是不饿，点了鸡丁炒饭，我觉得酸豇豆和酸萝卜真的好吃，感觉一般般，所以吃了一个多小时一半都没吃完</p>
+<p><img src="https://s2.loli.net/2022/07/03/wEos5eXkpqvArFu.jpg" alt="5__WOM1`GU_05CH60Q9_K83.jpg" style="zoom:20%;" /></p>
+</li>
+<li><p>听闻某同学 北大，复旦，人大，中山，上交都入营了之后的内心活动：<br>真厉害啊不愧是ta太牛啦:heart_eyes:呜呜呜不愧是我太废物啦:crying_cat_face:呜呜真就2%的人拿98%的offer:weary::weary::weary:好累尼玛，等川大面试完就躺平准备预推免吧，夏令营不适合我这种垃圾:sob:每个高校的夏令营就是硬气，只要985和211的rk1[自抱]希望你们预推免和九推的时候也敢这么硬气:open_mouth:希望大佬们夏令营赶紧拿完offer早点确定，预推免不要跟我这种垃圾争:weary:</p>
+</li>
+</ul>
+<h3 id="3nd"><a href="#3nd" class="headerlink" title="3nd"></a>3nd</h3><ul>
+<li>呜呜呜我以为 今天能够把os过一遍，结果晚上才开始过进程这一章呜呜，明天就开营了淦</li>
+<li>买了一盒周黑鸭的鸭翅，好好吃:dancer::dancer::dancer:</li>
+</ul>
+<h3 id="4th"><a href="#4th" class="headerlink" title="4th"></a>4th</h3><ul>
+<li>排队等njucs的网络测试浪费我一个下午，哼哼</li>
+</ul>
+<h3 id="5th"><a href="#5th" class="headerlink" title="5th"></a>5th</h3><ul>
+<li><p>吼吼，生活费到账了，点了绝味的鸭翅，真没有周黑鸭的鸭翅好吃，这波属实周黑鸭赢！</p>
+</li>
+<li><p>今天发现网易云的一个新功能，就是用歌房的耳返功能来背书，真不错！！！！！！！</p>
+</li>
+<li><p>早上起来发现寝室没电了，问了六个人校园卡里有没有钱，结果都没有hhhh</p>
+<p><img src="https://s2.loli.net/2022/07/05/wW6aUFudTLZe2mD.png" alt="image.png" style="zoom: 33%;" /></p>
+</li>
+<li><p>北航入营了，得知入营的瞬间是开心的，但又发现机试过不了的话不仅无法面试，还不能报之后的预推免，悲，真的是大喜大悲，无尽的悲。这种给你希望又让你意识到最后没有希望的感觉真是太上头迷死人啦:rage:，夏令营==体验营；明天川大cs我连数据结构都没复习完，项目也没复习呜呜呜。为什么过得会比期末都痛苦啊:satisfied:，期末复习好了期末就有希望，夏令营就算复习好了也没希望，并且根本不可能复习不好，一个寄字贯穿zyl的一生</p>
+<p><img src="https://s2.loli.net/2022/07/05/lrbLWzi1T6UQNB7.png" alt="image.png" style="zoom:33%;" /></p>
+</li>
+<li><p>原来在学校感受到的夏天的傍晚是，趴在阳台看晚霞，听楼下小树林的蝉鸣，还有足球场上少年们的欢呼</p>
+<p><img src="https://s2.loli.net/2022/07/05/mExB3HPnWcdN5ST.jpg" alt="~BAFHI42FAD1J___2A_D7_Y.jpg" style="zoom: 25%;" /></p>
+</li>
+<li><p>后悔，究极后悔，<strong>放下助人情结，尊重他人命运</strong>！<strong>放下助人情结，尊重他人命运</strong>!<strong>放下助人情结，尊重他人命运</strong>！<strong>放下助人情结，尊重他人命运</strong>！<strong>放下助人情结，尊重他人命运</strong>！<strong>放下助人情结，尊重他人命运</strong>！<strong>放下助人情结，尊重他人命运</strong>！<strong>放下助人情结，尊重他人命运</strong>！<strong>放下助人情结，尊重他人命运</strong>！<strong>放下助人情结，尊重他人命运</strong>！</p>
+</li>
+<li>呜呜，明天面试我真的复习不完了呜呜哒咩:confounded:，执行一个宵的通，面试完回来进行一个大觉的睡:sleepy:</li>
+</ul>
+<h3 id="6th"><a href="#6th" class="headerlink" title="6th"></a>6th</h3><ul>
+<li><p>中午scu面试，英语阅读和翻译磕磕绊绊，答题也答得磕磕绊绊，夏令营的第一个面试，算是攒了一丢丢经验，赢！hhh最后也不期待有没有优营了，随缘吧</p>
+</li>
+<li><p>面完试回去洗了个澡，下午去院办找同学盖章，快要下雨前的天气真的又闷又热，爬个坡又出汗了，澡白洗了属于是:woman_facepalming:</p>
+</li>
+<li><p>晚上出去一号门吃了酸汤水饺，还有他们家的素菜拼盘，素菜拼盘好便宜，七块钱那么大一盘；然后去菜市场那边买了几颗水蜜桃，还有白糖荔，呜呜现在好像没看到有妃子笑卖了，在妃子笑面前，白糖荔永远是弟弟，妃子笑就是最好吃的品种！然后称了一点那个🍇，老板说那个品种叫郁金香，不得不说真的难吃啊，真不如夏黑或者巨峰</p>
+<p><img src="https://s2.loli.net/2022/07/07/QhVYP628ewDBtXn.jpg" alt="8X~HO6__03F0~F2B4JEW_VS.jpg" style="zoom:25%;" /></p>
+<ul>
+<li>吃完饭出来突然发现晚霞很好看</li>
+</ul>
+<p><img src="https://s2.loli.net/2022/07/07/JSEAljVx38WUDiO.jpg" alt="4CMH4PPX_DF_LZES@HO57_X.jpg" style="zoom:20%;" /></p>
+</li>
+<li><p>回去的路上去取了个快递，买的可乐到了，然后回院办拿了遗忘在那里的三脚架</p>
+</li>
+<li><p>晚上收拾了一下宿舍，把好多好多不要的书都扔了，这些仿佛不是扔掉的书，而是之前一个个立下的但是从来没有完成过的flag，悲，大学三年立了这么多flag</p>
+<p><img src="https://s2.loli.net/2022/07/07/4TfJ2vNw8YCBMgL.jpg" alt="G5SUA7QFD9__0__7__XKENM.jpg" style="zoom:33%;" /></p>
+</li>
+<li><p>收拾东西的时候又把当年军训的那张大合照翻了出来，真的是，每一个人现在都不像从前了，毕竟那估计是大家最丑的时候hhhhh</p>
+<p><img src="https://s2.loli.net/2022/07/07/BHETgdk2RMGm9aW.jpg" alt="_F14C`QC1WTM_CK6P2_AB_B.jpg" style="zoom: 25%;" /></p>
+</li>
+</ul>
+<h3 id="8th"><a href="#8th" class="headerlink" title="8th"></a>8th</h3><ul>
+<li>buaa爆零，当初为什么不拿csp抵！！！！后悔，算了，看来:mouse2::mouse2:我注定和buaa无缘，嘤嘤嘤这是命</li>
+<li>下午睡一觉睡到了晚上，醒来好难过好难过好难过，我真的会有书读吗:sob::sob:我怎么这么垃圾这么废物呜呜</li>
+<li>晚上好饿，点了炸串，最近真的吃好多</li>
+<li>淦，吃撑了不舒服，呜呜更加难过了:sob::sob::sob:</li>
+</ul>
+<h3 id="9th"><a href="#9th" class="headerlink" title="9th"></a>9th</h3><ul>
+<li>不知道自己干了啥</li>
+</ul>
+<h3 id="10th"><a href="#10th" class="headerlink" title="10th"></a>10th</h3><ul>
+<li><p>非常非常，心态非常崩的一天，真的好难过好难过，2022年最难过的一天，心态崩到十一点上床一直到一点半都没睡着，然后和好朋友聊天聊到三点多:sleeping:。直到11号早上起来写下这个记录还是很难过，呜呜呜呜我好废物啊</p>
+<p><img src="https://s2.loli.net/2022/07/11/UOCq8kGi2xAuyLg.jpg" alt="9V0IGALG8_XXJE4@U_I03TP.jpg" style="zoom:25%;" /></p>
+<p><img src="https://s2.loli.net/2022/07/11/STuJimv5gneWLoq.jpg" alt="_`N@ZH_XV_YSL_9@0_K0_JB.jpg" style="zoom:25%;" /></p>
+<p><img src="https://s2.loli.net/2022/07/11/3dcVNGeya5Lbf1x.jpg" alt="TW_X_ZIXCY_S_R9_WS53@6O.jpg" style="zoom:25%;" /></p>
+<p><img src="https://s2.loli.net/2022/07/11/fl5dmFIxH379oE4.jpg" alt="QR5_`TGOUG0_@DZYW0_S_G7.jpg" style="zoom: 25%;" /></p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>LiaN
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2022/06/17/DaysCounter/" title="【生活】Days Counter">http://example.com/2022/06/17/DaysCounter/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%83%A1%E8%A8%80%E4%B9%B1%E8%AF%AD/" rel="tag"># 胡言乱语</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/06/15/2022-06-15-%E3%80%90%E9%A2%98%E8%A7%A3%E3%80%91%E6%A8%A1%E6%9D%BF%E9%A2%98%E6%80%BB%E7%BB%93/" rel="prev" title="【题解】模板题总结">
+      <i class="fa fa-chevron-left"></i> 【题解】模板题总结
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/06/19/2022-06-19-%E3%80%90%E9%A2%98%E8%A7%A3%E3%80%91BFS/" rel="next" title="【题解】BFS">
+      【题解】BFS <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2022"><span class="nav-number">1.</span> <span class="nav-text">2022</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#June"><span class="nav-number">1.1.</span> <span class="nav-text">June</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#17th"><span class="nav-number">1.1.1.</span> <span class="nav-text">17th</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#18th"><span class="nav-number">1.1.2.</span> <span class="nav-text">18th</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#19th"><span class="nav-number">1.1.3.</span> <span class="nav-text">19th</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20th"><span class="nav-number">1.1.4.</span> <span class="nav-text">20th</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#21st"><span class="nav-number">1.1.5.</span> <span class="nav-text">21st</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#22nd"><span class="nav-number">1.1.6.</span> <span class="nav-text">22nd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#23rd"><span class="nav-number">1.1.7.</span> <span class="nav-text">23rd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#24th"><span class="nav-number">1.1.8.</span> <span class="nav-text">24th</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#25th"><span class="nav-number">1.1.9.</span> <span class="nav-text">25th</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#26th"><span class="nav-number">1.1.10.</span> <span class="nav-text">26th</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#27th-30th"><span class="nav-number">1.1.11.</span> <span class="nav-text">27th-30th</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#July"><span class="nav-number">1.2.</span> <span class="nav-text">July</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1st"><span class="nav-number">1.2.1.</span> <span class="nav-text">1st</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2st"><span class="nav-number">1.2.2.</span> <span class="nav-text">2st</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3nd"><span class="nav-number">1.2.3.</span> <span class="nav-text">3nd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4th"><span class="nav-number">1.2.4.</span> <span class="nav-text">4th</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5th"><span class="nav-number">1.2.5.</span> <span class="nav-text">5th</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6th"><span class="nav-number">1.2.6.</span> <span class="nav-text">6th</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8th"><span class="nav-number">1.2.7.</span> <span class="nav-text">8th</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9th"><span class="nav-number">1.2.8.</span> <span class="nav-text">9th</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10th"><span class="nav-number">1.2.9.</span> <span class="nav-text">10th</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="LiaN"
+      src="https://cdn2.maocdn.cn/img/2022/01/21/J8U_G9ZTZG4W12DA260Z9.jpg">
+  <p class="site-author-name" itemprop="name">LiaN</p>
+  <div class="site-description" itemprop="description"><font color="#000000">别焦虑了，说不定明天就死了呢.</font></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/z-y-LiaN" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;z-y-LiaN" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2749613231@qq.com" title="E-Mail → mailto:2749613231@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      快速访问
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.luogu.com.cn/" title="https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;" rel="noopener" target="_blank">洛谷</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.acwing.com/" title="https:&#x2F;&#x2F;www.acwing.com&#x2F;" rel="noopener" target="_blank">AcWing</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.csdn.net/" title="https:&#x2F;&#x2F;www.csdn.net&#x2F;" rel="noopener" target="_blank">CSDN</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.bilibili.com/" title="https:&#x2F;&#x2F;www.bilibili.com&#x2F;" rel="noopener" target="_blank">b站</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LiaN</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">163k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">2:28</span>
+</div>
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+-->
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '532a45a59c2f395313f9',
+      clientSecret: '419760923076a6f709b5baa01457e5a96e275838',
+      repo        : 'z-y-LiaN.github.io',
+      owner       : 'z-y-LiaN',
+      admin       : ['z-y-LiaN'],
+      id          : 'da14e19598bcf2de7eb9a8bc0502db41',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>
