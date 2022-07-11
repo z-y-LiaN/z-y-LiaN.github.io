@@ -90,6 +90,8 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
 <!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="LiaN" type="application/atom+xml">
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -318,7 +320,7 @@
 <li>由有限数量的像素组成  —–》每个像素对应 一个（x，y）和一个f</li>
 </ul>
 </li>
-<li><strong>数字图像的表示</strong>：二维矩阵  <img src="https://i.bmp.ovh/imgs/2022/03/91bd075dd44a0604.png" style="zoom: 33%;" /></li>
+<li><strong>数字图像的表示</strong>：二维矩阵  <img src="https://i.bmp.ovh/imgs/2022/03/91bd075dd44a0604.png" style="zoom: 33%;"></li>
 </ul>
 <h1 id="图像获取"><a href="#图像获取" class="headerlink" title="图像获取"></a>图像获取</h1><h1 id="图像数字化（Digitization）"><a href="#图像数字化（Digitization）" class="headerlink" title="图像数字化（Digitization）"></a>图像数字化（Digitization）</h1><ul>
 <li><p>数字化的两个过程<strong>：取样 + 量化</strong></p>
@@ -379,17 +381,17 @@ C=|\frac{I_{p}-I_{n}}{I_{n}}|</script></li>
 <li>直方图：用来表达一幅图像灰度级分布情况的统计表</li>
 <li>横坐标→ 灰度级r； 纵坐标 ↑ 灰度值为r的像素个数n或者出现的概率p（r）</li>
 </ul>
-<p><img src="https://i.bmp.ovh/imgs/2022/03/3829be80550cf6d6.png" style="zoom:50%;" /></p>
+<p><img src="https://i.bmp.ovh/imgs/2022/03/3829be80550cf6d6.png" style="zoom:50%;"></p>
 <ul>
 <li><p>直方图<strong>不是一对一</strong>的映射关系  —&gt; 图像的直方图不能完全代表图像</p>
 <ul>
 <li>因此：直方图只能体现数据的统计特性，没有结构特点。</li>
-<li>比如：将一张图的像素随机扰乱，直方图仍然是不变的<img src="https://i.bmp.ovh/imgs/2022/03/aa18aac1c82e01a2.png" style="zoom:50%;" /></li>
+<li>比如：将一张图的像素随机扰乱，直方图仍然是不变的<img src="https://i.bmp.ovh/imgs/2022/03/aa18aac1c82e01a2.png" style="zoom:50%;"></li>
 </ul>
 </li>
 <li><p>直方图的<strong>用处</strong>：分析图像对比度的好坏</p>
 <ul>
-<li><strong>给定图像，算出图像平均值和标准差</strong><img src="https://i.bmp.ovh/imgs/2022/03/05bad86faafba1d7.png" style="zoom:65%;" /></li>
+<li><strong>给定图像，算出图像平均值和标准差</strong><img src="https://i.bmp.ovh/imgs/2022/03/05bad86faafba1d7.png" style="zoom:65%;"></li>
 </ul>
 </li>
 </ul>
@@ -431,7 +433,7 @@ Entropy(I) = -\sum_{k}P(k)logP(k)</script><ul>
 <li><p>阈值<strong>分割</strong>：</p>
 <ul>
 <li><p>阈值选取的基本规律：两个峰之间的谷底</p>
-<p><img src="https://i.bmp.ovh/imgs/2022/03/7575a89fe2de9213.png" style="zoom:50%;" /></p>
+<p><img src="https://i.bmp.ovh/imgs/2022/03/7575a89fe2de9213.png" style="zoom:50%;"></p>
 </li>
 </ul>
 </li>

@@ -84,6 +84,8 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
 <!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="LiaN" type="application/atom+xml">
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -308,7 +310,7 @@
 <hr>
 <p><strong>针对每个节点</strong>：</p>
 <ul>
-<li><p>被分配到的资源 以<key,value>的形式储存；</p>
+<li><p>被分配到的资源 以<key,value>的形式储存；</key,value></p>
 <blockquote>
 <p>通俗的理解：key-资源名（确切一点，是资源名的hash值），value-资源内容</p>
 </blockquote>
@@ -373,7 +375,7 @@
 </li>
 <li><p><strong>k</strong></p>
 <ul>
-<li>每一层k-bucket里<strong>装k个node信息</strong>：<nodeID, IP, Address ,Port></li>
+<li>每一层k-bucket里<strong>装k个node信息</strong>：<nodeid, ip,="" address="" ,port=""></nodeid,></li>
 <li>每次查找node，<strong>返回k个node信息</strong></li>
 <li>对于某个特定的data，它的ID也就是所说的key，离其key<strong>最近的k个节点</strong>也要存储这个data</li>
 </ul>
