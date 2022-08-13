@@ -22,18 +22,27 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":20,"offset":10,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="关系型数据库（RDBMS）：建立在关系模型基础上，由多张互相连接的二维表组成的数据库  特点：使用表存储：格式统一；使用SQL语言操作：标准统一  SQL分类 DDL：数据定义（define）语言；定义数据库对象（数据库、表、字段） DML：数据操作（manipulation）语言；对数据库表的数据进行增删改 DQL：数据查询（query）语言；查询数据库表的记录 DCL： 数据控制（contr">
+  <meta name="description" content="依稀记得大二考数据库熬夜通宵复习完大早上直接去考试 结果只考了79分的痛QAQ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【SE】数据库">
 <meta property="og:url" content="http://example.com/2022/07/22/2022-07-22-%E3%80%90SE%E3%80%91%E6%95%B0%E6%8D%AE%E5%BA%93/index.html">
 <meta property="og:site_name" content="LiaN">
-<meta property="og:description" content="关系型数据库（RDBMS）：建立在关系模型基础上，由多张互相连接的二维表组成的数据库  特点：使用表存储：格式统一；使用SQL语言操作：标准统一  SQL分类 DDL：数据定义（define）语言；定义数据库对象（数据库、表、字段） DML：数据操作（manipulation）语言；对数据库表的数据进行增删改 DQL：数据查询（query）语言；查询数据库表的记录 DCL： 数据控制（contr">
+<meta property="og:description" content="依稀记得大二考数据库熬夜通宵复习完大早上直接去考试 结果只考了79分的痛QAQ">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/08/05/1d37qUwLjeMXGrE.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/05/8SrCF41tNLgWdb6.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/06/CaA3EhOpzT4eQ9M.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/06/j3rwi94VoPHC6c1.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/06/zWLhMkYqSVbCsl1.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/07/sBloZvnj7qhCOVX.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/07/nLqDUCgx7BpiFH1.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/07/MSxj4rwPq3dV9eR.png">
 <meta property="article:published_time" content="2022-07-22T01:55:34.000Z">
-<meta property="article:modified_time" content="2022-07-19T14:50:19.063Z">
+<meta property="article:modified_time" content="2022-08-08T08:35:17.560Z">
 <meta property="article:author" content="LiaN">
 <meta property="article:tag" content="数据库">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/08/05/1d37qUwLjeMXGrE.png">
 
 <link rel="canonical" href="http://example.com/2022/07/22/2022-07-22-%E3%80%90SE%E3%80%91%E6%95%B0%E6%8D%AE%E5%BA%93/">
 
@@ -143,12 +152,12 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">10</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">33</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">36</span></a>
 
   </li>
         <li class="menu-item menu-item-mubulinks">
@@ -241,7 +250,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-19 22:50:19" itemprop="dateModified" datetime="2022-07-19T22:50:19+08:00">2022-07-19</time>
+                <time title="修改时间：2022-08-08 16:35:17" itemprop="dateModified" datetime="2022-08-08T16:35:17+08:00">2022-08-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -266,14 +275,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1k</span>
+              <span>12k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>11 分钟</span>
             </span>
 
         </div>
@@ -285,12 +294,31 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <span id="more"></span>
-<p><strong>关系型数据库</strong>（RDBMS）：建立在关系模型基础上，由多张互相连接的<strong>二维表</strong>组成的数据库</p>
+        <p>依稀记得大二考数据库熬夜通宵复习完大早上直接去考试 结果只考了79分的痛QAQ</p>
+<span id="more"></span>
+<h1 id="面试重点"><a href="#面试重点" class="headerlink" title="面试重点"></a>面试重点</h1><blockquote>
+<p>总结自网络</p>
+<p>参考：</p>
+</blockquote>
+<ul>
+<li><p>BC范式和第三范式区别</p>
+</li>
+<li><p>解释范式</p>
+</li>
+<li><p>数据库的四个特性是什么？（类似地：解释事务的隔离性？</p>
+</li>
+<li><p>DBS 和 DBMS 的区别</p>
+</li>
+<li><p>数据库的索引有哪些分类</p>
+</li>
+<li><p>数据库中的选择操作，什么时候应该用到索引？</p>
+</li>
+</ul>
+<h1 id="SQL一些语法"><a href="#SQL一些语法" class="headerlink" title="SQL一些语法"></a>SQL一些语法</h1><p><strong>关系型数据库</strong>（RDBMS）：建立在关系模型基础上，由多张互相连接的<strong>二维表</strong>组成的数据库</p>
 <ul>
 <li>特点：使用表存储：格式统一；使用SQL语言操作：标准统一</li>
 </ul>
-<h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><ul>
+<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><ul>
 <li>DDL：数据<strong>定义</strong>（define）语言；定义数据库对象（数据库、表、字段）</li>
 <li>DML：数据<strong>操作</strong>（manipulation）语言；对数据库表的<strong>数据进行增删改</strong></li>
 <li>DQL：数据<strong>查询</strong>（query）语言；查询数据库表的<strong>记录</strong></li>
@@ -308,7 +336,473 @@
 <ul>
 <li>DATE、TIME、YEAR、DATETIME、TIMESTAMP</li>
 </ul>
-<h2 id="DML"><a href="#DML" class="headerlink" title="DML"></a>DML</h2><h2 id="DQL"><a href="#DQL" class="headerlink" title="DQL"></a>DQL</h2><h2 id="DCL"><a href="#DCL" class="headerlink" title="DCL"></a>DCL</h2>
+<h1 id="数据库安全性"><a href="#数据库安全性" class="headerlink" title="数据库安全性"></a>数据库安全性</h1><p>指 DBMS应该保证数据库：<strong>免受非法、非授权用户的使用、泄露、更改和破坏</strong></p>
+<h2 id="DBMS的安全机制分类"><a href="#DBMS的安全机制分类" class="headerlink" title="DBMS的安全机制分类"></a>DBMS的安全机制分类</h2><ul>
+<li><strong>自主</strong>安全性机制：存取控制<ul>
+<li>通过权限在用户之间的传递，使用户自主管理数据库安全性</li>
+</ul>
+</li>
+<li><strong>强制</strong>安全性机制<ul>
+<li>通过对数据和用户强制分类，使得不同类别用户能访问不同类别的数据</li>
+</ul>
+</li>
+<li><strong>推断</strong>控制机制<ul>
+<li>防止通过历史信息，推断出不该被其知道的信息</li>
+<li>防止通过历史信息推断出私密信息，通常在一些由个体数据构成的公共数据库中此问题尤为重要</li>
+</ul>
+</li>
+<li>数据加密存储机制<ul>
+<li>加解密保护数据</li>
+</ul>
+</li>
+</ul>
+<h2 id="自主安全性机制"><a href="#自主安全性机制" class="headerlink" title="自主安全性机制"></a>自主安全性机制</h2><h3 id="通过授权机制实现"><a href="#通过授权机制实现" class="headerlink" title="通过授权机制实现"></a>通过<strong>授权机制</strong>实现</h3><ul>
+<li>授权者：决定用户权利的人；授权：授予用户访问的权利</li>
+</ul>
+<blockquote>
+<p>用户使用DB前，必须由DBA处获得一个账户，由DBA授予该账户一定权限；</p>
+<p>该账户用户也可将所拥有的权限转授给其他用户，实现权限在用户间的传播和控制</p>
+</blockquote>
+<p>🛑 $\textcolor{red}{DBMS如何自动实现自主安全性？}$</p>
+<ul>
+<li>DBMS允许用户定义一些<strong>安全性控制规则</strong>（DCL）</li>
+<li>当有DB访问操作时，DBMS<strong>自动</strong>按照安全性控制规则进行<strong>检查</strong>（安全性控制程序），检查通过则允许访问。</li>
+</ul>
+<p>🛑 $\textcolor{red}{自主安全性访问规则}$</p>
+<blockquote>
+<p>DBMS将权利和用户结合，形成一个访问规则表，依据该规则表实现对DB的安全性控制</p>
+</blockquote>
+<figure class="highlight typescript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">S这个用户对O这个访问对象，在满足在P这个条件下拥有的访问权利t：</span><br><span class="line">    <span class="attr">AcessRule</span> ::= (S, O, t, P)</span><br><span class="line">        S：访问主体（用户）：用户多时，可按用户组建立访问规则</span><br><span class="line">        O：访问对象：可大可小，属性/字段、记录/元组、关系、数据库</span><br><span class="line">        t：访问权利：创建、增删改查等</span><br><span class="line">        P：谓词：拥有权利需满足的条件</span><br></pre></td></tr></tbody></table></figure>
+<p><code>{AcessRule}</code>存放在数据字典 或称系统目录中，构成所有用户对DB的访问控制</p>
+<p>🛑 $\textcolor{red}{下面是一个例子}$</p>
+<p>对一个员工管理数据库<code>Employee(Pno, Pname, Page, Psex, Psalary, Dno, HEAD)</code>有如下安全性访问要求：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">S</th>
+<th style="text-align:center">O</th>
+<th style="text-align:center">t</th>
+<th style="text-align:center">P</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">员工管理人员</td>
+<td style="text-align:center">Employee</td>
+<td style="text-align:center">读、删、插、改</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">收发人员</td>
+<td style="text-align:center">Employee（Pname，Dno）</td>
+<td style="text-align:center">读</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">每个员工</td>
+<td style="text-align:center">Employee</td>
+<td style="text-align:center">读</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">部门领导</td>
+<td style="text-align:center">Employee</td>
+<td style="text-align:center">读</td>
+<td style="text-align:center">Pno=UserId</td>
+</tr>
+<tr>
+<td style="text-align:center">高级领导</td>
+<td style="text-align:center">Employee</td>
+<td style="text-align:center">读</td>
+<td style="text-align:center">Head=UserId</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>🛑 $\textcolor{red}{按名控制安全性的实现方式}$</p>
+<p><strong>实现方式一：存储矩阵</strong></p>
+<p><img src="https://s2.loli.net/2022/08/05/1d37qUwLjeMXGrE.png" alt="image.png"></p>
+<p><strong>实现方式二：视图</strong></p>
+<ul>
+<li><p>给不同用户用不同视图，就是相当于给与了不同的数据访问范围，相比矩阵更省空间</p>
+</li>
+<li><p>通过视图限制用户对关系中某些数据项的存取，例如</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">视图1：create view EmpV1 as select * from Employee</span><br><span class="line">视图2：create view EmpV2 as select Pname,Dno from Employee</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>通过视图 可将数据访问对象和谓词结合起来，限制用户对关系中某些元组的存取，例如：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">视图1：create view EmpV3 as select * from Employee where Pno=:UserId</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>用户定义视图后，视图便成为一新的对象，参与到存储矩阵与能力表中进行描述</p>
+</li>
+</ul>
+<h3 id="用户与权利"><a href="#用户与权利" class="headerlink" title="用户与权利"></a>用户与权利</h3><p>🛑 $\textcolor{red}{SQL语言将用户分为三个级别}$</p>
+<ul>
+<li>超级用户（DBA）</li>
+<li>账户级别（程序员用户）</li>
+<li>关系级别（普通用户）</li>
+</ul>
+<p>🛑 $\textcolor{red}{SQL语言将权利分级}$</p>
+<p>级别更高的权利自动包含级别低的权利；在有些DBMS中，将级别3的权利称为账户级别的权利，1和2称为关系级别的权利</p>
+<ul>
+<li>（级别1）<code>Select</code>：读（DB，Table，Record，Attribute…）</li>
+<li>（级别2）<code>Modify</code>：更新<ul>
+<li><code>Insert</code>、<code>Update</code>、<code>Delete</code></li>
+</ul>
+</li>
+<li>（级别3）<code>Create</code>：创建（表空间、模式、表、索引、视图等）<ul>
+<li><code>Create</code>、<code>Alter</code>、<code>Drop</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="DCL授权命令"><a href="#DCL授权命令" class="headerlink" title="DCL授权命令"></a>DCL授权命令</h3><p>🛑 $\textcolor{red}{授权：grant}$</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">GRANT {all PRIVILEGES | privilege {,privilege..}} </span><br><span class="line">ON [TABLE] tablename | viewname</span><br><span class="line">TO {public | user-id {, user-id...}}</span><br><span class="line">[WITH GRANT OPTION];</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li><code>user-id</code>：某一个用户账户，由DBA创建的合法账户</li>
+<li><code>public</code>：允许所有有效用户使用授予的权利</li>
+<li><code>privilege</code>：这些权利：<code>Select、Insert、Update、Delete、All privileges</code></li>
+<li><code>with grant option</code>：允许被授权者在传播这些权利</li>
+</ul>
+<p>❗ 授予视图访问的权利，并不意味着授予基本表的访问权利（两个级别：关系级别和视图级别）</p>
+<p>🛑 $\textcolor{red}{收回授权：revoke}$</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">REVOKE {all privilEges | priv {, priv..}} ON tablename | viewname</span><br><span class="line">FROM {public | user {, user..} };</span><br></pre></td></tr></tbody></table></figure>
+<p>🛑$\textcolor{red}{授权过程}$</p>
+<ul>
+<li>DBA创建DB，并为每个用户创建一个账户</li>
+<li>DBA授予某用户账户级别的权利</li>
+<li>具有账户级别的用户可以创建基本表或视图，他也自动成为该表或该视图的属主账户，拥有该表或该视图的所有访问权利</li>
+<li>拥有属主账户的用户可以将其中的部分权利授权给另外的用户，该用户也可将权利进一步授权给其他用户</li>
+</ul>
+<h2 id="强制安全性机制"><a href="#强制安全性机制" class="headerlink" title="强制安全性机制"></a>强制安全性机制</h2><p>🛑$\textcolor{red}{原理}$</p>
+<ul>
+<li>通过对数据对象进行安全性分级<ul>
+<li>绝密(Top Secret)、机密(Secret)、可信(Confidential)、无分类(Unclassified)</li>
+</ul>
+</li>
+<li>同时对用户也进行上述安全性分级</li>
+<li>从而强制实现不同级别用户访问不同级别数据的一种机制</li>
+</ul>
+<p>🛑$\textcolor{red}{访问规则}$</p>
+<ul>
+<li>高级别用户 可以访问 低级别数据对象：<ul>
+<li>用户S，不能读取数据对象O，除非<code>Level(S) &gt;= Level(D)</code></li>
+</ul>
+</li>
+<li>高级别用户 不可以修改 低级别数据对象<ul>
+<li>用户S，不能写数据对象O，除非<code>Level(S) &lt;= Level(O)</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="嵌入式SQL语言"><a href="#嵌入式SQL语言" class="headerlink" title="嵌入式SQL语言"></a>嵌入式SQL语言</h1><h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><blockquote>
+<p>特别复杂的检索结果难以用一条交互式SQL语句完成,此时需要结合高级语言中经常出现的顺序、分支和循环结构来帮助处理</p>
+<p>将SQL语言嵌入到某种高级语言中使用，如C/C++, Java, PowerBuilder等,又称宿主语言(Host Language)</p>
+</blockquote>
+<p><img src="https://s2.loli.net/2022/08/05/8SrCF41tNLgWdb6.png" alt="image.png" style="zoom: 50%;"></p>
+<h2 id="SQL执行的提交和撤销-事务"><a href="#SQL执行的提交和撤销-事务" class="headerlink" title="SQL执行的提交和撤销+事务"></a>SQL执行的提交和撤销+事务</h2><p>SQL执行过程中，必须有<strong>提交和撤销</strong>语句才能确认其操作结果</p>
+<p>🛑$\textcolor{red}{事务}$</p>
+<p><strong>概念</strong>：（从应用程序员角度），事务是一个存取或改变数据库内容的程序的一次执行；或者说<strong>一条或多条SQL语句的一次执行</strong>被看作一个事务</p>
+<p>由应用程序员提出，有开始和结束，结束前需要提交或撤销</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<p><strong>概念</strong>：（从DBMS角度），事务是DBMS提供的控制数据操作的一种手段，通过这种手段，应用程序将<strong>一系列数据库操作组合</strong>在一起<strong>作为一个整体进行操作和控制</strong>，以便DBMS能提供移植性状态转换的保证。</p>
+<p>🛑$\textcolor{red}{事务的特性：ACID}$</p>
+<h2 id="动态SQL"><a href="#动态SQL" class="headerlink" title="动态SQL"></a>动态SQL</h2><p><strong>静态SQL</strong>: SQL语句在程序中已经按要求写好,只需要把一些参数通过变量传送给嵌入式SQL语句即可</p>
+<p><strong>动态SQL</strong>: SQL语句可以<strong>在程序中动态构造</strong>，形成一个<strong>字符串</strong> ，然后再交给DBMS执行，交给DBMS执行时仍可以传递变量</p>
+<h2 id="数据字典"><a href="#数据字典" class="headerlink" title="数据字典"></a>数据字典</h2><p>🛑$\textcolor{red}{概念}$</p>
+<p>又称系统目录（目录表、系统视图），是系统维护的一些表或视图的集合，这些表或视图存储了数据库中<strong>各类对象的定义信息</strong>，这些对象包括用create定义的表、列、索引、视图、权限、约束等。这些信息又称为数据库的<strong>元信息</strong>（关于数据的数据；即 模式本身的信息）</p>
+<p>🛑$\textcolor{red}{数据字典的内容构成}$</p>
+<ul>
+<li>与关系相关的信息<ul>
+<li>关系名字、每个关系的属性名及类型、视图名字及定义、完整性约束</li>
+</ul>
+</li>
+<li>用户与账户信息，包括密码</li>
+<li>统计和描述性数据：比如每个关系中的元组数目</li>
+<li>物理文件组织信息<ul>
+<li>关系如何存储（顺序、无序、散列）</li>
+<li>关系的物理位置</li>
+</ul>
+</li>
+<li>索引相关的信息</li>
+</ul>
+<h2 id="ODBC-和-JDBC"><a href="#ODBC-和-JDBC" class="headerlink" title="ODBC 和 JDBC"></a>ODBC 和 JDBC</h2><p>🛑$\textcolor{red}{ODBC}$</p>
+<p>ODBC（open database connectivit开放式数据库连接）是一种 不同语言的语应用程序和不同数据库服务器之间<strong>通讯的标准</strong>，包含：</p>
+<ul>
+<li>一组API，支持<strong>应用程序和数据库服务器</strong>的交互</li>
+<li>应用程序通过调用 ODBC API，实现<ul>
+<li>与数据库服务器的连接</li>
+<li>向数据库服务器发送SQL命令</li>
+<li>逐条提取数据库检索结果中的元组传递给应用程序的变量</li>
+</ul>
+</li>
+<li>具体的DBMS提供一套<strong>驱动程序</strong>（Driver库函数），供ODBC调用，以便实现数据库和应用程序的连接</li>
+</ul>
+<blockquote>
+<p>⭕ 当应用程序调用<strong>ODBC API</strong>时，ODBC API会<strong>调用具体DBMS Driver库函数</strong>，DBMS Driver库函数 <strong>与 数据库服务器通信</strong>，执行相应的请求动作并返回检索结果</p>
+</blockquote>
+<p>🛑$\textcolor{red}{JDBC}$</p>
+<blockquote>
+<p>简单了解，反正会用jiu’x🤣真想深入学就去看专门讲JDBC运用的视频</p>
+</blockquote>
+<p>JDBC是一组Java版的应用程序接口API ，提供了<strong>Java应用程序与数据库服务</strong><br><strong>器</strong>的连接和通讯能力。</p>
+<p><strong>概念性的基本过程</strong>：打开一个连接，创建“Statement”对象，并设置查询语句，使用Statement对象执行查询，发送查询给数据库服务器，返回结果给应用程序；处理错误的例外机制</p>
+<p><strong>具体实施过程</strong> ：</p>
+<ul>
+<li><p>传一个Driver给DriverManager，<strong>加载数据库驱动</strong>。<code>Class.forName()</code></p>
+</li>
+<li><p>通过URL得到一个Connection对象，<strong>建立数据库连接</strong></p>
+<p><code>DriverManager.getConnection(sDBUrI)</code></p>
+<p><code>DriverManager.getConnection(sDBUrl,sDBUserlD,sDBPassword)</code></p>
+</li>
+<li><p>接着<strong>创建一个Statement对 象</strong>(PreparedStatement或CallableStatement)，用来查询或者修改数据库。<code>Statement stmt=con.createStatement()</code></p>
+</li>
+<li><p>查询<strong>返回</strong>一个ResultSet.<code>ResultSet rs =stmt.executeQuery(sSQL)</code></p>
+</li>
+</ul>
+<h1 id="关系数据库设计理论"><a href="#关系数据库设计理论" class="headerlink" title="关系数据库设计理论"></a>关系数据库设计理论</h1><blockquote>
+<p>包含：数据依赖理论、关系范式理论、模式分解理论</p>
+</blockquote>
+<h2 id="函数依赖"><a href="#函数依赖" class="headerlink" title="函数依赖"></a>函数依赖</h2><blockquote>
+<p>FD：Functional Dependence</p>
+<p>参考书籍：《数据库系统基础教程》Jeffrey.D Ullman Jennifer Widom著</p>
+<p>参考文章：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Jeremy_Tsang/article/details/108949656">完全/部分/函数依赖【通俗易懂，博主会讲人话】Jeremy_Tsang的博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/shuaishuai__/article/details/106076537?ops_request_misc=%7B%22request%5Fid%22%3A%22165979845916782391847571%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&amp;request_id=165979845916782391847571&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~blog~sobaiduend~default-2-106076537-null-null.nonecase&amp;utm_term=数据库闭包&amp;spm=1018.2226.3001.4450">数据库中的闭包到底是什么？_三看的博客</a></p>
+</blockquote>
+<p>🛑$\textcolor{red}{函数依赖的定义}$</p>
+<p>设$R(U)$是属性集合$U=\{A_1,A_2,\dots,A_n\}$上的一个关系模式，$X$，$Y$是$U$上的两个子集，若对$R(U)$的任意一个可能的关系$r$，$r$中<font color="red">不可能有两个元组</font>满足在$X$中的属性值相等而在$Y$中的属性值不等（即：$X$中的每一个属性值，$Y$都有唯一值与之对应），则称 “$X$函数决定$Y$”  或者 ” $Y$ 函数依赖于$X$“，记作$X \rightarrow Y$。$X$为决定因素</p>
+<blockquote>
+<p>两个属性(集)之间的取值关系，对于R(U)，X、Y为属性集，t1、t2为R的元组，若t1[X]＝t2[X]，则t1[Y]＝t2[Y]</p>
+</blockquote>
+<p><img src="https://s2.loli.net/2022/08/06/CaA3EhOpzT4eQ9M.png" alt="image.png" style="zoom:50%;"></p>
+<ul>
+<li><p><strong>例如：</strong>U = {学号，姓名，年龄，班号，班长，课号，成绩}；那么：学号 → { 姓名，年龄 } ：意思就是学号相同的话，那么姓名和年龄也一定相同；学号 决定 姓名+年龄 </p>
+</li>
+<li><p><strong>非平凡的函数依赖</strong>：对$X\rightarrow Y$，但$Y\not\subset X$，则称$X\rightarrow Y$为非平凡的函数依赖；反之，则是平凡的函数依赖</p>
+<blockquote>
+<p>说人话：Y不是X的子集</p>
+</blockquote>
+</li>
+<li><p><strong>平凡的函数依赖</strong>：</p>
+<blockquote>
+<p>X 可以推导出自己或者自己的一部分</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="https://s2.loli.net/2022/08/06/j3rwi94VoPHC6c1.png" alt="image.png" style="zoom: 50%;"></p>
+<p>🛑$\textcolor{red}{完全函数依赖和部分函数依赖}$</p>
+<p>在$R(U)$中，若$X\rightarrow Y$并且对于$X$的任何真子集$X’$都有$X’\nrightarrow Y$，则称$Y$<strong>完全函数依赖</strong>于$X$，记为$X \xrightarrow{f} Y $，否则称作Y<strong>部分函数</strong>依赖于X，记为$X \xrightarrow{p} Y $</p>
+<blockquote>
+<p>说人话：完全函数依赖就是必须由<strong>X中的全部属性值</strong> 才能确定唯一的Y的值，X属性集中缺少任何一个属性 都不能 确定唯一的Y；</p>
+<p>比如，想知道某位学生的某门课成绩Grade，必须得同时知道他的学号Sno和课程号Cno。如果只知道部分信息，比如只知道Sno或者Cno，无法确定Grade！此时 称Y[Grade]<strong>完全函数依赖</strong>于X[Sno,Cno]。</p>
+<p>而想知道某位学生姓名Sname，那知道他的学号Sno就可。也就是Y[Sname]只函数依赖于X[Sno,Cno]中的子集x[Sno]，此时称Y<strong>部分函数依赖</strong>于X</p>
+</blockquote>
+<p>🛑$\textcolor{red}{传递函数依赖}$</p>
+<p> 在$R(U)$中，若$X\rightarrow Y,Y\rightarrow Z$ 且 $Y\not\subset X,Z\not\subset Y,Z \not\subset X,Y\nrightarrow X$，则称$Z$传递函数依赖于$X$</p>
+<blockquote>
+<p>例如：知道一个学生的学号Sno，就能知道他所在的系Sdept。那知道某一个系Sdept，就能知道这个系的系主任的姓名Mname。<br>也就是，我知道了一个学生的<u>学号</u>Sno，其实我就知道了他所在系的<u>系主任的姓名</u>Mname。但这个过程中，他们是<strong>不存在直接函数依赖</strong>的，我需要通过<strong>系名称</strong>Sdept<strong>作为一个桥梁</strong>去把二者联系起来。</p>
+</blockquote>
+<p>🛑$\textcolor{red}{函数依赖的几个重要概念}$</p>
+<ul>
+<li><p><font color="red">候选键</font>（Candidate Key）：设$K$为$R(U)$中的属性或属性集合，若$K \xrightarrow{f} U $，则称$K$为$R(U)$上的候选键（最小性+唯一性）</p>
+<ul>
+<li>可以任选一候选键作为<font color="red">主键</font>（Primary Key）</li>
+<li><font color="red">主属性</font>：包含在任一候选键中的属性；其他称为<font color="red">非主属性</font></li>
+<li><font color="red">超键</font>：若$K$是$R$的一个候选键，$S\supset K$，则称$S$是$R$的一个超键（即：一个包含键的属性集，没有最小性）</li>
+</ul>
+</li>
+<li><p><font color="red">外键</font>（Foreign Key）：若$R(U)$中的属性或属性组合$X$<strong>并非</strong>$R$的候选键，但<strong>却是</strong>另一关系的候选键，则称$X$为$R$的外键</p>
+</li>
+<li><p><font color="red">逻辑蕴涵</font>：设$F$是关系模式$R(U)$中的一个<strong>函数依赖集合</strong>, $X, Y$是$R$的属性子集，如果从$F$ 中的函数依赖能够逻辑推导出$X \to Y$ ，则称$F$逻辑蕴涵$X \to Y$，或称$X \to Y$是$F$的逻辑蕴涵。记作$\mathbf{F} \models \mathbf{X} \rightarrow \mathbf{Y}$。</p>
+<blockquote>
+<p>由已给出的函数依赖集，推导出其他函数依赖。<strong>推导出来的函数依赖</strong>就称作F所逻辑蕴涵的函数依赖。<br>就好像是侦探破案，掌握了几条线索，然后根据这几条线索推出来另外的线索，这另外推出来的线索就是之前线索集的逻辑蕴涵的线索。</p>
+</blockquote>
+</li>
+<li><p><font color="red">闭包</font>（Closure）：被$F$逻辑蕴含的所有函数依赖集合称为$F$的闭包，记作$F^{+}$</p>
+<blockquote>
+<p>即：<strong>F中能所有的</strong>函数依赖 以及 能<strong>推导出来的</strong>所有的函数依赖 在一起的集合就是 F的闭包</p>
+<p>若$F^{+}=F$，则称$F$是一个<strong>全函数依赖</strong>（函数依赖完备集）</p>
+</blockquote>
+</li>
+</ul>
+<p>🛑$\textcolor{red}{函数依赖的Armstrong公理}$</p>
+<p>设$R(U)$是属性集$U=\{A_1,A_2,\dots,A_n\}$上的一个关系模式，$F$为$R(U)$的一组函数依赖，记作$R(U,F)$，有如下规则成立：</p>
+<ul>
+<li>自反律：若$Y\subseteq X \subseteq U$，则$X \to Y$ 被 $F$ 逻辑蕴涵</li>
+<li>增广律：若$X\to Y \in F$，且$Z\subseteq U$，则$XZ \to YZ$  被 $F$ 逻辑蕴涵</li>
+<li>传递律：若$X\to Y\in F$，且$Y\to Z$，则$X\to Z$  被 $F$ 逻辑蕴涵</li>
+</ul>
+<p>由$Armstrong$公理可推出如下结论（定理）：</p>
+<ul>
+<li>合并律：若$X\to Y$且$X\to Z$，则$X\to YZ$</li>
+<li>伪传递律：若$X\to Y$且$WY \to Z$，则 $XW \to Z$</li>
+<li>分解律：若$X\to Y$且$Z\subseteq Y$，则$X\to Z$</li>
+</ul>
+<p>一个引理：</p>
+<ul>
+<li>若$A_1,A_2,\dots,A_n$是属性，则$X\to A_1,A_2,\dots,A_n$当且仅当每个$A_i$有$X\to A_i(1\leq i\leq n)$</li>
+</ul>
+<p>🛑$\textcolor{red}{覆盖和最小覆盖}$</p>
+<p>覆盖：对$R(U)$上的两个函数依赖集合$F、G$，如果$F^{+}=G^{+}$，则称$F$ 和$G$ 是等价的，也称$F$ 覆盖$G$ 或者$G$ 覆盖$F$ 。</p>
+<p><strong>最小覆盖</strong>：若$F$满足以下条件，则称$F$为最小覆盖或最小依赖集：</p>
+<ul>
+<li>$F$ 中的每个函数依赖 的右部都是单个属性</li>
+<li>对任何 $X\to A\in F$，有$F-\{X\to A\}$不等价于$F$：指 每个函数依赖$X\to A$ 都是不可获取的</li>
+<li>对任何 $X\to A\in F,Z\subset X$，有$(F-\{X\to A\})\cup \{Z\to A\}$不等价于$F$：也就是说$X$ 中没有多余的属性</li>
+</ul>
+<p><strong>定理</strong>：每个函数依赖集$F$ 都有等价的最小覆盖$F’$</p>
+<p>🛑$\textcolor{red}{属性闭包的计算}$</p>
+<p><strong>思想</strong>：从一个给定的属性集合出发，重复地扩展这个集合，只要某个FD<u>左边的属性 全部 包含在这个集合</u>中，就把此FD右边的属性也包含进去。反复使用这个方法，直到不再产生新的属性为止。最后的结果集合就是给定属性集合的闭包。</p>
+<p><strong>算法：</strong></p>
+<p><img src="https://s2.loli.net/2022/08/06/zWLhMkYqSVbCsl1.png" alt="image.png" style="zoom: 50%;"></p>
+<hr>
+<h2 id="关系范式"><a href="#关系范式" class="headerlink" title="关系范式"></a>关系范式</h2><blockquote>
+<p>范式（数据库的设计范式）是<strong>符合某一种级别</strong>的<strong>关系模式的集合</strong>。<strong>构造数据库必须遵循一定的规则</strong>。在关系数据库中，这种规则就是范式。关系数据库中的关系必须满足一定的要求，即满足不同的范式</p>
+</blockquote>
+<h3 id="第一范式：1NF"><a href="#第一范式：1NF" class="headerlink" title="第一范式：1NF"></a>第一范式：1NF</h3><p>🛑$\textcolor{red}{定义}$</p>
+<p>若关系模式$R(U)$中，关系的<strong>每个分量都是不可再分</strong>的数据项（值、原子），则称$R(U)$ 属于第一范式，记作$R(U)\in 1NF$</p>
+<p><strong>例如</strong>：<code>Star(name, address(street, city))</code>就不属于第一范式，因为<code>address</code>包含两个属性，这个分量不是原子的，可以再分</p>
+<p>🛑$\textcolor{red}{非1NF转换为1NF}$</p>
+<ul>
+<li>将<strong>复合</strong>属性处理为<strong>简单</strong>属性；将多值属性与关键字单独组成一新的关系</li>
+<li>引入新的数据模型处理：面向对象的数据模型（封装）</li>
+</ul>
+<h3 id="第二范式：2NF"><a href="#第二范式：2NF" class="headerlink" title="第二范式：2NF"></a>第二范式：2NF</h3><p>🛑$\textcolor{red}{定义:1NF+消除非主属性对码的部分依赖}$</p>
+<p>若$R(U)\in 1NF$ 且$U$中的每一<font color="red">非主属性</font>都<strong>完全函数依赖</strong>于候选键，则称$R(U)$属于第二范式，记作$R(U)\in 2NF$</p>
+<blockquote>
+<p>2NF要求数据库表的每个实例或行 <strong>必须可以被唯一地区分</strong>。不能存在仅依赖主关键字一部分的属性。如果存在，那么这个属性和主关键字的这一部分应该分离出来形成一个新的实体，新实体与原实体之间是一对多的关系</p>
+</blockquote>
+<p><img src="https://s2.loli.net/2022/08/07/sBloZvnj7qhCOVX.png" alt="image.png" style="zoom:50%;"></p>
+<h3 id="第三范式：3NF"><a href="#第三范式：3NF" class="headerlink" title="第三范式：3NF"></a>第三范式：3NF</h3><p>🛑$\textcolor{red}{定义：2NF+消除非主属性对码的传递依赖}$</p>
+<p>若$R(U,F)\in 2NF$且$R$ 中<strong>不存在这样的情况</strong>：候选键$X$，属性组$Y\subseteq U$和非主属性$A$，且$A\notin X, A\notin Y,Y\not\subset X,Y\not\to X$，使得$X\to Y,Y\to A$成立。满足上述条件的$R(U)$属于第三范式，记为$R(U)\in 3NF$</p>
+<blockquote>
+<p>3NF要求一个数据库表中 <strong>不包含</strong>   已在<strong>其它表中已包含的非主关键字</strong>信息。</p>
+</blockquote>
+<h3 id="Boyce-Codd范式"><a href="#Boyce-Codd范式" class="headerlink" title="Boyce-Codd范式"></a>Boyce-Codd范式</h3><p>🛑$\textcolor{red}{定义：3NF+消除主属性对码的部分和传递依赖}$<br>若$R(U,F)\in 1NF$，若对任何$X\to Y\in F$（或$X\to A\in F$），当$Y\not\subset X$（或$A\not\subset X$）时，$X$必含有候选键，则称$R(U)$属于BC范式，记为：$R(U)\in BCNF$</p>
+<blockquote>
+<p>每个非平凡函数依赖的左边都必须<strong>包含键</strong>（可以是超键，不一定要最小化）</p>
+<p>有传递依赖的，或者说不满足3NF的，也一定不满足BCNF</p>
+</blockquote>
+<h3 id="多值依赖"><a href="#多值依赖" class="headerlink" title="多值依赖"></a>多值依赖</h3><h2 id="模式分解"><a href="#模式分解" class="headerlink" title="模式分解"></a>模式分解</h2><h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><p>🛑$\textcolor{red}{定义}$</p>
+<p>索引是定义在存储表（Table）的基础上，有助于 无需检查所有记录而<strong>快速定位</strong>所需记录的 一种<strong>辅助存储结构</strong>。由一系列存储在磁盘上的<strong>索引项</strong>组成，每一索引项分成以下两部分：</p>
+<ul>
+<li><strong>索引字段</strong>：由Table中某些列中的值串接而成。索引中通常存储了索引字段的每一个值（也有不是这样的），类似于词典中的词条</li>
+<li><strong>行指针</strong>：指向Table中包含索引字段值的<strong>记录在磁盘上的存储位置</strong>，类似于词典中的页码<br><img src="https://s2.loli.net/2022/08/07/nLqDUCgx7BpiFH1.png" alt="image.png" style="zoom: 50%;"></li>
+</ul>
+<p>索引文件：存储索引项的文件；主文件：存储表</p>
+<blockquote>
+<p>索引文件是一种辅助存储结构，存在与否不改变存储表的物理存储结构；存在就可以明显提高存储表的访问速度：索引文件比主文件<strong>小</strong>很多，可以<strong>全部装进</strong>内存</p>
+<p>有索引时，更新操作必须<strong>同步更新</strong>索引文件和主文件</p>
+</blockquote>
+<p>排序码：对主文件进行排序存储的那些属性或属性组</p>
+<p>索引码：即索引字段，不一定具有唯一性</p>
+<p>搜索码：在主文件中查找记录的属性或属性集</p>
+<p>🛑$\textcolor{red}{索引文件的组织方式}$</p>
+<ul>
+<li><strong>排序</strong>索引文件：按索引字段值的某一种<strong>顺序</strong>组织存储</li>
+<li><strong>散列</strong>索引文件：依据索引字段值使用<strong>散列函数</strong>分配散列桶的方式存储</li>
+</ul>
+<h2 id="稠密索引和稀疏索引"><a href="#稠密索引和稀疏索引" class="headerlink" title="稠密索引和稀疏索引"></a>稠密索引和稀疏索引</h2><p>🛑$\textcolor{red}{定义}$</p>
+<p><strong>稠密索引</strong>：对于主文件中的<strong>每一个记录</strong>，都有一个索引项与之对应，指明该记录所在位置</p>
+<p><strong>稀疏索引</strong>：部分记录</p>
+<blockquote>
+<p>稠密索引文件中 包含了主文件对应字段的<strong>所有不同值</strong></p>
+<p>稀疏索引的使用：要求主文件必须按对应索引字段属性排序存储</p>
+</blockquote>
+<h2 id="主索引和辅助索引"><a href="#主索引和辅助索引" class="headerlink" title="主索引和辅助索引"></a>主索引和辅助索引</h2><p>🛑$\textcolor{red}{主索引}$</p>
+<p>通常是对每一<strong>存储块</strong>有一个素引项 ，索引项的总数和存储表所占的存储块数目相同，存储表的每一个存储块的第一条记录，又称为<strong>锚记录或简称为块锚</strong></p>
+<blockquote>
+<p>主索引的索引字段值为<strong>块锚</strong>的索引字段值，指针指向其所在的存储块。<br>主索引是按索引字段值进行排序的一个有序文件，通常建立在有序主文件的基于主码的排序字段上，即主索引的<strong>索引字段与主文件的排序码(主码)</strong>有对应关系</p>
+<p>主索引 是稀疏索引</p>
+</blockquote>
+<p>🛑$\textcolor{red}{辅助索引}$</p>
+<p>是定义在主文件的任一或多个非排序字段上的辅助存储结构</p>
+<h2 id="聚簇索引和非聚簇索引"><a href="#聚簇索引和非聚簇索引" class="headerlink" title="聚簇索引和非聚簇索引"></a>聚簇索引和非聚簇索引</h2><p>🛑$\textcolor{red}{聚簇索引}$</p>
+<p>索引中<strong>邻近的记录</strong>在主文件中也是<strong>邻近存储</strong>的</p>
+<p>🛑$\textcolor{red}{非聚簇索引}$</p>
+<p>索引中<strong>邻近的记录</strong>在主文件中<strong>不一定是邻近存储</strong>的</p>
+<h2 id="B-树索引"><a href="#B-树索引" class="headerlink" title="B+树索引"></a>B+树索引</h2><blockquote>
+<p>多级索引：对索引再建立索引</p>
+</blockquote>
+<p>🛑$\textcolor{red}{定义}$</p>
+<p>B+树的每一个结点都是如下这样的存储块：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>$P_1$</th>
+<th>$K_1$</th>
+<th>$P_2$</th>
+<th>…</th>
+<th>$P_{n-1}$</th>
+<th>$K_{n-1}$</th>
+<th>$P_{n}$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<p>$K_i$：索引字段值</p>
+<p>$P_i$：指针，指向索引块或数据块或数据块中记录的指针</p>
+</blockquote>
+<ul>
+<li>一个存储块中有$n-1$个索引项$<p_i,k_i>$ + $1$个指针$P_n$</p_i,k_i></li>
+<li>索引字段值$x$，若$K_{i-1}\leq x\lt K_i$的由$P_i$ 指向；在$K_{i}\leq x\lt K_{i+1}$的由$P_{i+1}$指向</li>
+<li>非叶结点：指针指向索引块</li>
+<li>叶结点：指针指向主文件的数据库或数据记录（叶结点的最后一个指针始终指向其下一个数据块）</li>
+</ul>
+<p>🛑$\textcolor{red}{B+树的两个特性}$</p>
+<ul>
+<li>能自动保持与主文件大小相适应的树的层次</li>
+<li>每个索引块的指针利用率都在50%-100%之间</li>
+</ul>
+<p>🛑$\textcolor{red}{B+树的存储约定}$</p>
+<p><img src="https://s2.loli.net/2022/08/07/MSxj4rwPq3dV9eR.png" alt="image.png"></p>
+<ul>
+<li>索引字段值重复出现于叶结点和非叶结点</li>
+<li>指向主文件的指针 仅出现在 叶结点</li>
+<li>所有叶结点 即可覆盖所有键值的索引</li>
+<li>索引字段值在叶结点中按顺序排列</li>
+</ul>
+<h2 id="Hash索引"><a href="#Hash索引" class="headerlink" title="Hash索引"></a>Hash索引</h2><h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h1><h2 id="什么是数据库的事务？"><a href="#什么是数据库的事务？" class="headerlink" title="什么是数据库的事务？"></a><font color="red">什么是数据库的事务？</font></h2><p>🔸 DB的<strong>事务</strong>是一个不可分割的数据库操作<strong>序列</strong>，也是DB并发控制的基本单位；这组逻辑上的操作要么都执行，要么都不执行；其执行的结果必须使DB从一种<strong>一致性状态</strong>变到<strong>另一种一致性</strong>状态。</p>
+<blockquote>
+<p>将一系列数据库操作组合在一起，作为一个整体进行操作和控制</p>
+<p>从应用程序员角度：事务是一个存取或改变数据库内容的程序的一次执行；或者说<strong>一条或多条SQL语句的一次执行</strong>被看作一个事务；由应用程序员提出，有开始和结束，结束前需要提交或撤销</p>
+<p>在嵌入式SQL程序中,任何一条数据库操纵语句(如exec sql select等)都会引发一个新事务的开始，只要该程序当前没有正在处理的事务。而事务的结束是需要应用程序员通过commit或rollback确认的。因此Begin Transaction 和End Transaction两行语句是不需要的。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Begin Transaction</span><br><span class="line">	exec sql...</span><br><span class="line">	...</span><br><span class="line">	exec sql...</span><br><span class="line">	exec sql commit work | exec sql rollback work</span><br><span class="line">End Transaction</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="什么是数据库的四大特性ACID？"><a href="#什么是数据库的四大特性ACID？" class="headerlink" title="什么是数据库的四大特性ACID？"></a><font color="red">什么是数据库的四大特性ACID？</font></h2><p>🔸 <strong>原子性</strong>（Atomicity）：DBMS保证事务的一组<strong>更新操作</strong>是<strong>原子不可分</strong>的，确保操作要么全做，要么全不做</p>
+<blockquote>
+<p>事务中任何一个sql执行失败，那么执行成功的sql也必须撤销，数据库状态回退到执行事务之前的状态</p>
+</blockquote>
+<p>🔸 <strong>一致性</strong>（Consistency）：事务执行前后，所有数据都必须处于<strong>一致性状态</strong>，多个事务对同一个数据读取的结果是相同的</p>
+<blockquote>
+<p>比如：假设用户A和用户B的钱加起来一共5000，那不管A和B之间如何转账，转账几次，事务结束后两个用户的钱加起来应该还是5000，这就是事务的一致性。</p>
+</blockquote>
+<p>🔸 <strong>隔离性</strong>（Isolation）：DBMS保证<strong>并发执行的多个事务之间互相不受影响</strong>。</p>
+<blockquote>
+<p>一个事务<strong>内部的操作</strong>及<strong>正在操作的数据</strong> 对 其他并发执行的事务是隔离的。例如事务T1和T2即使并发执行，也相当于先执行T1，再执行T2（或者相反</p>
+</blockquote>
+<p>🔸 <strong>持久性</strong>（Durability）：一个事务被提交之后。它对数据库中数据的改变是持久的，即使数据库发生故障也不应该对其有任何影响。</p>
+<h2 id="事务的并发会带来什么问题？如何解决？"><a href="#事务的并发会带来什么问题？如何解决？" class="headerlink" title="事务的并发会带来什么问题？如何解决？"></a><font color="red">事务的并发会带来什么问题？如何解决？</font></h2><p>🔸 <strong>脏读</strong>：一个事务读取到另一个事务更新但<strong>尚未提交的数据</strong>。 </p>
+<blockquote>
+<p>事务 A 读取事务 B 更新的数据，然后 B 回滚操作，那么 A 读取到的数据是脏数据。</p>
+<p>T1修改某个数据，并将其写回磁盘，T2读取之后，T1由于某种原因被撤销，这时T1已修改过的数据恢复原值，导致T2读脏数据</p>
+</blockquote>
+<p>🔸 <strong>不可重复读</strong>：一个事务中<strong>两次读取</strong>的数据的<strong>内容不一致</strong></p>
+<blockquote>
+<p>T1读取数据后，T2执行更新操作，T1再次读取时，无法再读到之前的数据</p>
+</blockquote>
+<p>🔸<strong>幻读</strong>：一个事务中两次读取的<strong>数据量不一致</strong>。 事务A 按照一定条件进行数据读取， 期间事务B 插入了相同搜索条件的新数据，事务A再次按照原先条件进行读取时，发现了事务B 新插入的数据 </p>
+<blockquote>
+<p>当同一条查询在不同的时间产生不同的结果集</p>
+</blockquote>
+<p>🔸<strong>丢失更新</strong>：两个事务读入同一数据并修改，后一提交的事务会覆盖前一事务提交的结果，就会导致前一事务的修改被丢失。</p>
+
     </div>
 
     
@@ -343,10 +837,13 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/07/08/2022-07-08-%E3%80%90%E6%80%BB%E7%BB%93%E3%80%91%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%88%E6%80%BB%E7%BB%93%E8%87%AA%E3%80%8A%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E3%80%8B%EF%BC%89/" rel="prev" title="【总结】数据结构（总结自《算法笔记》）">
-      <i class="fa fa-chevron-left"></i> 【总结】数据结构（总结自《算法笔记》）
+    <a href="/2022/07/22/2022-07-22-%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%91%E6%9C%80%E7%9F%AD%E8%B7%AF+%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91+%E4%BA%8C%E5%88%86%E5%9B%BE/" rel="prev" title="【数据结构】最短路+最小生成树+二分图">
+      <i class="fa fa-chevron-left"></i> 【数据结构】最短路+最小生成树+二分图
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2022/08/02/2022-08-02-%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%91%E5%B9%B6%E6%9F%A5%E9%9B%86/" rel="next" title="【数据结构】并查集">
+      【数据结构】并查集 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -406,7 +903,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL"><span class="nav-number">1.</span> <span class="nav-text">SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E7%B1%BB"><span class="nav-number">1.1.</span> <span class="nav-text">分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DDL"><span class="nav-number">1.2.</span> <span class="nav-text">DDL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.2.1.</span> <span class="nav-text">操作数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E8%A1%A8"><span class="nav-number">1.2.2.</span> <span class="nav-text">操作表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.2.3.</span> <span class="nav-text">数据类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DML"><span class="nav-number">1.3.</span> <span class="nav-text">DML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DQL"><span class="nav-number">1.4.</span> <span class="nav-text">DQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DCL"><span class="nav-number">1.5.</span> <span class="nav-text">DCL</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9D%A2%E8%AF%95%E9%87%8D%E7%82%B9"><span class="nav-number">1.</span> <span class="nav-text">面试重点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">SQL一些语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E7%B1%BB"><span class="nav-number">2.1.</span> <span class="nav-text">分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DDL"><span class="nav-number">2.2.</span> <span class="nav-text">DDL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">2.2.1.</span> <span class="nav-text">操作数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E8%A1%A8"><span class="nav-number">2.2.2.</span> <span class="nav-text">操作表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.2.3.</span> <span class="nav-text">数据类型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E5%85%A8%E6%80%A7"><span class="nav-number">3.</span> <span class="nav-text">数据库安全性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DBMS%E7%9A%84%E5%AE%89%E5%85%A8%E6%9C%BA%E5%88%B6%E5%88%86%E7%B1%BB"><span class="nav-number">3.1.</span> <span class="nav-text">DBMS的安全机制分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E4%B8%BB%E5%AE%89%E5%85%A8%E6%80%A7%E6%9C%BA%E5%88%B6"><span class="nav-number">3.2.</span> <span class="nav-text">自主安全性机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E8%BF%87%E6%8E%88%E6%9D%83%E6%9C%BA%E5%88%B6%E5%AE%9E%E7%8E%B0"><span class="nav-number">3.2.1.</span> <span class="nav-text">通过授权机制实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E4%B8%8E%E6%9D%83%E5%88%A9"><span class="nav-number">3.2.2.</span> <span class="nav-text">用户与权利</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DCL%E6%8E%88%E6%9D%83%E5%91%BD%E4%BB%A4"><span class="nav-number">3.2.3.</span> <span class="nav-text">DCL授权命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%BA%E5%88%B6%E5%AE%89%E5%85%A8%E6%80%A7%E6%9C%BA%E5%88%B6"><span class="nav-number">3.3.</span> <span class="nav-text">强制安全性机制</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B5%8C%E5%85%A5%E5%BC%8FSQL%E8%AF%AD%E8%A8%80"><span class="nav-number">4.</span> <span class="nav-text">嵌入式SQL语言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E8%BF%B0"><span class="nav-number">4.1.</span> <span class="nav-text">简述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL%E6%89%A7%E8%A1%8C%E7%9A%84%E6%8F%90%E4%BA%A4%E5%92%8C%E6%92%A4%E9%94%80-%E4%BA%8B%E5%8A%A1"><span class="nav-number">4.2.</span> <span class="nav-text">SQL执行的提交和撤销+事务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E6%80%81SQL"><span class="nav-number">4.3.</span> <span class="nav-text">动态SQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%AD%97%E5%85%B8"><span class="nav-number">4.4.</span> <span class="nav-text">数据字典</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ODBC-%E5%92%8C-JDBC"><span class="nav-number">4.5.</span> <span class="nav-text">ODBC 和 JDBC</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E7%90%86%E8%AE%BA"><span class="nav-number">5.</span> <span class="nav-text">关系数据库设计理论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96"><span class="nav-number">5.1.</span> <span class="nav-text">函数依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E8%8C%83%E5%BC%8F"><span class="nav-number">5.2.</span> <span class="nav-text">关系范式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E8%8C%83%E5%BC%8F%EF%BC%9A1NF"><span class="nav-number">5.2.1.</span> <span class="nav-text">第一范式：1NF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E8%8C%83%E5%BC%8F%EF%BC%9A2NF"><span class="nav-number">5.2.2.</span> <span class="nav-text">第二范式：2NF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E8%8C%83%E5%BC%8F%EF%BC%9A3NF"><span class="nav-number">5.2.3.</span> <span class="nav-text">第三范式：3NF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Boyce-Codd%E8%8C%83%E5%BC%8F"><span class="nav-number">5.2.4.</span> <span class="nav-text">Boyce-Codd范式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E5%80%BC%E4%BE%9D%E8%B5%96"><span class="nav-number">5.2.5.</span> <span class="nav-text">多值依赖</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%BC%8F%E5%88%86%E8%A7%A3"><span class="nav-number">5.3.</span> <span class="nav-text">模式分解</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95"><span class="nav-number">6.</span> <span class="nav-text">索引</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D"><span class="nav-number">6.1.</span> <span class="nav-text">基本介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%A0%E5%AF%86%E7%B4%A2%E5%BC%95%E5%92%8C%E7%A8%80%E7%96%8F%E7%B4%A2%E5%BC%95"><span class="nav-number">6.2.</span> <span class="nav-text">稠密索引和稀疏索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E7%B4%A2%E5%BC%95%E5%92%8C%E8%BE%85%E5%8A%A9%E7%B4%A2%E5%BC%95"><span class="nav-number">6.3.</span> <span class="nav-text">主索引和辅助索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%81%9A%E7%B0%87%E7%B4%A2%E5%BC%95%E5%92%8C%E9%9D%9E%E8%81%9A%E7%B0%87%E7%B4%A2%E5%BC%95"><span class="nav-number">6.4.</span> <span class="nav-text">聚簇索引和非聚簇索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-%E6%A0%91%E7%B4%A2%E5%BC%95"><span class="nav-number">6.5.</span> <span class="nav-text">B+树索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hash%E7%B4%A2%E5%BC%95"><span class="nav-number">6.6.</span> <span class="nav-text">Hash索引</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1"><span class="nav-number">7.</span> <span class="nav-text">事务</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%BA%8B%E5%8A%A1%EF%BC%9F"><span class="nav-number">7.1.</span> <span class="nav-text">什么是数据库的事务？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%9B%9B%E5%A4%A7%E7%89%B9%E6%80%A7ACID%EF%BC%9F"><span class="nav-number">7.2.</span> <span class="nav-text">什么是数据库的四大特性ACID？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1%E7%9A%84%E5%B9%B6%E5%8F%91%E4%BC%9A%E5%B8%A6%E6%9D%A5%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%EF%BC%9F%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%EF%BC%9F"><span class="nav-number">7.3.</span> <span class="nav-text">事务的并发会带来什么问题？如何解决？</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -422,14 +919,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-count">36</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -502,13 +999,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">170k</span>
+    <span title="站点总字数">204k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">2:34</span>
+    <span title="站点阅读时长">3:06</span>
 </div>
 <!--
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

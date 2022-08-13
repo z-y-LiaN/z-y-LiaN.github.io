@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":20,"offset":10,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="主要内容 动态规划中最长上升子序列模型题目总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【动态规划】最长上升子序列模型">
+<meta property="og:url" content="http://example.com/2022/04/30/2022-4-30-%E3%80%90%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E3%80%91%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B/index.html">
+<meta property="og:site_name" content="LiaN">
+<meta property="og:description" content="主要内容 动态规划中最长上升子序列模型题目总结">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.bmp.ovh/imgs/2022/03/a61f3906e9a02f30.png">
+<meta property="article:published_time" content="2022-04-30T03:17:01.000Z">
+<meta property="article:modified_time" content="2022-08-03T04:03:09.812Z">
+<meta property="article:author" content="LiaN">
+<meta property="article:tag" content="AcWing">
+<meta property="article:tag" content="DP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.bmp.ovh/imgs/2022/03/a61f3906e9a02f30.png">
+
+<link rel="canonical" href="http://example.com/2022/04/30/2022-4-30-%E3%80%90%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E3%80%91%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>【动态规划】最长上升子序列模型 | LiaN</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end -->
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="LiaN" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband">
+    </div>
+<a target="_blank" rel="noopener" href="https://github.com/z-y-LiaN" class="github-corner" aria-label="View source on GitHub">
+<svg width="80" height="80" viewBox="0 0 250 250" style="fill:#F4A460; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">LiaN</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">是一只废物捏</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">31</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">10</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">36</span></a>
+
+  </li>
+        <li class="menu-item menu-item-mubulinks">
+
+    <a href="/mubulinks/" rel="section"><i class="fa fa-link fa-fw"></i>幕布链接</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/30/2022-4-30-%E3%80%90%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E3%80%91%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn2.maocdn.cn/img/2022/01/21/J8U_G9ZTZG4W12DA260Z9.jpg">
+      <meta itemprop="name" content="LiaN">
+      <meta itemprop="description" content="<font color="#000000">别焦虑了，说不定明天就死了呢.</font>">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LiaN">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【动态规划】最长上升子序列模型
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-04-30 11:17:01" itemprop="dateCreated datePublished" datetime="2022-04-30T11:17:01+08:00">2022-04-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-08-03 12:03:09" itemprop="dateModified" datetime="2022-08-03T12:03:09+08:00">2022-08-03</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%B7%E9%A2%98%E5%BA%9F%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">刷题废物</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <ul>
+<li>主要内容<ul>
+<li>动态规划中最长上升子序列模型题目总结</li>
+</ul>
+</li>
+</ul>
+<span id="more"></span>
+<h1 id="Easy-Part"><a href="#Easy-Part" class="headerlink" title="Easy Part"></a>Easy Part</h1><blockquote>
+<p>都是些常见基本模板题</p>
+</blockquote>
+<h2 id="AcWing-895-最长上升子序列（序列最长1000）"><a href="#AcWing-895-最长上升子序列（序列最长1000）" class="headerlink" title="AcWing 895. 最长上升子序列（序列最长1000）"></a><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/897/">AcWing 895. 最长上升子序列</a>（序列最长1000）</h2><blockquote>
+<p>数列长度1＜N＜1000，求给定序列的 数值严格递增的子序列长度；【模板题】</p>
+</blockquote>
+<h3 id="思路-【基于动态规划】"><a href="#思路-【基于动态规划】" class="headerlink" title="思路 【基于动态规划】"></a>思路 【基于动态规划】</h3><p><img src="https://i.bmp.ovh/imgs/2022/03/a61f3906e9a02f30.png" style="zoom:45%;"></p>
+<ul>
+<li>状态表示：<code>dp[i]</code>：以 <code>a[i]</code><strong>结尾</strong>的最长上升子序列的长度</li>
+<li>初始值：<code>dp[i]=1</code>,<code>i∈[0,n−1]</code> 表示<strong>最初</strong>一个数本身就是最长上升子序列，长度为 1</li>
+<li>状态转移：把前<code>i−1</code>个数字中所有<strong>满足条件</strong><code>dp[j]&lt;dp[i]</code>（上升子序列） 的<code>j</code>找出来，那么<code>dp[i]</code>就可以试着更新为以 <strong>dp[j] 结尾的最长上升子序列的长度+自己的长度 1</strong>，但可能更新后的结果没之前的大，最后两者取max</li>
+</ul>
+<h3 id="代码-O-n-2"><a href="#代码-O-n-2" class="headerlink" title="代码 $O(n^2)$"></a>代码 $O(n^2)$</h3><figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1005</span>;</span><br><span class="line"><span class="keyword">int</span> n,a[N],dp[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">	<span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++){</span><br><span class="line">		dp[i]=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;i;j++){</span><br><span class="line">			<span class="keyword">if</span>(a[j]&lt;a[i]) </span><br><span class="line">				dp[i]=<span class="built_in">max</span>(dp[i],dp[j]+<span class="number">1</span>);</span><br><span class="line">		} </span><br><span class="line">		ans = <span class="built_in">max</span>(ans,dp[i]);</span><br><span class="line">	} </span><br><span class="line">	cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="AcWing896-最长上升子序列（序列最长100000）"><a href="#AcWing896-最长上升子序列（序列最长100000）" class="headerlink" title="AcWing896 最长上升子序列（序列最长100000）"></a>AcWing896 最长上升子序列（序列最长100000）</h2><blockquote>
+<p>数列长度1＜N＜100 000  ，求数值严格递增的子序列长度</p>
+</blockquote>
+<h3 id="思路【基于二分】"><a href="#思路【基于二分】" class="headerlink" title="思路【基于二分】"></a>思路【基于二分】</h3><p>数据达到100000，考虑$nlogn$的算法</p>
+<h3 id="代码-O-nlogn"><a href="#代码-O-nlogn" class="headerlink" title="代码$O(nlogn)$"></a>代码$O(nlogn)$</h3><figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1e5</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> a[N],q[N];<span class="comment">//q[i]表示长度是i的上升子序列最后一个数的最小值 </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> n,cnt=<span class="number">0</span>;<span class="comment">//cnt:前i个数中最大的最长上升子序列的值</span></span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) cin&gt;&gt;a[i];</span><br><span class="line">    q[<span class="number">0</span>]=INT_MIN;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++){</span><br><span class="line">        <span class="keyword">int</span> l=<span class="number">0</span>,r=cnt;</span><br><span class="line">        <span class="keyword">while</span>(l&lt;r){</span><br><span class="line">            <span class="keyword">int</span> mid=l+r+<span class="number">1</span>&gt;&gt;<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span>(q[mid]&lt;a[i]) l=mid;</span><br><span class="line">            <span class="keyword">else</span> r=mid<span class="number">-1</span>;</span><br><span class="line">        }</span><br><span class="line">        cnt=<span class="built_in">max</span>(cnt,r+<span class="number">1</span>);</span><br><span class="line">        q[r+<span class="number">1</span>]=a[i];        </span><br><span class="line">    }</span><br><span class="line">    cout&lt;&lt;cnt&lt;&lt;endl;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>更好理解的一种</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1e5</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> a[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="keyword">int</span> n;cin&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++) cin&gt;&gt;a[i];</span><br><span class="line">	vector&lt;<span class="keyword">int</span>&gt;stk;</span><br><span class="line">	stk.<span class="built_in">push_back</span>(a[<span class="number">0</span>]);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++){</span><br><span class="line">		<span class="keyword">if</span>(a[i]&gt;stk.<span class="built_in">back</span>()) stk.<span class="built_in">push_back</span>(a[i]);</span><br><span class="line">		<span class="keyword">else</span>{ <span class="comment">//替换掉第一个大于等于它的数</span></span><br><span class="line">			<span class="keyword">int</span> l=<span class="number">0</span>,r=stk.<span class="built_in">size</span>()<span class="number">-1</span>;</span><br><span class="line">			<span class="keyword">while</span>(l&lt;r){</span><br><span class="line">				<span class="keyword">int</span> mid=l+r&gt;&gt;<span class="number">1</span>;</span><br><span class="line">				<span class="keyword">if</span>(stk[mid]&gt;=a[i]) r=mid;</span><br><span class="line">				<span class="keyword">else</span> l=mid+<span class="number">1</span>; </span><br><span class="line">			}  <span class="comment">// *lower_bound(stk.begin(), stk.end(), a[i]) = a[i];</span></span><br><span class="line">			stk[l]=a[i];</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	cout&lt;&lt;stk.<span class="built_in">size</span>()&lt;&lt;endl;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="AcWing897-最长公共子序列"><a href="#AcWing897-最长公共子序列" class="headerlink" title="AcWing897 最长公共子序列"></a>AcWing897 最长公共子序列</h2><blockquote>
+<p>两个长度分别为 N 和 M 的字符串 A 和 B，求既是 A 的子序列又是 B 的子序列的字符串长度最长是多少。</p>
+</blockquote>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">状态表示（集合表示）：dp[i][j] 所有在A[<span class="number">1</span>…i]中出现过且在B[<span class="number">1</span>…j]中也出现过的子序列</span><br><span class="line">    			   <span class="comment">//以选到A[i]和B[j]结尾的满足条件子序列</span></span><br><span class="line">属性：   最大值</span><br><span class="line">状态计算（集合划分）：根据A[i]是否等于B[j]</span><br><span class="line">    <span class="number">1</span>) A[i] == B[j] dp[i][j] → dp[i<span class="number">-1</span>][j<span class="number">-1</span>]+<span class="number">1</span>;</span><br><span class="line">	<span class="number">2</span>) A[i] != B[j] dp[i][j] → <span class="built_in">max</span>(dp[i][j],dp[i<span class="number">-1</span>][j],dp[i][j<span class="number">-1</span>])</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1010</span>;</span><br><span class="line"><span class="keyword">char</span> a[N],b[N];</span><br><span class="line"><span class="keyword">int</span> x,y;</span><br><span class="line"><span class="keyword">int</span> dp[N][N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">	cin&gt;&gt;x&gt;&gt;y;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=x;i++) cin&gt;&gt;a[i];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=y;i++) cin&gt;&gt;b[i];</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=x;i++){</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=y;j++){</span><br><span class="line">			dp[i][j]=<span class="built_in">max</span>(dp[i<span class="number">-1</span>][j],dp[i][j<span class="number">-1</span>]);</span><br><span class="line">			<span class="keyword">if</span>(a[i]==b[j])</span><br><span class="line">				dp[i][j]=<span class="built_in">max</span>(dp[i][j],dp[i<span class="number">-1</span>][j<span class="number">-1</span>]+<span class="number">1</span>);	</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	cout&lt;&lt;dp[x][y]&lt;&lt;endl;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="P1439-最长公共子序列"><a href="#P1439-最长公共子序列" class="headerlink" title="P1439 最长公共子序列"></a><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1439">P1439 最长公共子序列</a></h2><blockquote>
+<p>给出 1,2,…n 的两个排列 P1 和 P2 ，求它们的最长公共子序列。n&lt;=100 000</p>
+</blockquote>
+<p>数据范围大，按上一题的思路明显不行，所以考虑：</p>
+<p>因为是1到 n的排列，所以两个子序列的元素都相同，只是位置不同</p>
+<p>比如</p>
+<figure class="highlight apache"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">P1</span>: <span class="number">3</span> <span class="number">1</span> <span class="number">2</span> <span class="number">4</span> <span class="number">5</span> 映射成→ a b c d e  那么</span><br><span class="line"><span class="attribute">P2</span>: <span class="number">5</span> <span class="number">3</span> <span class="number">1</span> <span class="number">2</span> <span class="number">4</span> 映射成→ e a b c d  所以转换成求单个序列的最长上升子序列问题（AcWing<span class="number">896</span>）</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1e5</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">int</span> a[N],b[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++){</span><br><span class="line">		<span class="keyword">int</span> x;cin&gt;&gt;x;</span><br><span class="line">		a[x]=i;</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++){</span><br><span class="line">		<span class="keyword">int</span> x;cin&gt;&gt;x;</span><br><span class="line">		b[i]=a[x];</span><br><span class="line">	}</span><br><span class="line">	<span class="comment">//求b[]的最长上升子序列</span></span><br><span class="line">	vector&lt;<span class="keyword">int</span>&gt;stk;</span><br><span class="line">	stk.<span class="built_in">push_back</span>(b[<span class="number">1</span>]);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++){</span><br><span class="line">		<span class="keyword">if</span>(stk.<span class="built_in">back</span>()&lt;b[i]) stk.<span class="built_in">push_back</span>(b[i]);</span><br><span class="line">		<span class="keyword">else</span>{</span><br><span class="line">			*<span class="built_in">lower_bound</span>(stk.<span class="built_in">begin</span>(),stk.<span class="built_in">end</span>(),b[i])=b[i];</span><br><span class="line">		}</span><br><span class="line">	} </span><br><span class="line">	cout&lt;&lt;stk.<span class="built_in">size</span>()&lt;&lt;endl;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="AcWing-902-最短编辑距离"><a href="#AcWing-902-最短编辑距离" class="headerlink" title="AcWing 902. 最短编辑距离"></a><a target="_blank" rel="noopener" href="https://www.acwing.com/activity/content/problem/content/1094/">AcWing 902. 最短编辑距离</a></h2><blockquote>
+<p>给两字符串 A 和 B，将 A 经过若干操作变为 B，求出将 A 变为B 至少需要的操作次数。可进行操作有：</p>
+<ol>
+<li>删除–将字符串 A 中的某个字符删除。</li>
+<li>插入–在字符串 A 的某个位置插入某个字符。</li>
+<li>替换–将字符串 A 中的某个字符替换为另一个字符。</li>
+</ol>
+</blockquote>
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">状态表示：dp[i][j]: 将A的前i个字符变成B的前j个字符</span><br><span class="line">    	属性：最小操作次数</span><br><span class="line">状态计算：</span><br><span class="line">    <span class="number">1</span>) a[i]==b[j]: → dp[i<span class="number">-1</span>][j<span class="number">-1</span>];</span><br><span class="line">	<span class="number">2</span>) 删除：dp[i<span class="number">-1</span>][j]+<span class="number">1</span>;</span><br><span class="line">	   插入：dp[i][j<span class="number">-1</span>]+<span class="number">1</span>;</span><br><span class="line">       替换: dp[i<span class="number">-1</span>][j<span class="number">-1</span>]+<span class="number">1</span></span><br><span class="line">           </span><br><span class="line">关于初始化：</span><br><span class="line"><span class="number">1.</span>在<span class="keyword">for</span>遍历的时候需要用到的但是事先没有的 就要预处理 → 往往就是<span class="number">0</span>、<span class="number">1</span>之类的 </span><br><span class="line"><span class="number">2.</span>如果要找min → INF; 要找有负数的max → -INF</span><br><span class="line">因此：</span><br><span class="line">  f[<span class="number">0</span>][i]：如果a初始长度是<span class="number">0</span>，只能用插入操作让a变成b</span><br><span class="line">  f[i][<span class="number">0</span>]：如果b初始长度是<span class="number">0</span>，只能用删除操作让a变成b</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1010</span>;</span><br><span class="line"><span class="keyword">char</span> a[N],b[N];</span><br><span class="line"><span class="keyword">int</span> dp[N][N];<span class="comment">//dp[i][j]将A的前i个字母变成B的前j个字母的操作次数 </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="keyword">int</span> n,m;</span><br><span class="line">	cin&gt;&gt;n&gt;&gt;a+<span class="number">1</span>;<span class="comment">//使得a从下标1开始存储 </span></span><br><span class="line">	cin&gt;&gt;m&gt;&gt;b+<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) dp[i][<span class="number">0</span>]=i;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++) dp[<span class="number">0</span>][i]=i;</span><br><span class="line">    </span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++){</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=m;j++){</span><br><span class="line">			<span class="keyword">if</span>(a[i]==b[j]) dp[i][j]=dp[i<span class="number">-1</span>][j<span class="number">-1</span>];</span><br><span class="line">			<span class="keyword">else</span>{</span><br><span class="line">				<span class="comment">//删除or删除 </span></span><br><span class="line">				dp[i][j]=<span class="built_in">min</span>(dp[i<span class="number">-1</span>][j]+<span class="number">1</span>,dp[i][j<span class="number">-1</span>]+<span class="number">1</span>);</span><br><span class="line">				<span class="comment">//or替换				</span></span><br><span class="line">				dp[i][j]=<span class="built_in">min</span>(dp[i<span class="number">-1</span>][j<span class="number">-1</span>]+<span class="number">1</span>,dp[i][j]);</span><br><span class="line">			}</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	cout&lt;&lt;dp[n][m]&lt;&lt;endl;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="AcWing-899-编辑距离"><a href="#AcWing-899-编辑距离" class="headerlink" title="AcWing 899. 编辑距离"></a><a target="_blank" rel="noopener" href="https://www.acwing.com/activity/content/problem/content/1006/">AcWing 899. 编辑距离</a></h2><blockquote>
+<p> n个长度不超过 10 的字符串以及m 次询问，每次询问给出一个字符串和一个操作次数上限。</p>
+<p>对每次询问，求给定的 n 个串中有多少个串可以在上限操作次数内经过操作变成询问给出的字符串。</p>
+</blockquote>
+<h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><h3 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1010</span>;</span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="keyword">char</span> s[N][<span class="number">15</span>];</span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">15</span>][<span class="number">15</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dis</span><span class="params">(<span class="keyword">char</span> a[],<span class="keyword">char</span> b[])</span></span>{</span><br><span class="line">	<span class="keyword">int</span> lena=<span class="built_in">strlen</span>(a+<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">int</span> lenb=<span class="built_in">strlen</span>(b+<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=lena;i++) dp[i][<span class="number">0</span>]=i;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=lenb;i++) dp[<span class="number">0</span>][i]=i;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=lena;i++){</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=lenb;j++){</span><br><span class="line">			<span class="keyword">if</span>(a[i]==b[j]) dp[i][j]=dp[i<span class="number">-1</span>][j<span class="number">-1</span>];</span><br><span class="line">			<span class="keyword">else</span>{</span><br><span class="line">				dp[i][j]=<span class="built_in">min</span>(dp[i<span class="number">-1</span>][j],dp[i][j<span class="number">-1</span>])+<span class="number">1</span>;</span><br><span class="line">				dp[i][j]=<span class="built_in">min</span>(dp[i][j],dp[i<span class="number">-1</span>][j<span class="number">-1</span>]+<span class="number">1</span>);</span><br><span class="line">			}</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> dp[lena][lenb];</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++) cin&gt;&gt;(s[i]+<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">while</span>(m--){</span><br><span class="line">		<span class="keyword">char</span> b[<span class="number">15</span>];cin&gt;&gt;(b+<span class="number">1</span>);</span><br><span class="line">		<span class="keyword">int</span> len=<span class="number">0</span>; cin&gt;&gt;len;</span><br><span class="line">		<span class="keyword">int</span> cnt=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++){</span><br><span class="line">			<span class="built_in">memset</span>(dp,<span class="number">0</span>,<span class="keyword">sizeof</span> dp); <span class="comment">//注意点</span></span><br><span class="line">			<span class="keyword">if</span>(<span class="built_in">dis</span>(s[i],b)&lt;=len) cnt++;</span><br><span class="line">		}</span><br><span class="line">		cout&lt;&lt;cnt&lt;&lt;endl;</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="Medium-Part"><a href="#Medium-Part" class="headerlink" title="Medium Part"></a>Medium Part</h1><blockquote>
+<p>非模板题目，在基础模板上的一丢丢变化且不难的题</p>
+</blockquote>
+<h2 id="AcWing-1014-登山"><a href="#AcWing-1014-登山" class="headerlink" title="AcWing 1014. 登山"></a><a target="_blank" rel="noopener" href="https://www.acwing.com/activity/content/problem/content/1260/">AcWing 1014. 登山</a></h2><blockquote>
+<p>给定序列，求先单调上升再单调下降的最长子序列长度</p>
+</blockquote>
+<h3 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h3><p>先分别按数组 顺序和逆序 求以<code>a[i]</code>结尾的最长上升子序列长度<code>f[i]</code></p>
+<p>得到以<code>a[i]</code>结尾的先上升后下降的最长子序列长度即为<code>f[i]+g[i]-1</code></p>
+<h3 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1010</span>;</span><br><span class="line"><span class="keyword">int</span> f[N],g[N],a[N];</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++){</span><br><span class="line">		cin&gt;&gt;a[i];</span><br><span class="line">		f[i]=<span class="number">1</span>,g[i]=<span class="number">1</span>;</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++){</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;i;j++){</span><br><span class="line">			<span class="keyword">if</span>(a[i]&gt;a[j]) f[i]=<span class="built_in">max</span>(f[i],f[j]+<span class="number">1</span>);</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=n;i&gt;=<span class="number">1</span>;i--){</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=n;j&gt;i;j--){</span><br><span class="line">			<span class="keyword">if</span>(a[i]&gt;a[j]) g[i]=<span class="built_in">max</span>(g[i],g[j]+<span class="number">1</span>);</span><br><span class="line">		}</span><br><span class="line">	} </span><br><span class="line">	<span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) ans=<span class="built_in">max</span>(ans,f[i]+g[i]<span class="number">-1</span>);</span><br><span class="line">	cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>LiaN
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2022/04/30/2022-4-30-%E3%80%90%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E3%80%91%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B/" title="【动态规划】最长上升子序列模型">http://example.com/2022/04/30/2022-4-30-【动态规划】最长上升子序列模型/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/AcWing/" rel="tag"># AcWing</a>
+              <a href="/tags/DP/" rel="tag"># DP</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/04/19/2022-04-19-Kademlia%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/" rel="prev" title="Kademlia基本原理">
+      <i class="fa fa-chevron-left"></i> Kademlia基本原理
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/05/16/2022-05-16-%E3%80%90SE%E3%80%91%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%BE%8B%E9%A2%98%E6%80%BB%E7%BB%93/" rel="next" title="【SE】软件设计模式例题总结">
+      【SE】软件设计模式例题总结 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Easy-Part"><span class="nav-number">1.</span> <span class="nav-text">Easy Part</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#AcWing-895-%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97%EF%BC%88%E5%BA%8F%E5%88%97%E6%9C%80%E9%95%BF1000%EF%BC%89"><span class="nav-number">1.1.</span> <span class="nav-text">AcWing 895. 最长上升子序列（序列最长1000）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF-%E3%80%90%E5%9F%BA%E4%BA%8E%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E3%80%91"><span class="nav-number">1.1.1.</span> <span class="nav-text">思路 【基于动态规划】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-O-n-2"><span class="nav-number">1.1.2.</span> <span class="nav-text">代码 $O(n^2)$</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AcWing896-%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97%EF%BC%88%E5%BA%8F%E5%88%97%E6%9C%80%E9%95%BF100000%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">AcWing896 最长上升子序列（序列最长100000）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF%E3%80%90%E5%9F%BA%E4%BA%8E%E4%BA%8C%E5%88%86%E3%80%91"><span class="nav-number">1.2.1.</span> <span class="nav-text">思路【基于二分】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-O-nlogn"><span class="nav-number">1.2.2.</span> <span class="nav-text">代码$O(nlogn)$</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AcWing897-%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97"><span class="nav-number">1.3.</span> <span class="nav-text">AcWing897 最长公共子序列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF"><span class="nav-number">1.3.1.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">1.3.2.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P1439-%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97"><span class="nav-number">1.4.</span> <span class="nav-text">P1439 最长公共子序列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-1"><span class="nav-number">1.4.1.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AcWing-902-%E6%9C%80%E7%9F%AD%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB"><span class="nav-number">1.5.</span> <span class="nav-text">AcWing 902. 最短编辑距离</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF-1"><span class="nav-number">1.5.1.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-2"><span class="nav-number">1.5.2.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AcWing-899-%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB"><span class="nav-number">1.6.</span> <span class="nav-text">AcWing 899. 编辑距离</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF-2"><span class="nav-number">1.6.1.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-3"><span class="nav-number">1.6.2.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Medium-Part"><span class="nav-number">2.</span> <span class="nav-text">Medium Part</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#AcWing-1014-%E7%99%BB%E5%B1%B1"><span class="nav-number">2.1.</span> <span class="nav-text">AcWing 1014. 登山</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF-3"><span class="nav-number">2.1.1.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-4"><span class="nav-number">2.1.2.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="LiaN"
+      src="https://cdn2.maocdn.cn/img/2022/01/21/J8U_G9ZTZG4W12DA260Z9.jpg">
+  <p class="site-author-name" itemprop="name">LiaN</p>
+  <div class="site-description" itemprop="description"><font color="#000000">别焦虑了，说不定明天就死了呢.</font></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/z-y-LiaN" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;z-y-LiaN" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2749613231@qq.com" title="E-Mail → mailto:2749613231@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      快速访问
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.luogu.com.cn/" title="https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;" rel="noopener" target="_blank">洛谷</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.acwing.com/" title="https:&#x2F;&#x2F;www.acwing.com&#x2F;" rel="noopener" target="_blank">AcWing</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.csdn.net/" title="https:&#x2F;&#x2F;www.csdn.net&#x2F;" rel="noopener" target="_blank">CSDN</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.bilibili.com/" title="https:&#x2F;&#x2F;www.bilibili.com&#x2F;" rel="noopener" target="_blank">b站</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LiaN</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">204k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">3:06</span>
+</div>
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+-->
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '532a45a59c2f395313f9',
+      clientSecret: '419760923076a6f709b5baa01457e5a96e275838',
+      repo        : 'z-y-LiaN.github.io',
+      owner       : 'z-y-LiaN',
+      admin       : ['z-y-LiaN'],
+      id          : '91ea3fa72c445b58e57b787c6044a8a6',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>

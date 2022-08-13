@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":20,"offset":10,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="高数、线代、概率论一些常用基础知识点复习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【SE】数学基础知识">
+<meta property="og:url" content="http://example.com/2022/08/02/2022-08-02-%E3%80%90SE%E3%80%91%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/index.html">
+<meta property="og:site_name" content="LiaN">
+<meta property="og:description" content="高数、线代、概率论一些常用基础知识点复习">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/08/05/QLWHksud7xAlJjU.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/05/rkE4F6G1TfhS38i.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/05/uRhCXbatP98DTxe.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/06/1PtNzyeOvaKbkRV.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/06/O7ZjLAptkUSNln3.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/06/7iEsOulChydFNkU.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/06/R1O8iWub7dXer62.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/06/JqrMlxpIzNFVwRS.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/07/AiGpU7y1XshJtE4.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/07/IaBn9Uf7jOD3PFV.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/07/QUa8VjlWvgfxrZO.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/07/pHjM3ktqFQcrzKa.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/07/Gow7FAyfa5RbxHi.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/07/K7Bk1T4mO8gcPsi.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/08/rnCjQweYhBoMd1a.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/08/ljGVHB5L9Xe2kAv.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/08/XRTjeDCtJnuImdL.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/08/G14mgtHl9iCP6XW.png">
+<meta property="article:published_time" content="2022-08-02T01:55:34.000Z">
+<meta property="article:modified_time" content="2022-08-11T13:48:17.212Z">
+<meta property="article:author" content="LiaN">
+<meta property="article:tag" content="数学">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/08/05/QLWHksud7xAlJjU.png">
+
+<link rel="canonical" href="http://example.com/2022/08/02/2022-08-02-%E3%80%90SE%E3%80%91%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>【SE】数学基础知识 | LiaN</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end -->
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="LiaN" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband">
+    </div>
+<a target="_blank" rel="noopener" href="https://github.com/z-y-LiaN" class="github-corner" aria-label="View source on GitHub">
+<svg width="80" height="80" viewBox="0 0 250 250" style="fill:#F4A460; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">LiaN</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">是一只废物捏</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">31</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">10</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">36</span></a>
+
+  </li>
+        <li class="menu-item menu-item-mubulinks">
+
+    <a href="/mubulinks/" rel="section"><i class="fa fa-link fa-fw"></i>幕布链接</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/02/2022-08-02-%E3%80%90SE%E3%80%91%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn2.maocdn.cn/img/2022/01/21/J8U_G9ZTZG4W12DA260Z9.jpg">
+      <meta itemprop="name" content="LiaN">
+      <meta itemprop="description" content="<font color="#000000">别焦虑了，说不定明天就死了呢.</font>">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LiaN">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【SE】数学基础知识
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-08-02 09:55:34" itemprop="dateCreated datePublished" datetime="2022-08-02T09:55:34+08:00">2022-08-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-08-11 21:48:17" itemprop="dateModified" datetime="2022-08-11T21:48:17+08:00">2022-08-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/" itemprop="url" rel="index"><span itemprop="name">专业课</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <ul>
+<li>高数、线代、概率论一些常用基础知识点复习</li>
+</ul>
+<span id="more"></span>
+<h1 id="重点复习"><a href="#重点复习" class="headerlink" title="重点复习"></a>重点复习</h1><p><strong>高数部分</strong></p>
+<ul>
+<li>可导、可微、连续、可积之间的关系（一元函数+二元函数）。✅</li>
+<li>三个中值定理的区别、联系和物理意义（罗尔、拉格朗日、柯西），微分中值定理是啥？</li>
+<li>如何求梯度？梯度、方向导数与梯度。✅</li>
+<li>定积分如何求？定积分的意义？</li>
+<li>给你一个物体表面离散的一堆点，如何求任意表面的法向量？</li>
+<li>凸函数的定义，凸函数的局部最优解一定是全局最优解吗，为什么呢？</li>
+<li>什么是数列的极限，也就是说一个数列xn，收敛于a，你如何定义它？</li>
+<li>用数学语言描述极限</li>
+<li>一阶导，二阶导的物理意义，几何意义</li>
+<li>傅里叶级数和傅里叶变换的关系</li>
+</ul>
+<p><strong>线代部分</strong></p>
+<ul>
+<li>矩阵中秩和迹是如何计算的，物理意义分别是什么？秩是什么？什么是矩阵满秩？怎么求矩阵的秩？</li>
+<li>什么是线性变换？什么是线性空间？</li>
+<li>什么是全等变换？</li>
+<li>什么是极大无关组？</li>
+<li>什么是矩阵相似？</li>
+<li>正定矩阵是什么？</li>
+<li>正交矩阵的定义</li>
+<li>什么是矩阵合同</li>
+<li>对称矩阵是什么？</li>
+<li>特征值和特征向量几何含义？它们的意义以及之间的关系</li>
+<li>矩阵可逆的条件？</li>
+<li>子空间是什么？</li>
+<li>描述一下特征值分解？</li>
+<li>行列式的几何意义？</li>
+<li>线代：如何理解矩阵的秩？简述向量组线性无关的含义？解释正定矩阵以及半正定矩阵？特征值的含义以及矩阵分解的物理意义？</li>
+</ul>
+<p><strong>概率论部分</strong></p>
+<ul>
+<li>解释什么是大数定理，有什么用，什么时候用？</li>
+<li>解释什么是中心极限定理，有什么用，怎么用？数据如何处理？</li>
+<li>全概率公式怎么写？</li>
+<li>贝叶斯公式与应用？</li>
+<li>介绍下正态分布，两个正态分布相加是不是还是正态分布</li>
+<li>解释下相关系数、协方差。相关系数或协方差为0的时候能否说明两个分布无关？为什么？</li>
+<li>极大似然估计</li>
+</ul>
+<p><strong>离散数学部分</strong></p>
+<ul>
+<li>偏序关系和等价关系</li>
+<li>解释下等价关系和等价类</li>
+<li>双射</li>
+<li>什么是覆盖和划分、偏序集合、强弱连通图</li>
+</ul>
+<h1 id="高等数学"><a href="#高等数学" class="headerlink" title="高等数学"></a>高等数学</h1><h2 id="极限"><a href="#极限" class="headerlink" title="极限"></a>极限</h2><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="可微、可导、可积、连续"><a href="#可微、可导、可积、连续" class="headerlink" title="可微、可导、可积、连续"></a>可微、可导、可积、连续</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/SP_FA/article/details/117473545?ops_request_misc=%7B%22request%5Fid%22%3A%22165969690516782350825991%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&amp;request_id=165969690516782350825991&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~blog~sobaiduend~default-2-117473545-null-null.nonecase&amp;utm_term=可导与连续的关系&amp;spm=1018.2226.3001.4450">参考阅读： 可微，可导，可积与连续的关系</a></p>
+</blockquote>
+<h4 id="一些定义"><a href="#一些定义" class="headerlink" title="一些定义"></a>一些定义</h4><p>🔴 $\textcolor{red}{连续}$</p>
+<p>设$y=f(x)$在$x_{0}$的某一邻域内有定义，若$\lim_{x \to \infty}f(x)= f(x_{0})$，则称$f(x)$在点$x_{0}$处连续</p>
+<ul>
+<li><strong>三个条件</strong><ul>
+<li>函数在该点<strong>有定义</strong></li>
+<li>函数在该点极限$\lim_{x \to \infty}f(x)$<strong>存在</strong></li>
+<li><strong>极限值 =  函数值</strong>：$\lim_{x \to \infty}f(x)= f(x_{0})$</li>
+</ul>
+</li>
+</ul>
+<p>🔴 $\textcolor{red}{可导}$</p>
+<p>设$y=f(x)$在$x_{0}$的某一邻域$U(x_{0})$内有定义，当自变量$x$在$x_{0}$取得增量$\Delta x(x\neq 0) $，且$x_0 +\Delta x \in U(x_0)$时，相应的函数增量 $ \Delta y=f(x_0+\Delta x)-f(x_0)$，若极限</p>
+<script type="math/tex; mode=display">
+\lim _{\Delta x \rightarrow 0} \frac{\Delta y}{\Delta x}=\lim _{\Delta x \rightarrow 0} \frac{f\left(x_{0}+\Delta x\right)-f\left(x_{0}\right)}{\Delta x}</script><p>存在，则称函数在$x_0$处可导，并称这个极限值为函数在该点处的导数</p>
+<p>🔴 $\textcolor{red}{可微}$</p>
+<blockquote>
+<p>参考阅读：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/38967869">如何通俗理解全微分 - 知乎 (zhihu.com)</a></p>
+</blockquote>
+<p>设函数$y=f(x)$ 在区间内有定义，$x_{0}$及$x_{0}+\Delta x$在区间内：</p>
+<ul>
+<li>若增量 $ \Delta y=f(x_0+\Delta x)-f(x_0)$可表示为$\Delta y=A\Delta x+o(\Delta x)$</li>
+<li>其中$A$是不依赖于$\Delta x$的常数，那么称函数$y=f(x)$ 在点$x_0$处可微。</li>
+<li>$A\Delta x$ 叫做函数$y=f(x)$在点 $x_0$处相应于$\Delta x$的微分，记作$ \mathrm dy$</li>
+</ul>
+<p>🔴 $\textcolor{red}{可积}$</p>
+<ul>
+<li>$f(x)$在区间$[a,b]$上<strong>连续</strong>，则在$[a,b]$上可积</li>
+<li>$f(x)$在区间$[a,b]$上<strong>有界，且只有有限个间断点</strong>，则在$[a,b]$上可积</li>
+</ul>
+<h4 id="联系【一元函数】"><a href="#联系【一元函数】" class="headerlink" title="联系【一元函数】"></a>联系【一元函数】</h4><p>⭕ <strong>可导 必然 连续，连续 不一定 可导</strong></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/64324578">证明：连续性和可导性</a></p>
+<p>例子：魏尔施特拉斯函数：<strong>处处连续而处处不可导</strong>：</p>
+</blockquote>
+<p><img src="https://s2.loli.net/2022/08/05/QLWHksud7xAlJjU.png" alt="image.png" style="zoom: 50%;"></p>
+<p>⭕ <strong>可导 和 可微 等价</strong></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/319299307#:~:text=一元函数可导，表示曲线可作切线，表示曲线光滑。. （这个没有理解难度吧！. ）. 可导表示可作切线. 一元函数可微，表示曲线段的Y增量可以用直线段的Y增量代替。. 可微表示允许以直代曲.,曲线段PC的X增量是 ，直线段PB的X增量是 。. 两者相等. 曲线段PC的Y增量是 ，直线段PB的Y增量是 。.">一元函数和二元函数，可微和可导有什么区别？ - 知乎 (zhihu.com)</a></p>
+</blockquote>
+<p>⭕ <strong>连续必然可积，可积不一定连续</strong></p>
+<blockquote>
+<p>想想可积和连续的几何意义就理解了</p>
+</blockquote>
+<p>⭕ <strong>可导必然可积，可积不一定可导</strong></p>
+<blockquote>
+<p>可导👉连续👉可积，所以可导必可积。</p>
+<p>可积不一定连续👉不一定可导，所以可积不一定可导。</p>
+</blockquote>
+<h4 id="联系【多元函数】"><a href="#联系【多元函数】" class="headerlink" title="联系【多元函数】"></a>联系【多元函数】</h4><p>🔺 <strong>可导不一定连续，连续不一定可导</strong></p>
+<blockquote>
+<p>可导指的是<strong>可偏导</strong>，所以<strong>并不能推出在所有方向上函数连续</strong></p>
+</blockquote>
+<p>🔺 <strong>可微必然可导，可导不一定可微</strong></p>
+<blockquote>
+<p>一元函数👉可导：存在导数，可微：存在微分。</p>
+<p>多元函数👉可导：存在<strong>偏导数</strong>，可微：存在<strong>全微分</strong>。</p>
+</blockquote>
+<p>🔺<strong>可微必然连续，连续不一定可微</strong></p>
+<p>🔺<strong>偏导数连续必然可微，可微不一定偏导数连续</strong></p>
+<blockquote>
+<p>一个形象的角度理解：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/42504140">多元函数可微、可导、连续的关系 - 知乎 (zhihu.com)</a></p>
+<p><strong>连续</strong>：在定义范围内曲面上没有窟窿、断崖（但可以有尖点，有折痕）</p>
+<p><strong>(偏)导函数存在，即可导</strong>：曲面和某个切面相交的那条切线是光滑的（但是偏导函数可以在这点不连续，即极限存在但无定义)</p>
+<p><strong>可微</strong>：曲面是光滑的(想象一个穹顶)</p>
+</blockquote>
+<hr>
+<h3 id="偏导数、方向导数、梯度"><a href="#偏导数、方向导数、梯度" class="headerlink" title="偏导数、方向导数、梯度"></a>偏导数、方向导数、梯度</h3><blockquote>
+<p>参考阅读：</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/shine-lee/p/11715033.html">直观理解梯度，以及偏导数、方向导数和法向量等 - shine-lee - 博客园 (cnblogs.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/CSDN_SUSAN/article/details/90166474">导数，偏导数，方向导数，梯度的理解—-微积分数学基础SUSAN的博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/488961148">通俗理解方向导数与梯度 - 知乎 (zhihu.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/31942912">多元函数的偏导数、方向导数、梯度以及微分之间的关系思考 - 知乎 (zhihu.com)</a></p>
+</blockquote>
+<p>🔴 $\textcolor{red}{偏导数}$</p>
+<p>对于多元函数，求导数其实也是要求一个切线的斜率，但是由于曲面上的一个点的切线有<strong>无数条</strong>，那么取那条切线的斜率？引入： <strong>偏导数</strong>。</p>
+<p><strong>偏导数</strong>：可以理解成<strong>多元函数“退化”成一元函数时的导数</strong> ；“退化”：固定其他变量的值，只保留一个变量，依次保留每个变量，则$N$元函数有$N$个偏导数。</p>
+<ul>
+<li><strong>几何意义</strong>：也是切线斜率， 由于曲面上一点的切线有无数条（所有切线组成一个<strong>切面</strong>），偏导数选取的是<font color="red">垂直于各坐标轴</font>的几条特殊切线的<strong>斜率</strong>。</li>
+<li><strong>物理意义</strong>：表示函数沿着<font color="red">某个坐标轴方向上</font>的<strong>变化率</strong></li>
+</ul>
+<p>以二元函数$z=f(x,y)$为例，求$(x_0,y_0,z_0)$的偏导数：</p>
+<ul>
+<li>对$x$的偏导数：过点$(x_0,y_0,z_0)$且垂直于$y$轴的曲线（相当于固定$y$值），在该点切线的斜率</li>
+<li>对$y$的偏导数：过点$(x_0,y_0,z_0)$且垂直于$x$轴的曲线（相当于固定$x$值），在该点切线的斜率</li>
+</ul>
+<p><img src="https://s2.loli.net/2022/08/05/rkE4F6G1TfhS38i.png" alt="image.png" style="zoom:40%;"></p>
+<p>🔴 $\textcolor{red}{方向导数}$</p>
+<p>偏导数计算的是垂直于各坐标轴的几条特殊切线的斜率，某点的切线沿着不同方向有无数条 👉想求某点沿着<font color="red">任意方向</font>的切线斜率？引入：<strong>方向导数</strong>（补充：既然切线都分布在一个平面上，并且每一条切线都代表着函数朝着某一方向的变化率，那么在这个平面上就<strong>必定会存在唯一的一条切线的方向导数最大</strong>。（梯度为0的情况除外）</p>
+<p>以二元函数$z=f(x,y)$为例，求$(x_0,y_0,z_0)$的某方向导数：（<a target="_blank" rel="noopener" href="https://www.geogebra.org/m/Bx8nFMNc">下图动态演示地址</a>）</p>
+<ul>
+<li>$x$轴和$y$轴决定的平面上选择某一个方向向量（图中斜着的红色箭头），该方向所在的这个黄色平面 与 蓝色曲面相交 决定了一条过$(x_0,y_0,z_0)$的曲线（隐隐约约的红色细线描出来的部分），点在该曲线上的这条黑色切线斜率即为方向导数</li>
+</ul>
+<p><img src="https://s2.loli.net/2022/08/05/uRhCXbatP98DTxe.png" alt="image.png" style="zoom:33%;"></p>
+<ul>
+<li>设一个方向向量为$\overrightarrow{\mathrm{u}}=(\cos \alpha, \sin \alpha)$ （$\alpha$和$\beta$分别为该方向向量与$x$轴和$y$轴的夹角），则方向导数定义如下，它是个标量：<script type="math/tex; mode=display">
+\mathrm{D}_{\mathrm{u}} \mathrm{f}(\mathrm{x}, \mathrm{y})=\mathrm{f}_{\mathrm{x}}(\mathrm{x}, \mathrm{y}) \cos \alpha+\mathrm{f}_{\mathrm{y}}(\mathrm{x}, \mathrm{y}) \sin \alpha</script>进一步地，设偏导向量$\overrightarrow{\mathrm{A}}=\left(\mathrm{f}_{\mathrm{x}}(\mathrm{x}, \mathrm{y}), \mathrm{f}_{\mathrm{y}}(\mathrm{x}, \mathrm{y})\right)$，则上述方向导数可以改写为：<script type="math/tex; mode=display">
+\mathrm{D}_{\mathrm{u}} \mathrm{f}(\mathrm{x}, \mathrm{y})=\overrightarrow{\mathrm{A}} * \overrightarrow{\mathrm{u}}=|\overrightarrow{\mathrm{A}}| *|\overrightarrow{\mathrm{u}}| * \cos (\theta)</script>$ \theta$ 是偏导向量和方向向量之间的夹角。当$\theta=0$即二者同向时，方向导数$D_{u} f(x, y)$取得<strong>正</strong>最大值。反向时，则<strong>负</strong>最大值。</li>
+</ul>
+<p>🔴 $\textcolor{red}{梯度}$</p>
+<p><strong>梯度：</strong>是一个矢量，函数在某点 无数个变化方向中 <strong>变化最快</strong>的 <u><strong>那个方向</strong></u></p>
+<blockquote>
+<p>即：偏导数构成的向量；由此：方向导数 = 梯度 * 方向向量</p>
+</blockquote>
+<p>函数只要<strong>每一个变量</strong>都沿着关于这个变量的<strong>偏导所指定的方向</strong>来变化，函数的整体变化就能达到最快（变化的绝对值最大）</p>
+<p><strong>梯度的几何意义</strong>：</p>
+<ol>
+<li>当前位置的<strong>梯度方向</strong>，为函数在该位置处<strong>方向导数最大的方向</strong>，也是函数值<strong>上升最快的方向</strong>，反方向为下降最快的方向；</li>
+<li>当前位置的<strong>梯度长度（模）</strong>，为最大方向导数的值</li>
+<li>梯度（下降）的方向与<strong>等高线的切线方向垂直</strong></li>
+</ol>
+<p>以二元函数$z=f(x,y)$为例，其方向导数定义如下：</p>
+<script type="math/tex; mode=display">
+\nabla f\left(x_{0}, y_{0}\right)=\left.\left(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}\right)\right|_{\left(x_{0}, y_{0}\right)}</script><hr>
+<h2 id="微积分基础"><a href="#微积分基础" class="headerlink" title="微积分基础"></a>微积分基础</h2><blockquote>
+<p>参考视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1U94y1R71P?p=11&amp;spm_id_from=pageDriver&amp;vd_source=29f5937d4c8dc6b894a81d48deba4d66">3-定积分_哔哩哔哩_bilibili</a></p>
+</blockquote>
+<p>🔴 $\textcolor{red}{区分\Delta y和dy}$</p>
+<p><img src="https://s2.loli.net/2022/08/06/1PtNzyeOvaKbkRV.png" alt="image.png" style="zoom:50%;"></p>
+<h3 id="定积分"><a href="#定积分" class="headerlink" title="定积分"></a>定积分</h3><p>🔴 $\textcolor{red}{定义}$</p>
+<p><img src="https://s2.loli.net/2022/08/06/O7ZjLAptkUSNln3.png" alt="image.png" style="zoom: 50%;"></p>
+<p>🔴 $\textcolor{red}{积分上限函数}$</p>
+<p>函数$f(x)$在区间$[a,b]$上连续，对于定积分$\int_{a}^{x} f(x) d x$每一个取值$x$都有一个对应的定积分值，记作$\Phi(x)= \int_{a}^{x} f(t) dt$</p>
+<p>若函数$f(x)$在区间$[a,b]$上连续，则积分上限函数就是$f(x)$在$[a,b]$上的原函数</p>
+<h3 id="两大积分中值定理"><a href="#两大积分中值定理" class="headerlink" title="两大积分中值定理"></a>两大积分中值定理</h3><p>🔴 $\textcolor{red}{第一中值定理}$</p>
+<p>如果函数$f(x)$在闭区间$[a,b]$上连续，则在积分区间$[a,b]$上，至少存在一个点$\xi$，使$\int_{a}^{b} f(x) d x=f(\xi)(b-a) . \quad(a \leq \xi \leq b)$</p>
+<p><img src="https://s2.loli.net/2022/08/06/7iEsOulChydFNkU.png" alt="image.png" style="zoom:50%;"></p>
+<p>🔴 $\textcolor{red}{第二中值定理}$</p>
+<h3 id="三大微分中值定理"><a href="#三大微分中值定理" class="headerlink" title="三大微分中值定理"></a>三大微分中值定理</h3><h3 id="牛顿-莱布尼兹公式"><a href="#牛顿-莱布尼兹公式" class="headerlink" title="牛顿-莱布尼兹公式"></a>牛顿-莱布尼兹公式</h3><p>🔴 $\textcolor{red}{定义}$</p>
+<p>如果$F(x)$是连续函数$f(x)$在区间$[a,b]$上的一个原函数，则$\int_{a}^{b} f(x) d x=F(a)-F(b)$。</p>
+<blockquote>
+<p>即：一个连续函数在区间$[a,b]$上的定积分等于它的任意一个原函数在区间$[a,b]$上的增量</p>
+</blockquote>
+<p>🔴 $\textcolor{red}{几何解释}$</p>
+<p>可得：$f(b)-f(a)=\sum dy$，由于$dy=f’(x)dx$，$f(b)-f(a)=\sum f’(x)dx= \int_{a}^{b}f’(x)dx $</p>
+<p><img src="https://s2.loli.net/2022/08/06/R1O8iWub7dXer62.png" alt="image.png" style="zoom:40%;"></p>
+<hr>
+<h2 id="泰勒公式"><a href="#泰勒公式" class="headerlink" title="泰勒公式"></a>泰勒公式</h2><blockquote>
+<p>用简单的熟悉的多项式来近似代替复杂的函数</p>
+</blockquote>
+<p>🔴 $\textcolor{red}{泰勒多项式}$</p>
+<p>$f(x)$在$x_0$关于$(x-x_0)$的n阶泰勒多项式：</p>
+<script type="math/tex; mode=display">
+\begin{array}{l}
+P_{n}(x)=f\left(x_{0}\right)+f^{\prime}\left(x_{0}\right)\left(x-x_{0}\right)+\frac{f^{\prime \prime}\left(x_{0}\right)}{2 !}\left(x-x_{0}\right)^{2}+ \cdots \quad+\frac{f^{(n)}\left(x_{0}\right)}{n !}\left(x-x_{0}\right)^{n}
+\end{array}</script><p>🔴 $\textcolor{red}{麦克劳林公式}$</p>
+<p>令$x_0=0$：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+f(x)=& f(0)+f^{\prime}(0) x+\frac{f^{\prime \prime}(0)}{2 !} x^{2}+\cdots+\frac{f^{(n)}(0)}{n !} x^{n}+\frac{f^{(n+1)}(\theta x)}{(n+1) !} x^{n+1}(0<\theta<1)
+\end{aligned}</script><p>🔴 $\textcolor{red}{泰勒多项式中 阶数的作用}$</p>
+<ul>
+<li>阶数越高，增长速度越快；越高次项在越偏右侧影响越大</li>
+<li>对于一个复杂函数，低阶项能更好地描述当前点附近，对于之后的走势就越来越依靠高阶项</li>
+</ul>
+<hr>
+<h2 id="傅里叶级数"><a href="#傅里叶级数" class="headerlink" title="傅里叶级数"></a>傅里叶级数</h2><h2 id="拉格朗日乘子法"><a href="#拉格朗日乘子法" class="headerlink" title="拉格朗日乘子法"></a>拉格朗日乘子法</h2><blockquote>
+<p>寻找变量受一个或多个条件限制的多元函数的极值</p>
+<p>参考阅读：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/38586401">如何理解拉格朗日乘子法？ - 知乎 (zhihu.com)</a></p>
+</blockquote>
+<p><img src="https://s2.loli.net/2022/08/06/JqrMlxpIzNFVwRS.png" alt="image.png" style="zoom: 30%;"></p>
+<p>例如对于一个二元函数函数：$z=f(x,y)$在条件$\varphi(x, y)=0$下的极值，构造函数$F(x,y)=f(x,y)+\lambda \varphi(x, y)$，其中$\lambda$为拉格朗日乘数，构造下列函数求得极值点坐标：</p>
+<script type="math/tex; mode=display">
+\left\{\begin{array}{c}
+f_{x}(x, y)+\lambda \varphi_{x}(x, y)=0 \\
+f_{y}(x, y)+\lambda \varphi_{y}(x, y)=0 \\
+\varphi(x, y)=0
+\end{array}\right.</script><h1 id="线性代数"><a href="#线性代数" class="headerlink" title="线性代数"></a>线性代数</h1><blockquote>
+<p>参考阅读：</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/327042762">矩阵乘法核心思想（1）：列空间 - 知乎 (zhihu.com)</a></p>
+</blockquote>
+<h2 id="线性变换"><a href="#线性变换" class="headerlink" title="线性变换"></a>线性变换</h2><p>🔴 $\textcolor{red}{线性变换}$</p>
+<script type="math/tex; mode=display">
+\begin{array}{c}
+L(\overrightarrow{\mathbf{v}}+\overrightarrow{\mathbf{w}})=L(\overrightarrow{\mathbf{v}})+L(\overrightarrow{\mathbf{w}}) \\
+L(c \overrightarrow{\mathbf{v}})=c L(\overrightarrow{\mathbf{v}})
+\end{array}</script><p><strong>几何角度理解</strong>：它是网格线保持平行且等距分布的变换（1）直线在变换后仍保持直线，不弯曲 （2）原点必须固定</p>
+<p>一种矩阵相乘的几何理解方式👉<strong>线性变换作用于给定向量</strong>：把矩阵的列看作<strong>变换后的基向量</strong>，矩阵向量乘法看作它们的线性组合</p>
+<p><img src="https://s2.loli.net/2022/08/07/AiGpU7y1XshJtE4.png" alt="image.png" style="zoom:33%;"></p>
+<h2 id="线性相关和线性无关"><a href="#线性相关和线性无关" class="headerlink" title="线性相关和线性无关"></a>线性相关和线性无关</h2><p>🔴 $\textcolor{red}{张成空间}$</p>
+<p>所有可以表示为给定向量 线性组合 的向量的集合，被称为给定向量的张成空间</p>
+<blockquote>
+<p>仅通过向量加法和数乘，所能获得的可能向量的集合</p>
+</blockquote>
+<p>🔴 $\textcolor{red}{线性组合}$</p>
+<p>m个n维向量$\alpha_{1},\alpha_{2},…,\alpha_{m}$，及m个数$k_{1},k_{2},…,k_{m}$，则向量$k_{1}\alpha_{1}+k_{2}\alpha_{2}+…+k_{m}\alpha_{m}$称为向量$\alpha_{1},\alpha_{2},…,\alpha_{m}$的一个线性组合</p>
+<blockquote>
+<p>多个数乘向量的和</p>
+<p><strong>线性</strong>是指向量乘以一个标量，沿着向量的方向缩放，方向不变；<strong>组合</strong>是把多个向量加起来</p>
+</blockquote>
+<p>🔴 $\textcolor{red}{线性相关和线性无关}$</p>
+<p>对m个n维向量$\alpha_{1},\alpha_{2},…,\alpha_{m}$，若<strong>存在不全为0</strong>的数$k_{1},k_{2},…,k_{m}$，使得$k_{1}\alpha_{1}+k_{2}\alpha_{2}+…+k_{m}\alpha_{m}=0$成立，则称$\alpha_{1},\alpha_{2},…,\alpha_{m}$<strong>线性相关</strong>，否则称线性无关</p>
+<blockquote>
+<p>或者说，一个向量可以表示为其他向量的线性组合，那么这些向量线性相关</p>
+</blockquote>
+<p><strong>几何角度理解</strong>：</p>
+<ul>
+<li><p><strong>线性相关</strong>：一组向量中至少有一个是<strong>多余</strong>的，没有对张成空间做出贡献，可以移除其中一个而不减小张成空间</p>
+</li>
+<li><p><strong>线性无关</strong>：一组向量中的所有向量都给张成空间<strong>增添了新的维度</strong></p>
+<blockquote>
+<p>比如对于$\vec a$ 和$\vec b$ 张成的二维平面，若$\vec c$  刚好落在该平面中，那么$\vec c$ 的加入对张成空间没有任何贡献，仍然是一个二维平面，说明它们三个是线性相关的；如果$\vec c$ 没有落在那个二维平面，而使得张成空间变成一个三维空间了，说明它们三个是线性无关的</p>
+</blockquote>
+</li>
+<li><p><strong>或者说</strong>：一组矢量的线性相关性本质上，是描述他们所张成的<strong>广义平行四边形体积是否为零</strong>。N个向量线性无关👉他们所张成的N维体的体积不为零。于是有：<strong>线性无关矢量</strong>组成的矩阵的<strong>行列式不为零</strong>；线性相关矢量组成的矩阵的行列式必为零。</p>
+</li>
+</ul>
+<p>🔴 $\textcolor{red}{空间中的一组基}$</p>
+<p>向量空间中的一组基是<strong>张成该空间</strong>的一个<strong>线性无关</strong>的<strong>向量集合</strong></p>
+<h2 id="行列式"><a href="#行列式" class="headerlink" title="行列式"></a>行列式</h2><p>🔴 $\textcolor{red}{行列式的几何意义}$</p>
+<p>可以理解为<strong>线性变换的比例</strong>，如果是负数，说明变换后的<strong>空间定向</strong>发生改变</p>
+<blockquote>
+<p>例如，一个线性变换作用于一个2x2矩阵，该线性变换的行列式是1/2，那么变换后的区域的面积变成了原来的1/2（三维则是体积的缩放）；</p>
+</blockquote>
+<p>若一个二维线性变换的<strong>行列式为0</strong>，说明它将整个平面<strong>压缩到一条线，甚至一个点</strong>上，👉根据行列式是否=0，就能知道这个矩阵所代表的变换是否将空间压缩到更小的维度上</p>
+<blockquote>
+<p>或者理解为：<strong>向量围成空间的面积或体积</strong>；行列式就是在给定一组基下，N个向量张成的一个N维广义四边形的体积。2阶行列式代表的是平面内的面积；3阶行列式自然而然就是3维空间内的体积；4阶行列式是4维空间里的超体积</p>
+</blockquote>
+<h2 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>🔴 $\textcolor{red}{逆矩阵}$</p>
+<p><strong>理论定义</strong>：</p>
+<p><strong>理解</strong>：$Ax=v $  ⇨ $A^{-1}Ax=A^{-1}v$  ⇨ $x=A^{-1}v$</p>
+<p>寻找一个向量$x$，使得它在经过线性变换$A$ 之后与 $v$ 重合：$Ax=v$</p>
+<ul>
+<li>若行列式$|A|=0$，说明线性变换$A$ 将<strong>空间压缩</strong>到了<strong>更低</strong>维度→ <strong>不存在</strong>$A^{-1}$</li>
+<li>若$|A|\neq 0$（<strong>← 矩阵可逆的充要条件</strong>），说明原来的空间<strong>没被挤压</strong>，在这种情况下，有且仅有一个向量$x$在变换后与$v$重合</li>
+</ul>
+<p>即便不存在$A^{-1}$，<strong>解仍然可能存在</strong>：$A$将空间压缩为一条直线，而原本的$v$也刚好落在这条直线上</p>
+<p>🔴 $\textcolor{red}{秩}$</p>
+<p><strong>理论定义</strong>：</p>
+<p><strong>几何角度理解</strong>：代表<strong>变换后的维数</strong></p>
+<blockquote>
+<p>若一个线性变换作用的结果是一维的，则这个变换的秩是1，二维的则是2… </p>
+<p>一个3x3的矩阵，秩=2，说明空间被压缩</p>
+</blockquote>
+<p>🔴 $\textcolor{red}{列空间}$</p>
+<p>所有可能的输出向量$Av$构成的集合称作$A$的列空间（矩阵的列所张成的空间）；</p>
+<p>更精确地讲，秩是列空间的维数</p>
+<blockquote>
+<p>用于线性变换的矩阵的列 可以看作 变换后的基向量，这些变换后的基向量张成的空间就是所有可能的变换结果</p>
+</blockquote>
+<p>🔴 $\textcolor{red}{满秩}$</p>
+<p>对于一个满秩变换：唯一能在变换后落在原来的点就是零向量本身；</p>
+<p>对于非满秩变换，它将空间压缩到一个更低的维度上⇨ 会有一系列在变换后称为零向量</p>
+<blockquote>
+<p>一个二维线性变换将空间压缩到一条直线上，那么沿着某个不同于该直线的方向的所有向量都被压缩到原点</p>
+</blockquote>
+<p><strong>零空间</strong>（核）：变换后会落在原点的向量的集合；对于$Ax=0$，零空间给出了这个向量方程所有可能的解</p>
+<h3 id="各种矩阵"><a href="#各种矩阵" class="headerlink" title="各种矩阵"></a>各种矩阵</h3><p>🔴 $\textcolor{red}{正定矩阵}$</p>
+<p>🔴 $\textcolor{red}{正交矩阵}$</p>
+<p>🔴 $\textcolor{red}{对称矩阵}$</p>
+<p>🔴 $\textcolor{red}{矩阵合同}$</p>
+<p>🔴 $\textcolor{red}{相似矩阵}$</p>
+<h2 id="内积和外积"><a href="#内积和外积" class="headerlink" title="内积和外积"></a>内积和外积</h2><blockquote>
+<p>点积（点乘），叉积（叉乘）</p>
+</blockquote>
+<h3 id="内积"><a href="#内积" class="headerlink" title="内积"></a>内积</h3><p>🔴 $\textcolor{red}{定义}$</p>
+<p>设有$n$维向量，$x=\begin{pmatrix}x_1\\ x_2\\ \vdots\\ x_n\end{pmatrix}$，$y=\begin{pmatrix}y_1 \\y_2\\ \vdots \\y_n\end{pmatrix}$，$x$和$y$的内积 $x  \bullet y$ 如下：</p>
+<script type="math/tex; mode=display">
+x^{T} y=\left(x_{1}, x_{2}, \cdots, x_{n}\right)\left(\begin{array}{c}y_{1} \\
+y_{2} \\
+\vdots \\
+y_{n}
+\end{array}\right)=x_1y_1+x_2y_2+...+x_ny_n</script><p>🔴 $\textcolor{red}{几何意义}$</p>
+<p>$v\cdot w$的结果：$w$在$v$上的投影长度 乘 $v$的长度： $|w||v|cos \theta$</p>
+<p><img src="https://s2.loli.net/2022/08/07/IaBn9Uf7jOD3PFV.png" alt="image.png" style="zoom: 33%;"></p>
+<h3 id="外积"><a href="#外积" class="headerlink" title="外积"></a>外积</h3><p>外积的结果是<strong>一个向量</strong>，并非一个数 </p>
+<p>以二维为例，结果就是两个向量围成的平行四边形的<strong>面积</strong></p>
+<p><img src="https://s2.loli.net/2022/08/07/QUa8VjlWvgfxrZO.png" alt="image.png" style="zoom:33%;"></p>
+<p>面积的计算可以考虑行列式、$|v\times w| =|v||w|sin\theta$</p>
+<p>方向的确定（基向量的确定就是定向的基础）：</p>
+<p><img src="https://s2.loli.net/2022/08/07/pHjM3ktqFQcrzKa.png" alt="image.png" style="zoom:33%;"></p>
+<font color="red">真正的叉积是两个三维向量生成一个新的三维向量</font>
+
+<p>方向的确定（右手定则）：</p>
+<p><img src="https://s2.loli.net/2022/08/07/Gow7FAyfa5RbxHi.png" alt="image.png" style="zoom:33%;"></p>
+<p>计算：</p>
+<p><img src="https://s2.loli.net/2022/08/07/K7Bk1T4mO8gcPsi.png" alt="image.png" style="zoom:33%;"></p>
+<h2 id="特征值和特征向量"><a href="#特征值和特征向量" class="headerlink" title="特征值和特征向量"></a>特征值和特征向量</h2><p>🔴 $\textcolor{red}{定义}$</p>
+<p>给定一个矩阵$A$，寻找一个常数$\lambda$和一个非零向量$x$ ，使得向量$x$被矩阵$A$作用后所得到的向量$Ax$ 与 原向量$x$ 平行，并且满足$Ax = \lambda x$ 。那么，$\lambda$：特征值，$x$：特征向量。</p>
+<p><strong>求特征向量</strong>：$Ax=\lambda Ix$ （$I$是单位对角阵），$(A-\lambda I)x=0$，$x$是非零向量，因为当且仅当矩阵代表的变换将空间压缩到更低维度时，才会存在一个非零向量，使得矩阵和它的乘积为0，所以最终就是求行列式$|A-\lambda I|=0$</p>
+<p>🔴 $\textcolor{red}{理解}$</p>
+<p><strong>几何角度理解</strong>：</p>
+<ul>
+<li>将一个线性变换施加在一个基上，线性变换后<strong>仍然留在</strong>原来的基所张成的空间里的向量，就是这个线性变换的特征向量，任何其他向量在变换中都有或多或少的旋转→离开它原来张成的那条直线。</li>
+<li>每个特征向量都有一个所属的值：特征值，它是用来衡量特征向量在线性变换中拉伸或压缩比例的因子。</li>
+</ul>
+<blockquote>
+<p>例如某特征向量的特征值是-1/2，意味着原向量被反向且压缩为原来的1/2，但它仍然留在原来张成的直线上，并为发生旋转。</p>
+<p>考虑一个三维空间的旋转，若能找到这个旋转的特征向量，也就相当于找到了它的旋转轴，这种情况下，相应的特征值=1：旋转不缩放任何一个向量</p>
+</blockquote>
+<p><strong>特征值越大</strong>，我们可以认为<strong>对应的特征向量越重要</strong>。既然特征值表达了重要程度且和特征向量所对应，那么特征值大的就是主要信息，基于这点我们可以提取各种有价值的信息。</p>
+<p>🔴 $\textcolor{red}{特征空间}$</p>
+<p>特征空间包含了所有的特征向量</p>
+<p>🔴 $\textcolor{red}{基变换}$</p>
+<p>数据与第一个基做内积运算，结果为第一个新的坐标分量，依次类推，例如数据$(3,2)$映射到给定的一个基上的坐标：</p>
+<script type="math/tex; mode=display">
+\begin{pmatrix}1/\sqrt2
+  &1/\sqrt2 \\-1/\sqrt2
+  &1/\sqrt2
+\end{pmatrix}\begin{pmatrix}3
+ \\2
+
+\end{pmatrix}=\begin{pmatrix}5/\sqrt[]{2} 
+  \\-1/\sqrt[]{2} 
+\end{pmatrix}</script><h2 id="特征值分解"><a href="#特征值分解" class="headerlink" title="特征值分解"></a>特征值分解</h2><hr>
+<h1 id="概率论与梳理统计"><a href="#概率论与梳理统计" class="headerlink" title="概率论与梳理统计"></a>概率论与梳理统计</h1><h2 id="大数定律和中心极限定理"><a href="#大数定律和中心极限定理" class="headerlink" title="大数定律和中心极限定理"></a>大数定律和中心极限定理</h2><p>中心极限定理是说<font color="red">无论抽样分布如何 均值服从正态分布 </font>，而大数定律根本和正态分布无关 是说样本大了抽样分布近似总体分布</p>
+<blockquote>
+<p>参考阅读：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/haoso2/article/details/85290720?ops_request_misc=%7B%22request%5Fid%22%3A%22165976780516782395311447%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&amp;request_id=165976780516782395311447&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~blog~sobaiduend~default-2-85290720-null-null.nonecase&amp;utm_term=大数定理&amp;spm=1018.2226.3001.4450"> 大数定理的通俗理解_haso的博客-CSDN博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/22913867">怎样理解和区分中心极限定理与大数定律？ - 知乎 (zhihu.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/19911209/answer/245487255">大数定律具体是个什么概念？ - 知乎 (zhihu.com)</a></p>
+</blockquote>
+<h3 id="大数定律"><a href="#大数定律" class="headerlink" title="大数定律"></a>大数定律</h3><p>🔴 $\textcolor{red}{关键理解}$</p>
+<ul>
+<li><p>小数定律：如果统计数据很少，那么事件就表现为各种极端情况，而这些情况都是偶然事件，跟它的期望值一点关系都没有</p>
+</li>
+<li><p>大数定律：在试验不变的条件下，重复试验多次，那么随机事件出现的<strong>频率</strong>就能无限接近它的<strong>期望值（概率）</strong>。因此我们可以用样本均值来估计总体的期望。</p>
+</li>
+</ul>
+<p>🔴 $\textcolor{red}{切比雪夫大数定律(一般情形)}$</p>
+<p>设$ X_{1}, X_{2}, \ldots, X_{n}, \ldots $是由两两不相关（或两两独立）的随机变量所构成的序列, 分别具有 数学期望$E\left(X_{1}\right), E\left(X_{2}\right), \ldots, E\left(X_{n}\right), \ldots $和方差$D\left(X_{1}\right), D\left(X_{2}\right), \ldots D\left(X_{n}\right), \ldots ,$ 并且方差 有公共上界, 即存在正数  $M$ , 使得 $D\left(X_{n}\right) \leq M, n=1,2, \ldots ,$则对于任意给定的正数 $\varepsilon$ 总有：</p>
+<script type="math/tex; mode=display">
+\lim _{n \rightarrow \infty} P\left\{\left|\frac{1}{n} \sum_{k=1}^{n} X_{k}-\frac{1}{n} \sum_{k=1}^{n} E X_{k}\right|<\varepsilon\right\}=1</script><blockquote>
+<p>这些变量的均值 依概率收敛为 这些期望的均值</p>
+</blockquote>
+<p>🔴 $\textcolor{red}{独立同分布的切比雪夫大数定律(特殊情形)}$</p>
+<p>设随机变量$X_{1}, X_{2}, \ldots, X_{n}, \ldots$<strong>相互独立, 服从相同的分布</strong>, 具有数学期望$E\left(X_{n}\right)=\mu$ 和 方差$D\left(X_{n}\right)=\sigma^{2}(n=1,2, \ldots)$，则对于任意给定的正数$\varepsilon$，总有：</p>
+<script type="math/tex; mode=display">
+\lim _{n \rightarrow \infty} P\left\{\left|\frac{1}{n} \sum_{k=1}^{n} X_{k}-\mu\right|<\varepsilon\right\}=1
+,即随机变量序列  \overline{X_{n}}=\frac{1}{n} \sum_{k=1}^{n} X_{k} \stackrel{P}{\longrightarrow} \mu .</script><p>🔴 $\textcolor{red}{辛钦大数定律}$</p>
+<p>设随机变量$X_{1}, X_{2}, \ldots, X_{n}, \ldots$<strong>相互独立, 服从相同的分布</strong>，具有数学期望$E\left(X_{n}\right)=\mu (n=1,2, \ldots)$，则对于任意给定的正数$\varepsilon$，总有</p>
+<script type="math/tex; mode=display">
+\lim _{n \rightarrow \infty} P\left\{\left|\frac{1}{n} \sum_{k=1}^{n} X_{k}-\mu\right|<\varepsilon\right\}=1</script><p>🔴 $\textcolor{red}{伯努利大数定律}$</p>
+<blockquote>
+<p>它的直观表达就是只要做的试验够多，出现的次数 除以 总次数的结果 接近 统计概率p</p>
+</blockquote>
+<p>设在每次实验中$A$发生的概率$P(A)=p$，在$n$次独立重复实验中，事件$A$发生的频率为$f_n(A)$，则对任意正数$\varepsilon$，总有：</p>
+<script type="math/tex; mode=display">
+\lim _{n \rightarrow \infty} P\left\{\left|f_n(A)-p\right|<\varepsilon\right\}=1</script><h3 id="中心极限定理"><a href="#中心极限定理" class="headerlink" title="中心极限定理"></a>中心极限定理</h3><blockquote>
+<p>参考视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ah411q7tp/?spm_id_from=333.788&amp;vd_source=29f5937d4c8dc6b894a81d48deba4d66">中心极限定理的直观理解_哔哩哔哩_bilibili</a></p>
+</blockquote>
+<p>🔴 $\textcolor{red}{关键理解}$</p>
+<ul>
+<li><p>中心极限定理告诉我们，当样本量足够大时<strong>，样本均值的抽样分布</strong>慢慢趋近于<strong>正态分布</strong></p>
+</li>
+<li><p>不管总体是什么分布，任意一个<strong>总体的样本</strong>平均值都会围绕在<strong>总体的整体平均值</strong>周围，并且呈正态分布</p>
+</li>
+</ul>
+<p>🔴 $\textcolor{red}{棣莫弗-拉普拉斯中心极限定理}$</p>
+<p>设随机变量$X_n$服从参数$n$和$p$的二项分布，即$X_n\sim B(n,p)(0&lt;p&lt;1,n=1,2,\dots)$，则对于任意实数$x$，有：</p>
+<script type="math/tex; mode=display">
+\lim _{n \rightarrow \infty} P\left\{\frac{X_{n}-n p}{\sqrt{n p(1-p)}} \leq x\right\}=\Phi(x)</script><p>$\Phi(x)$为标准正态分布的分布函数</p>
+<p>🔴 $\textcolor{red}{列维-林德伯格中心极限定理}$</p>
+<p>设随机变量$X_{1}, X_{2}, \ldots, X_{n}, \ldots$<strong>相互独立, 服从相同的分布</strong>, 具有数学期望$E\left(X_{n}\right)=\mu$ 和 方差$D\left(X_{n}\right)=\sigma^{2}(n=1,2, \ldots)$，则对于任意实数$x$，有：</p>
+<script type="math/tex; mode=display">
+\lim _{n \rightarrow \infty} P\left\{\frac{\sum_{k=1}^{n} X_{k}-n \mu}{\sqrt{n} \sigma} \leq x\right\}=\Phi(x)</script><p>$\Phi(x)$为标准正态分布的分布函数</p>
+<h2 id="全概率公式和贝叶斯公式"><a href="#全概率公式和贝叶斯公式" class="headerlink" title="全概率公式和贝叶斯公式"></a>全概率公式和贝叶斯公式</h2><h2 id="各种分布"><a href="#各种分布" class="headerlink" title="各种分布"></a>各种分布</h2><h2 id="协方差和相关系数"><a href="#协方差和相关系数" class="headerlink" title="协方差和相关系数"></a>协方差和相关系数</h2><h1 id="离散数学"><a href="#离散数学" class="headerlink" title="离散数学"></a>离散数学</h1><h2 id="群论"><a href="#群论" class="headerlink" title="群论"></a>群论</h2><blockquote>
+<p>参考阅读：</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/376118280">【群论入门】(2)：模算术 - 知乎 (zhihu.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/377775196">【群论入门】(3): 群的定义 - 知乎 (zhihu.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1qf4y1m7K1?spm_id_from=333.337.search-card.all.click&amp;vd_source=29f5937d4c8dc6b894a81d48deba4d66">【近代应用数学-南京大学】给非数学系的基础入门款 群论/实变/点集拓扑/泛函_哔哩哔哩_bilibili</a></p>
+</blockquote>
+<h3 id="基本定义"><a href="#基本定义" class="headerlink" title="基本定义"></a>基本定义</h3><p>🔴 $\textcolor{red}{代数运算}$</p>
+<p>设$A$非空集合，引入一个法则，使得$A$中任意两个元素与$A$中另一个元素唯一对应，那么可以把这个法则称为$A$上的一个代数运算</p>
+<blockquote>
+<p>例如：A是实数集合$\mathbb{R}$，法则→加法$+$；$\forall x,y\in \mathbb{R}$，$x+y\in \mathbb{R}$。</p>
+<p>又如：向量的内积就不是一个代数运算，$\vec a,\vec b\in V$，$\vec a \cdot \vec b \in \mathbb{R}$，也就是说$V\cdot V\to \mathbb{R}$</p>
+</blockquote>
+<p>🔴 $\textcolor{red}{半群}$</p>
+<p>设$(S，∗)$ 是一个代数系统，“∗”是非空集合S上的一个代数运算。若</p>
+<p>​    （1）“∗”具有<strong>封闭性</strong>，即∗是S上的闭运算；    （2）“∗”满足<strong>结合律</strong>。</p>
+<p>则称(S，∗)是一个半群。</p>
+<blockquote>
+<p>比如，G={2，4，6，8，…}，（G,+)就是一个半群，只满足结合律，没有幺元<u>0</u>，也没有逆元<u>负数</u></p>
+</blockquote>
+<p>🔴 $\textcolor{red}{幺元}$</p>
+<p>设$(S，∗)$是一个代数系统，      </p>
+<p>（1）若存在$e_右∈S$，使得对于任意的$x∈S$，有$x∗e_右=x$，则称$e_右$是<strong>右幺元</strong>。      </p>
+<p>（2）若存在$e_左∈S$，使得对于任意的$x∈S$，有$e_左∗x=x$，则称$e_ 左$是<strong>左幺元</strong>。     </p>
+<p>（3）若存在一个元素e∈S，它<strong>既是左幺元，又是右幺元</strong>，则称e是<strong>幺元（又称单位元）</strong>。</p>
+<p><strong>若有幺元，则幺元唯一</strong>。    </p>
+<blockquote>
+<p> 证明：设$e_左，e_右∈S$分别是左幺元和右幺元，则有$e_左=e_左∗e_右=e_右$</p>
+<p> 若有$e_1，e_2∈S$，且均是幺元，则有$e_1=e_1∗e_2=e_2$通常用$e$表示么元</p>
+</blockquote>
+<p>🔴 $\textcolor{red}{含幺半群}$</p>
+<p>称含有<strong>幺元的半群</strong>为含幺半群。     </p>
+<blockquote>
+<p>比如 0是半群$(N，+)$的幺元，而1是半群$(N，×)$的幺元。$(N，+)$和$(N，×)$都是含幺半群</p>
+</blockquote>
+<p><strong>子半群</strong>：设$(S，∗)$是一个半群，$∅≠A⊆S$，若$(A，∗)$<strong>本身是一个半群</strong>，则称$(A，∗)$是$(S，∗)$的子半群</p>
+<blockquote>
+<p>比如：G={0，2，4，6，8，…}，（G,+)就是一个幺半群，满足结合律，<strong>有</strong>幺元<u>0</u>，也没有逆元<u>负数</u></p>
+<p>若，G={0，±1，±2，…}，(G,+)就是一个群；</p>
+<p>最小的群：（G,$\circ$) = {e}</p>
+</blockquote>
+<p>🔴 $\textcolor{red}{逆元}$</p>
+<p>设$(S，∗)$是一个代数系统，$e∈S$是<strong>幺元</strong>，$a∈S$。     </p>
+<p>（1）若存在$b∈S$，使得$a∗b=e$，则称$b$是$a$的<strong>右逆元</strong>；     </p>
+<p>（2）若存在$d∈S$，使得$d∗a=e$，则称$d$是$a$的<strong>左逆元</strong>；     </p>
+<p>（3）若存在$a^′∈S$，使得$a^′$既是$ a$的<strong>左逆元</strong>，又是$a$的<strong>右逆元</strong>，则称$a^′$是$a$的逆元。</p>
+<blockquote>
+<p>设(S，∗)是一个代数系统，∗满足结合律，e∈S是幺元，a∈S是任意的元素，则     </p>
+<p>（1）若a既有左逆元，又有右逆元，则a的<strong>左逆元等于右逆元</strong>，即为a的逆元。    </p>
+<p>（2）a的逆元<strong>若存在，则唯一</strong>。</p>
+</blockquote>
+<p>🔴 $\textcolor{red}{群的定义}$</p>
+<p>$(S，∗)$是一个代数系统，若$(S，∗)$满足以下四条：       </p>
+<p>（1）”∗”是$S$上的<strong>闭运算</strong>；       </p>
+<p>（2）”∗”适合<strong>结合律</strong>；       </p>
+<p>（3）存在<strong>幺元</strong>$e∈S$（又称之为单位元）；       </p>
+<p>（4）对于$S$中的任意元素$a$，存在<strong>逆元</strong>$a^{−1}∈S$。</p>
+<p>则称$(S，∗)$是一个群。</p>
+<p><strong>半群</strong>：(1)+(2)；<strong>幺半群</strong>：(1)+(2)+(3)</p>
+<p>🔴 $\textcolor{red}{左右消去律}$</p>
+<p>设$(S，∙)$是一个代数系统。若对于任意的$x，y，z∈S$，满足       </p>
+<p>如果$x∙y=x∙z$，那么$y=z$，则称“$∙$”运算满足左消去律；        </p>
+<p>如果$y∙x=z∙x$，那么$y=z$，则称“$∙$”运算满足右消去律。 </p>
+<p>设$(G，∙)$是一个群，则“$∙$”运算分别满足左、右消去律</p>
+<p>🔴 $\textcolor{red}{群的性质}$</p>
+<p>🔸 群$(G,\circ)$，若$a,b\in G$，$b\circ a=e$，则$a\circ b=e$</p>
+<p>🔸 群$(G,\circ)$，$e$，$\forall a\in G$，$e\circ a=a\circ e =a$</p>
+<p>🔸 群$(G,\circ)$ 的幺元 $e$ 是唯一的</p>
+<p>🔸 群$(G,\circ)$ ，$\forall a\in G$，$a$ 的逆元是唯一的</p>
+<p>🔴 $\textcolor{red}{幂}$</p>
+<p>$a\in G,n\in \mathbb{N},a^n=a…a,\quad a^0=e,a^{-1}=a的逆元，(a^{-1})^n = a^{-n}$</p>
+<p>∴ $a^{m+n}=a^m \circ a^n,m、n\in \mathbb{Z}$</p>
+<p>∴ $(a^n)^m = a^{nm}$</p>
+<p>🔴 $\textcolor{red}{阶}$</p>
+<p>群$(G,\circ)$，$a\in G$，$a^m=e$的最小的$m\in \mathbb{N}$，$m$称为$a$的阶，若找不到$m\in \mathbb{N}$，称$a$的阶为0</p>
+<h3 id="群的同态和同构"><a href="#群的同态和同构" class="headerlink" title="群的同态和同构"></a>群的同态和同构</h3><p>🔴 $\textcolor{red}{同态和同构}$</p>
+<p>设$(S_1，∗)$，$(S_2，∙)$是两个代数系统，“∗” 是$S_1$上的一个二元运算，“∙” 是$S_2$上的一个二元运算。设$f$是$S_1$到$S_2$的一个映射，即$f：S_1→S_2$。若对于$S_1$中的任意两个元素$x_1，x_2$，有$f(x_1∗x_2)=f(x_1)∙f(x_2)$，则称映射$f$是$S_1到S_2$的一个同态映射。      </p>
+<ul>
+<li>若$f$是单射，则称$f$是一个单一同态映射；     </li>
+<li>若$f$是满射，则称$f$是一个满同态映射；      </li>
+<li>若$f$是<strong>双射</strong>，则称$f$是一个<strong>同构映射</strong>。 </li>
+</ul>
+<p>若两个代数系统之间存在一个同构映射，则称这两个代数系统是同构的。</p>
+<p>群的同构作为群的关系，是一个等价关系：满足自反性、对称性、传递性</p>
+<p>🔴 $\textcolor{red}{例子}$</p>
+<p><img src="https://s2.loli.net/2022/08/08/rnCjQweYhBoMd1a.png" alt="image.png" style="zoom: 43%;"></p>
+<p><img src="https://s2.loli.net/2022/08/08/ljGVHB5L9Xe2kAv.png" alt="image.png" style="zoom:33%;"></p>
+<p><img src="https://s2.loli.net/2022/08/08/XRTjeDCtJnuImdL.png" alt="image.png" style="zoom: 33%;"></p>
+<h3 id="无限群和有限群"><a href="#无限群和有限群" class="headerlink" title="无限群和有限群"></a>无限群和有限群</h3><p>🔴 $\textcolor{red}{定义}$</p>
+<p>设$(G，∙)$是一个群，     </p>
+<p>若$G$是<strong>无限集</strong>，则称$(G，∙)$是无限群。      </p>
+<p>若$G$是<strong>有限集</strong>，且$|G|=n$，则称$(G，∙)$是$n$阶有限群。      </p>
+<p>🔴 $\textcolor{red}{阶}$</p>
+<p><img src="https://s2.loli.net/2022/08/08/G14mgtHl9iCP6XW.png" alt="image.png" style="zoom:40%;"></p>
+<blockquote>
+<p> 比如：在整数加群$(Z，+$)中，对于任意的$a∈Z(a≠0)$，因为对于任意的正整数n，有$a+a+⋯+a(n个a)=na≠0$      所以，$o(a)=∞$</p>
+</blockquote>
+<p>设$(G，∙)$是一个交换群，对于任意的$ a，b∈G$，有$(a∙b)^n=a^n∙b^n$。</p>
+<h3 id="交换群（阿贝尔群）"><a href="#交换群（阿贝尔群）" class="headerlink" title="交换群（阿贝尔群）"></a>交换群（阿贝尔群）</h3><p>对于$G$中任意两个元素$a，b∈G$，若满足交换律$，a∙b=b∙a$，则称$(G，∙)$是<strong>交换群</strong>，又称阿贝尔（Abel）群</p>
+<h3 id="变换群-置换群-循环群"><a href="#变换群-置换群-循环群" class="headerlink" title="变换群 置换群 循环群"></a>变换群 置换群 循环群</h3><p>🔴 $\textcolor{red}{集合的变换}$</p>
+<p>$A$非空集合，称由$A$到<strong>自身的映射</strong>$\tau：A\to A$ 称为集合上的一个变换，记为：$a\in A\to \tau(a)\in A$</p>
+<p>满变换、单变换、一一变换</p>
+<p>把集合$A$上的全体变换作成集合$S=\{\tau,\lambda,\mu,\dots\}$，规定$S$上的一个代数运算$\circ$，$\forall \tau,\lambda\in  S，\tau :a\to\tau(a);\lambda:a\to\lambda(a)$， 将$\lambda \circ \tau$定义为：$a\to \lambda(\tau(a))$。（也就是两个变换的复合）</p>
+<p>这个“乘法“满足结合律：$\forall \tau,\lambda,\mu\in S，\tau(\lambda\mu)=(\tau\lambda)\mu $</p>
+<p>🔴 $\textcolor{red}{变换群}$</p>
+<p>设$A$是一个非空集合，$G$是由$A$到$A$的<strong>一些映射构成的集合</strong>，若$G$是关于运算“$∘$”构成的一个群，则称$(G，∘)$是集合$A$上的一个<strong>变换群</strong>。</p>
+<p>🔴 $\textcolor{red}{Cayley定理}$</p>
+<p>任何一个群都与一个变换群同构</p>
+<p>🔴 $\textcolor{red}{置换群}$</p>
+<p>设$A$是一个非空有限集，则    </p>
+<p>（1）称$A$上的一个变换群为$A$上的一个置换群。    </p>
+<p>（2）对于任意的$f∈∪(A^A)$，称$f$为集合$A$上的一个置换。     </p>
+<p>🔴 $\textcolor{red}{循环群}$</p>
+<p>设$(G，∙)$是一个群，$g∈G$。若$G$中每一个元素都是$g$的<strong>乘方</strong>，则称$G$为<strong>循环群</strong>，称$g$为<strong>生成元</strong>，并且用符号$G=(g)$表示，即$G=(g)={g^n│n∈Z}$。</p>
+<blockquote>
+<p>设$(G，∙)$是一个群，$g∈G$ ，</p>
+<p>显然有$g^2∈G，g^3∈G，⋯$，即对于任意的正整数$n$，有$g^n∈G$；      </p>
+<p>显然有$g^{−1}∈G，g^{−2}∈G，⋯$，即对于任意的正整数$n$，有$g^−n∈G$；      </p>
+<p>规定$g^0∈G$是$G$中幺元。 </p>
+<p>综上所述，对于任意整数$n∈Z，g^n∈G$。     显然，$({g^n│n∈Z}，∙)$是一个群。</p>
+</blockquote>
+<p>设$G=(g)$是一个循环群，如果$o(g)=n$，则$|G|=n$，且$G=(g)=\{g^0=e，g，g^2，⋯，g^{n−1}\}$</p>
+<p>（1）若$o(g)=n$，则称$G$是$n$阶<strong>有限循环群</strong>。     （2）若$o(g)=∞$，则称$G$是<strong>无限循环群</strong></p>
+<h3 id="子群"><a href="#子群" class="headerlink" title="子群"></a>子群</h3><p>🔴 $\textcolor{red}{子群定义}$</p>
+<p>设$(G，∙)$是一个群，$∅≠A⊆G$，若$(A，∙)$也是一个群，则称$(A，∙)$$是(G，∙)$的子群。</p>
+<h3 id="子群的陪集"><a href="#子群的陪集" class="headerlink" title="子群的陪集"></a>子群的陪集</h3><p>🔴 $\textcolor{red}{右陪集}$</p>
+<p>设$(G，∙)$是一个群，$(H，∙)$是$(G，∙)$的一个子群，$a∈G$。称$H∙a=\{ℎ∙a|ℎ∈H\}$为子群$H$的<strong>右陪集</strong></p>
+<p>🔴 $\textcolor{red}{左陪集}$</p>
+<p>设$(G，∙)$是一个群，$(H，∙)$是$(G，∙)$的一个子群，$a∈G$。称$a∙H=\{a∙h|ℎ∈H\}$为子群$H$的<strong>左陪集</strong></p>
+<h3 id="正规子群和商群"><a href="#正规子群和商群" class="headerlink" title="正规子群和商群"></a>正规子群和商群</h3><p>🔴 $\textcolor{red}{正规子群}$</p>
+<p>设$G$是一个群，$H$是$G$的一个子群。若对于<strong>任意</strong>一个$a∈G$，有$a∙H=H∙a$即$a$关于$H$的<strong>左陪集等于右陪集</strong>，则称$H$是$G$的<strong>正规子群</strong>，或者称为不变子群</p>
+<p>🔴 $\textcolor{red}{商群}$</p>
+<p>设$G$是一个群，$H$是$G$的正规子群，$G/H=\{aH|a∈G\}$，对于任意的$aH$，$bH∈G/H$，$(aH)⊙(bH)=(ab)H$。则$(G/H，⊙)$是一个群。该群称为$G$的<strong>商群</strong>。</p>
+<h2 id="图论"><a href="#图论" class="headerlink" title="图论"></a>图论</h2>
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>LiaN
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2022/08/02/2022-08-02-%E3%80%90SE%E3%80%91%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="【SE】数学基础知识">http://example.com/2022/08/02/2022-08-02-【SE】数学基础知识/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag"># 数学</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/08/02/2022-08-02-%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%91%E5%B9%B6%E6%9F%A5%E9%9B%86/" rel="prev" title="【数据结构】并查集">
+      <i class="fa fa-chevron-left"></i> 【数据结构】并查集
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/08/08/2022-08-08-%E3%80%90%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E3%80%91%E5%9C%A8%E7%BA%BF%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E6%96%B9%E5%90%91%E7%9B%B8%E5%85%B3/" rel="next" title="【阅读笔记】在线社交网络方向相关">
+      【阅读笔记】在线社交网络方向相关 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%87%8D%E7%82%B9%E5%A4%8D%E4%B9%A0"><span class="nav-number">1.</span> <span class="nav-text">重点复习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6"><span class="nav-number">2.</span> <span class="nav-text">高等数学</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%81%E9%99%90"><span class="nav-number">2.1.</span> <span class="nav-text">极限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="nav-number">2.2.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E5%BE%AE%E3%80%81%E5%8F%AF%E5%AF%BC%E3%80%81%E5%8F%AF%E7%A7%AF%E3%80%81%E8%BF%9E%E7%BB%AD"><span class="nav-number">2.2.1.</span> <span class="nav-text">可微、可导、可积、连续</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E5%AE%9A%E4%B9%89"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">一些定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%81%94%E7%B3%BB%E3%80%90%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E3%80%91"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">联系【一元函数】</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%81%94%E7%B3%BB%E3%80%90%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E3%80%91"><span class="nav-number">2.2.1.3.</span> <span class="nav-text">联系【多元函数】</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%8F%E5%AF%BC%E6%95%B0%E3%80%81%E6%96%B9%E5%90%91%E5%AF%BC%E6%95%B0%E3%80%81%E6%A2%AF%E5%BA%A6"><span class="nav-number">2.2.2.</span> <span class="nav-text">偏导数、方向导数、梯度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AE%E7%A7%AF%E5%88%86%E5%9F%BA%E7%A1%80"><span class="nav-number">2.3.</span> <span class="nav-text">微积分基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E7%A7%AF%E5%88%86"><span class="nav-number">2.3.1.</span> <span class="nav-text">定积分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%A4%E5%A4%A7%E7%A7%AF%E5%88%86%E4%B8%AD%E5%80%BC%E5%AE%9A%E7%90%86"><span class="nav-number">2.3.2.</span> <span class="nav-text">两大积分中值定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E5%A4%A7%E5%BE%AE%E5%88%86%E4%B8%AD%E5%80%BC%E5%AE%9A%E7%90%86"><span class="nav-number">2.3.3.</span> <span class="nav-text">三大微分中值定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%9B%E9%A1%BF-%E8%8E%B1%E5%B8%83%E5%B0%BC%E5%85%B9%E5%85%AC%E5%BC%8F"><span class="nav-number">2.3.4.</span> <span class="nav-text">牛顿-莱布尼兹公式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%B0%E5%8B%92%E5%85%AC%E5%BC%8F"><span class="nav-number">2.4.</span> <span class="nav-text">泰勒公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%82%85%E9%87%8C%E5%8F%B6%E7%BA%A7%E6%95%B0"><span class="nav-number">2.5.</span> <span class="nav-text">傅里叶级数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95"><span class="nav-number">2.6.</span> <span class="nav-text">拉格朗日乘子法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0"><span class="nav-number">3.</span> <span class="nav-text">线性代数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2"><span class="nav-number">3.1.</span> <span class="nav-text">线性变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E7%9B%B8%E5%85%B3%E5%92%8C%E7%BA%BF%E6%80%A7%E6%97%A0%E5%85%B3"><span class="nav-number">3.2.</span> <span class="nav-text">线性相关和线性无关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-number">3.3.</span> <span class="nav-text">行列式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5"><span class="nav-number">3.4.</span> <span class="nav-text">矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">3.4.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%84%E7%A7%8D%E7%9F%A9%E9%98%B5"><span class="nav-number">3.4.2.</span> <span class="nav-text">各种矩阵</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E7%A7%AF%E5%92%8C%E5%A4%96%E7%A7%AF"><span class="nav-number">3.5.</span> <span class="nav-text">内积和外积</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E7%A7%AF"><span class="nav-number">3.5.1.</span> <span class="nav-text">内积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%96%E7%A7%AF"><span class="nav-number">3.5.2.</span> <span class="nav-text">外积</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E5%BE%81%E5%80%BC%E5%92%8C%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F"><span class="nav-number">3.6.</span> <span class="nav-text">特征值和特征向量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E5%BE%81%E5%80%BC%E5%88%86%E8%A7%A3"><span class="nav-number">3.7.</span> <span class="nav-text">特征值分解</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%A2%B3%E7%90%86%E7%BB%9F%E8%AE%A1"><span class="nav-number">4.</span> <span class="nav-text">概率论与梳理统计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%E5%92%8C%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86"><span class="nav-number">4.1.</span> <span class="nav-text">大数定律和中心极限定理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B"><span class="nav-number">4.1.1.</span> <span class="nav-text">大数定律</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86"><span class="nav-number">4.1.2.</span> <span class="nav-text">中心极限定理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A8%E6%A6%82%E7%8E%87%E5%85%AC%E5%BC%8F%E5%92%8C%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%85%AC%E5%BC%8F"><span class="nav-number">4.2.</span> <span class="nav-text">全概率公式和贝叶斯公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%84%E7%A7%8D%E5%88%86%E5%B8%83"><span class="nav-number">4.3.</span> <span class="nav-text">各种分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%8F%E6%96%B9%E5%B7%AE%E5%92%8C%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0"><span class="nav-number">4.4.</span> <span class="nav-text">协方差和相关系数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6"><span class="nav-number">5.</span> <span class="nav-text">离散数学</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%A4%E8%AE%BA"><span class="nav-number">5.1.</span> <span class="nav-text">群论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%AE%9A%E4%B9%89"><span class="nav-number">5.1.1.</span> <span class="nav-text">基本定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BE%A4%E7%9A%84%E5%90%8C%E6%80%81%E5%92%8C%E5%90%8C%E6%9E%84"><span class="nav-number">5.1.2.</span> <span class="nav-text">群的同态和同构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A0%E9%99%90%E7%BE%A4%E5%92%8C%E6%9C%89%E9%99%90%E7%BE%A4"><span class="nav-number">5.1.3.</span> <span class="nav-text">无限群和有限群</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%A4%E6%8D%A2%E7%BE%A4%EF%BC%88%E9%98%BF%E8%B4%9D%E5%B0%94%E7%BE%A4%EF%BC%89"><span class="nav-number">5.1.4.</span> <span class="nav-text">交换群（阿贝尔群）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E6%8D%A2%E7%BE%A4-%E7%BD%AE%E6%8D%A2%E7%BE%A4-%E5%BE%AA%E7%8E%AF%E7%BE%A4"><span class="nav-number">5.1.5.</span> <span class="nav-text">变换群 置换群 循环群</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%90%E7%BE%A4"><span class="nav-number">5.1.6.</span> <span class="nav-text">子群</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%90%E7%BE%A4%E7%9A%84%E9%99%AA%E9%9B%86"><span class="nav-number">5.1.7.</span> <span class="nav-text">子群的陪集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E8%A7%84%E5%AD%90%E7%BE%A4%E5%92%8C%E5%95%86%E7%BE%A4"><span class="nav-number">5.1.8.</span> <span class="nav-text">正规子群和商群</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E8%AE%BA"><span class="nav-number">5.2.</span> <span class="nav-text">图论</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="LiaN"
+      src="https://cdn2.maocdn.cn/img/2022/01/21/J8U_G9ZTZG4W12DA260Z9.jpg">
+  <p class="site-author-name" itemprop="name">LiaN</p>
+  <div class="site-description" itemprop="description"><font color="#000000">别焦虑了，说不定明天就死了呢.</font></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/z-y-LiaN" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;z-y-LiaN" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2749613231@qq.com" title="E-Mail → mailto:2749613231@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      快速访问
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.luogu.com.cn/" title="https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;" rel="noopener" target="_blank">洛谷</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.acwing.com/" title="https:&#x2F;&#x2F;www.acwing.com&#x2F;" rel="noopener" target="_blank">AcWing</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.csdn.net/" title="https:&#x2F;&#x2F;www.csdn.net&#x2F;" rel="noopener" target="_blank">CSDN</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.bilibili.com/" title="https:&#x2F;&#x2F;www.bilibili.com&#x2F;" rel="noopener" target="_blank">b站</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LiaN</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">204k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">3:06</span>
+</div>
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+-->
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '532a45a59c2f395313f9',
+      clientSecret: '419760923076a6f709b5baa01457e5a96e275838',
+      repo        : 'z-y-LiaN.github.io',
+      owner       : 'z-y-LiaN',
+      admin       : ['z-y-LiaN'],
+      id          : '3e0f950a1d260805370161a8fa49131e',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>
