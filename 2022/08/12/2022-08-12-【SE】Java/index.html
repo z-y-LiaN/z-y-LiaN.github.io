@@ -22,20 +22,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":20,"offset":10,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="分布式路由算法Kademlia的原理理解">
+  <meta name="description" content="一些Java语言问题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Kademlia基本原理">
-<meta property="og:url" content="http://example.com/2022/04/19/2022-04-19-Kademlia%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/index.html">
+<meta property="og:title" content="【SE】Java">
+<meta property="og:url" content="http://example.com/2022/08/12/2022-08-12-%E3%80%90SE%E3%80%91Java/index.html">
 <meta property="og:site_name" content="LiaN">
-<meta property="og:description" content="分布式路由算法Kademlia的原理理解">
+<meta property="og:description" content="一些Java语言问题">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-04-18T16:22:17.000Z">
-<meta property="article:modified_time" content="2022-04-19T06:57:52.000Z">
+<meta property="article:published_time" content="2022-08-12T01:55:34.000Z">
+<meta property="article:modified_time" content="2022-08-18T23:39:11.084Z">
 <meta property="article:author" content="LiaN">
-<meta property="article:tag" content="以太坊">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2022/04/19/2022-04-19-Kademlia%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/">
+<link rel="canonical" href="http://example.com/2022/08/12/2022-08-12-%E3%80%90SE%E3%80%91Java/">
 
 
 <script id="page-configurations">
@@ -48,7 +48,7 @@
   };
 </script>
 
-  <title>Kademlia基本原理 | LiaN</title>
+  <title>【SE】Java | LiaN</title>
   
 
 
@@ -138,7 +138,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">31</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">33</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -148,7 +148,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">36</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">39</span></a>
 
   </li>
         <li class="menu-item menu-item-mubulinks">
@@ -211,7 +211,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/19/2022-04-19-Kademlia%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/12/2022-08-12-%E3%80%90SE%E3%80%91Java/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://cdn2.maocdn.cn/img/2022/01/21/J8U_G9ZTZG4W12DA260Z9.jpg">
@@ -224,7 +224,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Kademlia基本原理
+          【SE】Java
         </h1>
 
         <div class="post-meta">
@@ -233,17 +233,23 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-04-19 00:22:17 / 修改时间：14:57:52" itemprop="dateCreated datePublished" datetime="2022-04-19T00:22:17+08:00">2022-04-19</time>
+              <time title="创建时间：2022-08-12 09:55:34" itemprop="dateCreated datePublished" datetime="2022-08-12T09:55:34+08:00">2022-08-12</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-08-19 07:39:11" itemprop="dateModified" datetime="2022-08-19T07:39:11+08:00">2022-08-19</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%BF%A1%E5%AE%89%E8%B5%9B/" itemprop="url" rel="index"><span itemprop="name">信安赛</span></a>
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">编程语言</span></a>
                 </span>
             </span>
 
@@ -260,14 +266,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.5k</span>
+              <span>1.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>1 分钟</span>
             </span>
 
         </div>
@@ -279,144 +285,24 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>分布式路由算法Kademlia的原理理解</p>
+        <p>一些Java语言问题</p>
 <span id="more"></span>
-<h1 id="Kademlia"><a href="#Kademlia" class="headerlink" title="Kademlia"></a>Kademlia</h1><p>来源：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f2c31e632f1d">易懂分布式 | Kademlia算法 - 简书 (jianshu.com)</a></p>
-<blockquote>
-<p>ps：这篇文章真的写得太棒啦！！！！！是我所看过讲Kademlia文章中逻辑最清晰表达最棒的一篇文章！</p>
-</blockquote>
-<h2 id="基本原理理解"><a href="#基本原理理解" class="headerlink" title="基本原理理解"></a>基本原理理解</h2><p><strong>Kad算法</strong> 是一种<strong>分布式存储</strong>及路由的算法，DHT (Distributed Hash Table) 的一种</p>
-<p>Kad优点：</p>
-<ul>
-<li>对于任意一个有[ 2^(n−1) ,2^n)个节点的网络，<strong>最多只需要n步</strong>搜索即可找到目标节点；</li>
-<li>K-bucket的更新机制一定程度上保持了网络的<strong>活性和安全性</strong></li>
-</ul>
-<blockquote>
-<p>分布式存储：<strong>不设立中心化</strong>的服务器，所有（资源）文件<strong>分散存储</strong>在各个节点上</p>
-</blockquote>
-<p><strong>DHT</strong>：一种去中心化的分布式系统</p>
-<ul>
-<li>在这类系统中，每个node分别维护<strong>一部分的存储内容</strong>以及<strong>其他</strong>（部分）<strong>节点的路由/地址</strong><ul>
-<li>使得网络中任何节点的进入和退出，对整个网络造成的影响最小。</li>
-</ul>
-</li>
-</ul>
-<hr>
-<p><strong>考虑的问题</strong>：</p>
-<ul>
-<li>分配：如何进行资源分配，把分配的内容存储到各个节点上，新增或者删除内容如何处理</li>
-<li>路由：如果某节点 想要<strong>获取</strong>某个特定的资源，<strong>如何找到</strong>存储资源的节点\地址\路径</li>
-</ul>
-<hr>
-<p><strong>针对每个节点</strong>：</p>
-<ul>
-<li><p>被分配到的资源 以<key,value>的形式储存；</key,value></p>
-<blockquote>
-<p>通俗的理解：key-资源名（确切一点，是资源名的hash值），value-资源内容</p>
-</blockquote>
-</li>
-<li><p>维护一张路由表；用来去找其他节点</p>
-<ul>
-<li>这张路由表，也称为“k-bucket”（k桶）</li>
-<li>路由表<strong>按异或距离分层</strong><ul>
-<li>本节点的nodeID 异或  目标节点的nodeID</li>
-</ul>
-</li>
-<li>记录<strong>有限</strong>个数的<strong>其他节点的ID</strong> （nodeID）、IP地址和端口</li>
-</ul>
-</li>
-</ul>
-<hr>
-<p><strong>为什么每个节点不能拥有其他所有的节点路由信息</strong>：</p>
-<ul>
-<li>分布式系统中，节点的进入退出十分频繁<ul>
-<li>如果每次变动都全网广播，通讯量很大</li>
-</ul>
-</li>
-<li>不安全：如果一个节点被攻破的话</li>
-</ul>
-<hr>
-<p><strong>分布式存储后，资源如何存储和查找？</strong></p>
-<p>例子：</p>
-<blockquote>
-<p>假设《分布式算法》这本书的书名的hash值是 <strong>00010000</strong>，那么这本书就会被要求存在学号为<strong>00010000</strong>的同学手上。（这要求hash算法的值域与node ID的值域一致。Kademlia的Node ID是160位2进制。这里的示例对Node ID进行了简略）<br> 但还得考虑到会有同学缺勤。万一<em>00010000</em>今天没来上学（节点<strong>没有上线或彻底退出</strong>网络），那《分布式算法》这本书岂不是谁都拿不到了？那算法要求这本书不能只存在一个同学手上，而是被要求<strong>同时存储在学号最接近00010000</strong>的<strong>k</strong>位同学手上，即<em>00010001</em>、<em>00010010</em>、<em>00010011</em>…等同学手上都会有这本书。</p>
-<p>同样地，当你需要找《分布式算法》这本书时，将书名hash一下，得到 <em>00010000</em>，这个便是索书号，你就知道该找哪（几）位同学了。</p>
-</blockquote>
-<p>剩下的问题，就是找到这（几）位同学的手机号（路由）。</p>
-<p>但是，你手中的通讯录里<strong>可能没他们的手机号</strong></p>
-<p>即是：已知源节点<strong>持有的路由表</strong>，和 目的节点<strong>target</strong>的<strong>nodeID</strong>，如果找到目的节点的IP</p>
-<blockquote>
-<p>算法的核心思路：</p>
-<p>当你知道<strong>目标同学Z</strong>与你之间的<strong>距离</strong>（这个距离通过你的nodeID和目标的nodeID异或得到）</p>
-<p>你可以在你的通讯录（即：路由表）上先找到一个你认为与同学Z<strong>最相近的同学B</strong>，请同学B再进一步去<strong>查找同学Z</strong>的手机号。</p>
-<p>每个同学只维护<strong>一部分</strong>的通讯录，这个通讯录按照距离分层（可以理解为按学号与自己的学号从第几位开始不同而分层），即k-bucket1, k-bucket 2, k-bucket 3…</p>
-<p>虽然每个k-bucket中实际存在的同学人数逐渐增多，但每个同学在它自己的每个k-bucket中<strong>只记录k位同学</strong>的手机号</p>
-</blockquote>
-<p><strong>对应</strong>：每个k-bucket只存 k个节点的地址与端口，这里的k是一个<strong>可调节的常量参数</strong></p>
-<blockquote>
-<p>由于学号（节点的ID）有160位，所以每个同学的通讯录中共分160层（节点共有160个k-bucket）。整个网络最多可以容纳2^160个同学（节点），但是每个同学（节点）最多只维护<strong>160 * k</strong> 行通讯录（其他节点的地址与端口）</p>
-</blockquote>
-<hr>
-<p><strong>节点的定位</strong>：</p>
-<p>A同学（学号<em>00000110</em>）想找《分布式算法》，A首先需要<strong>计算</strong>书名的<strong>哈希值</strong>，hash(《分布式算法》) = <strong>00010000</strong>。那么A就知道ta需要找到<strong>00010000</strong>号同学（命名为Z同学）或学号与Z<strong>邻近的</strong>同学。<br> Z的学号<em>00010000</em>与自己的<strong>异或距离</strong>为 <em>00010110</em>，距离范围在[2^4, 2^5)，所以这个Z同学可能在k-bucket 5中（或者说，Z同学的学号与A同学的学号从第5位开始不同，所以Z同学可能在k-bucket 5中）。<br> 然后<strong>A同学看看自己的k-bucket 5</strong>有没有Z同学：</p>
-<ul>
-<li>如果有，那就直接联系Z同学要书；</li>
-<li>如果没有，在k-bucket 5里<strong>随便找一个</strong>B同学（注意任意B同学，它的学号第5位肯定与Z相同，即它与Z同学的距离会小于24，相当于比Z、A之间的<strong>距离缩短了一半以上</strong>），请求B同学在它自己的通讯录里按同样的查找方式找一下Z同学：<ul>
-<li>如果B知道Z同学，那就把Z同学的手机号（IP Address）告诉A；</li>
-<li>如果B也不知道Z同学，那<strong>B按同样的搜索方法</strong>，可以在自己的通讯录里找到一个离Z更近的C同学（Z、C之间距离小于2^3），把C同学推荐给A；A同学请求C同学进行下一步查找。<strong>（递归）</strong></li>
-</ul>
-</li>
-</ul>
-<h2 id="技术细节"><a href="#技术细节" class="headerlink" title="技术细节"></a>技术细节</h2><h3 id="三个参数"><a href="#三个参数" class="headerlink" title="三个参数"></a>三个参数</h3><ul>
-<li><strong>keyspace</strong><ul>
-<li>nodeID有多少位</li>
-<li>决定每个节点的路由表有几层</li>
-</ul>
-</li>
-<li><p><strong>k</strong></p>
-<ul>
-<li>每一层k-bucket里<strong>装k个node信息</strong>：<nodeid, ip,="" address="" ,port=""></nodeid,></li>
-<li>每次查找node，<strong>返回k个node信息</strong></li>
-<li>对于某个特定的data，它的ID也就是所说的key，离其key<strong>最近的k个节点</strong>也要存储这个data</li>
-</ul>
-</li>
-<li><p>α</p>
-<ul>
-<li>每次向其他node请求查找某个node时，会<strong>向α个node发送请求</strong></li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="节点的指令"><a href="#节点的指令" class="headerlink" title="节点的指令"></a>节点的指令</h3><blockquote>
-<p>每个节点只有4个指令</p>
-</blockquote>
-<ul>
-<li>PING：测试一个节点是否在线</li>
-<li>STORE：要求一个节点存储一份数据</li>
-<li>FIND_NODE：根据nodeID查找一个node</li>
-<li>FIND_VALUE：根据KEY查找一个data，跟FIND_NODE十分相似</li>
-</ul>
-<hr>
-<h3 id="k-bucket的维护和更新机制"><a href="#k-bucket的维护和更新机制" class="headerlink" title="k-bucket的维护和更新机制"></a>k-bucket的维护和更新机制</h3><blockquote>
-<p>保证任何节点的加入和离开都不影响整体网络</p>
-</blockquote>
-<ul>
-<li>每个bucket里的节点都按最后一次接触的时间倒序排列<ul>
-<li>也就是：最近接触的放在队尾</li>
-</ul>
-</li>
-<li>每次执行四个指令中的任何一个，都会触发更新</li>
-<li>当<font color="green">一个节点</font>和<strong>自己</strong>接触时，检查它是否在<strong>自己</strong>的k-bucket中<ul>
-<li>在：把<font color="green">这个节点</font>挪到k-bucket列表的末尾</li>
-<li>不在：PING一下列表最头部的<font color="orange">一个节点</font><ul>
-<li>PING通：把<font color="orange">旧节点</font>挪到列表的末尾，丢弃<font color="green">新节点</font></li>
-<li>PING不通：删除<font color="orange">旧节点</font>，并将<font color="green">新节点</font>加入列表</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
+<h1 id="JVM的优点，"><a href="#JVM的优点，" class="headerlink" title="JVM的优点，"></a>JVM的优点，</h1><p>Java语言的一个非常重要的特点就是与平台的无关性。而使用Java虚拟机是实现这一特点的关键。一般的高级语言如果要在不同的平台上运行，至少需要编译成不同的目标代码。而引入Java语言虚拟机后，Java语言在不同平台上运行时不需要重新编译。Java语言使用Java虚拟机屏蔽了与具体平台相关的信息，使得Java语言编译程序只需生成在Java虚拟机上运行的目标代码（字节码），就可以在多种平台上不加修改地运行。Java虚拟机在执行字节码时，把字节码解释成具体平台上的机器指令执行。这就是Java的能够<strong>“一次编译，到处运行”</strong>的原因</p>
+<p>创建类型和引用类型有什么区别（我不知道他那两个词指的是什么 后来感觉更像是变量初始化和引用变量？） 还有类型转换需要考虑什么 这个应该是自下而上的转换</p>
+<p>继承与重写</p>
+<p>java中重载和重构的区别？</p>
+<h1 id="java中抽象类和接口的区别？"><a href="#java中抽象类和接口的区别？" class="headerlink" title="java中抽象类和接口的区别？"></a>java中抽象类和接口的区别？</h1><p><strong>相同点</strong></p>
+<p>（1）都不能被实例化 （2）接口的实现类或抽象类的子类都只有实现了接口或抽象类中的方法后才能实例化。</p>
+<p><strong>不同点</strong></p>
+<p>（1）接口只有定义，不能有方法的实现，java 1.8中可以定义default方法体，而抽象类可以有定义与实现，方法可在抽象类中实现。</p>
+<p>（2）实现接口的关键字为implements，继承抽象类的关键字为extends。一个类可以实现多个接口，但一个类只能继承一个抽象类。所以，使用接口可以间接地实现多重继承。</p>
+<p>（3）接口强调特定功能的实现，而抽象类强调所属关系。</p>
+<p>（4）接口成员变量默认为public static final，必须赋初值，不能被修改；其所有的成员方法都是public、abstract的。抽象类中成员变量默认default，可在子类中被重新定义，也可被重新赋值；抽象方法被abstract修饰，不能被private、static、synchronized和native等修饰，必须以分号结尾，不带花括号。</p>
+<h1 id="Java为什么能在各个平台使用？"><a href="#Java为什么能在各个平台使用？" class="headerlink" title="Java为什么能在各个平台使用？"></a>Java为什么能在各个平台使用？</h1><p>因为它有虚拟机（JVM），JAVA程序不是直接在电脑上运行的，是在虚拟机上进行的，每个系统平台都是有自己的虚拟机（JVM），所以<a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=JAVA语言&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1dBnHfkPAF9PHbvnjnvuHFb0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EPjf3PHbzrjm">JAVA语言</a>能跨平台。<br>1， java代码不是直接运行在CPU上，而是运行在java虚机（简称JVM)上的。<br>2，java是先把java文件编译成二进制字节码的<a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=class文件&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1dBnHfkPAF9PHbvnjnvuHFb0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EPjf3PHbzrjm">class文件</a>，jvm就<a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=解释执行&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1dBnHfkPAF9PHbvnjnvuHFb0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EPjf3PHbzrjm">解释执行</a><a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=class文件&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1dBnHfkPAF9PHbvnjnvuHFb0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EPjf3PHbzrjm">class文件</a>。<br>3，就是因为java是运行在jvm上的，所以它的代码就能不经修改，就能在不同平台的jvm上运行(在UNIX用UNIX的jvm,在linux上用linux的jvm，在windows上用windows的jvm）<br>假如用windows移植到UNIX，只需把java文件是UNIX的jvm上编译成<a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=class文件&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1dBnHfkPAF9PHbvnjnvuHFb0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EPjf3PHbzrjm">class文件</a>，然后用jvm运行就可以了</p>
+<h1 id="Java是否会资源泄露"><a href="#Java是否会资源泄露" class="headerlink" title="Java是否会资源泄露"></a>Java是否会资源泄露</h1><h1 id="Java的final和static解释一下？"><a href="#Java的final和static解释一下？" class="headerlink" title="Java的final和static解释一下？"></a>Java的final和static解释一下？</h1><h1 id="java的多态怎么实现？"><a href="#java的多态怎么实现？" class="headerlink" title="java的多态怎么实现？"></a>java的多态怎么实现？</h1><p>“java”中的多态是通过动态绑定来实现的，即在执行期间判断所引用对象的实际类型，然后根据其实际的类型调用其相应的方法。多态存在需要三个必要条件，分别是：一、要有继承；二、要有重写；三、父类引用指向子类对象。</p>
+<p><em>1、 继承的存在；（继承是多态的基础，没有继承就没有多态）。</em></p>
+<p><em>2、子类重写父类的方法。（多态下会调用子类重写后的方法）。</em></p>
+<p><em>3、父类引用变量指向子类对象。（涉及子类到父类的类型转换</em></p>
 
     </div>
 
@@ -432,7 +318,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://example.com/2022/04/19/2022-04-19-Kademlia%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/" title="Kademlia基本原理">http://example.com/2022/04/19/2022-04-19-Kademlia基本原理/</a>
+    <a href="http://example.com/2022/08/12/2022-08-12-%E3%80%90SE%E3%80%91Java/" title="【SE】Java">http://example.com/2022/08/12/2022-08-12-【SE】Java/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -443,7 +329,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E4%BB%A5%E5%A4%AA%E5%9D%8A/" rel="tag"># 以太坊</a>
+              <a href="/tags/Java/" rel="tag"># Java</a>
           </div>
 
         
@@ -452,13 +338,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/04/17/2022-04-17-%E3%80%90SE%E3%80%91%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="prev" title="【SE】线性代数">
-      <i class="fa fa-chevron-left"></i> 【SE】线性代数
+    <a href="/2022/08/12/2022-08-12-%E3%80%90SE%E3%80%91C++/" rel="prev" title="【SE】C++常见问题">
+      <i class="fa fa-chevron-left"></i> 【SE】C++常见问题
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/04/30/2022-4-30-%E3%80%90%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E3%80%91%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B/" rel="next" title="【动态规划】最长上升子序列模型">
-      【动态规划】最长上升子序列模型 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -518,7 +401,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Kademlia"><span class="nav-number">1.</span> <span class="nav-text">Kademlia</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E7%90%86%E8%A7%A3"><span class="nav-number">1.1.</span> <span class="nav-text">基本原理理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E7%BB%86%E8%8A%82"><span class="nav-number">1.2.</span> <span class="nav-text">技术细节</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E4%B8%AA%E5%8F%82%E6%95%B0"><span class="nav-number">1.2.1.</span> <span class="nav-text">三个参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8A%82%E7%82%B9%E7%9A%84%E6%8C%87%E4%BB%A4"><span class="nav-number">1.2.2.</span> <span class="nav-text">节点的指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#k-bucket%E7%9A%84%E7%BB%B4%E6%8A%A4%E5%92%8C%E6%9B%B4%E6%96%B0%E6%9C%BA%E5%88%B6"><span class="nav-number">1.2.3.</span> <span class="nav-text">k-bucket的维护和更新机制</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JVM%E7%9A%84%E4%BC%98%E7%82%B9%EF%BC%8C"><span class="nav-number">1.</span> <span class="nav-text">JVM的优点，</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#java%E4%B8%AD%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">java中抽象类和接口的区别？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java%E4%B8%BA%E4%BB%80%E4%B9%88%E8%83%BD%E5%9C%A8%E5%90%84%E4%B8%AA%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">Java为什么能在各个平台使用？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java%E6%98%AF%E5%90%A6%E4%BC%9A%E8%B5%84%E6%BA%90%E6%B3%84%E9%9C%B2"><span class="nav-number">4.</span> <span class="nav-text">Java是否会资源泄露</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java%E7%9A%84final%E5%92%8Cstatic%E8%A7%A3%E9%87%8A%E4%B8%80%E4%B8%8B%EF%BC%9F"><span class="nav-number">5.</span> <span class="nav-text">Java的final和static解释一下？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#java%E7%9A%84%E5%A4%9A%E6%80%81%E6%80%8E%E4%B9%88%E5%AE%9E%E7%8E%B0%EF%BC%9F"><span class="nav-number">6.</span> <span class="nav-text">java的多态怎么实现？</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -534,7 +417,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-count">39</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -547,7 +430,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-count">33</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -614,13 +497,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">204k</span>
+    <span title="站点总字数">226k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">3:06</span>
+    <span title="站点阅读时长">3:25</span>
 </div>
 <!--
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
@@ -702,6 +585,59 @@
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
@@ -716,7 +652,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'z-y-LiaN.github.io',
       owner       : 'z-y-LiaN',
       admin       : ['z-y-LiaN'],
-      id          : 'ff7c4224825109a2566a53caf803a575',
+      id          : 'ee9e783596f85666a9917587bcde3180',
         language: 'zh-CN',
       distractionFreeMode: true
     });

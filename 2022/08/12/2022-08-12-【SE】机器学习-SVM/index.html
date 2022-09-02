@@ -22,20 +22,28 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":20,"offset":10,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="线性代数基本概念复习总结">
+  <meta name="description" content="支持向量机">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【SE】线性代数">
-<meta property="og:url" content="http://example.com/2022/04/17/2022-04-17-%E3%80%90SE%E3%80%91%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/index.html">
+<meta property="og:title" content="【SE】机器学习-SVM">
+<meta property="og:url" content="http://example.com/2022/08/12/2022-08-12-%E3%80%90SE%E3%80%91%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-SVM/index.html">
 <meta property="og:site_name" content="LiaN">
-<meta property="og:description" content="线性代数基本概念复习总结">
+<meta property="og:description" content="支持向量机">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-04-17T14:45:34.000Z">
-<meta property="article:modified_time" content="2022-04-19T06:54:22.503Z">
+<meta property="og:image" content="https://s2.loli.net/2022/09/02/9V6P3GvbKCcqft2.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/02/QDen6Xw4SVYvsLB.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/02/MWLvkJxys9p6HZf.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/02/ROEFc1fKxIDMAT9.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/02/cskYAMujJ7mDSKw.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/02/aIMwlgpoYdm1UHf.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/02/UbEvK62S9Yud5Cj.png">
+<meta property="article:published_time" content="2022-08-12T01:55:34.000Z">
+<meta property="article:modified_time" content="2022-09-02T12:46:15.680Z">
 <meta property="article:author" content="LiaN">
-<meta property="article:tag" content="线性代数">
+<meta property="article:tag" content="机器学习">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/09/02/9V6P3GvbKCcqft2.png">
 
-<link rel="canonical" href="http://example.com/2022/04/17/2022-04-17-%E3%80%90SE%E3%80%91%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">
+<link rel="canonical" href="http://example.com/2022/08/12/2022-08-12-%E3%80%90SE%E3%80%91%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-SVM/">
 
 
 <script id="page-configurations">
@@ -48,7 +56,7 @@
   };
 </script>
 
-  <title>【SE】线性代数 | LiaN</title>
+  <title>【SE】机器学习-SVM | LiaN</title>
   
 
 
@@ -138,7 +146,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">31</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">33</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -148,7 +156,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">36</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">39</span></a>
 
   </li>
         <li class="menu-item menu-item-mubulinks">
@@ -211,7 +219,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/17/2022-04-17-%E3%80%90SE%E3%80%91%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/12/2022-08-12-%E3%80%90SE%E3%80%91%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-SVM/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://cdn2.maocdn.cn/img/2022/01/21/J8U_G9ZTZG4W12DA260Z9.jpg">
@@ -224,7 +232,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          【SE】线性代数
+          【SE】机器学习-SVM
         </h1>
 
         <div class="post-meta">
@@ -234,14 +242,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2022-04-17 22:45:34" itemprop="dateCreated datePublished" datetime="2022-04-17T22:45:34+08:00">2022-04-17</time>
+              <time title="创建时间：2022-08-12 09:55:34" itemprop="dateCreated datePublished" datetime="2022-08-12T09:55:34+08:00">2022-08-12</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-19 14:54:22" itemprop="dateModified" datetime="2022-04-19T14:54:22+08:00">2022-04-19</time>
+                <time title="修改时间：2022-09-02 20:46:15" itemprop="dateModified" datetime="2022-09-02T20:46:15+08:00">2022-09-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -249,7 +257,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
+                  <a href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/" itemprop="url" rel="index"><span itemprop="name">专业课</span></a>
                 </span>
             </span>
 
@@ -266,14 +274,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>20</span>
+              <span>3.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>3 分钟</span>
             </span>
 
         </div>
@@ -285,9 +293,123 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>线性代数基本概念复习总结</p>
+        <p>支持向量机</p>
 <span id="more"></span>
-<p>[先挖个坑….]</p>
+<h1 id="SVM（支持向量机）"><a href="#SVM（支持向量机）" class="headerlink" title="SVM（支持向量机）"></a>SVM（支持向量机）</h1><blockquote>
+<p>参考文献链接：</p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1qf4y1x7kB?p=6&amp;vd_source=29f5937d4c8dc6b894a81d48deba4d66">2.1.1]—支持向量机（线性可分定义）_哔哩哔哩_bilibili</a> （b站上 浙江大学胡浩基老师的讲解视频）</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/77750026">【机器学习】支持向量机 SVM（非常详细） - 知乎 (zhihu.com)</a> </p>
+</blockquote>
+<h2 id="线性可分与不可分"><a href="#线性可分与不可分" class="headerlink" title="线性可分与不可分"></a>线性可分与不可分</h2><p>在二维空间下，</p>
+<ul>
+<li><strong>线性可分</strong>Liner Separable</li>
+</ul>
+<p><img src="https://s2.loli.net/2022/09/02/9V6P3GvbKCcqft2.png" alt="image.png" style="zoom:50%;"></p>
+<ul>
+<li><p><strong>非线性可分</strong>NonLinear Separable：不存在一条直线</p>
+<p><img src="https://s2.loli.net/2022/09/02/QDen6Xw4SVYvsLB.png" alt="image.png" style="zoom:50%;"></p>
+</li>
+</ul>
+<p>同理，在三维空间下，</p>
+<p><img src="https://s2.loli.net/2022/09/02/MWLvkJxys9p6HZf.png" alt="image.png" style="zoom:50%;"></p>
+<p>接下来看下图，</p>
+<p><img src="https://s2.loli.net/2022/09/02/ROEFc1fKxIDMAT9.png" alt="image.png" style="zoom:50%;"></p>
+<p>用数学严格定义训练样本以及他们的标签，假设，有N个训练样本及其标签$\left\{\left(X_{1}, y_{1}\right),\left(X_{2}, y_{2}\right), \ldots,\left(X_{N}, y_{N}\right)\right\}$，其中</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+X_{i} &=\left[x_{i 1}, x_{i 2}\right]^{T} \\
+y_{i} &=\{+1,-1\}
+\end{aligned}</script><p>人为规定，如果$X_i$属于$C_1$，则$y_i$等于+1，若属于$C_2$，等于-1。</p>
+<p><strong>线性可分的严格定义：</strong></p>
+<p>​    一个训练样本集$\left\{\left(X_{1}, y_{1}\right),\left(X_{2}, y_{2}\right), \ldots,\left(X_{N}, y_{N}\right)\right\}$，在$i=1 \to N$ 线性可分，是指存在$（w_1,w_2,b）$，使得</p>
+<ol>
+<li>若 $y_i = +1$ ，则 $\omega_{1} \mathrm{x}_{i 1}+\omega_{2} \mathrm{x}_{i 2}+\mathrm{b}&gt;0$</li>
+<li>若 $y_i = -1$ ，则 $\omega_{1} \mathrm{x}_{i 1}+\omega_{2} \mathrm{x}_{i 2}+\mathrm{b}&lt;0$</li>
+</ol>
+<p>若用<strong>向量形式</strong>来定义，$X_{i}=\left[\begin{array}{l}<br>x_{i 1} \\<br>x_{i 2}<br>\end{array}\right]$，$\omega=\left[\begin{array}{l}<br>\omega_{1} \\<br>\omega_{2}<br>\end{array}\right]$，则有，</p>
+<ol>
+<li>若 $y_i = +1$ ，则 $\omega^{T} X_{i}+\mathrm{b}&gt;0$</li>
+<li>若 $y_i = - 1$ ，则 $\omega^{T} X_{i}+\mathrm{b}&lt;0$</li>
+</ol>
+<p>最终线性可分的判定<strong>简化为</strong>：</p>
+<script type="math/tex; mode=display">
+\mathrm{y}_{i}\left(\omega^{T} X_{i}+b\right)>0</script><p>在二分类的情况下，如果<strong>一个数据集是线性可分</strong>的，即存在一个超平面将两个类别完全分开，那么一定存在<strong>无数多个超平面</strong>将这两个类别完全分开。</p>
+<p><img src="https://s2.loli.net/2022/09/02/cskYAMujJ7mDSKw.png" alt="image.png" style="zoom:33%;"></p>
+<p>ヾ(,,・∇・,, 那么， <strong>哪一个超平面最好呢？</strong></p>
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><blockquote>
+<p>1、解决线性可分问题</p>
+<p>2、将线性可分问题中获得的结论推广到线性不可分情况</p>
+</blockquote>
+<p>将位于 上下两边的这两条平行线上的<strong>样本</strong>，称为 “支持向量”</p>
+<p>这两条平行线之间的距离，称为“间隔”（Margin）</p>
+<p>我们要找的，就是使得 <strong>间隔最大</strong> 的那条直线</p>
+<p><img src="https://s2.loli.net/2022/09/02/aIMwlgpoYdm1UHf.png" alt="image.png" style="zoom:50%;"></p>
+<p>但是，使用“间隔最大”这条准则，并不能唯一的确定一条直线，因此，还需规定：这条线<strong>在上下两个平行线的中间</strong></p>
+<p>因此，SVM寻找的<strong>最优分类直线应该满足三个条件</strong>：</p>
+<ul>
+<li>该直线<strong>分开</strong>了两类</li>
+<li>该直线<strong>最大化间隔</strong></li>
+<li>该直线处于间隔的<strong>正中间</strong>，到所有支持向量距离相等</li>
+</ul>
+<p>在线性可分的条件下，<strong>有且仅有唯一一条直线</strong>，满足上面三个条件。在高维空间中，直线就变成了<strong>超平面</strong></p>
+<h2 id="优化问题"><a href="#优化问题" class="headerlink" title="优化问题"></a>优化问题</h2><blockquote>
+<p>用严格的数学，将寻找<strong>最优分类超平面</strong>的过程写成一个最优化问题</p>
+</blockquote>
+<p>描述任意一个超平面：$w^{T} x+b=0$</p>
+<p>$\omega=\left[\begin{array}{c}<br>\omega_{1} \\<br>\omega_{2} \\<br>\vdots \\<br>\omega_{m}<br>\end{array}\right]$，$|\omega|^{2}=\omega_{1}^{2}+\omega_{2}^{2} \ldots+\omega_{m}^{2}=\sum_{i=1}^{m} \omega_{i}^{2}$</p>
+<p><strong>点到直线距离</strong>：</p>
+<ul>
+<li><p>二维空间：点 $(x,y)$ 到直线 $Ax+By+C=0$ 的距离：$\frac{|A x+B y+C|}{\sqrt{A^{2}+B^{2}}}$</p>
+</li>
+<li><p>n维空间：点$x=\left(x_{1}, x_{2} \ldots x_{n}\right)$，到直线$w^{T} x+b=0$的距离：$\frac{\left|w^{T} x+b\right|}{|w|}$，其中$|w|=\sqrt{w_{1}^{2}+\ldots w_{n}^{2}}$</p>
+</li>
+</ul>
+<p>因此，<strong>支持向量到超平面的距离 </strong>若为$r$，则其它点到超平面的距离必然大于$r$。因此，对于所有样本点$x$：</p>
+<script type="math/tex; mode=display">
+\left\{\begin{array}{l}
+\frac{w^{T} x+b}{\|w\|} \geq r \quad y=1 \\
+\frac{w^{T} x+b}{\|w\|} \leq-r \quad y=-1
+\end{array}\right.</script><p>$|w|r$为正数，暂且令为$|w|r = 1$（方便推导，且对目标函数优化没有影响）</p>
+<p>则为了$r$最大，则等价于：</p>
+<script type="math/tex; mode=display">
+\max _{w, b} \frac{1}{\|w\|} \Leftrightarrow \max _{w, b} \frac{1}{\|w\|^{2}} \Leftrightarrow \min _{w, b}\|w\|^{2} \Leftrightarrow \min _{w, b} \frac{1}{2}\|w\|^{2}</script><p>使得</p>
+<script type="math/tex; mode=display">
+\left\{\begin{array}{l}
+w^{T} x+b \geq 1 \quad y=1 \\
+w^{T} x+b \leq-1 \quad y=-1
+\end{array}\right.</script><p>上面这个方程组合并，简写为：</p>
+<script type="math/tex; mode=display">
+y\left(w^{T} x+b\right) \geq 1</script><p>故<strong>SVM最优化问题</strong>总结为：</p>
+<p><strong>已知：</strong>训练样本集$\{(X_i,y_i)\},i=1\to m$</p>
+<p><strong>待求</strong>：$(w,b)$</p>
+<p><strong>则可以表示为</strong>：$\min \frac{1}{2}|w|^{2} \text { s.t. } \quad y_{i}\left(w^{T} x_{i}+b\right) \geq 1 \quad i\in[1,m]$</p>
+<blockquote>
+<p>凸优化（Convex Optimization）中的二次规划问题：</p>
+<p>（1）目标函数是二次项</p>
+<p>（2）限制条件是一次项</p>
+<p>凸优化问题只有唯一一个全局极值，可用梯度下降求得</p>
+</blockquote>
+<p><img src="https://s2.loli.net/2022/09/02/UbEvK62S9Yud5Cj.png" alt="svm.png" style="zoom: 33%;"></p>
+<p><strong>支持向量</strong>：满足$w^{T} x+b=1 \quad或\quad  w^{T} x+b=-1$ 的点</p>
+<p>每个<strong>支持向量到超平面</strong>的距离：$d=\frac{\left|w^{T} x+b\right|}{|w|}$</p>
+<p>多维空间中<strong>任意平行的超平面</strong>间的距离：$\frac{|d_1-d_2|}{|w|}$</p>
+<p><strong>辅助决策边界距离</strong>：$2\frac{1}{|w|}$</p>
+<h2 id="线性不可分的情况"><a href="#线性不可分的情况" class="headerlink" title="线性不可分的情况"></a>线性不可分的情况</h2><p>需要适当放松限制条件，对于每个训练样本及标签，设置<strong>松弛变量</strong>（slack variable）$\delta_{i}$</p>
+<p>因此，限制条件改写为：</p>
+<script type="math/tex; mode=display">
+y_{i}\left(\omega^{T} X_{i}+b\right) \geq 1-\delta_{i},(i=1 \sim m)</script><p>再加入新的限制条件，防止松弛变量无限大，改造后SVM最优化版本如下：</p>
+<p><strong>最小化:</strong>  $\frac{1}{2}|\omega|^{2}+C \sum_{i=1}^{N} \delta_{i}  或  \frac{1}{2}|\omega|^{2}+C \sum_{i=1}^{N} \delta_{i}^{2}$</p>
+<p><strong>限制条件</strong></p>
+<ol>
+<li>$\delta_{i} \geq 0 .(i=1 \sim m)$</li>
+<li>$y_{i}\left(\omega^{T} X_{i}+b\right) \geq 1-\delta_{i},(i=1 \sim m)$</li>
+</ol>
+<blockquote>
+<p>比例因子C是人为设定的——超参数</p>
+</blockquote>
+<h2 id="低维到高维的映射"><a href="#低维到高维的映射" class="headerlink" title="低维到高维的映射"></a>低维到高维的映射</h2><blockquote>
+<p>把线性不可分转换成线性可分</p>
+</blockquote>
 
     </div>
 
@@ -303,7 +425,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://example.com/2022/04/17/2022-04-17-%E3%80%90SE%E3%80%91%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" title="【SE】线性代数">http://example.com/2022/04/17/2022-04-17-【SE】线性代数/</a>
+    <a href="http://example.com/2022/08/12/2022-08-12-%E3%80%90SE%E3%80%91%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-SVM/" title="【SE】机器学习-SVM">http://example.com/2022/08/12/2022-08-12-【SE】机器学习-SVM/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -314,7 +436,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag"># 线性代数</a>
+              <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"># 机器学习</a>
           </div>
 
         
@@ -323,12 +445,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/04/15/2022-04-15-%E3%80%90SE%E3%80%91%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E5%99%A8%E5%92%8C%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1/" rel="prev" title="【SE】词法分析器和语法分析器的设计">
-      <i class="fa fa-chevron-left"></i> 【SE】词法分析器和语法分析器的设计
+    <a href="/2022/08/12/2022-08-12-%E3%80%90SE%E3%80%91%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="prev" title="【SE】机器学习">
+      <i class="fa fa-chevron-left"></i> 【SE】机器学习
     </a></div>
       <div class="post-nav-item">
-    <a href="/2022/04/19/2022-04-19-Kademlia%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/" rel="next" title="Kademlia基本原理">
-      Kademlia基本原理 <i class="fa fa-chevron-right"></i>
+    <a href="/2022/08/12/2022-08-12-%E3%80%90SE%E3%80%91%E5%8D%8E%E4%B8%BA%E6%98%87%E8%85%BEMindSpore%E5%BC%80%E6%BA%90%E5%88%9B%E6%96%B0%E5%AE%9E%E8%B7%B5%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" rel="next" title="【SE】MindSpore开源创新实践课程笔记">
+      【SE】MindSpore开源创新实践课程笔记 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -389,6 +511,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SVM%EF%BC%88%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">SVM（支持向量机）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E5%8F%AF%E5%88%86%E4%B8%8E%E4%B8%8D%E5%8F%AF%E5%88%86"><span class="nav-number">1.1.</span> <span class="nav-text">线性可分与不可分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.2.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98"><span class="nav-number">1.3.</span> <span class="nav-text">优化问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E4%B8%8D%E5%8F%AF%E5%88%86%E7%9A%84%E6%83%85%E5%86%B5"><span class="nav-number">1.4.</span> <span class="nav-text">线性不可分的情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%8E%E7%BB%B4%E5%88%B0%E9%AB%98%E7%BB%B4%E7%9A%84%E6%98%A0%E5%B0%84"><span class="nav-number">1.5.</span> <span class="nav-text">低维到高维的映射</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -404,7 +527,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-count">39</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -417,7 +540,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-count">33</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -484,13 +607,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">204k</span>
+    <span title="站点总字数">226k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">3:06</span>
+    <span title="站点阅读时长">3:25</span>
 </div>
 <!--
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
@@ -639,7 +762,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'z-y-LiaN.github.io',
       owner       : 'z-y-LiaN',
       admin       : ['z-y-LiaN'],
-      id          : '1a82424fb617ad282ae974006d395f09',
+      id          : '2b42af927c6c5cb23c2c6d42a488b342',
         language: 'zh-CN',
       distractionFreeMode: true
     });
