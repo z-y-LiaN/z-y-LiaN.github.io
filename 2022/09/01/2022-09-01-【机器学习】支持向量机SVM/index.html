@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":20,"offset":10,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="支持向量机">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【机器学习】支持向量机SVM">
+<meta property="og:url" content="http://example.com/2022/09/01/2022-09-01-%E3%80%90%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E3%80%91%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BASVM/index.html">
+<meta property="og:site_name" content="LiaN">
+<meta property="og:description" content="支持向量机">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/09/02/9V6P3GvbKCcqft2.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/02/QDen6Xw4SVYvsLB.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/02/MWLvkJxys9p6HZf.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/02/ROEFc1fKxIDMAT9.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/02/cskYAMujJ7mDSKw.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/02/aIMwlgpoYdm1UHf.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/02/UbEvK62S9Yud5Cj.png">
+<meta property="article:published_time" content="2022-09-01T01:55:34.000Z">
+<meta property="article:modified_time" content="2022-09-03T16:22:07.196Z">
+<meta property="article:author" content="LiaN">
+<meta property="article:tag" content="机器学习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/09/02/9V6P3GvbKCcqft2.png">
+
+<link rel="canonical" href="http://example.com/2022/09/01/2022-09-01-%E3%80%90%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E3%80%91%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BASVM/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>【机器学习】支持向量机SVM | LiaN</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end -->
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="LiaN" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband">
+    </div>
+<a target="_blank" rel="noopener" href="https://github.com/z-y-LiaN" class="github-corner" aria-label="View source on GitHub">
+<svg width="80" height="80" viewBox="0 0 250 250" style="fill:#F4A460; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">LiaN</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">是一只废物捏</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">33</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">10</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">43</span></a>
+
+  </li>
+        <li class="menu-item menu-item-mubulinks">
+
+    <a href="/mubulinks/" rel="section"><i class="fa fa-link fa-fw"></i>幕布链接</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/01/2022-09-01-%E3%80%90%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E3%80%91%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BASVM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn2.maocdn.cn/img/2022/01/21/J8U_G9ZTZG4W12DA260Z9.jpg">
+      <meta itemprop="name" content="LiaN">
+      <meta itemprop="description" content="<font color="#000000">别焦虑了，说不定明天就死了呢.</font>">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LiaN">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【机器学习】支持向量机SVM
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-09-01 09:55:34" itemprop="dateCreated datePublished" datetime="2022-09-01T09:55:34+08:00">2022-09-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-04 00:22:07" itemprop="dateModified" datetime="2022-09-04T00:22:07+08:00">2022-09-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/" itemprop="url" rel="index"><span itemprop="name">专业课</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>7.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>6 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>支持向量机</p>
+<span id="more"></span>
+<h1 id="SVM（支持向量机）"><a href="#SVM（支持向量机）" class="headerlink" title="SVM（支持向量机）"></a>SVM（支持向量机）</h1><blockquote>
+<p>参考文献链接：</p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1qf4y1x7kB?p=6&amp;vd_source=29f5937d4c8dc6b894a81d48deba4d66">2.1.1]—支持向量机（线性可分定义）_哔哩哔哩_bilibili</a> （b站上 浙江大学胡浩基老师的讲解视频）</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/77750026">【机器学习】支持向量机 SVM（非常详细） - 知乎 (zhihu.com)</a> </p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_31347869/article/details/88071930?ops_request_misc=%7B%22request%5Fid%22%3A%22166211843916781790711325%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&amp;request_id=166211843916781790711325&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~blog~top_positive~default-1-88071930-null-null.nonecase&amp;utm_term=svm&amp;spm=1018.2226.3001.4450">机器学习算法（一）SVM_yaoyz105的博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Mr_Robert/article/details/88958629">【机器学习算法笔记系列】支持向量机(SVM)算法详解和实战_fpzRobert的博客</a></p>
+</blockquote>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote>
+<p>机器学习的一般框架：<br>训练集 =&gt; 提取特征向量 =&gt; 结合一定的算法（分类器：比如决策树、KNN）=&gt;得到结果</p>
+</blockquote>
+<h3 id="阐述"><a href="#阐述" class="headerlink" title="阐述"></a>阐述</h3><p>SVM是<strong>二分类</strong>模型，将实例的特征向量 映射成空间中的一些点，寻找一个超平面来对样本点进行分割，分割的原则是间隔最大化，最终转化为一个凸二次规划问题来求解，若出现新的点，这个超平面也能做出很好的分类</p>
+<ul>
+<li>当训练样本<strong>线性可分</strong>时，通过<strong>硬间隔最大化</strong>，学习一个<strong>线性可分支持向量机</strong></li>
+<li>当训练样本<strong>近似线性可分</strong>时，通过<strong>软间隔最大化</strong>，学习一个<strong>线性支持向量机</strong></li>
+<li>当训练样本<strong>线性不可分</strong>时，通过<strong>核技巧和软间隔最大化</strong>，学习一个<strong>非线性支持向量机</strong></li>
+</ul>
+<h3 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h3><p><strong>优点</strong></p>
+<ul>
+<li>决策函数只由<strong>少数的支持向量决定</strong>，计算的复杂性取决于支持向量的数目，而不是样本空间的维数，这在某种意义上避免了维数灾难。</li>
+<li>可进行<strong>小样本</strong>学习：支持向量机(SVM)本质上是非线性方法，在样本量比较少的时候，容易抓住数据与特征之间的非线性关系，因此可以解决非线性问题、可以避免神经网络结构选择和局部极小值点问题、可以提高泛化能力、可以解决高维问题。（<strong>分类鲁棒性高、全局最优解</strong>）</li>
+</ul>
+<p><strong>缺点</strong></p>
+<ul>
+<li>对<strong>大规模训练样本难以实施</strong>，由于SVM是借助二次规划来求解支持向量，而求解二次规划将涉及m阶矩阵的计算（m为样本的个数），当m数目很大时该矩阵的存储和计算将耗费大量的机器内存和运算时间。</li>
+<li>原始分类器<strong>不加修改仅适用于处理二分类</strong>问题（改进：通过多个二类支持向量机的组合来解决等等）</li>
+<li>对缺失数据敏感，对参数调节和核函数的选择敏感。对非线性问题没有通用解决方案，必须<strong>谨慎选择核函数</strong>来处理。</li>
+</ul>
+<h2 id="线性可分、不可分"><a href="#线性可分、不可分" class="headerlink" title="线性可分、不可分"></a>线性可分、不可分</h2><p>在二维空间下，</p>
+<ul>
+<li><strong>线性可分</strong>Liner Separable</li>
+</ul>
+<p><img src="https://s2.loli.net/2022/09/02/9V6P3GvbKCcqft2.png" alt="image.png" style="zoom:50%;"></p>
+<ul>
+<li><p><strong>非线性可分</strong>NonLinear Separable：不存在一条直线</p>
+<p><img src="https://s2.loli.net/2022/09/02/QDen6Xw4SVYvsLB.png" alt="image.png" style="zoom:50%;"></p>
+</li>
+</ul>
+<p>同理，在三维空间下，</p>
+<p><img src="https://s2.loli.net/2022/09/02/MWLvkJxys9p6HZf.png" alt="image.png" style="zoom:50%;"></p>
+<p>接下来看下图，</p>
+<p><img src="https://s2.loli.net/2022/09/02/ROEFc1fKxIDMAT9.png" alt="image.png" style="zoom:50%;"></p>
+<p>用数学严格定义训练样本以及他们的标签，假设，有N个训练样本及其标签$\left\{\left(X_{1}, y_{1}\right),\left(X_{2}, y_{2}\right), \ldots,\left(X_{N}, y_{N}\right)\right\}$，其中</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+X_{i} &=\left[x_{i 1}, x_{i 2}\right]^{T} \\
+y_{i} &=\{+1,-1\}
+\end{aligned}</script><p>人为规定，如果$X_i$属于$C_1$，则$y_i$等于+1，若属于$C_2$，等于-1。</p>
+<p><strong>线性可分的严格定义：</strong></p>
+<p>​    一个训练样本集$\left\{\left(X_{1}, y_{1}\right),\left(X_{2}, y_{2}\right), \ldots,\left(X_{N}, y_{N}\right)\right\}$，在$i=1 \to N$ 线性可分，是指存在$（w_1,w_2,b）$，使得</p>
+<ol>
+<li>若 $y_i = +1$ ，则 $\omega_{1} \mathrm{x}_{i 1}+\omega_{2} \mathrm{x}_{i 2}+\mathrm{b}&gt;0$</li>
+<li>若 $y_i = -1$ ，则 $\omega_{1} \mathrm{x}_{i 1}+\omega_{2} \mathrm{x}_{i 2}+\mathrm{b}&lt;0$</li>
+</ol>
+<p>若用<strong>向量形式</strong>来定义，$X_{i}=\left[\begin{array}{l}<br>x_{i 1} \\<br>x_{i 2}<br>\end{array}\right]$，$\omega=\left[\begin{array}{l}<br>\omega_{1} \\<br>\omega_{2}<br>\end{array}\right]$，则有，</p>
+<ol>
+<li>若 $y_i = +1$ ，则 $\omega^{T} X_{i}+\mathrm{b}&gt;0$</li>
+<li>若 $y_i = - 1$ ，则 $\omega^{T} X_{i}+\mathrm{b}&lt;0$</li>
+</ol>
+<p>最终线性可分的判定<strong>简化为</strong>：</p>
+<script type="math/tex; mode=display">
+\mathrm{y}_{i}\left(\omega^{T} X_{i}+b\right)>0</script><p>在二分类的情况下，如果<strong>一个数据集是线性可分</strong>的，即存在一个超平面将两个类别完全分开，那么一定存在<strong>无数多个超平面</strong>将这两个类别完全分开。</p>
+<blockquote>
+<p><strong>Q：为什么要叫作“超平面”呢？</strong><br><strong>A：</strong>样本的特征很可能是高维的，此时样本空间的划分就不是一条线</p>
+</blockquote>
+<p><img src="https://s2.loli.net/2022/09/02/cskYAMujJ7mDSKw.png" alt="image.png" style="zoom:33%;"></p>
+<p>ヾ(,,・∇・,, 那么， <strong>哪一个超平面最好呢？</strong></p>
+<blockquote>
+<p><strong>Q：画线的标准是什么？/ 什么才叫这条线的效果好？/ 哪里好？</strong><br><strong>A：</strong>SVM 将会寻找可以<strong>区分两个类别并且能使间隔（margin）最大</strong>的划分超平面。比较好的划分超平面，样本局部扰动时对它的影响最小、产生的分类结果最鲁棒、对未见示例的泛化能力最强。</p>
+<p><strong>Q：间隔（margin）是什么？</strong><br><strong>A：</strong>对于任意一个超平面，其两侧数据点都距离它有一个最小距离（垂直距离），这两个最小距离的和就是间隔。</p>
+<p><strong>Q：为什么要让 margin 尽量大？</strong><br><strong>A：</strong>因为大 margin 犯错的几率比较小，也就是更鲁棒啦。</p>
+</blockquote>
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><blockquote>
+<p>1、解决线性可分问题</p>
+<p>2、将线性可分问题中获得的结论推广到线性不可分情况</p>
+</blockquote>
+<p>将位于 上下两边的这两条平行线上的<strong>样本</strong>，称为 “支持向量”</p>
+<p>这两条平行线之间的距离，称为“间隔”（Margin）</p>
+<p>我们要找的，就是使得 <strong>间隔最大</strong> 的那条直线</p>
+<p><img src="https://s2.loli.net/2022/09/02/aIMwlgpoYdm1UHf.png" alt="image.png" style="zoom:50%;"></p>
+<p>但是，使用“间隔最大”这条准则，并不能唯一的确定一条直线，因此，还需规定：这条线<strong>在上下两个平行线的中间</strong></p>
+<p>因此，SVM寻找的<strong>最优分类直线应该满足三个条件</strong>：</p>
+<ul>
+<li>该直线<strong>分开</strong>了两类</li>
+<li>该直线<strong>最大化间隔</strong></li>
+<li>该直线处于间隔的<strong>正中间</strong>，到所有支持向量距离相等</li>
+</ul>
+<p>在线性可分的条件下，<strong>有且仅有唯一一条直线</strong>，满足上面三个条件。在高维空间中，直线就变成了<strong>超平面</strong></p>
+<h2 id="优化问题（硬间隔）"><a href="#优化问题（硬间隔）" class="headerlink" title="优化问题（硬间隔）"></a>优化问题（硬间隔）</h2><blockquote>
+<p>用严格的数学，将寻找<strong>最优分类超平面</strong>的过程写成一个最优化问题</p>
+</blockquote>
+<p>描述任意一个超平面：$w^{T} x+b=0$</p>
+<p>$\omega=\left[\begin{array}{c}<br>\omega_{1} \\<br>\omega_{2} \\<br>\vdots \\<br>\omega_{m}<br>\end{array}\right]$，$|\omega|^{2}=\omega_{1}^{2}+\omega_{2}^{2} \ldots+\omega_{m}^{2}=\sum_{i=1}^{m} \omega_{i}^{2}$</p>
+<p><strong>点到直线距离</strong>：</p>
+<ul>
+<li><p>二维空间：点 $(x,y)$ 到直线 $Ax+By+C=0$ 的距离：$\frac{|A x+B y+C|}{\sqrt{A^{2}+B^{2}}}$</p>
+</li>
+<li><p>n维空间：点$x=\left(x_{1}, x_{2} \ldots x_{n}\right)$，到直线$w^{T} x+b=0$的距离：$\frac{\left|w^{T} x+b\right|}{|w|}$，其中$|w|=\sqrt{w_{1}^{2}+\ldots w_{n}^{2}}$</p>
+</li>
+</ul>
+<p>因此，<strong>支持向量到超平面的距离 </strong>若为$r$，则其它点到超平面的距离必然大于$r$。因此，对于所有样本点$x$：</p>
+<script type="math/tex; mode=display">
+\left\{\begin{array}{l}
+\frac{w^{T} x+b}{\|w\|} \geq r \quad y=1 \\
+\frac{w^{T} x+b}{\|w\|} \leq-r \quad y=-1
+\end{array}\right.</script><p>$|w|r$为正数，暂且令为$|w|r = 1$（方便推导，且对目标函数优化没有影响）</p>
+<p>则为了$r$最大，则等价于：</p>
+<script type="math/tex; mode=display">
+\max _{w, b} \frac{1}{\|w\|} \Leftrightarrow \max _{w, b} \frac{1}{\|w\|^{2}} \Leftrightarrow \min _{w, b}\|w\|^{2} \Leftrightarrow \min _{w, b} \frac{1}{2}\|w\|^{2}</script><p>使得</p>
+<script type="math/tex; mode=display">
+\left\{\begin{array}{l}
+w^{T} x+b \geq 1 \quad y=1 \\
+w^{T} x+b \leq-1 \quad y=-1
+\end{array}\right.</script><p>上面这个方程组合并，简写为：</p>
+<script type="math/tex; mode=display">
+y\left(w^{T} x+b\right) \geq 1</script><p>故<strong>SVM最优化问题</strong>总结为：</p>
+<p><strong>已知：</strong>训练样本集$\{(X_i,y_i)\},i=1\to m$</p>
+<p><strong>待求</strong>：$(w,b)$</p>
+<p><strong>则可以表示为</strong>：$\min \frac{1}{2}|w|^{2} \text { s.t. } \quad y_{i}\left(w^{T} x_{i}+b\right) \geq 1 \quad i\in[1,m]$</p>
+<blockquote>
+<p>凸优化（Convex Optimization）中的二次规划问题：</p>
+<p>（1）目标函数是二次项</p>
+<p>（2）限制条件是一次项</p>
+<p>凸优化问题只有唯一一个全局极值，可用梯度下降求得</p>
+</blockquote>
+<p>🔸 利用<strong>拉格朗日乘子法转换为对偶问题</strong> 求解超平面</p>
+<p>原问题 写成 拉格朗日函数：</p>
+<script type="math/tex; mode=display">
+L(\omega, b, \alpha)=\frac{1}{2}\|\omega\|^{2}+\sum_{i=1}^{m} \alpha_{i}\left(1-y_{i}\left(\omega^{T} x_{i}+b\right)\right)</script><p>转换为  <strong>对偶问题</strong></p>
+<script type="math/tex; mode=display">
+\max _{\alpha} \min _{w, b}L(w, b, \alpha) \quad s.t.  \alpha_{i} \geq 0, \forall i \in\{1, \ldots m\}</script><p>同时要满足<strong>KKT条件</strong>（原问题可行、对偶问题可行、互补松弛）：</p>
+<script type="math/tex; mode=display">
+\begin{array}{cc}
+1-y^{(i)}\left(\left(w^{*}\right)^{T} x^{(i)}+b^{*}\right) \leq 0 & \forall i \in\{1, \ldots m\} \\
+\alpha_{i} \geq 0 & \forall i \in\{1, \ldots m\} \\
+\alpha_{i}\left(1-y^{(i)}\left(\left(w^{*}\right)^{T} x^{(i)}+b^{*}\right)\right)=0 & \forall i \in\{1, \ldots m\}
+\end{array}</script><p><strong>求解对偶问题</strong>：</p>
+<ul>
+<li><p><strong>拉格朗日函数最小化</strong></p>
+<script type="math/tex; mode=display">
+\begin{array}{c}
+\frac{\partial L(w, b, \alpha)}{\partial w}=w-\sum_{i=1}^{m} \alpha_{i} y^{(i)} x^{(i)}=0 \Rightarrow w=\sum_{i=1}^{m} \alpha_{i} y^{(i)} x^{(i)} \\
+\frac{\partial L(w, b, \alpha)}{\partial b}=\sum_{i=1}^{m} \alpha_{i} y^{(i)}=0
+\end{array}</script><p>然后把上述结果带回到拉格朗日函数中，得到</p>
+<script type="math/tex; mode=display">
+\min _{w, b} L(w, b, \alpha)=-\frac{1}{2} \sum_{i, j=1}^{m} y^{(i)} y^{(j)} \alpha_{i} \alpha_{j}\left(x^{(i)}\right)^{T} x^{(j)}+\sum_{i=1}^{m} \alpha_{i}</script></li>
+<li><p><strong>最大化 最小拉格朗日函数</strong></p>
+<script type="math/tex; mode=display">
+\begin{array}{c}
+\max _{\boldsymbol{\alpha}} \min _{\boldsymbol{w}, b} L(w, b, \alpha)=\max _{\alpha}\left(-\frac{1}{2} \sum_{i, j=1}^{m} y^{(i)} y^{(j)} \alpha_{i} \alpha_{j}\left(x^{(i)}\right)^{T} x^{(j)}+\sum_{i=1}^{m} \alpha_{i}\right) \\
+\text { s.t. } \alpha_{i} \geq 0, \forall i \in\{1, \ldots m\} \\
+\sum_{i=1}^{m} \alpha_{i} y^{(i)}=0
+\end{array}</script><p>通过序列最小优化SMO求解最优$\alpha^*$，则有：</p>
+<script type="math/tex; mode=display">
+\boldsymbol{w}^{*}=\sum_{i=1}^{m} \alpha_{i}^{*} y^{(i)} x^{(i)}</script><p>“有用的” $a^*&gt;0$，根据KKT的互补松弛条件：</p>
+<script type="math/tex; mode=display">
+\alpha_{i}^{*}\left(1-y^{(i)}\left(\left(w^{*}\right)^{T} x^{(i)}+b^{*}\right)\right)=0</script><p>可知$1-y^{(i)}\left(\left(w^{<em>}\right)^{T} x^{(i)}+b^{</em>}\right)=0$，$(x^{(i)},y^{(i)})$一定是约束边界上的点，记为：$(\tilde{x},\tilde{y})$，因此有：</p>
+<script type="math/tex; mode=display">
+b^{*}=\tilde{y}-w^{* T} \tilde{x}</script><p>所以，SVM的决策函数为：</p>
+</li>
+</ul>
+<script type="math/tex; mode=display">
+\hat{y}=\operatorname{sgn}\left(h_{w^{*}, b^{*}}(x)\right)=\operatorname{sgn}\left(\left(w^{*}\right)^{T} x+b\right)=\operatorname{sgn}\left(\sum_{i=1}^{m} \alpha_{i}^{*} y^{(i)}\left(x^{(i)}\right)^{T} x^{(i)}+b^{*}\right)</script><p><img src="https://s2.loli.net/2022/09/02/UbEvK62S9Yud5Cj.png" alt="svm.png" style="zoom: 33%;"></p>
+<ul>
+<li><strong>支持向量</strong>：满足$w^{T} x+b=1 \quad或\quad  w^{T} x+b=-1$ 的点</li>
+<li><p>每个<strong>支持向量到超平面</strong>的距离：$d=\frac{\left|w^{T} x+b\right|}{|w|}$</p>
+</li>
+<li><p>多维空间中<strong>任意平行的超平面</strong>间的距离：$\frac{|d_1-d_2|}{|w|}$</p>
+</li>
+<li><p><strong>辅助决策边界距离</strong>：$2\frac{1}{|w|}$</p>
+</li>
+</ul>
+<h2 id="线性不可分的情况（软间隔）"><a href="#线性不可分的情况（软间隔）" class="headerlink" title="线性不可分的情况（软间隔）"></a>线性不可分的情况（软间隔）</h2><p>通常情况下，线性不可分的训练数据有一些特异点，去掉这些特异点后，剩下的大部分的样本点组成的集合是线性可分的。线性不可分意味着某些样本点不能满足间隔大于等于1的条件，样本点落在超平面与边界之间。</p>
+<p>因此，需<strong>要适当放松限制条件</strong>，对于每个训练样本及标签，为每一个样本点设置<strong>松弛变量</strong>（slack variable）$\delta_{i}$</p>
+<p>因此，限制条件改写为：</p>
+<script type="math/tex; mode=display">
+y_{i}\left(\omega^{T} X_{i}+b\right) \geq 1-\delta_{i},(i=1 \sim m)</script><p>再加入新的限制条件，防止松弛变量无限大，改造后SVM最优化版本如下：</p>
+<p><strong>最小化:</strong>  $\frac{1}{2}|\omega|^{2}+C \sum_{i=1}^{N} \delta_{i}  或  \frac{1}{2}|\omega|^{2}+C \sum_{i=1}^{N} \delta_{i}^{2}$</p>
+<p><strong>限制条件</strong></p>
+<ol>
+<li>$\delta_{i} \geq 0 .(i=1 \sim m)$</li>
+<li>$y_{i}\left(\omega^{T} X_{i}+b\right) \geq 1-\delta_{i},(i=1 \sim m)$</li>
+</ol>
+<blockquote>
+<p>比例因子C是人为设定的——超参数</p>
+</blockquote>
+<h2 id="低维到高维的映射"><a href="#低维到高维的映射" class="headerlink" title="低维到高维的映射"></a>低维到高维的映射</h2><blockquote>
+<p>把线性不可分转换成线性可分</p>
+<p>把特征空间从低维映射到高维，用线性超平面对数据进行分类</p>
+</blockquote>
+<p>对于原始样本空间不是线性可分的情况，可将样本从原始空间<strong>映射到一个更高维</strong>的特征空间，使得样本在这个特征空间内线性可分。如果原始空间是有限维，即属性数有限，那么一定存在一个高维特征空间使样本可分。</p>
+<h2 id="核函数的定义"><a href="#核函数的定义" class="headerlink" title="核函数的定义"></a>核函数的定义</h2><p>核函数Kernel Function：</p>
+<script type="math/tex; mode=display">
+K\left(X_{1}, X_{2}\right)=\varphi\left(X_{1}\right)^{T} \varphi\left(X_{2}\right)</script><p>假设，$\varphi\left(X\right)$ 是一个将<strong>二维</strong>向量映射到<strong>三维</strong>向量的映射：</p>
+<script type="math/tex; mode=display">
+\begin{array}{c}
+X=\left[x_{1}, x_{2}\right]^{T} \\
+\varphi(X)=\varphi\left(\left[x_{1}, x_{2}\right]^{T}\right)=\left[x_{1}^{2}, x_{1} x_{2}, x_{2}^{2}\right]
+\end{array}</script><p>假设有两个二维向量  $X_{1}=\left[x_{11}, x_{12}\right]^{T} \quad X_{2}=\left[x_{21}, x_{22}\right]^{T}$，根据上述定义，则有：</p>
+<script type="math/tex; mode=display">
+\varphi\left({X}_{1}\right)=\left[{x}_{11}^{2}, {x}_{11} {x}_{12}, {x}_{12}^{2}\right]\\
+\varphi\left({X}_{2}\right)=\left[{x}_{21}^{2}, {x}_{21} {x}_{22}, {x}_{22}^{2}\right]</script><p>那么：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+K\left(X_{1}, X_{2}\right) &=\varphi\left(X_{1}\right)^{T} \varphi\left(X_{2}\right) \\
+&=\left[x_{11}^{2}, x_{11} x_{12}, x_{12}^{2}\right]\left[x_{21}^{2}, x_{21} x_{22} x_{22}^{2}\right]^{T} \\
+&=x_{11}^{2} x_{21}^{2}+x_{11} x_{12} x_{21} x_{22}+x_{12}^{2} x_{22}^{2}
+\end{aligned}</script>
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>LiaN
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2022/09/01/2022-09-01-%E3%80%90%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E3%80%91%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BASVM/" title="【机器学习】支持向量机SVM">http://example.com/2022/09/01/2022-09-01-【机器学习】支持向量机SVM/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"># 机器学习</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/08/31/2022-08-12-%E3%80%90SE%E3%80%91%E5%8D%8E%E4%B8%BA%E6%98%87%E8%85%BEMindSpore%E5%BC%80%E6%BA%90%E5%88%9B%E6%96%B0%E5%AE%9E%E8%B7%B5%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" rel="prev" title="【SE】MindSpore开源创新实践课程笔记">
+      <i class="fa fa-chevron-left"></i> 【SE】MindSpore开源创新实践课程笔记
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/09/02/2022-09-02-%E3%80%90SE%E3%80%91%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" rel="next" title="【SE】高等数学">
+      【SE】高等数学 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SVM%EF%BC%88%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">SVM（支持向量机）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%98%90%E8%BF%B0"><span class="nav-number">1.1.1.</span> <span class="nav-text">阐述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-number">1.1.2.</span> <span class="nav-text">优缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E5%8F%AF%E5%88%86%E3%80%81%E4%B8%8D%E5%8F%AF%E5%88%86"><span class="nav-number">1.2.</span> <span class="nav-text">线性可分、不可分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.3.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98%EF%BC%88%E7%A1%AC%E9%97%B4%E9%9A%94%EF%BC%89"><span class="nav-number">1.4.</span> <span class="nav-text">优化问题（硬间隔）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E4%B8%8D%E5%8F%AF%E5%88%86%E7%9A%84%E6%83%85%E5%86%B5%EF%BC%88%E8%BD%AF%E9%97%B4%E9%9A%94%EF%BC%89"><span class="nav-number">1.5.</span> <span class="nav-text">线性不可分的情况（软间隔）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%8E%E7%BB%B4%E5%88%B0%E9%AB%98%E7%BB%B4%E7%9A%84%E6%98%A0%E5%B0%84"><span class="nav-number">1.6.</span> <span class="nav-text">低维到高维的映射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B8%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.7.</span> <span class="nav-text">核函数的定义</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="LiaN"
+      src="https://cdn2.maocdn.cn/img/2022/01/21/J8U_G9ZTZG4W12DA260Z9.jpg">
+  <p class="site-author-name" itemprop="name">LiaN</p>
+  <div class="site-description" itemprop="description"><font color="#000000">别焦虑了，说不定明天就死了呢.</font></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/z-y-LiaN" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;z-y-LiaN" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2749613231@qq.com" title="E-Mail → mailto:2749613231@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      快速访问
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.luogu.com.cn/" title="https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;" rel="noopener" target="_blank">洛谷</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.acwing.com/" title="https:&#x2F;&#x2F;www.acwing.com&#x2F;" rel="noopener" target="_blank">AcWing</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.csdn.net/" title="https:&#x2F;&#x2F;www.csdn.net&#x2F;" rel="noopener" target="_blank">CSDN</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.bilibili.com/" title="https:&#x2F;&#x2F;www.bilibili.com&#x2F;" rel="noopener" target="_blank">b站</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LiaN</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">244k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">3:41</span>
+</div>
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+-->
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '532a45a59c2f395313f9',
+      clientSecret: '419760923076a6f709b5baa01457e5a96e275838',
+      repo        : 'z-y-LiaN.github.io',
+      owner       : 'z-y-LiaN',
+      admin       : ['z-y-LiaN'],
+      id          : 'c166a75ca01b22859ef4b0d72bd6e5fd',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>

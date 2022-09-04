@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":20,"offset":10,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="高数基础知识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【SE】高等数学">
+<meta property="og:url" content="http://example.com/2022/09/02/2022-09-02-%E3%80%90SE%E3%80%91%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/index.html">
+<meta property="og:site_name" content="LiaN">
+<meta property="og:description" content="高数基础知识">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/08/05/QLWHksud7xAlJjU.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/05/rkE4F6G1TfhS38i.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/05/uRhCXbatP98DTxe.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/06/1PtNzyeOvaKbkRV.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/06/O7ZjLAptkUSNln3.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/06/7iEsOulChydFNkU.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/06/R1O8iWub7dXer62.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/06/JqrMlxpIzNFVwRS.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/03/84FjIcap5LxvrCB.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/03/yDLFtOzeBWS6oXx.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/03/Twt9XhJUVOS4uW5.png">
+<meta property="og:image" content="https://s2.loli.net/2022/09/03/EQNwDmacLsvCg3V.png">
+<meta property="article:published_time" content="2022-09-02T01:55:34.000Z">
+<meta property="article:modified_time" content="2022-09-04T06:33:46.015Z">
+<meta property="article:author" content="LiaN">
+<meta property="article:tag" content="数学">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/08/05/QLWHksud7xAlJjU.png">
+
+<link rel="canonical" href="http://example.com/2022/09/02/2022-09-02-%E3%80%90SE%E3%80%91%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>【SE】高等数学 | LiaN</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end -->
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="LiaN" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband">
+    </div>
+<a target="_blank" rel="noopener" href="https://github.com/z-y-LiaN" class="github-corner" aria-label="View source on GitHub">
+<svg width="80" height="80" viewBox="0 0 250 250" style="fill:#F4A460; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">LiaN</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">是一只废物捏</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">33</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">10</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">43</span></a>
+
+  </li>
+        <li class="menu-item menu-item-mubulinks">
+
+    <a href="/mubulinks/" rel="section"><i class="fa fa-link fa-fw"></i>幕布链接</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/02/2022-09-02-%E3%80%90SE%E3%80%91%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn2.maocdn.cn/img/2022/01/21/J8U_G9ZTZG4W12DA260Z9.jpg">
+      <meta itemprop="name" content="LiaN">
+      <meta itemprop="description" content="<font color="#000000">别焦虑了，说不定明天就死了呢.</font>">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LiaN">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【SE】高等数学
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-09-02 09:55:34" itemprop="dateCreated datePublished" datetime="2022-09-02T09:55:34+08:00">2022-09-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-04 14:33:46" itemprop="dateModified" datetime="2022-09-04T14:33:46+08:00">2022-09-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/" itemprop="url" rel="index"><span itemprop="name">专业课</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.9k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>高数基础知识</p>
+<span id="more"></span>
+<h1 id="重点部分"><a href="#重点部分" class="headerlink" title="重点部分"></a><strong>重点部分</strong></h1><ul>
+<li>可导、可微、连续、可积之间的关系（一元函数+二元函数）。✅</li>
+<li>三个中值定理的区别、联系和物理意义（罗尔、拉格朗日、柯西），微分中值定理是啥？</li>
+<li>如何求梯度？梯度、方向导数与梯度。✅</li>
+<li>定积分如何求？定积分的意义？</li>
+<li>给你一个物体表面离散的一堆点，如何求任意表面的法向量？</li>
+<li>凸函数的定义，凸函数的局部最优解一定是全局最优解吗，为什么呢？</li>
+<li>什么是数列的极限，也就是说一个数列xn，收敛于a，你如何定义它？</li>
+<li>用数学语言描述极限</li>
+<li>一阶导，二阶导的物理意义，几何意义</li>
+<li>傅里叶级数和傅里叶变换的关系</li>
+</ul>
+<h1 id="高等数学"><a href="#高等数学" class="headerlink" title="高等数学"></a>高等数学</h1><h2 id="极限"><a href="#极限" class="headerlink" title="极限"></a>极限</h2><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="可微、可导、可积、连续"><a href="#可微、可导、可积、连续" class="headerlink" title="可微、可导、可积、连续"></a>可微、可导、可积、连续</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/SP_FA/article/details/117473545?ops_request_misc=%7B%22request%5Fid%22%3A%22165969690516782350825991%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&amp;request_id=165969690516782350825991&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~blog~sobaiduend~default-2-117473545-null-null.nonecase&amp;utm_term=可导与连续的关系&amp;spm=1018.2226.3001.4450">参考阅读： 可微，可导，可积与连续的关系</a></p>
+</blockquote>
+<h4 id="一些定义"><a href="#一些定义" class="headerlink" title="一些定义"></a>一些定义</h4><p>🔴 $\textcolor{red}{连续}$</p>
+<p>设$y=f(x)$在$x_{0}$的某一邻域内有定义，若$\lim_{x \to \infty}f(x)= f(x_{0})$，则称$f(x)$在点$x_{0}$处连续</p>
+<ul>
+<li><strong>三个条件</strong><ul>
+<li>函数在该点<strong>有定义</strong></li>
+<li>函数在该点极限$\lim_{x \to \infty}f(x)$<strong>存在</strong></li>
+<li><strong>极限值 =  函数值</strong>：$\lim_{x \to \infty}f(x)= f(x_{0})$</li>
+</ul>
+</li>
+</ul>
+<p>🔴 $\textcolor{red}{可导}$</p>
+<p>设$y=f(x)$在$x_{0}$的某一邻域$U(x_{0})$内有定义，当自变量$x$在$x_{0}$取得增量$\Delta x(x\neq 0) $，且$x_0 +\Delta x \in U(x_0)$时，相应的函数增量 $ \Delta y=f(x_0+\Delta x)-f(x_0)$，若极限</p>
+<script type="math/tex; mode=display">
+\lim _{\Delta x \rightarrow 0} \frac{\Delta y}{\Delta x}=\lim _{\Delta x \rightarrow 0} \frac{f\left(x_{0}+\Delta x\right)-f\left(x_{0}\right)}{\Delta x}</script><p>存在，则称函数在$x_0$处可导，并称这个极限值为函数在该点处的导数</p>
+<p>🔴 $\textcolor{red}{可微}$</p>
+<blockquote>
+<p>参考阅读：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/38967869">如何通俗理解全微分 - 知乎 (zhihu.com)</a></p>
+</blockquote>
+<p>设函数$y=f(x)$ 在区间内有定义，$x_{0}$及$x_{0}+\Delta x$在区间内：</p>
+<ul>
+<li>若增量 $ \Delta y=f(x_0+\Delta x)-f(x_0)$可表示为$\Delta y=A\Delta x+o(\Delta x)$</li>
+<li>其中$A$是不依赖于$\Delta x$的常数，那么称函数$y=f(x)$ 在点$x_0$处可微。</li>
+<li>$A\Delta x$ 叫做函数$y=f(x)$在点 $x_0$处相应于$\Delta x$的微分，记作$ \mathrm dy$</li>
+</ul>
+<p>🔴 $\textcolor{red}{可积}$</p>
+<ul>
+<li>$f(x)$在区间$[a,b]$上<strong>连续</strong>，则在$[a,b]$上可积</li>
+<li>$f(x)$在区间$[a,b]$上<strong>有界，且只有有限个间断点</strong>，则在$[a,b]$上可积</li>
+</ul>
+<h4 id="联系【一元函数】"><a href="#联系【一元函数】" class="headerlink" title="联系【一元函数】"></a>联系【一元函数】</h4><p>⭕ <strong>可导 必然 连续，连续 不一定 可导</strong></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/64324578">证明：连续性和可导性</a></p>
+<p>例子：魏尔施特拉斯函数：<strong>处处连续而处处不可导</strong>：</p>
+</blockquote>
+<p><img src="https://s2.loli.net/2022/08/05/QLWHksud7xAlJjU.png" alt="image.png" style="zoom: 50%;"></p>
+<p>⭕ <strong>可导 和 可微 等价</strong></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/319299307#:~:text=一元函数可导，表示曲线可作切线，表示曲线光滑。. （这个没有理解难度吧！. ）. 可导表示可作切线. 一元函数可微，表示曲线段的Y增量可以用直线段的Y增量代替。. 可微表示允许以直代曲.,曲线段PC的X增量是 ，直线段PB的X增量是 。. 两者相等. 曲线段PC的Y增量是 ，直线段PB的Y增量是 。.">一元函数和二元函数，可微和可导有什么区别？ - 知乎 (zhihu.com)</a></p>
+</blockquote>
+<p>⭕ <strong>连续必然可积，可积不一定连续</strong></p>
+<blockquote>
+<p>想想可积和连续的几何意义就理解了</p>
+</blockquote>
+<p>⭕ <strong>可导必然可积，可积不一定可导</strong></p>
+<blockquote>
+<p>可导👉连续👉可积，所以可导必可积。</p>
+<p>可积不一定连续👉不一定可导，所以可积不一定可导。</p>
+</blockquote>
+<h4 id="联系【多元函数】"><a href="#联系【多元函数】" class="headerlink" title="联系【多元函数】"></a>联系【多元函数】</h4><p>🔺 <strong>可导不一定连续，连续不一定可导</strong></p>
+<blockquote>
+<p>可导指的是<strong>可偏导</strong>，所以<strong>并不能推出在所有方向上函数连续</strong></p>
+</blockquote>
+<p>🔺 <strong>可微必然可导，可导不一定可微</strong></p>
+<blockquote>
+<p>一元函数👉可导：存在导数，可微：存在微分。</p>
+<p>多元函数👉可导：存在<strong>偏导数</strong>，可微：存在<strong>全微分</strong>。</p>
+</blockquote>
+<p>🔺<strong>可微必然连续，连续不一定可微</strong></p>
+<p>🔺<strong>偏导数连续必然可微，可微不一定偏导数连续</strong></p>
+<blockquote>
+<p>一个形象的角度理解：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/42504140">多元函数可微、可导、连续的关系 - 知乎 (zhihu.com)</a></p>
+<p><strong>连续</strong>：在定义范围内曲面上没有窟窿、断崖（但可以有尖点，有折痕）</p>
+<p><strong>(偏)导函数存在，即可导</strong>：曲面和某个切面相交的那条切线是光滑的（但是偏导函数可以在这点不连续，即极限存在但无定义)</p>
+<p><strong>可微</strong>：曲面是光滑的(想象一个穹顶)</p>
+</blockquote>
+<hr>
+<h3 id="偏导数、方向导数、梯度"><a href="#偏导数、方向导数、梯度" class="headerlink" title="偏导数、方向导数、梯度"></a>偏导数、方向导数、梯度</h3><blockquote>
+<p>参考阅读：</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/shine-lee/p/11715033.html">直观理解梯度，以及偏导数、方向导数和法向量等 - shine-lee - 博客园 (cnblogs.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/CSDN_SUSAN/article/details/90166474">导数，偏导数，方向导数，梯度的理解—-微积分数学基础SUSAN的博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/488961148">通俗理解方向导数与梯度 - 知乎 (zhihu.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/31942912">多元函数的偏导数、方向导数、梯度以及微分之间的关系思考 - 知乎 (zhihu.com)</a></p>
+</blockquote>
+<p>🔴 $\textcolor{red}{偏导数}$</p>
+<p>对于多元函数，求导数其实也是要求一个切线的斜率，但是由于曲面上的一个点的切线有<strong>无数条</strong>，那么取那条切线的斜率？引入： <strong>偏导数</strong>。</p>
+<p><strong>偏导数</strong>：可以理解成<strong>多元函数“退化”成一元函数时的导数</strong> ；“退化”：固定其他变量的值，只保留一个变量，依次保留每个变量，则$N$元函数有$N$个偏导数。</p>
+<ul>
+<li><strong>几何意义</strong>：也是切线斜率， 由于曲面上一点的切线有无数条（所有切线组成一个<strong>切面</strong>），偏导数选取的是<font color="red">垂直于各坐标轴</font>的几条特殊切线的<strong>斜率</strong>。</li>
+<li><strong>物理意义</strong>：表示函数沿着<font color="red">某个坐标轴方向上</font>的<strong>变化率</strong></li>
+</ul>
+<p>以二元函数$z=f(x,y)$为例，求$(x_0,y_0,z_0)$的偏导数：</p>
+<ul>
+<li>对$x$的偏导数：过点$(x_0,y_0,z_0)$且垂直于$y$轴的曲线（相当于固定$y$值），在该点切线的斜率</li>
+<li>对$y$的偏导数：过点$(x_0,y_0,z_0)$且垂直于$x$轴的曲线（相当于固定$x$值），在该点切线的斜率</li>
+</ul>
+<p><img src="https://s2.loli.net/2022/08/05/rkE4F6G1TfhS38i.png" alt="image.png" style="zoom:40%;"></p>
+<p>🔴 $\textcolor{red}{方向导数}$</p>
+<p>偏导数计算的是垂直于各坐标轴的几条特殊切线的斜率，某点的切线沿着不同方向有无数条 👉想求某点沿着<font color="red">任意方向</font>的切线斜率？引入：<strong>方向导数</strong>（补充：既然切线都分布在一个平面上，并且每一条切线都代表着函数朝着某一方向的变化率，那么在这个平面上就<strong>必定会存在唯一的一条切线的方向导数最大</strong>。（梯度为0的情况除外）</p>
+<p>以二元函数$z=f(x,y)$为例，求$(x_0,y_0,z_0)$的某方向导数：（<a target="_blank" rel="noopener" href="https://www.geogebra.org/m/Bx8nFMNc">下图动态演示地址</a>）</p>
+<ul>
+<li>$x$轴和$y$轴决定的平面上选择某一个方向向量（图中斜着的红色箭头），该方向所在的这个黄色平面 与 蓝色曲面相交 决定了一条过$(x_0,y_0,z_0)$的曲线（隐隐约约的红色细线描出来的部分），点在该曲线上的这条黑色切线斜率即为方向导数</li>
+</ul>
+<p><img src="https://s2.loli.net/2022/08/05/uRhCXbatP98DTxe.png" alt="image.png" style="zoom:33%;"></p>
+<ul>
+<li>设一个方向向量为$\overrightarrow{\mathrm{u}}=(\cos \alpha, \sin \alpha)$ （$\alpha$和$\beta$分别为该方向向量与$x$轴和$y$轴的夹角），则方向导数定义如下，它是个标量：<script type="math/tex; mode=display">
+\mathrm{D}_{\mathrm{u}} \mathrm{f}(\mathrm{x}, \mathrm{y})=\mathrm{f}_{\mathrm{x}}(\mathrm{x}, \mathrm{y}) \cos \alpha+\mathrm{f}_{\mathrm{y}}(\mathrm{x}, \mathrm{y}) \sin \alpha</script>进一步地，设偏导向量$\overrightarrow{\mathrm{A}}=\left(\mathrm{f}_{\mathrm{x}}(\mathrm{x}, \mathrm{y}), \mathrm{f}_{\mathrm{y}}(\mathrm{x}, \mathrm{y})\right)$，则上述方向导数可以改写为：<script type="math/tex; mode=display">
+\mathrm{D}_{\mathrm{u}} \mathrm{f}(\mathrm{x}, \mathrm{y})=\overrightarrow{\mathrm{A}} * \overrightarrow{\mathrm{u}}=|\overrightarrow{\mathrm{A}}| *|\overrightarrow{\mathrm{u}}| * \cos (\theta)</script>$ \theta$ 是偏导向量和方向向量之间的夹角。当$\theta=0$即二者同向时，方向导数$D_{u} f(x, y)$取得<strong>正</strong>最大值。反向时，则<strong>负</strong>最大值。</li>
+</ul>
+<p>🔴 $\textcolor{red}{梯度}$</p>
+<p><strong>梯度：</strong>是一个矢量，函数在某点 无数个变化方向中 <strong>变化最快</strong>的 <u><strong>那个方向</strong></u></p>
+<blockquote>
+<p>即：偏导数构成的向量；由此：方向导数 = 梯度 * 方向向量</p>
+</blockquote>
+<p>函数只要<strong>每一个变量</strong>都沿着关于这个变量的<strong>偏导所指定的方向</strong>来变化，函数的整体变化就能达到最快（变化的绝对值最大）</p>
+<p><strong>梯度的几何意义</strong>：</p>
+<ol>
+<li>当前位置的<strong>梯度方向</strong>，为函数在该位置处<strong>方向导数最大的方向</strong>，也是函数值<strong>上升最快的方向</strong>，反方向为下降最快的方向；</li>
+<li>当前位置的<strong>梯度长度（模）</strong>，为最大方向导数的值</li>
+<li>梯度（下降）的方向与<strong>等高线的切线方向垂直</strong></li>
+</ol>
+<p>以二元函数$z=f(x,y)$为例，其方向导数定义如下：</p>
+<script type="math/tex; mode=display">
+\nabla f\left(x_{0}, y_{0}\right)=\left.\left(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}\right)\right|_{\left(x_{0}, y_{0}\right)}</script><hr>
+<h2 id="微积分基础"><a href="#微积分基础" class="headerlink" title="微积分基础"></a>微积分基础</h2><blockquote>
+<p>参考视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1U94y1R71P?p=11&amp;spm_id_from=pageDriver&amp;vd_source=29f5937d4c8dc6b894a81d48deba4d66">3-定积分_哔哩哔哩_bilibili</a></p>
+</blockquote>
+<p>🔴 $\textcolor{red}{区分\Delta y和dy}$</p>
+<p><img src="https://s2.loli.net/2022/08/06/1PtNzyeOvaKbkRV.png" alt="image.png" style="zoom:50%;"></p>
+<h3 id="定积分"><a href="#定积分" class="headerlink" title="定积分"></a>定积分</h3><p>🔴 $\textcolor{red}{定义}$</p>
+<p><img src="https://s2.loli.net/2022/08/06/O7ZjLAptkUSNln3.png" alt="image.png" style="zoom: 50%;"></p>
+<p>🔴 $\textcolor{red}{积分上限函数}$</p>
+<p>函数$f(x)$在区间$[a,b]$上连续，对于定积分$\int_{a}^{x} f(x) d x$每一个取值$x$都有一个对应的定积分值，记作$\Phi(x)= \int_{a}^{x} f(t) dt$</p>
+<p>若函数$f(x)$在区间$[a,b]$上连续，则积分上限函数就是$f(x)$在$[a,b]$上的原函数</p>
+<h3 id="两大积分中值定理"><a href="#两大积分中值定理" class="headerlink" title="两大积分中值定理"></a>两大积分中值定理</h3><p>🔴 $\textcolor{red}{第一中值定理}$</p>
+<p>如果函数$f(x)$在闭区间$[a,b]$上连续，则在积分区间$[a,b]$上，至少存在一个点$\xi$，使$\int_{a}^{b} f(x) d x=f(\xi)(b-a) . \quad(a \leq \xi \leq b)$</p>
+<p><img src="https://s2.loli.net/2022/08/06/7iEsOulChydFNkU.png" alt="image.png" style="zoom:50%;"></p>
+<p>🔴 $\textcolor{red}{第二中值定理}$</p>
+<h3 id="三大微分中值定理"><a href="#三大微分中值定理" class="headerlink" title="三大微分中值定理"></a>三大微分中值定理</h3><h3 id="牛顿-莱布尼兹公式"><a href="#牛顿-莱布尼兹公式" class="headerlink" title="牛顿-莱布尼兹公式"></a>牛顿-莱布尼兹公式</h3><p>🔴 $\textcolor{red}{定义}$</p>
+<p>如果$F(x)$是连续函数$f(x)$在区间$[a,b]$上的一个原函数，则$\int_{a}^{b} f(x) d x=F(a)-F(b)$。</p>
+<blockquote>
+<p>即：一个连续函数在区间$[a,b]$上的定积分等于它的任意一个原函数在区间$[a,b]$上的增量</p>
+</blockquote>
+<p>🔴 $\textcolor{red}{几何解释}$</p>
+<p>可得：$f(b)-f(a)=\sum dy$，由于$dy=f’(x)dx$，$f(b)-f(a)=\sum f’(x)dx= \int_{a}^{b}f’(x)dx $</p>
+<p><img src="https://s2.loli.net/2022/08/06/R1O8iWub7dXer62.png" alt="image.png" style="zoom:40%;"></p>
+<hr>
+<h2 id="泰勒公式"><a href="#泰勒公式" class="headerlink" title="泰勒公式"></a>泰勒公式</h2><blockquote>
+<p>用简单的熟悉的多项式来近似代替复杂的函数</p>
+</blockquote>
+<p>🔴 $\textcolor{red}{泰勒多项式}$</p>
+<p>$f(x)$在$x_0$关于$(x-x_0)$的n阶泰勒多项式：</p>
+<script type="math/tex; mode=display">
+\begin{array}{l}
+P_{n}(x)=f\left(x_{0}\right)+f^{\prime}\left(x_{0}\right)\left(x-x_{0}\right)+\frac{f^{\prime \prime}\left(x_{0}\right)}{2 !}\left(x-x_{0}\right)^{2}+ \cdots \quad+\frac{f^{(n)}\left(x_{0}\right)}{n !}\left(x-x_{0}\right)^{n}
+\end{array}</script><p>🔴 $\textcolor{red}{麦克劳林公式}$</p>
+<p>令$x_0=0$：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+f(x)=& f(0)+f^{\prime}(0) x+\frac{f^{\prime \prime}(0)}{2 !} x^{2}+\cdots+\frac{f^{(n)}(0)}{n !} x^{n}+\frac{f^{(n+1)}(\theta x)}{(n+1) !} x^{n+1}(0<\theta<1)
+\end{aligned}</script><p>🔴 $\textcolor{red}{泰勒多项式中 阶数的作用}$</p>
+<ul>
+<li>阶数越高，增长速度越快；越高次项在越偏右侧影响越大</li>
+<li>对于一个复杂函数，低阶项能更好地描述当前点附近，对于之后的走势就越来越依靠高阶项</li>
+</ul>
+<hr>
+<h2 id="傅里叶级数"><a href="#傅里叶级数" class="headerlink" title="傅里叶级数"></a>傅里叶级数</h2><h2 id="拉格朗日乘子法"><a href="#拉格朗日乘子法" class="headerlink" title="拉格朗日乘子法"></a>拉格朗日乘子法</h2><blockquote>
+<p>寻找变量受一个或多个条件限制的多元函数的极值</p>
+<p>参考阅读：</p>
+<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/38586401">如何理解拉格朗日乘子法？ - 知乎 (zhihu.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44378835/article/details/110732412?utm_source=app">【线性分类器】（四）万字长文解释拉格朗日乘子与支持向量机_二进制人工智能的博客-CSDN博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/frostime/article/details/90291392?ops_request_misc=%7B%22request%5Fid%22%3A%22166219600716781790779835%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&amp;request_id=166219600716781790779835&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~blog~top_positive~default-1-90291392-null-null.nonecase&amp;utm_term=拉格朗日对偶&amp;spm=1018.2226.3001.4450">【数学】拉格朗日对偶，从0到完全理解_frostime的博客</a><strong>（←这篇博客写得超级超级好！）</strong></p>
+</blockquote>
+<h3 id="高数中的拉格朗日乘子"><a href="#高数中的拉格朗日乘子" class="headerlink" title="高数中的拉格朗日乘子"></a>高数中的拉格朗日乘子</h3><p><strong>条件极值：</strong>对函数的自变量还有附加条件的极值</p>
+<p>求解条件极值：<strong>拉格朗日乘子法</strong></p>
+<p><img src="https://s2.loli.net/2022/08/06/JqrMlxpIzNFVwRS.png" alt="image.png" style="zoom: 30%;"></p>
+<p>例如对于一个二元函数函数：$z=f(x,y)$在条件$\varphi(x, y)=0$下的极值，构造拉格朗日函数$F(x,y)=f(x,y)+\lambda \varphi(x, y)$，其中$\lambda$为拉格朗日乘数，构造下列函数求得极值点坐标：</p>
+<script type="math/tex; mode=display">
+\left\{\begin{array}{c}
+f_{x}(x, y)+\lambda \varphi_{x}(x, y)=0 \\
+f_{y}(x, y)+\lambda \varphi_{y}(x, y)=0 \\
+\varphi(x, y)=0
+\end{array}\right.</script><hr>
+<h3 id="凸优化"><a href="#凸优化" class="headerlink" title="凸优化"></a>凸优化</h3><h4 id="凸函数、凹函数、仿射函数"><a href="#凸函数、凹函数、仿射函数" class="headerlink" title="凸函数、凹函数、仿射函数"></a>凸函数、凹函数、仿射函数</h4><p>左图是凸函数，右图是凹函数；</p>
+<p>凹凸可以转化：对于凹函数f，− f即为凸函数。</p>
+<p><img src="https://s2.loli.net/2022/09/03/84FjIcap5LxvrCB.png" alt="image.png" style="zoom: 80%;"></p>
+<p>凸函数：</p>
+<script type="math/tex; mode=display">
+\forall \mathrm{x}, \mathrm{y} \in \operatorname{dom} \mathrm{f}, \quad \forall \theta \in[0,1] 
+\\
+\mathrm{f}(\theta \mathrm{x}+(1-\theta) \mathrm{y}) \leqslant \theta \mathrm{f}(\mathrm{x})+(1-\theta) \mathrm{f}(\mathrm{y})</script><p>凹函数</p>
+<script type="math/tex; mode=display">
+\forall \mathrm{x}, \mathrm{y} \in \operatorname{dom} \mathrm{f}, \quad \forall \theta \in[0,1] 
+\\
+\mathrm{f}(\theta \mathrm{x}+(1-\theta) \mathrm{y}) \geqslant \theta \mathrm{f}(\mathrm{x})+(1-\theta) \mathrm{f}(\mathrm{y})</script><p><strong>仿射函数既凹又凸</strong>：</p>
+<script type="math/tex; mode=display">
+\mathrm{f}(\theta \mathrm{x}+(1-\theta) \mathrm{y}) = \theta \mathrm{f}(\mathrm{x})+(1-\theta) \mathrm{f}(\mathrm{y})</script><script type="math/tex; mode=display">
+\overrightarrow{\mathrm{x}} \rightarrow \mathrm{A} \overrightarrow{\mathrm{x}}+\overrightarrow{\mathrm{b}}
+
+\quad被称为\quad  \mathbb{R}^{\mathrm{n}} \rightarrow \mathbb{R}^{\mathrm{m}}  的仿射变换，这一过程被称为仿射函数。
+\\
+f(x)=A x+b, x \in \mathbb{R}^{n}
+\\
+比如最简单的:
+
+\mathrm{a}_{1} \mathrm{x}_{1}+\mathrm{a}_{2} \mathrm{x}_{2}+\cdots+\mathrm{a}_{\mathrm{n}} \mathrm{x}_{\mathrm{n}}+\mathrm{b}
+
+就是一个仿射函数。</script><hr>
+<h4 id="凸优化-1"><a href="#凸优化-1" class="headerlink" title="凸优化"></a><strong>凸优化</strong></h4><p>凸优化问题就是满足特定条件的优化问题，任意位置的<strong>局部最优解同时也是全局最优解</strong></p>
+<p>凸优化问题的基本形式描述：</p>
+<script type="math/tex; mode=display">
+\begin{array}{ll}
+\min _{\mathrm{x} \in \mathbb{R}^{\mathrm{n}}} \mathrm{f}(\mathrm{x}) \\
+\text { s.t } & \mathrm{c}_{\mathrm{i}}(\mathrm{x}) \leqslant 0, \mathrm{i} \in[1, \mathrm{k}] \\
+& \mathrm{h}_{\mathrm{j}}(\mathrm{x})=0, \mathrm{j} \in[1,l]
+\end{array}</script><p>要求<strong>满足</strong>：</p>
+<ul>
+<li>$f(x)$ 是凸函数</li>
+<li>$c_i(x)$是凸函数</li>
+<li>$h_j(x)$是仿射函数</li>
+</ul>
+<hr>
+<h3 id="从广义拉格朗日函数到拉格朗日对偶函数"><a href="#从广义拉格朗日函数到拉格朗日对偶函数" class="headerlink" title="从广义拉格朗日函数到拉格朗日对偶函数"></a>从广义拉格朗日函数到拉格朗日对偶函数</h3><h4 id="原问题"><a href="#原问题" class="headerlink" title="原问题"></a>原问题</h4><script type="math/tex; mode=display">
+\begin{array}{ll}
+\min _{\mathrm{x} \in \mathbb{R}^{\mathrm{n}}} \mathrm{f}(\mathrm{x}) \\
+\text { s.t } & \mathrm{c}_{\mathrm{i}}(\mathrm{x}) \leqslant 0, \mathrm{i} \in[1, \mathrm{k}] \\
+& \mathrm{h}_{\mathrm{j}}(\mathrm{x})=0, \mathrm{j} \in[1,l]
+\end{array}</script><p>针对上述原问题，首先约定：</p>
+<ul>
+<li>不假定$f(x)$的凹凸性，可以非凹非凸</li>
+<li>原问题的定义域：$\mathrm{D}=(\operatorname{dom} \mathrm{f}) \cap\left(\bigcap_{\mathrm{i}=1}^{\mathrm{k}} \mathrm{c}_{\mathrm{i}}\right) \cap\left(\bigcap_{\mathrm{i}=1}^{\mathrm{l}} \mathrm{h}_{\mathrm{i}}\right) \neq \empty$</li>
+<li>最终求出的最优结果表示：$p^ * $</li>
+</ul>
+<p><strong>对于该原问题，不太好解，难点在于</strong>：</p>
+<ul>
+<li>约束条件多：$k+l$ 个约束</li>
+<li>$f(x)$凹凸性不明确，意味着无法运用凸优化的方法</li>
+</ul>
+<p>因此，考虑采用<strong>拉格朗日对偶</strong>的方式求解，<strong>优点在于</strong>：</p>
+<blockquote>
+<p>对偶：实质相同，但同不同角度提出不同提法的一对问题</p>
+</blockquote>
+<ul>
+<li>只有<strong>一个约束</strong></li>
+<li>拉格朗日对偶问题一定是<strong>凹</strong>的</li>
+</ul>
+<p>将<strong>非凸目标函数的极小化转换成凹目标函数的极大化</strong>，局部极值点便是全局极值点</p>
+<hr>
+<h4 id="广义拉格朗日函数"><a href="#广义拉格朗日函数" class="headerlink" title="广义拉格朗日函数"></a>广义拉格朗日函数</h4><script type="math/tex; mode=display">
+\begin{array}{l}
+\mathcal{L}: \mathbb{R}^{\mathrm{n}} \times \mathbb{R}^{\mathrm{k}} \times \mathbb{R}^{l} \rightarrow \mathrm{R} \\
+\mathcal{L}(\mathrm{x}, \lambda, \mu)=\mathrm{f}(\mathrm{x})+\sum_{\mathrm{i}=1}^{\mathrm{k}} \lambda_{\mathrm{i}} \mathrm{c}_{\mathrm{i}}(\mathrm{x})+\sum_{\mathrm{j}=1}^{l} \mu_{\mathrm{j}} \mathrm{h}_{\mathrm{j}}(\mathrm{x}) \\
+\overrightarrow{\mathrm{x}} \in \mathbb{R}^{\mathrm{n}}, \vec{\lambda} \in \mathbb{R}^{\mathrm{k}}, \vec{\mu} \in \mathbb{R}^{l}
+\end{array}</script><hr>
+<h4 id="拉格朗日对偶函数"><a href="#拉格朗日对偶函数" class="headerlink" title="拉格朗日对偶函数"></a>拉格朗日对偶函数</h4><p>🔸 不管原函数$f$的凹凸性，它的对偶函数$g$一定是一个<strong>凹函数</strong></p>
+<blockquote>
+<p>相关证明详见：<a target="_blank" rel="noopener" href="https://blog.csdn.net/frostime/article/details/90291392?ops_request_misc=%7B%22request%5Fid%22%3A%22166219600716781790779835%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&amp;request_id=166219600716781790779835&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~blog~top_positive~default-1-90291392-null-null.nonecase&amp;utm_term=拉格朗日对偶&amp;spm=1018.2226.3001.4450">【数学】拉格朗日对偶，从0到完全理解_frostime的博客</a></p>
+</blockquote>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\mathrm{g}(\lambda, \mu) &=\inf _{\mathrm{x} \in \mathrm{D}} \mathcal{L}(\mathrm{x}, \lambda, \mu) \\
+&=\inf _{\mathrm{x} \in \mathrm{D}}\left(\mathrm{f}(\mathrm{x})+\sum_{\mathrm{i}=1}^{\mathrm{k}} \lambda_{\mathrm{i}} \mathrm{c}_{\mathrm{i}}(\mathrm{x})+\sum_{\mathrm{j}=1}^{l} \mu_{\mathrm{j}} \mathrm{h}_{\mathrm{j}}(\mathrm{x})\right) \\
+\lambda \geqslant 0
+\end{aligned}</script><blockquote>
+<p>inf：下确界，和<strong>min</strong>类似，但细节部分略不同</p>
+</blockquote>
+<p>这个对偶函数 能<strong>给出原问题最优解的下确界</strong>：</p>
+<blockquote>
+<p>相关证明详见：<a target="_blank" rel="noopener" href="https://blog.csdn.net/frostime/article/details/90291392?ops_request_misc=%7B%22request%5Fid%22%3A%22166219600716781790779835%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&amp;request_id=166219600716781790779835&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~blog~top_positive~default-1-90291392-null-null.nonecase&amp;utm_term=拉格朗日对偶&amp;spm=1018.2226.3001.4450">【数学】拉格朗日对偶，从0到完全理解_frostime的博客</a></p>
+</blockquote>
+<script type="math/tex; mode=display">
+\forall \lambda \geqslant 0 \Rightarrow \mathrm{g}(\lambda, \mu) \leqslant \mathrm{p}^{*}</script><p>🔸 也就是说，无论如何，$p^<em>$ 都   <em>*不会小于</em></em>  $max g(\lambda,\mu)$</p>
+<p><img src="https://s2.loli.net/2022/09/03/yDLFtOzeBWS6oXx.png" alt="image.png" style="zoom: 33%;"></p>
+<p>最初的目的是找到<strong>原问题的最优解</strong> $p^ * $，但有时候该解并不一起能解出来，因此希望可以给出一个尽可能逼近</p>
+<p> $p^ * $的值：$\max \operatorname{g}(\lambda, \mu)(\text { s.t } \lambda \geqslant 0)$</p>
+<hr>
+<h4 id="总结：原问题vs对偶问题"><a href="#总结：原问题vs对偶问题" class="headerlink" title="总结：原问题vs对偶问题"></a>总结：原问题vs对偶问题</h4><p>🔸 原问题（Primal Problem），结果记为$p^ * $</p>
+<script type="math/tex; mode=display">
+\begin{array}{ll}
+\min _{\mathrm{x} \in \mathbb{R}^{\mathrm{n}}} \mathrm{f}(\mathrm{x}) \\
+\text { s.t } & \mathrm{c}_{\mathrm{i}}(\mathrm{x}) \leqslant 0, \mathrm{i} \in[1, \mathrm{k}] \\
+& \mathrm{h}_{\mathrm{j}}(\mathrm{x})=0, \mathrm{j} \in[1,l]
+\end{array}</script><p>🔸 拉格朗日对偶问题（Lagrange Dual Problem），结果记为$d^*$</p>
+<script type="math/tex; mode=display">
+\begin{array}{ll}
+转换为\mathcal{L}(\mathrm{x}, \lambda, \mu)=\mathrm{f}(\mathrm{x})+\sum_{\mathrm{i}=1}^{\mathrm{k}} \lambda_{\mathrm{i}} \mathrm{c}_{\mathrm{i}}(\mathrm{x})+\sum_{\mathrm{j}=1}^{l} \mu_{\mathrm{j}} \mathrm{h}_{\mathrm{j}}(\mathrm{x})\\
+求\max _{\lambda, \mu} g(\lambda, \mu)=\max _{\lambda, \mu} \inf _{\mathrm{x} \in \mathrm{D}} \mathcal{L}(\mathrm{x}, \lambda, \mu)
+\\
+s.t  \quad \lambda_{\mathrm{i}} \geqslant 0, \mathrm{i}=1,2, \ldots, \mathrm{k}
+\end{array}</script><blockquote>
+<p>希望求p*  ，但不好求，因此求d*</p>
+<p>因为 d* ≤ p* $，至少说明能求得 $ p*的下界，如果在非常理想，或者说，满足具体特定条件时，等式就成立了</p>
+</blockquote>
+<hr>
+<h3 id="强、弱对偶"><a href="#强、弱对偶" class="headerlink" title="强、弱对偶"></a>强、弱对偶</h3><p>弱对偶—— d* ≤ p* ：</p>
+<ul>
+<li>最优对偶间隙（Optimal Duality Gap）：p* -d*</li>
+</ul>
+<p><img src="https://s2.loli.net/2022/09/03/Twt9XhJUVOS4uW5.png" alt="image.png" style="zoom: 33%;"></p>
+<p>强对偶——d*= p*：</p>
+<ul>
+<li>如果满足强对偶，只要求出了d*，就相当于求出了p*</li>
+<li><strong>必须满足一定的条件</strong>，强对偶才可能成立（使满足强对偶的条件有多种）</li>
+</ul>
+<p><img src="https://s2.loli.net/2022/09/03/EQNwDmacLsvCg3V.png" alt="image.png" style="zoom:33%;"></p>
+<hr>
+<h3 id="关于强对偶和最优的条件"><a href="#关于强对偶和最优的条件" class="headerlink" title="关于强对偶和最优的条件"></a>关于强对偶和最优的条件</h3><h4 id="Convex-Slater"><a href="#Convex-Slater" class="headerlink" title="Convex+Slater"></a>Convex+Slater</h4><blockquote>
+<p>满足强对偶的一个充分条件</p>
+</blockquote>
+<p>🔴 即：原问题是<strong>凸优化 且满足 Slater条件</strong>，则<strong>一定满足强对偶</strong></p>
+<ul>
+<li>Slater条件：</li>
+</ul>
+<script type="math/tex; mode=display">
+\begin{array}{l}
+\exists \mathrm{x} \in \mathrm{D} \\
+\mathrm{c}_{\mathrm{i}}(\mathrm{x})<0, \mathrm{i} \in[1, \mathrm{k}] \\
+\mathrm{Ax}=\mathrm{b}
+\end{array}</script><hr>
+<h4 id="KKT条件"><a href="#KKT条件" class="headerlink" title="KKT条件"></a>KKT条件</h4><h5 id="非凸问题下的KKT"><a href="#非凸问题下的KKT" class="headerlink" title="非凸问题下的KKT"></a>非凸问题下的KKT</h5><p>暂略…</p>
+<h5 id="凸问题下的KKT"><a href="#凸问题下的KKT" class="headerlink" title="凸问题下的KKT"></a>凸问题下的KKT</h5><blockquote>
+<p>凸问题下，满足 KKT 条件的点一定是原问题和对偶问题的最优解；</p>
+<p><strong>KKT 条件成了强对偶和最优解的充要条件</strong></p>
+</blockquote>
+<p>🔴也就是说：</p>
+<ul>
+<li><p>若原问题是凸（Convex）的</p>
+<script type="math/tex; mode=display">
+\mathcal{L}(\mathrm{x}, \lambda, \mu)=\mathrm{f}(\mathrm{x})+\sum_{\mathrm{i}=1}^{\mathrm{k}} \lambda_{\mathrm{i}} \mathrm{c}_{\mathrm{i}}(\mathrm{x})+\sum_{\mathrm{j}=1}^{l} \mu_{\mathrm{j}} \mathrm{h}_{\mathrm{j}}(\mathrm{x})</script></li>
+<li><p>$\exists \hat{\mathrm{x}}, \hat{\lambda}, \hat{\mu}$，满足：</p>
+<script type="math/tex; mode=display">
+\begin{array}{lr}
+(1)\quad\mathrm{c}_{\mathrm{i}}(\hat{\mathrm{x}}) \leqslant 0 & \mathrm{i}=1, \ldots, \mathrm{k} \\
+(2)\quad\mathrm{h}_{\mathrm{i}}(\hat{\mathrm{x}})=0 & \mathrm{i}=1, \ldots, l \\
+(3)\quad\hat{\lambda}_{\mathrm{i}} \geqslant 0 & \mathrm{i}=1, \ldots, \mathrm{k} \\
+(4)\quad\hat{\lambda}_{\mathrm{i}} \mathrm{c}_{\mathrm{i}}(\hat{\mathrm{x}})=0 & \mathrm{i}=1, \ldots, \mathrm{k} \\
+(5)\quad\nabla \mathrm{f}(\hat{\mathrm{x}})+\sum_{\mathrm{i}=1}^{\mathrm{k}} \hat{\lambda}_{\mathrm{i}} \nabla \mathrm{c}_{\mathrm{i}}(\hat{\mathrm{x}})+\sum_{\mathrm{i}=1}^{l} \hat{\mu}_{\mathrm{i}} \nabla \mathrm{h}_{\mathrm{i}}(\hat{\mathrm{x}})=0 &
+\end{array}</script><blockquote>
+<p>(1)（2）：满足原问题的等式和不等式约束（原问题可行）</p>
+<p>(3)：满足非负性（弱对偶的必要条件）（对偶问题可行）</p>
+<p>(4)：互补松弛条件，防止出现$\mathrm{c}_{\mathrm{i}}(\hat{\mathrm{x}})&gt;0$</p>
+<p>(5)：$x$* 是最优点，理所当然的，原问题 $\mathcal{L}$ 关于 $x$* 的导数必须等于 0。</p>
+</blockquote>
+</li>
+<li><p>那么，$\hat{\mathrm{x}}, \hat{\lambda}, \hat{\mu}$都是原问题和对偶问题的最优解，且最优对偶间隙为0，满足强对偶性。</p>
+</li>
+</ul>
+<hr>
+<h3 id="矩阵分析中的拉格朗日乘子"><a href="#矩阵分析中的拉格朗日乘子" class="headerlink" title="矩阵分析中的拉格朗日乘子"></a>矩阵分析中的拉格朗日乘子</h3><h4 id="含有一个等式约束的最优化"><a href="#含有一个等式约束的最优化" class="headerlink" title="含有一个等式约束的最优化"></a>含有一个等式约束的最优化</h4><p>实函数$f(w)$是参数向量$w$ 的函数，约束条件：$w^Tx=b$，其中$x$是已知向量，$b$是常数，令$h(w)=w^Tx-b=0$，最小化问题可以描述为</p>
+<script type="math/tex; mode=display">
+minf(w) \quad s.t.\quad h(w)=0</script><p>引入拉格朗日乘子，将上述约束最小化问题转化为无约束问题，定义新函数，利用偏导求参即可：</p>
+<script type="math/tex; mode=display">
+\mathrm{L}(\mathrm{w}, \lambda)=\mathrm{f}(\mathrm{w})+\lambda \mathrm{h}(\mathrm{w})</script><h4 id="含有多个等式约束的最优化"><a href="#含有多个等式约束的最优化" class="headerlink" title="含有多个等式约束的最优化"></a>含有多个等式约束的最优化</h4><p>实函数$f(w)$是参数向量$w$的二次函数，约束条件：$w^Tx_k=b_k,k=1,2,\dots K$，其中$x$是已知向量，$b_k$是常数，令$h_k(w)=w^Tx_k-b_k=0$，最小化问题描述为：</p>
+<script type="math/tex; mode=display">
+minf(w)\quad s.t.\quad h_k(w)=0,k=1,2,\dots K</script><p>将上述最小化问题转化为无约束问题，定义一个新的实函数：</p>
+<script type="math/tex; mode=display">
+\mathrm{L}(\mathrm{w}, \lambda)=\mathrm{f}(\mathrm{w})+\sum_{\mathrm{k}=1}^{\mathrm{K}} \lambda_{\mathrm{k}} \mathrm{h}_{\mathrm{k}}(\mathrm{w})</script><h4 id="拉格朗日对偶问题"><a href="#拉格朗日对偶问题" class="headerlink" title="拉格朗日对偶问题"></a>拉格朗日对偶问题</h4><p>函数$f(x)=max\{x_1,x_2,\dots,x_n\}$是$R^n$上的<strong>凸函数</strong></p>
+<p>函数$f(x)=min\{x_1,x_2,\dots,x_n\}$是$R^n$上的<strong>凹函数</strong></p>
+<p>约束优化的<strong>原始问题</strong>模型：</p>
+<script type="math/tex; mode=display">
+\min _{x} f_{0}(x)\\
+
+s.t.\quad \mathrm{f}_{\mathrm{i}}(\mathrm{x}) \leq 0, \mathrm{i}=1, \ldots \mathrm{m} 
+\\
+\quad\quad  \mathrm{h}_{\mathrm{i}}(\mathrm{x})=0, \mathrm{i}=1, \ldots \mathrm{q}</script><p>利用<strong>拉格朗日乘子法</strong>可以松弛为<strong>无约束</strong>优化问题（<strong>对偶问题</strong>）：</p>
+<script type="math/tex; mode=display">
+\min \mathrm{L}(\mathrm{x}, \lambda, \mathrm{v})=\mathrm{f}_{0}(\mathrm{x})+\sum_{\mathrm{i}=1}^{\mathrm{m}} \lambda_{\mathrm{i}} \mathrm{f}_{\mathrm{i}}(\mathrm{x})+\sum_{\mathrm{i}=1}^{\mathrm{q}} \mathrm{v}_{\mathrm{i}} \mathrm{h}_{\mathrm{i}}(\mathrm{x})</script>
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>LiaN
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2022/09/02/2022-09-02-%E3%80%90SE%E3%80%91%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" title="【SE】高等数学">http://example.com/2022/09/02/2022-09-02-【SE】高等数学/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag"># 数学</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/09/01/2022-09-01-%E3%80%90%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E3%80%91%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BASVM/" rel="prev" title="【机器学习】支持向量机SVM">
+      <i class="fa fa-chevron-left"></i> 【机器学习】支持向量机SVM
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/09/02/2022-09-02-%E3%80%90%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E3%80%91k-means%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95/" rel="next" title="【机器学习】k-means聚类算法">
+      【机器学习】k-means聚类算法 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%87%8D%E7%82%B9%E9%83%A8%E5%88%86"><span class="nav-number">1.</span> <span class="nav-text">重点部分</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6"><span class="nav-number">2.</span> <span class="nav-text">高等数学</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%81%E9%99%90"><span class="nav-number">2.1.</span> <span class="nav-text">极限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="nav-number">2.2.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E5%BE%AE%E3%80%81%E5%8F%AF%E5%AF%BC%E3%80%81%E5%8F%AF%E7%A7%AF%E3%80%81%E8%BF%9E%E7%BB%AD"><span class="nav-number">2.2.1.</span> <span class="nav-text">可微、可导、可积、连续</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E5%AE%9A%E4%B9%89"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">一些定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%81%94%E7%B3%BB%E3%80%90%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E3%80%91"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">联系【一元函数】</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%81%94%E7%B3%BB%E3%80%90%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E3%80%91"><span class="nav-number">2.2.1.3.</span> <span class="nav-text">联系【多元函数】</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%8F%E5%AF%BC%E6%95%B0%E3%80%81%E6%96%B9%E5%90%91%E5%AF%BC%E6%95%B0%E3%80%81%E6%A2%AF%E5%BA%A6"><span class="nav-number">2.2.2.</span> <span class="nav-text">偏导数、方向导数、梯度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AE%E7%A7%AF%E5%88%86%E5%9F%BA%E7%A1%80"><span class="nav-number">2.3.</span> <span class="nav-text">微积分基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E7%A7%AF%E5%88%86"><span class="nav-number">2.3.1.</span> <span class="nav-text">定积分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%A4%E5%A4%A7%E7%A7%AF%E5%88%86%E4%B8%AD%E5%80%BC%E5%AE%9A%E7%90%86"><span class="nav-number">2.3.2.</span> <span class="nav-text">两大积分中值定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E5%A4%A7%E5%BE%AE%E5%88%86%E4%B8%AD%E5%80%BC%E5%AE%9A%E7%90%86"><span class="nav-number">2.3.3.</span> <span class="nav-text">三大微分中值定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%9B%E9%A1%BF-%E8%8E%B1%E5%B8%83%E5%B0%BC%E5%85%B9%E5%85%AC%E5%BC%8F"><span class="nav-number">2.3.4.</span> <span class="nav-text">牛顿-莱布尼兹公式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%B0%E5%8B%92%E5%85%AC%E5%BC%8F"><span class="nav-number">2.4.</span> <span class="nav-text">泰勒公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%82%85%E9%87%8C%E5%8F%B6%E7%BA%A7%E6%95%B0"><span class="nav-number">2.5.</span> <span class="nav-text">傅里叶级数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95"><span class="nav-number">2.6.</span> <span class="nav-text">拉格朗日乘子法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E6%95%B0%E4%B8%AD%E7%9A%84%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90"><span class="nav-number">2.6.1.</span> <span class="nav-text">高数中的拉格朗日乘子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%B8%E4%BC%98%E5%8C%96"><span class="nav-number">2.6.2.</span> <span class="nav-text">凸优化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%B8%E5%87%BD%E6%95%B0%E3%80%81%E5%87%B9%E5%87%BD%E6%95%B0%E3%80%81%E4%BB%BF%E5%B0%84%E5%87%BD%E6%95%B0"><span class="nav-number">2.6.2.1.</span> <span class="nav-text">凸函数、凹函数、仿射函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%B8%E4%BC%98%E5%8C%96-1"><span class="nav-number">2.6.2.2.</span> <span class="nav-text">凸优化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8E%E5%B9%BF%E4%B9%89%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%87%BD%E6%95%B0%E5%88%B0%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%AF%B9%E5%81%B6%E5%87%BD%E6%95%B0"><span class="nav-number">2.6.3.</span> <span class="nav-text">从广义拉格朗日函数到拉格朗日对偶函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%9F%E9%97%AE%E9%A2%98"><span class="nav-number">2.6.3.1.</span> <span class="nav-text">原问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B9%BF%E4%B9%89%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%87%BD%E6%95%B0"><span class="nav-number">2.6.3.2.</span> <span class="nav-text">广义拉格朗日函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%AF%B9%E5%81%B6%E5%87%BD%E6%95%B0"><span class="nav-number">2.6.3.3.</span> <span class="nav-text">拉格朗日对偶函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A%E5%8E%9F%E9%97%AE%E9%A2%98vs%E5%AF%B9%E5%81%B6%E9%97%AE%E9%A2%98"><span class="nav-number">2.6.3.4.</span> <span class="nav-text">总结：原问题vs对偶问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%BA%E3%80%81%E5%BC%B1%E5%AF%B9%E5%81%B6"><span class="nav-number">2.6.4.</span> <span class="nav-text">强、弱对偶</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E5%BC%BA%E5%AF%B9%E5%81%B6%E5%92%8C%E6%9C%80%E4%BC%98%E7%9A%84%E6%9D%A1%E4%BB%B6"><span class="nav-number">2.6.5.</span> <span class="nav-text">关于强对偶和最优的条件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Convex-Slater"><span class="nav-number">2.6.5.1.</span> <span class="nav-text">Convex+Slater</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#KKT%E6%9D%A1%E4%BB%B6"><span class="nav-number">2.6.5.2.</span> <span class="nav-text">KKT条件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%9D%9E%E5%87%B8%E9%97%AE%E9%A2%98%E4%B8%8B%E7%9A%84KKT"><span class="nav-number">2.6.5.2.1.</span> <span class="nav-text">非凸问题下的KKT</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%87%B8%E9%97%AE%E9%A2%98%E4%B8%8B%E7%9A%84KKT"><span class="nav-number">2.6.5.2.2.</span> <span class="nav-text">凸问题下的KKT</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E5%88%86%E6%9E%90%E4%B8%AD%E7%9A%84%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90"><span class="nav-number">2.6.6.</span> <span class="nav-text">矩阵分析中的拉格朗日乘子</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%AB%E6%9C%89%E4%B8%80%E4%B8%AA%E7%AD%89%E5%BC%8F%E7%BA%A6%E6%9D%9F%E7%9A%84%E6%9C%80%E4%BC%98%E5%8C%96"><span class="nav-number">2.6.6.1.</span> <span class="nav-text">含有一个等式约束的最优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%AB%E6%9C%89%E5%A4%9A%E4%B8%AA%E7%AD%89%E5%BC%8F%E7%BA%A6%E6%9D%9F%E7%9A%84%E6%9C%80%E4%BC%98%E5%8C%96"><span class="nav-number">2.6.6.2.</span> <span class="nav-text">含有多个等式约束的最优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%AF%B9%E5%81%B6%E9%97%AE%E9%A2%98"><span class="nav-number">2.6.6.3.</span> <span class="nav-text">拉格朗日对偶问题</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="LiaN"
+      src="https://cdn2.maocdn.cn/img/2022/01/21/J8U_G9ZTZG4W12DA260Z9.jpg">
+  <p class="site-author-name" itemprop="name">LiaN</p>
+  <div class="site-description" itemprop="description"><font color="#000000">别焦虑了，说不定明天就死了呢.</font></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/z-y-LiaN" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;z-y-LiaN" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2749613231@qq.com" title="E-Mail → mailto:2749613231@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      快速访问
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.luogu.com.cn/" title="https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;" rel="noopener" target="_blank">洛谷</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.acwing.com/" title="https:&#x2F;&#x2F;www.acwing.com&#x2F;" rel="noopener" target="_blank">AcWing</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.csdn.net/" title="https:&#x2F;&#x2F;www.csdn.net&#x2F;" rel="noopener" target="_blank">CSDN</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.bilibili.com/" title="https:&#x2F;&#x2F;www.bilibili.com&#x2F;" rel="noopener" target="_blank">b站</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LiaN</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">244k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">3:41</span>
+</div>
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+-->
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '532a45a59c2f395313f9',
+      clientSecret: '419760923076a6f709b5baa01457e5a96e275838',
+      repo        : 'z-y-LiaN.github.io',
+      owner       : 'z-y-LiaN',
+      admin       : ['z-y-LiaN'],
+      id          : 'c0ee095fb698ff19d607f64c23db8c71',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>
